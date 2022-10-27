@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { useEffect, useState } from "react"
+import axios from "axios";
 import './App.css';
 
 function App() {
+  const [crypto, setCrypto] = useState(null)
+
+  useEffect(() => {
+    const fetchCrypto = async () => {
+        const response = await axios('http://localhost:5000/cryptown/api')
+        const json = await response.data
+
+        if (response.status === 200) {
+            setCrypto(json)
+        }
+    }
+    fetchCrypto()
+    
+    
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>{crypto && (<div>{crypto.mssg}</div>)}</h2>
     </div>
   );
 }
