@@ -7,18 +7,33 @@ const Login = () => {
     // const [password, setPassword] = useState("");
 
     return (
+      <div className='.login-wrapper'>
       <h1>LOGIN</h1>
-      // <div className='log'>
-      //   <form className='login_form'>
-      //       <h1>Login</h1>
+
+    <form>
+      <label>
+        <p>Username</p>
+        <input type="text" />
+      </label>
+      <label>
+        <p>Password</p>
+        <input type="password" />
+      </label>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+      {/* //   <form className='login_form'> */}
+      {/* //       <h1>Login</h1>
       //       <input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
       //       <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} /> 
 
       //       <button type='"submit' className='submit-btn'>Submit</button>
-      //   </form>
+      //   </form> */}
 
 
-      // </div>
+      
+      </div>
     )
 }
 

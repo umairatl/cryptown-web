@@ -1,7 +1,8 @@
+import React, { useState  } from 'react';
 import './App.css';
 import { BrowserRouter,Routes, Route} from "react-router-dom";
 import { Navbar } from './components/navbar/navbar';
-// import { Login } from './views/login/login';
+// import Login from './views/login/login';
 import FavPage from './views/favouritePage/fav';
 import CryptoList from './views/cryptoList/crypto';
 import AppList from './views/appList/appList';
@@ -11,6 +12,13 @@ import Profile from './views/profilePage/profile';
 
 
 function App() {
+  // const [token, setToken] =  useState();
+
+
+  // if(!token){
+  //   return <Login setToken={setToken} />
+  // }
+
   return (
     <BrowserRouter>
       <div className='App'>
