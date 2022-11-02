@@ -13,8 +13,6 @@ const ForumPage = () => {
             }
         }
         fetchCrypto()
-    
-    
       }, [])
 
     return (  

@@ -3,18 +3,7 @@ import { Box, Card, CardContent, Typography, CardActions, Button, CardMedia } fr
 import '../news/news.css';
 
 const NewsPge = () => {
-    // var [data, setData] = useState([]);
-
-  //to call api and list
-//   useEffect(() => {
-//     axios
-//       .get("https://amiiboapi.com/api/amiiboseries/", {})
-//       .then(function (response) {
-//         setData(response.data.amiibo); // array for display data
-//         setDataSearch(response.data.amiibo); //  array for search function
-//       });
-//   }, []);
-
+  
     return ( 
         <div className='news-page'>
         <h1>NEWS</h1>
