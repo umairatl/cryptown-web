@@ -5,7 +5,7 @@ const ForumPage = () => {
     const [crypto, setCrypto] = useState(null)
     useEffect(() => {
         const fetchCrypto = async () => {
-            const response = await axios('https://localhost:5000/api/crypto/cryptoList')
+            const response = await axios('http://localhost:5000/api/crypto/cryptoList')
             const json = await response.data
     
             if (response.status === 200) {
@@ -18,7 +18,7 @@ const ForumPage = () => {
   // useEffect(() => {
   //   const fetchCrypto = async () => {
   //     const response = await axios(
-  //       "https://localhost:8443/api/crypto/cryptoList"
+  //       "http://localhost:5000/api/crypto/cryptoList"
   //     );
   //     const json = await response.data;
 

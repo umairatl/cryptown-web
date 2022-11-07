@@ -9,7 +9,7 @@ const NewsPage = () => {
 
   useEffect(() => {
       const fetchNewsList = async () => {
-          const response = await axios('https://localhost:5000/api/news')
+          const response = await axios('http://localhost:5000/api/news')
           const json = await response.data
   
           if (response.status === 200) {
