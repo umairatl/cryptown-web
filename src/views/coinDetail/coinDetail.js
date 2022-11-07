@@ -12,7 +12,7 @@ const CoinDetail = () => {
 
     useEffect(() => {
         const fetchCoinDetail = async () => {
-            const response = await axios.post('https://localhost:5000/api/crypto/cryptoDetail',
+            const response = await axios.post('http://localhost:5000/api/crypto/cryptoDetail',
             {
                 'cryptoId': id
             },
