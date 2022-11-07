@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/navbar/navbar";
+import Signup from "./views/signupPage/signup";
 // import Login from './views/login/login';
 import FavPage from "./views/favouritePage/fav";
 import CryptoList from "./views/cryptoList/coin";
@@ -25,12 +26,13 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/fav" element={<FavPage />}></Route>
-          <Route path="/cryptoList" element={<CryptoList />}></Route>
+          <Route path="/" element={<CryptoList />}></Route>
           <Route path="/coinDetail/:id" element={<CoinDetail />}></Route>
           <Route path="/forum" element={<Forum />}></Route>
           <Route path="/appList" element={<AppList />}></Route>
           <Route path="/news" element={<NewsPage />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
         </Routes>
       </div>
       {/* <Footer /> */}

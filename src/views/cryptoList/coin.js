@@ -23,7 +23,7 @@ const Coin = ({}) => {
   useEffect(() => {
     const fetchCrypto = async () => {
       const response = await axios(
-        "http://localhost:5000/api/crypto/cryptoList"
+        "https://localhost:5000/api/crypto/cryptoList"
       );
       const json = await response.data;
 
@@ -37,7 +37,7 @@ const Coin = ({}) => {
   useEffect(() => {
     const fetchCryptoTren = async () => {
       const response = await axios(
-        "http://localhost:5000/api/crypto/cryptoTrending"
+        "https://localhost:5000/api/crypto/cryptoTrending"
       );
       const json = await response.data;
 
@@ -70,9 +70,8 @@ const Coin = ({}) => {
           </div>
         ))}
       <div className="coin-app">
-        <Intro />
         <div className="coinsearchFilter-search">
-          <h1 className="coin-text">Search CI/CD 2</h1>
+          <h1 className="coin-text">Search</h1>
 
           <div className="search-col">
             <input
@@ -83,6 +82,7 @@ const Coin = ({}) => {
               placeholder="Search"
             />
           </div>
+
           <div className="set-coinList">
             <TableContainer component={Paper}>
               <Table aria-label="simple table" stickyHeader>
@@ -111,7 +111,7 @@ const Coin = ({}) => {
                         </TableCell>
                         <TableCell>{data.name}</TableCell>
                         <TableCell>${data.current_price}</TableCell>
-                        <TableCell>{data.market_cap} / 10</TableCell>
+                        <TableCell>{data.market_cap}</TableCell>
                         {/* </Link> */}
                       </TableRow>
                     ))}
