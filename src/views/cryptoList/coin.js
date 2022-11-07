@@ -22,7 +22,7 @@ const Coin = ({}) => {
   useEffect(() => {
     const fetchCrypto = async () => {
       const response = await axios(
-        "https://localhost:8443/api/crypto/cryptoList"
+        "https://localhost:5000/api/crypto/cryptoList"
       );
       const json = await response.data;
 
@@ -37,9 +37,9 @@ const Coin = ({}) => {
     useEffect(() => {
     const fetchCryptoTren = async () => {
       const response = await axios(
-        "https://localhost:8443/api/crypto/cryptoTrending"
+        "https://localhost:5000/api/crypto/cryptoTrending"
       );
-      const json = await response.data;
+      const json = await response.data;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 
       if (response.status === 200) {
         setTren(json);
@@ -111,7 +111,7 @@ const Coin = ({}) => {
                     {data.name}
                     </TableCell>
                 <TableCell>${data.current_price}</TableCell>
-                <TableCell>{data.market_cap} / 10</TableCell>
+                <TableCell>{data.market_cap}</TableCell>
               {/* </Link> */}
 
             </TableRow>
