@@ -15,13 +15,14 @@ import { useNavigate } from "react-router-dom";
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
+  const [tren, setTren] = useState(null);
     const navigation = useNavigate();
   let arr = [];
 
   useEffect(() => {
     const fetchCrypto = async () => {
       const response = await axios(
-        "https://localhost:5000/api/crypto/cryptoList"
+        "https://localhost:8443/api/crypto/cryptoList"
       );
       const json = await response.data;
 
@@ -30,6 +31,21 @@ const Coin = ({}) => {
       }
     };
     fetchCrypto();
+  }, []);
+
+
+    useEffect(() => {
+    const fetchCryptoTren = async () => {
+      const response = await axios(
+        "https://localhost:8443/api/crypto/cryptoTrending"
+      );
+      const json = await response.data;
+
+      if (response.status === 200) {
+        setTren(json);
+      }
+    };
+    fetchCryptoTren();
   }, []);
 
   const cryptoFilter = (e) => {
@@ -42,6 +58,17 @@ const Coin = ({}) => {
   };
 
   return (
+    <div>
+      {tren &&
+        tren.cryptoTrending.map((res) => (
+          <div>
+            <img src={res.image} />
+            <p className="legend">{res.name} </p>
+            <p className="legend">{res.symbol} </p>
+            <p className="legend">{res.cryptoId} </p>
+            {/* <AliceCarousel mouseTracking items={items} /> */}
+          </div>
+        ))}
     <div className="coin-app">
       <div className="coinsearchFilter-search">
         <h1 className="coin-text">Search</h1>
@@ -120,6 +147,7 @@ const Coin = ({}) => {
         </h2> */}
         </div>
       </div>
+    </div>
     </div>
   );
 };
