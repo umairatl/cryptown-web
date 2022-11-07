@@ -2,20 +2,21 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./coin.css";
 import axios from "axios";
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
-
+import Intro from "../../components/pages/HomePage/Intro";
+import "../../components/pages/HomePage/intro.css";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
-    const navigation = useNavigate();
+  const navigation = useNavigate();
   let arr = [];
 
   useEffect(() => {
@@ -43,6 +44,7 @@ const Coin = ({}) => {
 
   return (
     <div className="coin-app">
+      <Intro />
       <div className="coinsearchFilter-search">
         <h1 className="coin-text">Search</h1>
 
@@ -55,45 +57,43 @@ const Coin = ({}) => {
             placeholder="Search"
           />
         </div>
-
         <div className="set-coinList">
-        <TableContainer component={Paper}>
-        <Table aria-label="simple table" stickyHeader>
-          <TableHead>
-            <TableRow>
-              <TableCell>Ranking</TableCell>
-              <TableCell></TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Price</TableCell>
-              <TableCell>Market Cap</TableCell>
-            </TableRow>
-           </TableHead>
-        <TableBody>
-        {crypto &&
-            cryptoFilter(search).map((data) => (
-            <TableRow key={data.name} style={{cursor:'pointer'}} 
-            onClick={() => {
-              navigation(`/coinDetail/${data.cryptoId}`);
-            }}
-            >
-                <TableCell>{data.market_cap_rank}</TableCell>
-                   <TableCell>
-                    <img src={data.image} width='40px'></img>
-                   </TableCell>
-                <TableCell>
-                    {data.name}
-                    </TableCell>
-                <TableCell>${data.current_price}</TableCell>
-                <TableCell>{data.market_cap} / 10</TableCell>
-              {/* </Link> */}
+          <TableContainer component={Paper}>
+            <Table aria-label="simple table" stickyHeader>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Ranking</TableCell>
+                  <TableCell></TableCell>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Price</TableCell>
+                  <TableCell>Market Cap</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {crypto &&
+                  cryptoFilter(search).map((data) => (
+                    <TableRow
+                      key={data.name}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        navigation(`/coinDetail/${data.cryptoId}`);
+                      }}
+                    >
+                      <TableCell>{data.market_cap_rank}</TableCell>
+                      <TableCell>
+                        <img src={data.image} width="40px"></img>
+                      </TableCell>
+                      <TableCell>{data.name}</TableCell>
+                      <TableCell>${data.current_price}</TableCell>
+                      <TableCell>{data.market_cap} / 10</TableCell>
+                      {/* </Link> */}
+                    </TableRow>
+                  ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
 
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-
-        {/* <h2>
+          {/* <h2>
           {crypto &&
             cryptoFilter(search).map((data) => (
               <Link to={`/coinDetail/${data.cryptoId}`}>
