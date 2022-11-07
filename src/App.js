@@ -5,11 +5,12 @@ import { Navbar } from "./components/navbar/navbar";
 // import Login from './views/login/login';
 import FavPage from "./views/favouritePage/fav";
 import CryptoList from "./views/cryptoList/Coin";
-import Trending from "./views/cryptoList/Carousel";
+
 import AppList from "./views/appList/appList";
 import Forum from "./views/forumPage/forum";
 import NewsPage from "./views/news/news";
 import Profile from "./views/profilePage/profile";
+// import Banner from "./views/Banner/Banner";
 
 function App() {
   // const [token, setToken] =  useState();
