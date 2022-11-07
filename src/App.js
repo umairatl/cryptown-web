@@ -4,11 +4,13 @@ import { BrowserRouter,Routes, Route} from "react-router-dom";
 import { Navbar } from './components/navbar/navbar';
 // import Login from './views/login/login';
 import FavPage from './views/favouritePage/fav';
-import CryptoList from './views/cryptoList/crypto';
+import CryptoList from './views/cryptoList/coin';
 import AppList from './views/appList/appList';
 import Forum from './views/forumPage/forum';
 import NewsPage from './views/news/news';
 import Profile from './views/profilePage/profile';
+import CoinDetail from './views/coinDetail/coinDetail';
+import Footer from './components/footer/footer'
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
             </Route>
             <Route path="/cryptoList" element = { <CryptoList />}>
             </Route> 
+            <Route path="/coinDetail/:id" element = { <CoinDetail />}>
+            </Route> 
             <Route path="/forum" element = { <Forum />}>
             </Route>
             <Route path="/appList" element = { <AppList />}>
@@ -38,6 +42,7 @@ function App() {
             </Route>
           </Routes>
       </div>
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

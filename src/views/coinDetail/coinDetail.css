@@ -1,0 +1,23 @@
+.col-details{
+    margin: auto;
+    text-align: justify;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.con-1{
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+    /* background: #a2bfd8; */
+    text-align: center;
+}
+
+.con-2{
+    height: 60px;
+    width:400px;
+    border-radius: 20px;
+    background:  #abd8ff; 
+    color: black;
+    font-size: 1.6rem;
+}

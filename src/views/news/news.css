@@ -9,16 +9,18 @@
 } */
 
 .grid-container-news{
-    margin: auto;
     display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* flex-wrap: wrap; */
+    flex-direction: row;
+    justify-content: center;
+    margin: 100px auto;
+    flex-wrap: wrap;
 }
 
 .grid-item-news{
-    margin: 15px 30px 15px 30px;
+    margin: 15px 15px 15px;
+    border-radius: 5%;
     display: flex;
-    /* flex-wrap: wrap; */
-    /* flex-direction: row; */
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
 }

@@ -7,8 +7,12 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import '../appList/appList.css';
+import { Link } from 'react-router-dom';
+
+
 
   function createData(rank, name, year, score, country, trade_volume) {
     return { rank, name, year, score, country, trade_volume };
