@@ -2,20 +2,32 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const ForumPage = () => {
-  const [crypto, setCrypto] = useState(null);
-  useEffect(() => {
-    const fetchCrypto = async () => {
-      const response = await axios(
-        "https://localhost:8443/api/crypto/cryptoList"
-      );
-      const json = await response.data;
+    const [crypto, setCrypto] = useState(null)
+    useEffect(() => {
+        const fetchCrypto = async () => {
+            const response = await axios('https://localhost:5000/api/crypto/cryptoList')
+            const json = await response.data
+    
+            if (response.status === 200) {
+                setCrypto(json)
+            }
+        }
+        fetchCrypto()
+      }, [])
+  // const [crypto, setCrypto] = useState(null);
+  // useEffect(() => {
+  //   const fetchCrypto = async () => {
+  //     const response = await axios(
+  //       "https://localhost:8443/api/crypto/cryptoList"
+  //     );
+  //     const json = await response.data;
 
-      if (response.status === 200) {
-        setCrypto(json);
-      }
-    };
-    fetchCrypto();
-  }, []);
+  //     if (response.status === 200) {
+  //       setCrypto(json);
+  //     }
+  //   };
+  //   fetchCrypto();
+  // }, []);
 
   return (
     <div className="forum">

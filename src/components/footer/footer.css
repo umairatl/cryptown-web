@@ -1,0 +1,8 @@
+.footer-col{
+    /* background: linear-gradient(#e66465, #9198e5); */
+   background: rgb(2,0,36);
+   background: linear-gradient(90deg, #1167b1 10%, #03254c 90%); 
+   color: white;
+   height: 50%;
+   text-align: center;
+  }
