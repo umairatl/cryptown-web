@@ -71,7 +71,7 @@ const Coin = ({}) => {
         ))}
     <div className="coin-app">
       <div className="coinsearchFilter-search">
-        <h1 className="coin-text">Search CI/CD 2</h1>
+        <h1 className="coin-text">Search CI/CD 3 TEST</h1>
 
         <div className="search-col">
           <input
