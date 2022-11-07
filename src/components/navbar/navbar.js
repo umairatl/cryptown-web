@@ -11,10 +11,10 @@ export class Navbar extends Component {
       <div className='first-col'>
       <nav className="nav-up">
         <ul>
-        <Link to ='/cryptoList' className="nav-text"> Cryptown LOGO </Link>
+        <Link to ='/' className="nav-text"> Cryptown LOGO </Link>
         </ul>
         <ul className="nav-right">
-            <Link to ='/cryptoList' className="nav-text">  Market </Link>
+            <Link to ='/' className="nav-text">  Market </Link>
             <Link to ='/forum' className="nav-text">  Forum </Link>
             <Link to = '/news' className="nav-text">  News </Link>
             <Link to = '/appList' className="nav-text"> Exchange </Link>
