@@ -9,7 +9,7 @@ const NewsPage = () => {
 
   useEffect(() => {
       const fetchNewsList = async () => {
-          const response = await axios('https://localhost:5000/api/news')
+          const response = await axios('https://localhost:8443/api/news')
           const json = await response.data
   
           if (response.status === 200) {
@@ -44,7 +44,7 @@ const NewsPage = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small"><a href={row.url}>Learn more</a></Button>
+        <Button size="small"><a href={row.url} target ="_blank">Learn more</a></Button>
       </CardActions>
     </Card>
     </div>
