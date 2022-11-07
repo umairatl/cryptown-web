@@ -28,7 +28,7 @@ function App() {
           <Routes>
             <Route path="/fav" element = { <FavPage />}>
             </Route>
-            <Route path="/cryptoList" element = { <CryptoList />}>
+            <Route path="/" element = { <CryptoList />}>
             </Route> 
             <Route path="/coinDetail/:id" element = { <CoinDetail />}>
             </Route> 
