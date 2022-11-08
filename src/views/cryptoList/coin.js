@@ -22,7 +22,7 @@ const Coin = ({}) => {
   useEffect(() => {
     const fetchCrypto = async () => {
       const response = await axios(
-        "https://localhost:5000/api/crypto/cryptoList"
+        process.env.REACT_APP_URL + 'api/crypto/cryptoList'
       );
       const json = await response.data;
 
@@ -37,7 +37,7 @@ const Coin = ({}) => {
     useEffect(() => {
     const fetchCryptoTren = async () => {
       const response = await axios(
-        "https://localhost:5000/api/crypto/cryptoTrending"
+        process.env.REACT_APP_URL + 'api/crypto/cryptoTrending'
       );
       const json = await response.data;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 

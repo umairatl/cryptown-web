@@ -9,7 +9,7 @@ const NewsPage = () => {
 
   useEffect(() => {
       const fetchNewsList = async () => {
-          const response = await axios('https://localhost:5000/api/news')
+          const response = await axios( process.env.REACT_APP_URL + 'api/news')
           const json = await response.data
   
           if (response.status === 200) {
@@ -19,15 +19,12 @@ const NewsPage = () => {
       fetchNewsList()
     }, []);
 
-    console.log(news)
   
     return ( 
         <div className='news-page'>
         <h1>NEWS</h1>
         <div className='grid-container-news'>
-          {news && news.news.map((row => (
-
-     
+          {news && news.news.map((row => (     
             <div className='grid-item-news'>
         <Card sx={{ maxWidth: 345 }}> 
       <CardMedia

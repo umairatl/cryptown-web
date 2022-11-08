@@ -21,7 +21,7 @@ const Chart = ({cryptoId}) => {
             
             if (time == '14'){
                 console.log('2W')
-                    response = await axios.post('https://localhost:5000/api/crypto/cryptoChartWeekly',
+                    response = await axios.post(process.env.REACT_APP_URL + 'api/crypto/cryptoChartWeekly',
                 {
                     'cryptoId': cryptoId
                 },
@@ -34,7 +34,7 @@ const Chart = ({cryptoId}) => {
 
             } if (time == 'max'){
                 console.log('6M')
-                    response = await axios.post('https://localhost:5000/api/crypto/cryptoChartMax',
+                    response = await axios.post( process.env.REACT_APP_URL + 'api/crypto/cryptoChartMax',
                 {
                     'cryptoId': cryptoId
                 },
@@ -47,7 +47,7 @@ const Chart = ({cryptoId}) => {
 
             } else if (time == '24') {
                 console.log('1D')
-                    response =  await axios.post('https://localhost:5000/api/crypto/cryptoChartDaily',
+                    response =  await axios.post( process.env.REACT_APP_URL + 'api/crypto/cryptoChartDaily',
                 {
                     'cryptoId': cryptoId
                 },

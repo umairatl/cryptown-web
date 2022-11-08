@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
 
     useEffect(() => {
         const fetchExchangeList = async () => {
-            const response = await axios('https://localhost:5000/api/exchange')
+            const response = await axios( process.env.REACT_APP_URL + 'api/exchange')
             const json = await response.data
     
             if (response.status === 200) {

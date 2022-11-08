@@ -19,7 +19,7 @@ export class Navbar extends Component {
             <Link to = '/news' className="nav-text">  News </Link>
             <Link to = '/appList' className="nav-text"> Exchange </Link>
             <Link to = '/signup' className="nav-text"> Signup Test </Link>
-
+            <Link to = '/login' className="nav-text"> Login Test </Link>
         </ul>
         <ul>
         <Link to = '/profile' className="nav-text">

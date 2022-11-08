@@ -11,7 +11,8 @@ import Forum from './views/forumPage/forum';
 import NewsPage from './views/news/news';
 import Profile from './views/profilePage/profile';
 import CoinDetail from './views/coinDetail/coinDetail';
-import Footer from './components/footer/footer'
+import Footer from './components/footer/footer';
+import Login from './views/loginPage/login';
 
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
             <Route path="/profile" element = { <Profile />}>
             </Route>
             <Route path="/signup" element = { <Signup />}>
+            </Route>
+            <Route path="/login" element = { <Login />}>
             </Route>
           </Routes>
       </div>
