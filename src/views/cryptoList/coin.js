@@ -36,6 +36,7 @@ const Coin = ({}) => {
 
     useEffect(() => {
     const fetchCryptoTren = async () => {
+      console.log( process.env.REACT_APP_URL + 'api/crypto/cryptoTrending')
       const response = await axios(
         process.env.REACT_APP_URL + 'api/crypto/cryptoTrending'
       );
