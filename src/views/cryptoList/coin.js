@@ -22,7 +22,7 @@ const Coin = ({}) => {
   useEffect(() => {
     const fetchCrypto = async () => {
       const response = await axios(
-        "http://localhost:5000/api/crypto/cryptoList"
+        "https://api.cryptown-besquare.one/api/crypto/cryptoList"
       );
       const json = await response.data;
 
@@ -37,7 +37,7 @@ const Coin = ({}) => {
     useEffect(() => {
     const fetchCryptoTren = async () => {
       const response = await axios(
-        "http://localhost:5000/api/crypto/cryptoTrending"
+        "https://api.cryptown-besquare.one/api/crypto/cryptoTrending"
       );
       const json = await response.data;
 
@@ -71,7 +71,7 @@ const Coin = ({}) => {
         ))}
     <div className="coin-app">
       <div className="coinsearchFilter-search">
-        <h1 className="coin-text">Search CI/CD 3 TEST</h1>
+        <h1 className="coin-text">Search CI/CD 4 TEST</h1>
 
         <div className="search-col">
           <input
