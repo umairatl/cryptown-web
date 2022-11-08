@@ -1,7 +1,10 @@
 import React from "react";
 import '../coinChart/chart.css'
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../components/axios/axios";
+
+
+
 import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Filler,Legend,} from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import moment from "moment";
@@ -21,7 +24,7 @@ const Chart = ({cryptoId}) => {
             
             if (time == '14'){
                 console.log('2W')
-                    response = await axios.post(process.env.REACT_APP_URL + 'api/crypto/cryptoChartWeekly',
+                    response = await axios.post('api/crypto/cryptoChartWeekly',
                 {
                     'cryptoId': cryptoId
                 },
@@ -34,7 +37,7 @@ const Chart = ({cryptoId}) => {
 
             } if (time == 'max'){
                 console.log('6M')
-                    response = await axios.post( process.env.REACT_APP_URL + 'api/crypto/cryptoChartMax',
+                    response = await axios.post('api/crypto/cryptoChartMax',
                 {
                     'cryptoId': cryptoId
                 },
@@ -47,7 +50,7 @@ const Chart = ({cryptoId}) => {
 
             } else if (time == '24') {
                 console.log('1D')
-                    response =  await axios.post( process.env.REACT_APP_URL + 'api/crypto/cryptoChartDaily',
+                    response =  await axios.post('api/crypto/cryptoChartDaily',
                 {
                     'cryptoId': cryptoId
                 },

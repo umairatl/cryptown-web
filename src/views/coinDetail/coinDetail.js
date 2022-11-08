@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import CoinChart from "../../components/coinChart/chart";
 import '../coinDetail/coinDetail.css';
 import Box from '@mui/material/Box';
@@ -12,7 +12,7 @@ const CoinDetail = () => {
 
     useEffect(() => {
         const fetchCoinDetail = async () => {
-            const response = await axios.post( process.env.REACT_APP_URL + 'api/crypto/cryptoDetail',
+            const response = await axios.post('api/crypto/cryptoDetail',
             {
                 'cryptoId': id
             },
