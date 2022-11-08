@@ -18,9 +18,10 @@ const Chart = ({cryptoId}) => {
 
     useEffect(() => {
         const fetchChart = async () => {
+            
             if (time == '14'){
                 console.log('2W')
-                    response = await axios.post('http://localhost:5000/api/crypto/cryptoChartWeekly',
+                    response = await axios.post(process.env.REACT_APP_URL + 'api/crypto/cryptoChartWeekly',
                 {
                     'cryptoId': cryptoId
                 },
@@ -33,7 +34,7 @@ const Chart = ({cryptoId}) => {
 
             } if (time == 'max'){
                 console.log('6M')
-                    response = await axios.post('http://localhost:5000/api/crypto/cryptoChartMax',
+                    response = await axios.post( process.env.REACT_APP_URL + 'api/crypto/cryptoChartMax',
                 {
                     'cryptoId': cryptoId
                 },
@@ -46,7 +47,7 @@ const Chart = ({cryptoId}) => {
 
             } else if (time == '24') {
                 console.log('1D')
-                    response =  await axios.post('http://localhost:5000/api/crypto/cryptoChartDaily',
+                    response =  await axios.post( process.env.REACT_APP_URL + 'api/crypto/cryptoChartDaily',
                 {
                     'cryptoId': cryptoId
                 },
@@ -70,15 +71,6 @@ const Chart = ({cryptoId}) => {
             x: value[0], y:value[1].toFixed(2) 
         }));
 
-        // const reverseMax  = data && data.cryptoChart
-        // reverseMax.reverse();
-        // const coinChartMax = reverseMax(value => ({
-        //     x: value[0], y:value[1].toFixed(2) 
-        // }));
-
-        // console.log(reverseMax.reverse())
-
-
         if (time == '24'){
             data2 = {
                 labels: coinChartData.map(value => moment(value.x).format('ddd, hA')),
@@ -93,22 +85,6 @@ const Chart = ({cryptoId}) => {
                 ]
             }
         } 
-        
-        // if (time == 'max'){
-        //     data2 = {
-        //         labels: coinChartMax.map(value => moment(value.x).format('ddd, hA')),
-        //         datasets: [
-        //             {
-        //                 fill: true,
-        //                 data: coinChartData.map(value => value.y),
-        //                 label: cryptoId,
-        //                 borderColor: 'rgb(53, 162, 235)',
-        //                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        //             }
-        //         ]
-        //     }
-        // } 
-        
         else 
         {
             data2 = {

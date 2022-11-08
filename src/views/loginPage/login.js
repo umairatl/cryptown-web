@@ -1,40 +1,34 @@
 import React, { Component } from 'react'
 import { useState } from 'react';
+import {useLogin} from '../../hooks/useLogin';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const {login, isLoading, error, status} = useLogin()
 
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
-    return (
-      <div className='.login-wrapper'>
-      <h1>LOGIN</h1>
-
-    <form>
-      <label>
-        <p>Username</p>
-        <input type="text" />
-      </label>
-      <label>
-        <p>Password</p>
-        <input type="password" />
-      </label>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-      {/* //   <form className='login_form'> */}
-      {/* //       <h1>Login</h1>
-      //       <input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-      //       <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} /> 
-
-      //       <button type='"submit' className='submit-btn'>Submit</button>
-      //   </form> */}
+    await login(email, password)
+  }
 
 
-      
-      </div>
-    )
+return (
+  <form className='login' onSubmit={handleSubmit}>
+    <label>Email</label>
+    <input type ='email' onChange={(e) => setEmail(e.target.value)} value={email}/>
+  
+    <label>Password</label>
+    <input type ='password' onChange={(e) => setPassword(e.target.value)} value={password}/>
+  
+  <button disabled={isLoading}>Login</button>
+  {error && <div className='error'>{error}</div>}
+  <p>{status}</p>
+  
+  </form>
+)
+
 }
 
 export default Login

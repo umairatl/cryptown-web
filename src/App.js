@@ -2,6 +2,7 @@ import React, { useState  } from 'react';
 import './App.css';
 import { BrowserRouter,Routes, Route} from "react-router-dom";
 import { Navbar } from './components/navbar/navbar';
+import Signup from './views/signupPage/signup'
 // import Login from './views/login/login';
 import FavPage from './views/favouritePage/fav';
 import CryptoList from './views/cryptoList/coin';
@@ -10,7 +11,8 @@ import Forum from './views/forumPage/forum';
 import NewsPage from './views/news/news';
 import Profile from './views/profilePage/profile';
 import CoinDetail from './views/coinDetail/coinDetail';
-import Footer from './components/footer/footer'
+import Footer from './components/footer/footer';
+import Login from './views/loginPage/login';
 
 
 function App() {
@@ -39,6 +41,10 @@ function App() {
             <Route path="/news" element = { <NewsPage />}>
             </Route>
             <Route path="/profile" element = { <Profile />}>
+            </Route>
+            <Route path="/signup" element = { <Signup />}>
+            </Route>
+            <Route path="/login" element = { <Login />}>
             </Route>
           </Routes>
       </div>
