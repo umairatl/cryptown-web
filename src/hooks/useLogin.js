@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import axios from "axios";
+import axios from "../components/axios/axios";
 import { useAuthContext } from './useAuthContext'
 
 
@@ -15,7 +15,7 @@ export const useLogin = () => {
     setStatus(null)
 
     try{
-      const response = await axios.post( process.env.REACT_APP_URL + 'api/user/login',
+      const response = await axios.post('api/user/login',
     {
         'email' : email,
         'password': password, 

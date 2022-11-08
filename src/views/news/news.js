@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import { Box, Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
 import '../news/news.css';
 
@@ -9,7 +9,7 @@ const NewsPage = () => {
 
   useEffect(() => {
       const fetchNewsList = async () => {
-          const response = await axios( process.env.REACT_APP_URL + 'api/news')
+          const response = await axios('api/news')
           const json = await response.data
   
           if (response.status === 200) {

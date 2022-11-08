@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { useState } from 'react';
 import {useLogin} from '../../hooks/useLogin';
+import {
+  Link,
+} from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -25,6 +28,9 @@ return (
   <button disabled={isLoading}>Login</button>
   {error && <div className='error'>{error}</div>}
   <p>{status}</p>
+  <button>
+  <Link to ='/signup'>  Signup </Link>
+  </button>
   
   </form>
 )
