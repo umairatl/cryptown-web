@@ -11,8 +11,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import '../appList/appList.css';
 import { Link } from 'react-router-dom';
-
-
+import Navbar from '../../components/navbar/navbar';
 
   function createData(rank, name, year, score, country, trade_volume) {
     return { rank, name, year, score, country, trade_volume };
@@ -52,10 +51,12 @@ import { Link } from 'react-router-dom';
       setPage(0);
     };
       return (
+        <div>
+        <Navbar />
         <div className='set-appList'>
-            <img src = 
-            'https://images.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'>
-            </img>
+            {/* <img src = 
+            'https://asset.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'>
+            </img> */}
 
 
             <h1>Exchange <span>List</span></h1>
@@ -106,6 +107,7 @@ import { Link } from 'react-router-dom';
     </TableContainer>
 
     
+    </div>
     </div>
   );
 }

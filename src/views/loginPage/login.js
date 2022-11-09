@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useState } from 'react';
 import {useLogin} from '../../hooks/useLogin';
-import {
-  Link,
-} from "react-router-dom";
+import {Link} from "react-router-dom";
+import Navbar from '../../components/navbar/navbar'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,8 +15,9 @@ const Login = () => {
     await login(email, password)
   }
 
-
 return (
+  <div>
+    <Navbar />
   <form className='login' onSubmit={handleSubmit}>
     <label>Email</label>
     <input type ='email' onChange={(e) => setEmail(e.target.value)} value={email}/>
@@ -33,6 +33,7 @@ return (
   </button>
   
   </form>
+  </div>
 )
 
 }

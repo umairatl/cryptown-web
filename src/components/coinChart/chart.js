@@ -1,5 +1,5 @@
 import React from "react";
-import '../coinChart/chart.css'
+import "../coinChart/chart.css";
 import { useEffect, useState } from "react";
 import axios from "../../components/axios/axios";
 
@@ -8,8 +8,8 @@ import axios from "../../components/axios/axios";
 import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Filler,Legend,} from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import moment from "moment";
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 ChartJS.register(CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Filler,Legend);
     
@@ -105,29 +105,30 @@ const Chart = ({cryptoId}) => {
         }
     }
 
-const options = {
-    responsive: true
-}
+  const options = {
+    responsive: true,
+  };
 
-const handleChange = (event, newAlignment) => {
+  const handleChange = (event, newAlignment) => {
     setTime(newAlignment);
-};
+  };
 
-
-return ( 
-<div className="line-chart">
-    <ToggleButtonGroup
+  return (
+    <div className="line-chart">
+      <ToggleButtonGroup
         color="primary"
         value={time}
         exclusive
         onChange={handleChange}
-        aria-label="Platform">
+        aria-label="Platform"
+      >
         <ToggleButton value="24">24</ToggleButton>
         <ToggleButton value="14">2W</ToggleButton>
         <ToggleButton value="max">6M</ToggleButton>
-        </ToggleButtonGroup>
-        { data ? (<Line options={options} data={data2} />) : ('test')}
-</div> );
-}
- 
+      </ToggleButtonGroup>
+      {data ? <Line options={options} data={data2} /> : "test"}
+    </div>
+  );
+};
+
 export default Chart;
