@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { Box, Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
+import axios from "../../components/axios/axios";
+import { Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
 import '../news/news.css';
 import HeaderHero from "../news/heroimage";
 
@@ -19,7 +19,7 @@ const NewsPage = () => {
           }
       }
       fetchNewsList()
-    }, []);
+  }, []);
 
     console.log(news)
   
@@ -51,12 +51,11 @@ const NewsPage = () => {
         <Button size="small"><a href={row.url}>Learn more</a></Button>
       </CardActions>
     </Card>
-    </div>
-     )))} 
+  </div>
+  )))} 
+</div>
+</div>
 
-    </div>
-    </div>
-     );
-}
+)}
  
 export default NewsPage;

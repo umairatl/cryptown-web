@@ -2,54 +2,54 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../navbar/navbar.css";
 import { FaUserCircle } from "react-icons/fa";
-import logoo from "../../Images/Assetlogo.png";
+import { useAuthContext } from '../../hooks/useAuthContext';
+import logoo from "../../Images/Assetlogo.png"; 
 
-export class Navbar extends Component {
-  render() {
+const Navbar = () => {
+    const { user } = useAuthContext()
+
     return (
-      <div className="n-wrapper" id="Navbar">
-     
-      <div className="n-right">
-        <div className="n-list">
-        <ul style={{ listStyleType: "none" }}>
-          
-        {/* <Link to ='/' className="nav-text"> Cryptown LOGO </Link> */}
-        <li>
+      <div className='first-col'>
+        { user && (
+          <nav className="nav-up">
+          <ul>
+          <Link to ='/' className="nav-text">
           <img className="imageslogo" src={logoo} alt="logo" />
-        </li>
-        <li>
-          <Link to ='/' className="nav-text">  Market </Link>
-        </li>
-        <li>
-          <Link to ='/forum' className="nav-text">  Forum </Link>
-        </li>
-        <li>
-          <Link to = '/news' className="nav-text">  News </Link>
-        </li>
-        <li>
-          <Link to = '/appList' className="nav-text"> Exchange </Link>
-        </li>
-        <li id="stylenav-acc">
-          <Link to = '/profile' id="stylingnav-account" className="nav-text" >
-            <FaUserCircle />
-          </Link>  
-        </li>
-        </ul>
-        </div>
-          
-      </div>
-    </div>
-        
-        
-            
-            
-            
-            
-            
+         </Link>
+         </ul>
 
-       
-    );
+            <ul className="nav-right">
+            <Link to ='/' className="nav-text">  Market </Link>
+            <Link to = '/watchlist' className="nav-text"> Watchlist </Link>
+            <Link to ='/forum' className="nav-text">  Forum </Link>
+            <Link to = '/news' className="nav-text">  News </Link>
+            <Link to = '/appList' className="nav-text"> Exchange </Link>
+        </ul>
+        <ul>
+        <Link to = '/profile' className="nav-text">
+            <FaUserCircle />
+        </Link>
+        </ul>
+        </nav>
+        )}
+
+        { !user && (
+        <nav className="nav-up">
+        <ul>
+       <Link to ='/' className="nav-text"> Cryptown LOGO </Link>
+       </ul>
+
+        <ul className="nav-right">
+            <Link to ='/' className="nav-text">  Market </Link>
+            <Link to ='/forum' className="nav-text">  Forum </Link>
+            <Link to = '/news' className="nav-text">  News </Link>
+            <Link to = '/appList' className="nav-text"> Exchange </Link>
+            <Link to = '/login' className="nav-text"> Login </Link>
+          </ul>
+       </nav>
+        )}
+    </div>
+    )
   }
-};
 
 export default Navbar;

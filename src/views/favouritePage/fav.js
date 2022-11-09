@@ -1,6 +1,12 @@
+import Navbar from '../../components/navbar/navbar'
+
 const FavPage = () => {
     return ( 
-        <h1>FAV PAGE</h1>
+        <div>
+            <Navbar />
+
+            <h1>FAV PAGE</h1>
+        </div>
      );
 }
  

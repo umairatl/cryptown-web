@@ -13,7 +13,7 @@ on:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -30,5 +30,27 @@ jobs:
     - run: npm cache clear --force
     - run: npm ci --verbose
     - run: npm run build --if-present --verbose
+    - run: tar czvf build.tar ./build
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: build.tar
     env:
      CI: false
+
+  deploy:
+    name: Deploy the build
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: create .env file
+        run: |
+          touch .env
+          echo 'REACT_APP_URL=${{ secrets.REACT_APP_URL }}' >> .env
+      - name: Download the build
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+      - run: tar xzvf build.tar
+      - run: ls

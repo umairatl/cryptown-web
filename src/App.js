@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/navbar/navbar";
+import  Navbar from "./components/navbar/navbar";
 import Signup from "./views/signupPage/signup";
 // import Login from './views/login/login';
 import FavPage from "./views/favouritePage/fav";

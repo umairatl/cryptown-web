@@ -1,23 +1,20 @@
 import { useState } from 'react'
 import { useAuthContext } from './useAuthContext';
-import axios from "axios";
+import axios from "../components/axios/axios";
 
 export const useSignup = () => {
     const [error, setError] = useState(null);
-    const [isLaoading, setIsLoading] = useState(null);
-    const {dispatch} =  useAuthContext;
-
+    const [status, setStatus] = useState(null);
+    const [isLoading, setIsLoading] = useState(null);
+    const { dispatch } =  useAuthContext();
 
     const signup = async (email, username, password, confirmPass) => {
-        console.log('in')
-        setIsLoading(true)
-        setError(null)
+    setIsLoading(true)
+    setError(null)
+    setStatus(null)
 
-        // useEffect(() => {
-            const userSignup = async () => {
-                console.log('in 2')
-                console.log(email, username, password, confirmPass)
-                const response = await axios.post('https://localhost:5000/api/user/signup',
+        try{
+            const response = await axios.post('api/user/signup',
                 {
                     'email' : email,
                     'username': username, 
@@ -33,46 +30,25 @@ export const useSignup = () => {
                 const json = await response.data
         
                 if (response.status === 200) {
-                    console.log("status 200")
-                    localStorage.setItem('user', JSON.stringify(json))
-                    dispatch({type: 'LOGIN', payload: json})
-                    setIsLoading(false)
-                }
+                 localStorage.setItem('user', JSON.stringify(json))
 
-                // if(response.status === 400){
-                //     console.log(json, "TEST")
-                //     setIsLoading(false)
-                //     setError(json.data.error)
-                // }
-            }
+                 
 
-            try {
-                userSignup()
-            } catch (error) {
-                console.log(error, "error")
-            }
-        //   }, []);
+                 dispatch({type: 'LOGIN', payload: json})
+                 console.log("windows 1")
+                 setIsLoading(false)
+                 console.log("windows 2")
+                 window.location = '/';
+                 console.log("windows")
+               }
+           
+               } catch(error){
+                console.log('still in')
+                 setIsLoading(false)
+                 setStatus(error.response.data.mssg)
+                 setError(error.response.data.error)
+               }
+             }
 
-
-        // const response = async () => {
-        // console.log('in 2')
-        //     console.log(email, password, "res")
-        //     const response = await axios.post('https://localhost:5000/api/user/signup',
-        //     {
-        //         headers: {'Content-Type': 'application/json'},
-        //         body: JSON.stringify({ email, password })
-        //     },
-        //     )
-            
-        //     const json = await response.data
-
-        //     if (response.status === 200){
-        //         localStorage.setItem('user', JSON.stringify(json))
-        //         dispatch({type: 'LOGIN', payload: json})
-        //         setIsLoading(false)
-        //     }
-
-    }
-
-    return {signup, isLaoading, error}
+    return {signup, error, status, isLoading}
 } 
