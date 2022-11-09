@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./coin.css";
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -21,8 +21,7 @@ const Coin = ({}) => {
 
   useEffect(() => {
     const fetchCrypto = async () => {
-      const response = await axios(
-        process.env.REACT_APP_URL + 'api/crypto/cryptoList'
+      const response = await axios('api/crypto/cryptoList'
       );
       const json = await response.data;
 
@@ -36,9 +35,7 @@ const Coin = ({}) => {
 
     useEffect(() => {
     const fetchCryptoTren = async () => {
-      console.log( process.env.REACT_APP_URL + 'api/crypto/cryptoTrending')
-      const response = await axios(
-        process.env.REACT_APP_URL + 'api/crypto/cryptoTrending'
+      const response = await axios('api/crypto/cryptoTrending'
       );
       const json = await response.data;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 

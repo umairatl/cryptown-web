@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from "react"
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
 
     useEffect(() => {
         const fetchExchangeList = async () => {
-            const response = await axios( process.env.REACT_APP_URL + 'api/exchange')
+            const response = await axios('api/exchange')
             const json = await response.data
     
             if (response.status === 200) {

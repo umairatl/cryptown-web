@@ -44,6 +44,10 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
+      - name: create .env file
+        run: |
+          touch .env
+          echo 'REACT_APP_URL=${{ secrets.REACT_APP_URL }}' >> .env
       - name: Download the build
         uses: actions/download-artifact@v3
         with:
