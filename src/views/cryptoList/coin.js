@@ -10,8 +10,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
-import Intro from "../../components/pages/HomePage/Intro";
-import "../../components/pages/HomePage/intro.css";
+import Intro from "../../components/homeBanner/intro";
+import Footer from "../../components/footer/footer";
+import flyingsearch from "../../Images/flyingsearcher.gif";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -71,7 +72,14 @@ const Coin = ({}) => {
         ))}
       <div className="coin-app">
         <div className="coinsearchFilter-search">
-          <h1 className="coin-text">Search</h1>
+          <h1 className="sectionTitle">
+            Market <span class="crimson-text">Trends</span>
+          </h1>
+          <br />
+          <div className="coin-text">
+            <span>Crypto Market Board</span>
+          </div>
+          <br />
 
           <div className="search-col">
             <input
@@ -81,7 +89,15 @@ const Coin = ({}) => {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search"
             />
+          
           </div>
+          <div className="box">
+          <img id="gif1" src={flyingsearch} alt="gif" />
+          </div>
+          
+
+
+          
 
           <div className="set-coinList">
             <TableContainer component={Paper}>
@@ -147,6 +163,8 @@ const Coin = ({}) => {
           </div>
         </div>
       </div>
+      <Intro />
+      <Footer />
     </div>
   );
 };

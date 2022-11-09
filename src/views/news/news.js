@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
 import '../news/news.css';
+import HeaderHero from "../news/heroimage";
+
 
 const NewsPage = () => {
   var [news, setNewsList] = useState(null);
@@ -22,7 +24,9 @@ const NewsPage = () => {
     console.log(news)
   
     return ( 
+        
         <div className='news-page'>
+          <HeaderHero />
         <h1>NEWS</h1>
         <div className='grid-container-news'>
           {news && news.news.map((row => (
