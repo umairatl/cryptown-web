@@ -10,14 +10,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/navbar/navbar";
 
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [tren, setTren] = useState(null);
-    const navigation = useNavigate();
-  let arr = [];
+  const navigation = useNavigate();
 
   useEffect(() => {
     const fetchCrypto = async () => {
@@ -57,6 +57,7 @@ const Coin = ({}) => {
 
   return (
     <div>
+      <Navbar />       
       {tren &&
         tren.cryptoTrending.map((res) => (
           <div>

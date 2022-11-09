@@ -35,6 +35,7 @@ export const useLogin = () => {
       dispatch({type: 'LOGIN', payload: json})
       // update loading state
       setIsLoading(false)
+      window.location = '/';
     }
 
     } catch(error){
