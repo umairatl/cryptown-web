@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./coin.css";
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,19 +10,20 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/navbar/navbar";
+import Intro from '../../components/homeBanner/intro';
+import Footer from '../../components/footer/footer'
 
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [tren, setTren] = useState(null);
-    const navigation = useNavigate();
-  let arr = [];
+  const navigation = useNavigate();
 
   useEffect(() => {
     const fetchCrypto = async () => {
-      const response = await axios(
-        "http://localhost:5000/api/crypto/cryptoList"
+      const response = await axios('api/crypto/cryptoList'
       );
       const json = await response.data;
 
@@ -33,11 +34,9 @@ const Coin = ({}) => {
     fetchCrypto();
   }, []);
 
-
-    useEffect(() => {
+  useEffect(() => {
     const fetchCryptoTren = async () => {
-      const response = await axios(
-        "http://localhost:5000/api/crypto/cryptoTrending"
+      const response = await axios('api/crypto/cryptoTrending'
       );
       const json = await response.data;
 
@@ -59,6 +58,7 @@ const Coin = ({}) => {
 
   return (
     <div>
+      <Navbar />       
       {tren &&
         tren.cryptoTrending.map((res) => (
           <div>
@@ -71,7 +71,7 @@ const Coin = ({}) => {
         ))}
     <div className="coin-app">
       <div className="coinsearchFilter-search">
-        <h1 className="coin-text">Search CI/CD 3 TEST</h1>
+        <h1 className="coin-text">Search</h1>
 
         <div className="search-col">
           <input
@@ -111,7 +111,7 @@ const Coin = ({}) => {
                     {data.name}
                     </TableCell>
                 <TableCell>${data.current_price}</TableCell>
-                <TableCell>{data.market_cap} / 10</TableCell>
+                <TableCell>{data.market_cap}</TableCell>
               {/* </Link> */}
 
             </TableRow>
@@ -145,9 +145,11 @@ const Coin = ({}) => {
               </Link>
             ))}
         </h2> */}
+          </div>
         </div>
       </div>
-    </div>
+      <Intro />
+      <Footer />
     </div>
   );
 };

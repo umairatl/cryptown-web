@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { Box, Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
+import axios from "../../components/axios/axios";
+import { Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
 import '../news/news.css';
+import HeaderHero from "../news/heroimage";
+
 
 const NewsPage = () => {
   var [news, setNewsList] = useState(null);
 
   useEffect(() => {
       const fetchNewsList = async () => {
-          const response = await axios('http://localhost:5000/api/news')
+          const response = await axios('https://localhost:5000/api/news')
           const json = await response.data
   
           if (response.status === 200) {
@@ -17,12 +19,14 @@ const NewsPage = () => {
           }
       }
       fetchNewsList()
-    }, []);
+  }, []);
 
     console.log(news)
   
     return ( 
+        
         <div className='news-page'>
+          <HeaderHero />
         <h1>NEWS</h1>
         <div className='grid-container-news'>
           {news && news.news.map((row => (
@@ -44,15 +48,14 @@ const NewsPage = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small"><a href={row.url} target ="_blank">Learn more</a></Button>
+        <Button size="small"><a href={row.url}>Learn more</a></Button>
       </CardActions>
     </Card>
-    </div>
-     )))} 
+  </div>
+  )))} 
+</div>
+</div>
 
-    </div>
-    </div>
-     );
-}
+)}
  
 export default NewsPage;

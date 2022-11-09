@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import CoinChart from "../../components/coinChart/chart";
 import '../coinDetail/coinDetail.css';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import Navbar from '../../components/navbar/navbar'
 
 const CoinDetail = () => {
     const { id } = useParams();
@@ -12,7 +13,7 @@ const CoinDetail = () => {
 
     useEffect(() => {
         const fetchCoinDetail = async () => {
-            const response = await axios.post('http://localhost:5000/api/crypto/cryptoDetail',
+            const response = await axios.post('api/crypto/cryptoDetail',
             {
                 'cryptoId': id
             },
@@ -35,6 +36,7 @@ const CoinDetail = () => {
     return ( 
 
         <div className="list">
+            <Navbar />
             <h1>COIN DETAIL - {id} </h1><br></br>
             <CoinChart cryptoId={id} />
 
