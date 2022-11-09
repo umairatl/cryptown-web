@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./coin.css";
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -14,19 +14,21 @@ import { Carousel } from 'react-responsive-carousel';
 import { Pagination } from '@mui/material';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import ReactDOM from 'react-dom';
+import Navbar from "../../components/navbar/navbar";
+import Intro from '../../components/homeBanner/intro';
+import Footer from '../../components/footer/footer'
+
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [tren, setTren] = useState(null);
-  const [page, setPage] = useState(1);
   const navigation = useNavigate();
-  let arr = [];
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchCrypto = async () => {
-      const response = await axios(
-        "https://localhost:8443/api/crypto/cryptoList"
+      const response = await axios('api/crypto/cryptoList'
       );
       const json = await response.data;
 
@@ -37,11 +39,9 @@ const Coin = ({}) => {
     fetchCrypto();
   }, []);
 
-
-    useEffect(() => {
+  useEffect(() => {
     const fetchCryptoTren = async () => {
-      const response = await axios(
-        "https://localhost:8443/api/crypto/cryptoTrending"
+      const response = await axios('api/crypto/cryptoTrending'
       );
       const json = await response.data;
 
@@ -64,6 +64,7 @@ const Coin = ({}) => {
 
   return (
     <div>
+      <Navbar />       
       {tren &&
         tren.cryptoTrending.map((res) => (
           <div>
@@ -86,7 +87,7 @@ const Coin = ({}) => {
         ))}
     <div className="coin-app">
       <div className="coinsearchFilter-search">
-        <h1 className="coin-text">Search CI/CD</h1>
+        <h1 className="coin-text">Search</h1>
 
         <div className="search-col">
           <input
@@ -181,9 +182,11 @@ const Coin = ({}) => {
               </Link>
             ))}
         </h2> */}
+          </div>
         </div>
       </div>
-    </div>
+      <Intro />
+      <Footer />
     </div>
   );
 };
