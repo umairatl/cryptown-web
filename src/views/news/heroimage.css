@@ -1,11 +1,11 @@
 .hero-setting {
-  /* background-image: url("../../Images/city1.png");
+  /* background-image: url("../../asset/city1.png");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative; */
-  background-image: url("../../Images/city1.png");
+  background-image: url("../../asset/city1.png");
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
