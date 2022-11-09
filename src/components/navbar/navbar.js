@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import {
-  Link,
-} from "react-router-dom";
-import '../navbar/navbar.css';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "../navbar/navbar.css";
 import { FaUserCircle } from "react-icons/fa";
 import { useAuthContext } from '../../hooks/useAuthContext';
+import logoo from "../../Images/Assetlogo.png"; 
 
 const Navbar = () => {
     const { user } = useAuthContext()
@@ -14,7 +13,9 @@ const Navbar = () => {
         { user && (
           <nav className="nav-up">
           <ul>
-         <Link to ='/' className="nav-text"> Cryptown LOGO </Link>
+          <Link to ='/' className="nav-text">
+          <img className="imageslogo" src={logoo} alt="logo" />
+         </Link>
          </ul>
 
             <ul className="nav-right">

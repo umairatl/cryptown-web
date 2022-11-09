@@ -11,6 +11,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/navbar";
+import Intro from '../../components/homeBanner/intro';
+import Footer from '../../components/footer/footer'
 
 
 const Coin = ({}) => {
@@ -32,12 +34,11 @@ const Coin = ({}) => {
     fetchCrypto();
   }, []);
 
-
-    useEffect(() => {
+  useEffect(() => {
     const fetchCryptoTren = async () => {
       const response = await axios('api/crypto/cryptoTrending'
       );
-      const json = await response.data;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+      const json = await response.data;
 
       if (response.status === 200) {
         setTren(json);
@@ -144,9 +145,11 @@ const Coin = ({}) => {
               </Link>
             ))}
         </h2> */}
+          </div>
         </div>
       </div>
-    </div>
+      <Intro />
+      <Footer />
     </div>
   );
 };
