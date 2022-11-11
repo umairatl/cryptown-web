@@ -14,11 +14,8 @@ span#colortext{
 }
 
 
-
-
-
 .about{
-    background:url(../../asset/whatpng-01.png) no-repeat;
+    background:url(../../../asset/whatpng-01.png) no-repeat;
     
     background-size: cover;
     background-position: center;

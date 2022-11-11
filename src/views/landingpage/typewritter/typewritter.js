@@ -1,5 +1,6 @@
-import { useTypingText } from "./useTypingText";
-import "../../components/landingpage/typewritteranimation.css"
+import { useTypingText } from "../../../hooks/useTypingText";
+import '../typewritter/typewritteranimation.css'
+
 export default function Typewritter() {
   const { word} = useTypingText(
     ["trustable", "reliable", "impeccable"],

@@ -1,12 +1,12 @@
-import "../landingpage/carousallp.css";
+import "../carousell/carousel.css";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { useState } from "react";
-import pic1 from "../../asset/b1.png";
-import pic2 from "../../asset/b2.png";
-import pic3 from "../../asset/b3.png";
-import pic4 from "../../asset/b4.png";
-import pic5 from "../../asset/b5.png";
+import pic1 from "../../../asset/b1.png";
+import pic2 from "../../../asset/b2.png";
+import pic3 from "../../../asset/b3.png";
+import pic4 from "../../../asset/b4.png";
+import pic5 from "../../../asset/b5.png";
 
 
 const images = [pic1, pic2, pic3, pic4, pic5];

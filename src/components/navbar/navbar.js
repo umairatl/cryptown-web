@@ -17,12 +17,12 @@ const Navbar = () => {
         { user && (
           <nav className="nav-up">
           <ul>
-         <Link to ='/' className="nav-text"> 
+         <Link to ='/market' className="nav-text"> 
          <img src = { logo } width='60%'/>
           </Link>
          </ul>
         <ul className="nav-right">
-            <Link to ='/' className="nav-text">  Market </Link>
+            <Link to ='/market' className="nav-text">  Market </Link>
             <Link to = '/watchlist' className="nav-text"> Watchlist </Link>
             <Link to ='/forum' className="nav-text">  Forum </Link>
             <Link to = '/news' className="nav-text">  News </Link>
@@ -38,12 +38,12 @@ const Navbar = () => {
 
         { !user && (
         <nav className="nav-up">
-        <ul>
+        <Link to ='/market' className="nav-text"> 
          <img src = { logo } width='60%'/>
-       </ul>
+        </Link>
 
         <ul className="nav-right">
-            <Link to ='/' className="nav-text">  Market </Link>
+            <Link to ='/market' className="nav-text">  Market </Link>
             <Link to ='/forum' className="nav-text">  Forum </Link>
             <Link to = '/news' className="nav-text">  News </Link>
             <Link to = '/appList' className="nav-text"> Exchange </Link>

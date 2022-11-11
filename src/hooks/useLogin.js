@@ -9,6 +9,11 @@ export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(null)
   const { dispatch } = useAuthContext()
 
+  /**
+   * 
+   * @param {*} email 
+   * @param {*} password 
+   */
   const login = async (email, password) => {
     setIsLoading(true)
     setError(null)
@@ -35,7 +40,7 @@ export const useLogin = () => {
       dispatch({type: 'LOGIN', payload: json})
       // update loading state
       setIsLoading(false)
-      window.location = '/';
+      window.location = '/market';
     }
 
     } catch(error){

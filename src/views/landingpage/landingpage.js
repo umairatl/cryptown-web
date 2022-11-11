@@ -1,14 +1,12 @@
 import "../landingpage/landingstyle.css";
-import "../landingpage/textone.css";
-import "../landingpage/typewritteranimation.css";
-import "../landingpage/typewritter.js";
-
+import "../landingpage/textone/textone.css";
+import "../landingpage/typewritter/typewritteranimation.css";
 import phoneecrypto from "../../asset/phone.png";
-import Typewritter from "../landingpage/typewritter.js";
+import Typewritter from "./typewritter/typewritter.js";
 
 export default function HeaderLandingPage() {
   return (
-    <div className="">
+    <div className="landing">
         <section className="site-title">
               <div className="containercontent">
                 {/* <div className="site-background" data-aos="fade-up" data-aos-delay="100"> */}

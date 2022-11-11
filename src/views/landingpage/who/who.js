@@ -1,9 +1,5 @@
 import React from "react";
-import "../landingpage/who.css";
-import image1 from "../../asset/A1.png";
-import image3 from "../../asset/A2.png";
-import image4 from "../../asset/Abract01.png";
-import image2 from "../../asset/blue3dpic.png";
+import "../who/who.css";
 
 import { AiOutlineRocket } from 'react-icons/ai';
 import {FaGlobeAmericas} from 'react-icons/fa';

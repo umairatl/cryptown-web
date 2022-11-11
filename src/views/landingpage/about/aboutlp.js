@@ -1,8 +1,5 @@
 import React from "react";
-import "../landingpage/aboutlp.css";
-import tvimage from "../../asset/tv.png";
-
-
+import "../about/aboutlp.css";
 
 export default function AboutLandingPage() {
   return (
@@ -15,7 +12,6 @@ export default function AboutLandingPage() {
     <div class="column">
 
         <div class="image">
-            {/* <img src={tvimage} alt=""/> */}
         </div>
 
         <div class="contentabout">

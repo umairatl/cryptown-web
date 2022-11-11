@@ -38,7 +38,7 @@ export const useSignup = () => {
                  console.log("windows 1")
                  setIsLoading(false)
                  console.log("windows 2")
-                 window.location = '/';
+                 window.location = '/market';
                  console.log("windows")
                }
            

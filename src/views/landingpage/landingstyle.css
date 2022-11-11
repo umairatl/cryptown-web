@@ -1,8 +1,4 @@
-
-
-
-
-:root{
+.landing :root{
 
     /*      Theme colors        */
     --text-gray: #3f4954;
@@ -25,12 +21,12 @@
 
 /* ---------------- Global Classes ---------------*/
 
-a{
+.landing a{
     text-decoration: none;
     color: var(--text-gray);
 }
 
-.flex-row{
+.landing .flex-row{
     display: flex;
     flex-direction: row;    
     flex-wrap: wrap;
@@ -40,7 +36,7 @@ a{
     list-style-type: none;
 } */
 
-h1#landingheaderOne{
+.landing h1#landingheaderOne{
     font-family: var(--Lexend);
     font-size: 3.7rem;
     color:#ffffff
@@ -48,7 +44,7 @@ h1#landingheaderOne{
 
 
 
-button.btn{
+.landing button.btn{
     border: none;
     border-radius: 2rem;
     padding: 1rem 3rem;
@@ -68,11 +64,11 @@ button.btn{
   top: 0;
 } */
 
-.container{
+.landing .container{
     margin: 0 5vw;
 }
 
-.text-gray{
+.landing .text-gray{
     color: var(--text-gray);
 }
 
@@ -88,7 +84,7 @@ button.btn{
 
 /* --------------- navbar ----------------- */
 
-.nav{
+.landing .nav{
     background: white;
     padding: 0 2rem;
     height: 0rem;
@@ -211,11 +207,6 @@ button.btn{
     box-shadow: 0 5px 15px #0f0f0f;
 }
 
-
-
-
-
-
 /* img#phonestyle{
     height: 70%;
     position:absolute;
@@ -223,14 +214,11 @@ button.btn{
     bottom:0%;
 } */
 
-
 .containercontent{
     justify-content: center;
     align-items: center;
     margin: 4rem;
 }
-
-
 
 .buttoncentre{
     text-align: center;
