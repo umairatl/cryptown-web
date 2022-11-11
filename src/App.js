@@ -13,6 +13,8 @@ import Login from './views/loginPage/login';
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import NotFound from './components/notFound/notFound';
+import HeaderLandingPage from './components/landingpage/landingpage';
+import MainLandingPage from './views/mainlanding-page';
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-          <Routes>
+        <MainLandingPage />
+          {/* <Routes>
             <Route path="/" element = { <CryptoList />}>
             </Route> 
             <Route path="/coinDetail/:id" element = { <CoinDetail />}>
@@ -41,7 +44,7 @@ function App() {
             <Route path="/watchlist" element = { user ? <FavPage /> : <Navigate to="/login" />}>
             </Route>
             <Route path='*' element={<NotFound />}/>
-          </Routes>
+          </Routes> */}
       </div>
     </BrowserRouter>
   );
