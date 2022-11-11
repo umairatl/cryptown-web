@@ -1,8 +1,10 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {useLogin} from '../../hooks/useLogin';
 import {Link} from "react-router-dom";
-import Navbar from '../../components/navbar/navbar'
+import img from '../../asset/signup.png'
+import '../../views/loginPage/login.css'
+import logo from '../../asset/Assetlogo.png'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,27 +15,20 @@ const Login = () => {
     e.preventDefault()
 
     await login(email, password)
-  }
+}
 
 return (
   <div>
-    <Navbar />
-  <form className='login' onSubmit={handleSubmit}>
-    <label>Email</label>
-    <input type ='email' onChange={(e) => setEmail(e.target.value)} value={email}/>
-  
-    <label>Password</label>
-    <input type ='password' onChange={(e) => setPassword(e.target.value)} value={password}/>
-  
-  <button disabled={isLoading}>Login</button>
-  {error && <div className='error'>{error}</div>}
-  <p>{status}</p>
-  <button>
-  <Link to ='/signup'>  Signup </Link>
-  </button>
-  
-  </form>
-  </div>
+  {/* <img src={logo} width='80%'/> */}
+		<h5>LOGIN</h5>
+    <form className='login' onSubmit={handleSubmit}>
+        <input type ='email' placeholder='Enter your email' onChange={(e) => setEmail(e.target.value)} value={email}/><br></br>
+        <input type ='password' placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} value={password}/><br></br>
+      <button disabled={isLoading}>Login</button>
+      {error && <div className='error'>{error}</div>}
+      <p>{status}</p>
+      </form>
+    </div>
 )
 
 }

@@ -4,6 +4,7 @@ import axios from "../../components/axios/axios";
 import { Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
 import '../news/news.css';
 import HeaderHero from "../news/heroimage";
+import Navbar from '../../components/navbar/navbar'
 
 
 const NewsPage = () => {
@@ -11,7 +12,7 @@ const NewsPage = () => {
 
   useEffect(() => {
       const fetchNewsList = async () => {
-          const response = await axios('https://localhost:5000/api/news')
+          const response = await axios('/api/news')
           const json = await response.data
   
           if (response.status === 200) {
@@ -26,7 +27,8 @@ const NewsPage = () => {
     return ( 
         
         <div className='news-page'>
-          <HeaderHero />
+          <Navbar />
+          {/* <HeaderHero /> */}
         <h1>NEWS</h1>
         <div className='grid-container-news'>
           {news && news.news.map((row => (

@@ -30,7 +30,7 @@ export const useSignup = () => {
                 const json = await response.data
         
                 if (response.status === 200) {
-                 localStorage.setItem('user', JSON.stringify(json))
+                 localStorage.setItem('user', JSON.stringify(json.userJwt))
 
                  
 
