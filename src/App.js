@@ -13,8 +13,7 @@ import Login from './views/loginPage/login';
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import NotFound from './components/notFound/notFound';
-import HeaderLandingPage from './components/landingpage/landingpage';
-import MainLandingPage from './views/mainlanding-page';
+import AuthLayout from './components/authLayout/authLayout';
 
 
 function App() {
@@ -39,7 +38,7 @@ function App() {
             </Route>
             <Route path="/signup" element = { <Signup />}>
             </Route>
-            <Route path="/login" element = { <Login />}>
+            <Route path="/login" element = { <AuthLayout />}>
             </Route>
             <Route path="/watchlist" element = { user ? <FavPage /> : <Navigate to="/login" />}>
             </Route>

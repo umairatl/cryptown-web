@@ -65,7 +65,7 @@ const Coin = ({}) => {
   return (
     <div>
       <Navbar />       
-      {tren &&
+      {/* {tren &&
         tren.cryptoTrending.map((res) => (
           <div>
 
@@ -76,15 +76,15 @@ const Coin = ({}) => {
                     <p className="legend">{res.symbol}</p>
                     
                 </div>
-               </Carousel>  
+               </Carousel {/* </div>
+        ))}>   */}
             {/* <img src={res.image} onDragStart={handleDragStart} role="presentation" />, */}
             {/* <img src={res.image} /> */}
             {/* <p className="legend">{res.name} </p>
             <p className="legend">{res.symbol} </p>
             <p className="legend">{res.cryptoId} </p> */}
             {/* <AliceCarousel mouseTracking items={items} /> */}
-          </div>
-        ))}
+          
     <div className="coin-app">
       <div className="coinsearchFilter-search">
         <h1 className="coin-text">Search</h1>
