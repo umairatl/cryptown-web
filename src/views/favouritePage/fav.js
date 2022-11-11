@@ -1,6 +1,13 @@
+import Navbar from '../../components/navbar/navbar'
+import '../../views/favouritePage/fav.css'
+
 const FavPage = () => {
     return ( 
-        <h1>FAV PAGE</h1>
+        <div className='test'>
+            {/* <Navbar /> */}
+
+            <h1>FAV PAGE</h1>
+        </div>
      );
 }
  
