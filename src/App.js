@@ -22,7 +22,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-          <Routes>
+        <MainLandingPage />
+          {/* <Routes>
             <Route path="/" element = { <CryptoList />}>
             </Route> 
             <Route path="/coinDetail/:id" element = { <CoinDetail />}>
@@ -42,7 +43,7 @@ function App() {
             <Route path="/watchlist" element = { user ? <FavPage /> : <Navigate to="/login" />}>
             </Route>
             <Route path='*' element={<NotFound />}/>
-          </Routes>
+          </Routes> */}
       </div>
     </BrowserRouter>
   );

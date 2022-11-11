@@ -1,0 +1,62 @@
+.headingabout{
+    text-align: center;
+    background:var(--gradient);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding:1rem;
+}
+
+span#colortext{
+    color: #0000ff;
+}
+
+
+
+
+
+.about{
+    background:url(../../asset/whatpng-01.png) no-repeat;
+    
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 22rem;
+}
+
+.about .column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about .column .image{
+    flex:1 1 40rem;
+}
+
+.about .column .image img{
+    width:80%;
+}
+
+.about .column .contentabout{
+    flex:1 1 40rem;
+}
+
+.about .column .contentabout h3{
+    font-size: 3rem;
+    /* color:#666; */
+    color: #000;
+}
+
+.about .column .contentabout p{
+    font-size: 1.5rem;
+    color:#666;
+    padding:1rem 0;
+    text-align: justify;
+}
+
+.about .column .contentabout .buttons a:last-child{
+    margin-left: 2rem;
+}
