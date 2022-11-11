@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { Carousel } from 'react-responsive-carousel';
 import { Pagination } from '@mui/material';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import ReactDOM from 'react-dom';
+
 import Navbar from "../../components/navbar/navbar";
 import Intro from '../../components/homeBanner/intro';
 import Footer from '../../components/footer/footer'
@@ -61,30 +61,37 @@ const Coin = ({}) => {
     );
   };
 
+  
+  
+  const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
+                       {/* <div key={res.symbol} style={{cursor:'pointer'}} 
+                    onClick={() => {
+                  navigation(`/coinDetail/${res.id}`);
+                }} /> */}
+                    <img src={res.image} />
+                    {/* <p className="legend">{res.name}</p> */}
+                    <button className="legend" onClick={() => {
+                  navigation(`/coinDetail/${res.cryptoId}`);
+                }}>{res.symbol}</button>
+                    
+ 
+                    
+                    
+                </div>)
+
 
   return (
     <div>
-      <Navbar />       
-      {tren &&
-        tren.cryptoTrending.map((res) => (
-          <div>
+      <Navbar /> 
+      <div className="Carousel">
+      <Carousel autoPlay interval="3000" axis="horizontal" infiniteLoop centerMode autoFocus stopOnHover>
+        {trends}
+                
+      </Carousel>
+      </div>
 
-               <Carousel>
-                <div>
-                    <img src={res.image}  />
-                    <p className="legend">{res.name}</p>
-                    <p className="legend">{res.symbol}</p>
-                    
-                </div>
-               </Carousel>  
-            {/* <img src={res.image} onDragStart={handleDragStart} role="presentation" />, */}
-            {/* <img src={res.image} /> */}
-            {/* <p className="legend">{res.name} </p>
-            <p className="legend">{res.symbol} </p>
-            <p className="legend">{res.cryptoId} </p> */}
-            {/* <AliceCarousel mouseTracking items={items} /> */}
-          </div>
-        ))}
+     
+       
     <div className="coin-app">
       <div className="coinsearchFilter-search">
         <h1 className="coin-text">Search</h1>
