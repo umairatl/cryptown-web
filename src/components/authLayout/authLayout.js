@@ -94,7 +94,7 @@ return (
     </div>: 
     <div >
     <Signup /> 
-    <p>Already have an account? <a onClick={event => handleClick(event, 'login')}>Login to Your Account</a></p>
+    <p>Already have an account? <a onClick={event => handleClick(event, 'login')}>Login into Your Account</a></p>
 </div>
     }
     </div>
