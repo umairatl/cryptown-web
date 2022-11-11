@@ -71,7 +71,7 @@ const Chart = ({cryptoId}) => {
 
     if (data){
         const coinChartData = data && data.cryptoChart.map(value => ({
-            x: value[0], y:value[1].toFixed(2) 
+            x: value[0], y:value[1].toFixed(7) 
         }));
 
         if (time == '24'){

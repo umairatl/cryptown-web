@@ -1,9 +1,10 @@
 import Navbar from '../../components/navbar/navbar'
+import '../../views/favouritePage/fav.css'
 
 const FavPage = () => {
     return ( 
-        <div>
-            <Navbar />
+        <div className='test'>
+            {/* <Navbar /> */}
 
             <h1>FAV PAGE</h1>
         </div>

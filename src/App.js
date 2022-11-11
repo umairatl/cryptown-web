@@ -13,6 +13,8 @@ import Login from './views/loginPage/login';
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import NotFound from './components/notFound/notFound';
+import AuthLayout from './components/authLayout/authLayout';
+import MainLandingPage from './views/landingpage/mainlanding-page'
 
 
 function App() {
@@ -22,8 +24,10 @@ function App() {
     <BrowserRouter>
       <div className='App'>
           <Routes>
-            <Route path="/" element = { <CryptoList />}>
+            <Route path="/" element = { <MainLandingPage />}>
             </Route> 
+            <Route path="/market" element = { <CryptoList />}>
+            </Route>
             <Route path="/coinDetail/:id" element = { <CoinDetail />}>
             </Route> 
             <Route path="/forum" element = { user ? <Forum /> : <Navigate to="/login" />}>
@@ -36,7 +40,7 @@ function App() {
             </Route>
             <Route path="/signup" element = { <Signup />}>
             </Route>
-            <Route path="/login" element = { <Login />}>
+            <Route path="/login" element = { <AuthLayout />}>
             </Route>
             <Route path="/watchlist" element = { user ? <FavPage /> : <Navigate to="/login" />}>
             </Route>
