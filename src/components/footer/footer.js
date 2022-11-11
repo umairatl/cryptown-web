@@ -2,8 +2,8 @@ import "../footer/footer.css";
 // import { faHome } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {FaFacebook , FaInstagram, FaYoutube, FaTwitter}from 'react-icons/fa';
-import footerimg from "../../Images/Asset2.png";
-import footerimgTwo from "../../Images/Asset5.png";
+import footerimg from "../../asset/Asset2.png";
+import footerimgTwo from "../../asset/Asset5.png";
 
 
 const Footer = () => {

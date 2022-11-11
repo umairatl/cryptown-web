@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../homeBanner/intro.css";
-import phonee from "../../Images/phone.png";
+import phonee from "../../asset/phonee.png";
 
 const Intro = () => {
   return (
