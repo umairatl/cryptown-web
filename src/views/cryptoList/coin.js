@@ -28,6 +28,10 @@ const Coin = ({}) => {
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
 
+  const [watchList, setWatchList] = useState("");
+  const [error, setError] = useState(null);
+
+
   const { user } = useAuthContext()
 
   useEffect(() => {
@@ -65,8 +69,40 @@ const Coin = ({}) => {
     );
   };
 
-  const handleWatchLists = (cryptoId) => {
-    console.log(cryptoId)
+
+  const addToWatchlist = async (cryptoId) => {
+    const response = await axios.post('api/favourite/favourite-add',
+    {
+        'cryptoId': cryptoId
+    },
+    {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user}`,
+        }
+    })
+    
+    const json = await response.data
+
+    if (response.status === 200){
+        setWatchList(json)
+        // console.log(`${cryptoId} successfully added to favourite`, json)
+    }
+}
+
+  const handleWatchLists = async (cryptoId) => {
+    // e.stopPropagation()
+    // console.log(cryptoId)
+    try {
+      await addToWatchlist(cryptoId)
+      setError(null)
+      console.log(watchList)
+      alert(`${watchList["mssg"]}`)
+    } catch (error) {
+      console.log(error)
+      setError(error.response.data.error) 
+      alert(error.response.data.error)
+    }
   }
 
   
@@ -124,6 +160,7 @@ const Coin = ({}) => {
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
+              <TableCell>Add to Watchlist</TableCell>
             </TableRow>
            </TableHead>
            
@@ -136,19 +173,21 @@ const Coin = ({}) => {
             .map((data) => {
               // const marketCap = data.market_cap_rank > 0;
               return (
-                <TableRow key={data.name} style={{cursor:'pointer'}}>
+                <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
+                  navigation(`/coinDetail/${data.cryptoId}`);
+                }}>
                     <TableCell>{data.market_cap_rank}</TableCell>
                       <TableCell>
-                        <img src={data.image} width='40px' onClick={() => {
-                          navigation(`/coinDetail/${data.cryptoId}`);
-                        }}></img>
+                        <img src={data.image} width='40px'></img>
                       </TableCell>
                     <TableCell>
                         {data.name}
                         </TableCell>
                     <TableCell>${data.current_price}</TableCell>
+                    
+
                     <TableCell>{data.market_cap} </TableCell>
-                    {user && <button onClick={() => handleWatchLists(data.cryptoId)}>{data.cryptoId}</button>}
+                    {user && <button onClick={e => {e.stopPropagation(); handleWatchLists(data.cryptoId)}}>{data.cryptoId}</button>}
                   {/* </Link> */}
                 </TableRow>
                 )
