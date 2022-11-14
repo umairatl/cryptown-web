@@ -13,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 import { Carousel } from 'react-responsive-carousel';
 import { Pagination } from '@mui/material';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { useAuthContext } from '../../hooks/useAuthContext';
+
 
 import Navbar from "../../components/navbar/navbar";
 import Intro from '../../components/homeBanner/intro';
@@ -25,6 +27,8 @@ const Coin = ({}) => {
   const [tren, setTren] = useState(null);
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
+
+  const { user } = useAuthContext()
 
   useEffect(() => {
     const fetchCrypto = async () => {
@@ -60,6 +64,10 @@ const Coin = ({}) => {
         f.cryptoId.toLowerCase().includes(search)
     );
   };
+
+  const handleWatchLists = (cryptoId) => {
+    console.log(cryptoId)
+  }
 
   
   
@@ -128,20 +136,19 @@ const Coin = ({}) => {
             .map((data) => {
               // const marketCap = data.market_cap_rank > 0;
               return (
-                <TableRow key={data.name} style={{cursor:'pointer'}} 
-                onClick={() => {
-                  navigation(`/coinDetail/${data.cryptoId}`);
-                }}
-                >
+                <TableRow key={data.name} style={{cursor:'pointer'}}>
                     <TableCell>{data.market_cap_rank}</TableCell>
                       <TableCell>
-                        <img src={data.image} width='40px'></img>
+                        <img src={data.image} width='40px' onClick={() => {
+                          navigation(`/coinDetail/${data.cryptoId}`);
+                        }}></img>
                       </TableCell>
                     <TableCell>
                         {data.name}
                         </TableCell>
                     <TableCell>${data.current_price}</TableCell>
                     <TableCell>{data.market_cap} </TableCell>
+                    {user && <button onClick={() => handleWatchLists(data.cryptoId)}>{data.cryptoId}</button>}
                   {/* </Link> */}
                 </TableRow>
                 )
