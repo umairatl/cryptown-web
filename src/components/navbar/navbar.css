@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .first-col{
- background: #24262b;
- background: linear-gradient(90deg, #78acc5 10%, #03254c 90%); 
+ /* background: #24262b; */
+ /* background: linear-gradient(90deg, #00b4d8 10%, #03254c 90%);  */
  /* height: 50%; */
- text-align: center;
- /* justify-content: space-around; */
+ /* text-align: center; */
+ justify-content: space-between;
 }
 
 .nav-up{
@@ -24,7 +24,7 @@
 }
 
 .nav-text{
-    color: white;
+    color: black;
     padding-left: 0.8rem;
     padding-right: 1rem;
     padding-top: 0.1rem; 

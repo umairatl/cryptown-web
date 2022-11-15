@@ -18,7 +18,20 @@ import MainLandingPage from './views/landingpage/mainlanding-page'
 
 
 function App() {
-  const { user } = useAuthContext()
+  const { user } = useAuthContext();
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+
+  const yourFunction = async () => {
+    await delay(10000);
+
+    console.log(test)
+
+    if(user){
+      <Forum /> 
+    } else {
+    <Navigate to="/login" />  
+    }
+  };
 
   return (
     <BrowserRouter>
@@ -30,7 +43,7 @@ function App() {
             </Route>
             <Route path="/coinDetail/:id" element = { <CoinDetail />}>
             </Route> 
-            <Route path="/forum" element = { user ? <Forum /> : <Navigate to="/login" />}>
+            <Route path="/forum" element = {(yourFunction)}>
             </Route>
             <Route path="/appList" element = { <AppList />}>
             </Route>

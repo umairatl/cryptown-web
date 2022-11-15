@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import {
-  Link,
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import '../navbar/navbar.css';
 import { FaUserCircle } from "react-icons/fa";
 import { useAuthContext } from '../../hooks/useAuthContext';
 import logo  from '../../asset/Assetlogo.png'
-
-// src/asset/Assetlogo.png
 
 const Navbar = () => {
     const { user } = useAuthContext()
