@@ -21,19 +21,15 @@ const AuthLayout = () => {
 
 
   useEffect(() => {
-    console.log('in')
-
     const setAuthType1 = () => {
       setAuthType('login');
-      console.log(authType)
     };
     setAuthType1();
   }, []);
 
  
       const handleClick = (event, type) => {
-        setAuthType('signup')
-        console.log(type);
+        setAuthType(type)
       };
 
 
@@ -41,7 +37,6 @@ const AuthLayout = () => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
-
     return () => { clearInterval(ticker) };
   }, [text])
 

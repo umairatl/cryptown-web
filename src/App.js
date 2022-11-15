@@ -20,7 +20,20 @@ import RedirectBack from './components/utils/redirectBack';
 
 
 function App() {
-  const { user } = useAuthContext()
+  const { user } = useAuthContext();
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+
+  const yourFunction = async () => {
+    await delay(10000);
+
+    console.log(test)
+
+    if(user){
+      <Forum /> 
+    } else {
+    <Navigate to="/login" />  
+    }
+  };
 
   return (
     <BrowserRouter>

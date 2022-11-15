@@ -27,7 +27,7 @@ const FavPage = () => {
             }
         })
           const json = await response.data;
-    
+
           if (response.status === 200) {
             setWatchLists(json.favourites);
           }
@@ -35,7 +35,6 @@ const FavPage = () => {
         fetchWatchLists();
       }, []);
     
-    console.log(watchLists)
     return ( 
         <div className='test'>
             <Navbar />
@@ -44,9 +43,9 @@ const FavPage = () => {
                 <Table aria-label="simple table" stickyHeader>
                     <TableHead>
                         <TableRow>
-                        <TableCell>Ranking</TableCell>
                         <TableCell>Image</TableCell>
                         <TableCell>Name</TableCell>
+                        <TableCell>ID</TableCell>
                         <TableCell>Remove from Watchlist</TableCell>
                         </TableRow>
                     </TableHead>

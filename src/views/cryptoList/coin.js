@@ -10,7 +10,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom";
-import { Carousel } from 'react-responsive-carousel';
 import { Pagination } from '@mui/material';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useAuthContext } from '../../hooks/useAuthContext';
@@ -18,8 +17,9 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 
 import Navbar from "../../components/navbar/navbar";
 import Intro from '../../components/homeBanner/intro';
-import Footer from '../../components/footer/footer'
-
+import Footer from '../../components/footer/footer';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -28,7 +28,7 @@ const Coin = ({}) => {
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
 
-  const [watchList, setWatchList] = useState("");
+  const [watchList, setWatchList] = useState({});
   const [error, setError] = useState(null);
 
 
@@ -44,10 +44,7 @@ const Coin = ({}) => {
         setCrypto(json);
       }
     };
-    fetchCrypto();
-  }, []);
 
-  useEffect(() => {
     const fetchCryptoTren = async () => {
       const response = await axios('api/crypto/cryptoTrending'
       );
@@ -57,6 +54,7 @@ const Coin = ({}) => {
         setTren(json);
       }
     };
+    fetchCrypto();
     fetchCryptoTren();
   }, []);
 
@@ -70,10 +68,12 @@ const Coin = ({}) => {
   };
 
 
-  const addToWatchlist = async (cryptoId) => {
+  const addToWatchlist = async (cryptoId, coinName, image_url) => {
     const response = await axios.post('api/favourite/favourite-add',
     {
-        'cryptoId': cryptoId
+      "cryptoId": cryptoId,
+      "coinName": coinName,
+      "image_url": image_url
     },
     {
         headers: {
@@ -81,22 +81,25 @@ const Coin = ({}) => {
             'Authorization': `Bearer ${user}`,
         }
     })
-    
+
     const json = await response.data
+    return json
 
-    if (response.status === 200){
-        setWatchList(json)
-        // console.log(`${cryptoId} successfully added to favourite`, json)
-    }
-}
+    // if (response.status === 200){
+    //     setWatchList(json)
+    //     // console.log(`${cryptoId} successfully added to favourite`, json)
+    // }
+  }
 
-  const handleWatchLists = async (cryptoId) => {
-    // e.stopPropagation()
+  const handleWatchLists = async (cryptoId, coinName, image_url) => {
+    // e.stopProawaitpagation()
     // console.log(cryptoId)
     try {
-      await addToWatchlist(cryptoId)
+      let mssg = await addToWatchlist(cryptoId, coinName, image_url)
       setError(null)
-      console.log(watchList)
+      setWatchList((prev) => ({ ...prev, ...mssg }))
+
+      // console.log("watch list", watchList)
       alert(`${watchList["mssg"]}`)
     } catch (error) {
       console.log(error)
@@ -106,47 +109,59 @@ const Coin = ({}) => {
   }
 
   
+const handleDragStart = (e) => e.preventDefault();
+
+const items = [];
+
+const items1 = tren && tren.cryptoTrending.map((res) => 
+items.push(
+    <img src={res.image} onDragStart={handleDragStart} role="presentation" />,
+  ));
+
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 }
+  ];
+
+  // tren && tren.cryptoTrending.map ((res)=> <div>
+  //     <img src={res.image} />
+  //     <button className="legend" onClick={() => {
+  //   navigation(`/coinDetail/${res.cryptoId}`);
+  // }}>{res.symbol}</button>
+  // </div>)
+
+// 
   
   const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
-                       {/* <div key={res.symbol} style={{cursor:'pointer'}} 
-                    onClick={() => {
-                  navigation(`/coinDetail/${res.id}`);
-                }} /> */}
-                    <img src={res.image} />
-                    {/* <p className="legend">{res.name}</p> */}
-                    <button className="legend" onClick={() => {
-                  navigation(`/coinDetail/${res.cryptoId}`);
-                }}>{res.symbol}</button>
-                    
- 
-                    
-                    
-                </div>)
-
+      <img src={res.image} />
+      <button className="legend" onClick={() => {
+    navigation(`/coinDetail/${res.cryptoId}`);
+  }}>{res.symbol}</button>
+  </div>)
 
   return (
-    <div>
+    <div className="main-page">
+
       <Navbar /> 
-      <div className="Carousel">
-      <Carousel autoPlay interval="3000" axis="horizontal" infiniteLoop centerMode autoFocus stopOnHover>
-        {trends}
-                
-      </Carousel>
-      </div>
+      
+      {/* first wrapper*/}
+      <div className="carousel-col">
+      <AliceCarousel mouseTracking items={items} breakPoints={breakPoints}/>
 
-     
-       
-    <div className="coin-app">
-      <div className="coinsearchFilter-search">
-        <h1 className="coin-text">Search</h1>
+    </div>
 
+      {/* second wrapper */}
+      <div className="sec-wrap">
         <div className="search-col">
           <input
             className="coin-input"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search"
+            placeholder="Search Coin"
           />
         </div>
 
@@ -160,11 +175,9 @@ const Coin = ({}) => {
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
-              <TableCell>Add to Watchlist</TableCell>
+              {user && <TableCell>Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
-           
-
 
         <TableBody>
         {crypto &&
@@ -184,10 +197,10 @@ const Coin = ({}) => {
                         {data.name}
                         </TableCell>
                     <TableCell>${data.current_price}</TableCell>
-                    
-
                     <TableCell>{data.market_cap} </TableCell>
-                    {user && <button onClick={e => {e.stopPropagation(); handleWatchLists(data.cryptoId)}}>{data.cryptoId}</button>}
+                    {user && <TableCell>
+                                <button onClick={async (e) => {e.stopPropagation(); await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
+                             </TableCell>}
                   {/* </Link> */}
                 </TableRow>
                 )
@@ -197,47 +210,21 @@ const Coin = ({}) => {
       </Table>
     </TableContainer>
 
- <Pagination
-          count={(cryptoFilter()?.length / 10).toFixed(0)}
-          style={{
-            padding: 20,
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-          }}
-          onChange={(_, value) => {
-            setPage(value);
-            window.scroll(0, 450);
-          }}
-        />
-        {/* <h2>
-          {crypto &&
-            cryptoFilter(search).map((data) => (
-              <Link to={`/coinDetail/${data.cryptoId}`}>
-
-
-              <div className="coin-container">
-                <div className="coin-row">
-                  <div className="coin">
-                    <img src={data.image} alt="" />
-                    <h1>{data.name}</h1>
-                    <p className="coin-symbol">{data.symbol}</p>
-                  </div>
-                  <div className="coin-data">
-                    <p className="coin-price">${data.current_price}</p>
-                    <p className="market-cap-rank">{data.market_cap_rank}</p>
-                    <p className="coin-marketcap">
-                      Mkt Cap: ${data.market_cap}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              </Link>
-            ))}
-        </h2> */}
-          </div>
+      <Pagination
+                count={(cryptoFilter()?.length / 10).toFixed(0)}
+                style={{
+                  padding: 20,
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                onChange={(_, value) => {
+                  setPage(value);
+                  window.scroll(0, 450);
+                }}
+              />
         </div>
-      </div>
+        </div>
       <Intro />
       <Footer />
     </div>
