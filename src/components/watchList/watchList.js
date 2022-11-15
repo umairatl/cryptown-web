@@ -5,18 +5,24 @@ import { useNavigate } from 'react-router-dom';
 import axios from "../../components/axios/axios";
 import { useState } from "react";
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { useWatchListContexts } from '../../hooks/useWatchListContext';
 
 
 // src/asset/Assetlogo.png
 
 const WatchList = ({ watchlists }) => {
-    const [deleteWatchList, setDeleteWatchList] = useState({});
-    const [error, setError] = useState(null);
+    const [deleteWatchList, setDeleteWatchList] = useState({})
+    const [error, setError] = useState(null)
     const navigation = useNavigate()
 
+    const { dispatch } = useWatchListContexts()
     const { user } = useAuthContext()
 
     const deleteWatchlist = async (favId) => {
+
+      if (!user) {
+        return
+      }
       const response = await axios.delete('api/favourite/favourite-delete',
       {
           headers: {
@@ -32,6 +38,7 @@ const WatchList = ({ watchlists }) => {
     
       if (response.status === 200){
         setDeleteWatchList(json)
+        dispatch({type:"DELETE_WATCHLIST", payload: json.deletedFavId})
       }
     }
     

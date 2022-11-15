@@ -20,6 +20,7 @@ import Intro from '../../components/homeBanner/intro';
 import Footer from '../../components/footer/footer';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { useWatchListContexts } from "../../hooks/useWatchListContext";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -31,7 +32,7 @@ const Coin = ({}) => {
   const [watchList, setWatchList] = useState({});
   const [error, setError] = useState(null);
 
-
+  const { dispatch } = useWatchListContexts()
   const { user } = useAuthContext()
 
   useEffect(() => {
@@ -69,6 +70,12 @@ const Coin = ({}) => {
 
 
   const addToWatchlist = async (cryptoId, coinName, image_url) => {
+
+    if (!user) {
+      setError("Please log in to use this feature")
+      return 
+    }
+
     const response = await axios.post('api/favourite/favourite-add',
     {
       "cryptoId": cryptoId,
@@ -83,22 +90,19 @@ const Coin = ({}) => {
     })
 
     const json = await response.data
-    return json
 
-    // if (response.status === 200){
-    //     setWatchList(json)
-    //     // console.log(`${cryptoId} successfully added to favourite`, json)
-    // }
+    if (response.status === 200){
+        setWatchList((prev) => ({ ...prev, ...json }))
+        dispatch({type:"ADD_WATCHLIST", payload: json["newFavourite"]})
+    }
   }
 
   const handleWatchLists = async (cryptoId, coinName, image_url) => {
     // e.stopProawaitpagation()
     // console.log(cryptoId)
     try {
-      let mssg = await addToWatchlist(cryptoId, coinName, image_url)
+      await addToWatchlist(cryptoId, coinName, image_url)
       setError(null)
-      setWatchList((prev) => ({ ...prev, ...mssg }))
-
       // console.log("watch list", watchList)
       alert(`${watchList["mssg"]}`)
     } catch (error) {
