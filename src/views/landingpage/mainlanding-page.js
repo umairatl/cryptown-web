@@ -16,7 +16,6 @@ const MainLandingPage = () => {
       <AboutLandingPage/>
       <Carousallp/>
       <Footer/>
-
       {/* <br></br> */}
 
      
