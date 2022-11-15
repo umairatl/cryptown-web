@@ -50,7 +50,7 @@ const NewsPage = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small"><a href={row.url}>Learn more</a></Button>
+        <Button size="small"><a href={row.url} target ="_blank">Learn more</a></Button>
       </CardActions>
     </Card>
   </div>
