@@ -16,17 +16,10 @@ span#colortext{
 
 .about{
     background:url(../../../asset/whatpng-01.png) no-repeat;
-<<<<<<< HEAD
     background-size: cover;
     background-position: center;
     padding-bottom: 22rem;
     margin-top: 150px;
-=======
-    
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 22rem;
->>>>>>> 9e51a8c6e1a5c850774038d69d3a13cef671bc24
 }
 
 .about .column{
@@ -63,7 +56,6 @@ span#colortext{
 
 .about .column .contentabout .buttons a:last-child{
     margin-left: 2rem;
-<<<<<<< HEAD
 }
 
 
@@ -94,6 +86,3 @@ span#colortext{
 
 
 
-=======
-}
->>>>>>> 9e51a8c6e1a5c850774038d69d3a13cef671bc24
