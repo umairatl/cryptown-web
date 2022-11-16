@@ -1,5 +1,5 @@
 import React from "react";
-import videogif2 from "../../asset/RotatingCyclinder_21.gif";
+import videogif2 from "../../asset/RotatingCyclinder_2.gif";
 import '../news/ambassador.css';
 
 

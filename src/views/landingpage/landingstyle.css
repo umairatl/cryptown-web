@@ -171,25 +171,13 @@
   left: 50%;
 } */
 .site-title{
-    /* background: url('/src/asset/bg2.png'); */
-    background: url('/src/asset/bluepink.png');
+    background: url('/src/asset/bg2.png');
     background-size: cover;
-    height: 107vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    object-fit: cover;
-    margin-top: -2.3%;
 }
-
-
-@media only screen and (min-width: 1080px) {
-  span.text {
-    font-size: 8em;
-
-}
-}
-
 
 /* .site-title{
     padding-top: 10rem;
@@ -237,18 +225,3 @@
 .buttoncentre{
     text-align: center;
 }
-
-
-
-img#bnce{
-
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease;
-        animation-name: bounce-2;
-}
-@keyframes  bounce-2{
-        0%   { transform: translateY(0); }
-        50%  { transform: translateY(-100px); }
-        100% { transform: translateY(0); }
-    }

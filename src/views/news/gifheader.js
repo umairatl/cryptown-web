@@ -17,7 +17,7 @@ export default function NewsGif() {
 
 return (
 
-  <div className="jimvideo">
+  <div className="jimvideo2">
     <video autoplay muted loop id="myVideo2">
       
       <source src={videogifnews} type="video/mp4"/>

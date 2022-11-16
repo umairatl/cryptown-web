@@ -21,6 +21,7 @@ export default function HeaderLandingPage() {
                
               <div className="imagecoin">
                       <img  id="bnce" src={phoneecrypto} alt="picture" />
+                      {/* <img src={phoneecrypto} alt="picture" /> */}
               </div>
                 
         </section>

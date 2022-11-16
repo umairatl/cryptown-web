@@ -28,8 +28,13 @@ margin: 0 auto;
 .arrow{
   background-color: #fff;
   position: absolute;
+<<<<<<< HEAD
   cursor: pointer;
   z-index: 10;
+=======
+cursor: pointer;
+z-index: 10;
+>>>>>>> 9e51a8c6e1a5c850774038d69d3a13cef671bc24
 }
 
 .arrow svg{
