@@ -4,6 +4,7 @@ import '../news/ambassador.css';
 
 
 const AmbassadorSection = () => {
+  console.log("test", videogif2)
   return (
 
     // <div className="rowmain">
