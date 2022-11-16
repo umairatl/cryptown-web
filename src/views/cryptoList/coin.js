@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./coin.css";
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,19 +10,58 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom";
+import { Pagination } from '@mui/material';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { useAuthContext } from '../../hooks/useAuthContext';
 
+
+import Navbar from "../../components/navbar/navbar";
+import Intro from '../../components/homeBanner/intro';
+import Footer from '../../components/footer/footer'
+import RollingSection from "./rollingcoin";
+
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import { useWatchListContexts } from "../../hooks/useWatchListContext";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [tren, setTren] = useState(null);
-    const navigation = useNavigate();
-  let arr = [];
+  const navigation = useNavigate();
+  const [page, setPage] = useState(1);
+
+  const [watchList, setWatchList] = useState({});
+  const [error, setError] = useState(null);
+
+  const { watchList: watchListContext, dispatch } = useWatchListContexts()
+  const { user } = useAuthContext()
+
+  useEffect(() => {
+    const fetchWatchLists = async () => {
+    const response = await axios('api/favourite/favourite-list',
+    {
+        headers: {
+            'Authorization': `Bearer ${user}`,
+        }
+    })
+      const json = await response.data;
+
+      if (response.status === 200) {
+        // setWatchLists(json.favourites);
+        dispatch({type:"SET_WATCHLIST", payload: json.favourites})
+
+      }
+    };
+
+    if (user) {
+        fetchWatchLists();
+    }
+  }, [dispatch, user]);
 
   useEffect(() => {
     const fetchCrypto = async () => {
-      const response = await axios(
-        "https://localhost:5000/api/crypto/cryptoList"
+      const response = await axios('api/crypto/cryptoList'
       );
       const json = await response.data;
 
@@ -30,14 +69,9 @@ const Coin = ({}) => {
         setCrypto(json);
       }
     };
-    fetchCrypto();
-  }, []);
 
-
-    useEffect(() => {
     const fetchCryptoTren = async () => {
-      const response = await axios(
-        "https://localhost:5000/api/crypto/cryptoTrending"
+      const response = await axios('api/crypto/cryptoTrending'
       );
       const json = await response.data;
 
@@ -45,41 +79,137 @@ const Coin = ({}) => {
         setTren(json);
       }
     };
+    fetchCrypto();
     fetchCryptoTren();
+    // console.log(watchListContext)
   }, []);
 
-  const cryptoFilter = (e) => {
+  const cryptoFilter = () => {
     return crypto?.cryptoList.filter(
       (f) =>
-        f.name.toLowerCase().includes(e) ||
-        f.symbol.toLowerCase().includes(e) ||
-        f.cryptoId.toLowerCase().includes(e)
+        f.name.toLowerCase().includes(search) ||
+        f.symbol.toLowerCase().includes(search) ||
+        f.cryptoId.toLowerCase().includes(search)
     );
   };
 
-  return (
-    <div>
-      {tren &&
-        tren.cryptoTrending.map((res) => (
-          <div>
-            <img src={res.image} />
-            <p className="legend">{res.name} </p>
-            <p className="legend">{res.symbol} </p>
-            <p className="legend">{res.cryptoId} </p>
-            {/* <AliceCarousel mouseTracking items={items} /> */}
-          </div>
-        ))}
-    <div className="coin-app">
-      <div className="coinsearchFilter-search">
-        <h1 className="coin-text">Search CI/CD</h1>
 
+  const addToWatchlist = async (cryptoId, coinName, image_url) => {
+
+    if (!user) {
+      setError("Please log in to use this feature")
+      return 
+    }
+
+    const response = await axios.post('api/favourite/favourite-add',
+    {
+      "cryptoId": cryptoId,
+      "coinName": coinName,
+      "image_url": image_url
+    },
+    {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user}`,
+        }
+    })
+
+    const json = await response.data
+
+    if (response.status === 200){
+        setWatchList((prev) => ({ ...prev, ...json }))
+        console.log("ADD: ",json["newFavourite"])
+        dispatch({type:"ADD_WATCHLIST", payload: json["newFavourite"]})
+    }
+  }
+
+  const handleWatchLists = async (cryptoId, coinName, image_url) => {
+    // e.stopProawaitpagation()
+    // console.log(cryptoId)
+    try {
+      await addToWatchlist(cryptoId, coinName, image_url)
+      setError(null)
+      // console.log("watch list", watchList)
+      alert(`${watchList["mssg"]}`)
+    } catch (error) {
+      console.log(error)
+      setError(error.response.data.error) 
+      alert(error.response.data.error)
+    }
+  }
+
+  
+const handleDragStart = (e) => e.preventDefault();
+
+const items = [];
+
+const items1 = tren && tren.cryptoTrending.map((res) => 
+items.push(
+    <img src={res.image} onDragStart={handleDragStart} role="presentation" />,
+  ));
+
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 }
+  ];
+
+  // tren && tren.cryptoTrending.map ((res)=> <div>
+  //     <img src={res.image} />
+  //     <button className="legend" onClick={() => {
+  //   navigation(`/coinDetail/${res.cryptoId}`);
+  // }}>{res.symbol}</button>
+  // </div>)
+
+// 
+  
+  const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
+      <img src={res.image} />
+      <button className="legend" onClick={() => {
+    navigation(`/coinDetail/${res.cryptoId}`);
+  }}>{res.symbol}</button>
+  </div>)
+
+  return (
+    <div className="main-page">
+
+      <Navbar /> 
+    {/* //   <div className="Carousel">
+    //   <Carousel autoPlay interval="3000" axis="horizontal" infiniteLoop centerMode autoFocus stopOnHover>
+    //     {trends}
+                
+    //   </Carousel>
+    //   </div>
+    // <br/>
+    // <br/>
+    // <br/>
+    // <RollingSection/>
+    // <br/>
+    // <br/>
+    // <br/>
+    // <br/>  
+    // <div className="coin-app">
+    //   <div className="coinsearchFilter-search">
+    //     <h3 className="headercointable">Market<span id="colortext6"> Trend</span> </h3>
+    //     <h1 className="coin-text">Search</h1> */}
+      
+      {/* first wrapper*/}
+      <div className="carousel-col">
+      {/* <AliceCarousel mouseTracking items={items} breakPoints={breakPoints}/> */}
+
+    </div>
+
+      {/* second wrapper */}
+      <div className="sec-wrap">
         <div className="search-col">
           <input
             className="coin-input"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search"
+            placeholder="Search Coin"
           />
         </div>
 
@@ -93,61 +223,58 @@ const Coin = ({}) => {
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
+              {user && <TableCell>Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
+
         <TableBody>
         {crypto &&
-            cryptoFilter(search).map((data) => (
-            <TableRow key={data.name} style={{cursor:'pointer'}} 
-            onClick={() => {
-              navigation(`/coinDetail/${data.cryptoId}`);
-            }}
-            >
-                <TableCell>{data.market_cap_rank}</TableCell>
-                   <TableCell>
-                    <img src={data.image} width='40px'></img>
-                   </TableCell>
-                <TableCell>
-                    {data.name}
-                    </TableCell>
-                <TableCell>${data.current_price}</TableCell>
-                <TableCell>{data.market_cap} / 10</TableCell>
-              {/* </Link> */}
-
-            </TableRow>
-          ))}
+            cryptoFilter()
+            .slice((page - 1) * 10, (page - 1) * 10 + 10)
+            .map((data) => {
+              // const marketCap = data.market_cap_rank > 0;
+              return (
+                <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
+                  navigation(`/coinDetail/${data.cryptoId}`);
+                }}>
+                    <TableCell>{data.market_cap_rank}</TableCell>
+                      <TableCell>
+                        <img src={data.image} width='40px'></img>
+                      </TableCell>
+                    <TableCell>
+                        {data.name}
+                        </TableCell>
+                    <TableCell>${data.current_price}</TableCell>
+                    <TableCell>{data.market_cap} </TableCell>
+                    {user && <TableCell>
+                                <button onClick={async (e) => {e.stopPropagation(); await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
+                             </TableCell>}
+                  {/* </Link> */}
+                </TableRow>
+                )
+            }
+            )}
         </TableBody>
       </Table>
     </TableContainer>
 
-        {/* <h2>
-          {crypto &&
-            cryptoFilter(search).map((data) => (
-              <Link to={`/coinDetail/${data.cryptoId}`}>
-
-
-              <div className="coin-container">
-                <div className="coin-row">
-                  <div className="coin">
-                    <img src={data.image} alt="" />
-                    <h1>{data.name}</h1>
-                    <p className="coin-symbol">{data.symbol}</p>
-                  </div>
-                  <div className="coin-data">
-                    <p className="coin-price">${data.current_price}</p>
-                    <p className="market-cap-rank">{data.market_cap_rank}</p>
-                    <p className="coin-marketcap">
-                      Mkt Cap: ${data.market_cap}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              </Link>
-            ))}
-        </h2> */}
+      <Pagination
+                count={(cryptoFilter()?.length / 10).toFixed(0)}
+                style={{
+                  padding: 20,
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                onChange={(_, value) => {
+                  setPage(value);
+                  window.scroll(0, 450);
+                }}
+              />
         </div>
-      </div>
-    </div>
+        </div>
+      <Intro />
+      <Footer />
     </div>
   );
 };

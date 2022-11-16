@@ -4,11 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
+import { AuthContextProvider } from "./context/AuthContext";
+import { WatchListContextsProvider } from "./context/WatchListContext";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthContextProvider>
+      <WatchListContextsProvider>
+        <App />
+      </WatchListContextsProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );
 

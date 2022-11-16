@@ -1,15 +1,21 @@
 import * as React from 'react';
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { Box, Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
+import axios from "../../components/axios/axios";
+import { Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
 import '../news/news.css';
+// import HeaderHero from "../news/heroimage";
+import Navbar from '../../components/navbar/navbar'
+import AmbassadorSection from '../news/ambassador'
+import NewsGif from './gifheader';
+import SliderSectionNews from '../news/sliderpartner';
+import Footer from '../../components/footer/footer';
 
 const NewsPage = () => {
   var [news, setNewsList] = useState(null);
 
   useEffect(() => {
       const fetchNewsList = async () => {
-          const response = await axios('https://localhost:5000/api/news')
+          const response = await axios('/api/news')
           const json = await response.data
   
           if (response.status === 200) {
@@ -17,13 +23,18 @@ const NewsPage = () => {
           }
       }
       fetchNewsList()
-    }, []);
+  }, []);
 
     console.log(news)
   
     return ( 
-        <div className='news-page'>
-        <h1>NEWS</h1>
+        
+      <div className='news-page'>
+          <Navbar />
+          <NewsGif/>
+          <SliderSectionNews/>
+          
+        <h3 className="headernews">News<span id="colortext5"> Feed</span></h3>
         <div className='grid-container-news'>
           {news && news.news.map((row => (
 
@@ -36,23 +47,29 @@ const NewsPage = () => {
         image={row.image}
       />
       <CardContent>
+        <div className='title-col-news'>
         <Typography gutterBottom variant="h5" component="div">
           {row.name}
         </Typography>
+        </div>
+        <div className='subtitle-text'>
         <Typography variant="body2" color="text.secondary">
           {row.description}
         </Typography>
+        </div>
       </CardContent>
       <CardActions>
-        <Button size="small"><a href={row.url} target ="_blank">Learn more</a></Button>
+        <Button size="small"><a href={row.url} target ="_blank">Read more</a></Button>
       </CardActions>
     </Card>
-    </div>
-     )))} 
+    
+  </div>
+  )))} 
+</div>
+<AmbassadorSection/>
+<Footer />
+</div>
 
-    </div>
-    </div>
-     );
-}
+)}
  
 export default NewsPage;

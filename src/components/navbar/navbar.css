@@ -2,22 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .first-col{
-  /* background: linear-gradient(#e66465, #9198e5); */
- background: rgb(2,0,36);
- background: linear-gradient(90deg, #1167b1 10%, #03254c 90%); 
+ /* background: #24262b; */
+ /* background: linear-gradient(90deg, #00b4d8 10%, #03254c 90%);  */
  /* height: 50%; */
- text-align: center;
-}
-
-.pic{
-    border-radius: 20%;
-    text-align: center;
+ /* text-align: center; */
+ justify-content: space-between;
 }
 
 .nav-up{
-    padding-top: 2.5rem; 
-    padding-bottom: 2.5rem;
-    margin-bottom: 3rem; 
+    padding-top: 2rem; 
+    /* padding-bottom: 2rem; */
+    /* margin-bottom: 2rem;  */
     display: flex;
     color: white;
     justify-content: space-around;
@@ -29,16 +24,16 @@
 }
 
 .nav-text{
-    color: white;
-    padding-left: 1rem;
+    color: black;
+    padding-left: 0.8rem;
     padding-right: 1rem;
-    padding-top: 0.2rem; 
-    padding-bottom: 0.2rem;
+    padding-top: 0.1rem; 
+    padding-bottom: 0.1rem;
     border: none;
     border-radius: 0px;
     margin-left: 2rem;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .sec-layer{
@@ -84,6 +79,28 @@ button{
     height: 40px; */
 
     text-transform: uppercase;
+}
+
+
+
+
+
+@media (min-width: 480px) and (max-width:801px) {
+
+    .nav-up{
+
+        overflow: hidden;
+        font-size: 1;
+    }
+
+    .nav-text{
+    margin-left: 0rem;
+    font-size: 1rem;
+}
+    img.logoclass{
+        width: 100px;
+    }
+
 }
 
 
