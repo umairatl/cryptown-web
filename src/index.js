@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 import { AuthContextProvider } from "./context/AuthContext";
-import CommentContextProvider from './context/CommentContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
