@@ -1,95 +1,3 @@
-/* .coin-container {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.coin-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  height: 80px;
-  border-bottom: 1px solid #000000;
-  width: 900px;
-  text-decoration: none;
-}
-
-.coin {
-  display: flex;
-  align-items: center;
-  padding-right: 24px;
-  text-decoration: none;
-
-  min-width: 300px;
-}
-
-.coin h1 {
-  font-size: 16px;
-  width: 150px;
-  text-decoration: none;
-}
-
-.coin img {
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
-  text-decoration: none;
-}
-
-.coin-symbol {
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.coin-data {
-  display: flex;
-  text-align: right;
-  justify-content: space-between;
-  text-decoration: none;
-
-  width: 100%;
-}
-
-.coin-price {
-  width: 110px;
-  text-decoration: none;
-}
-
-.coin-volume {
-  width: 155px;
-  text-decoration: none;
-}
-
-.coin-marketcap {
-  width: 230px;
-  text-decoration: none;
-}
-
-.coin-percent {
-  width: 100px;
-  text-decoration: none;
-}
-
-.red {
-  color: #ff0202;
-}
-
-.green {
-  color: #05a300;
-}
-
-
-
-/* .search-col { */
-  /* border: 1px solid grey;
-  border-radius: 5px;
-  height: 20px;
-  width: 100%; */
-  /* width: 3rem;   */
-  /* text-align: center; */
-/* } */
-
 .coin-input {
   border-radius: 5px;
   height: 31px;
@@ -160,6 +68,7 @@ img#gif1{
   padding: 0 0 50px 0;
   position: relative;
 }
+
 .skill-bx {
   /* background: #151515; */
   color: black;
@@ -168,10 +77,12 @@ img#gif1{
   padding: 60px 50px;
   margin-top: -60px;
 }
+
 .skill h2 {
     font-size: 45px;
     font-weight: 700;
 }
+
 .skill p {
     color: black;
     font-size: 18px;
@@ -179,11 +90,13 @@ img#gif1{
     line-height: 1.5em;
     margin: 14px 0 75px 0;
 }
+
 .skill-slider {
   width: 80%;
   margin: 0 auto;
   position: relative;
 }
+
 .skill-slider .item img {
   width: 50%;
   margin: 0 auto 15px auto;
@@ -198,9 +111,10 @@ img#gif1{
 }
 
 
-.container{
+/* issue here  */
+/* .container{
     width: 50%;
     margin: auto;
     padding-bottom: 20%;
     padding-top: 10%;
-}
+} */
