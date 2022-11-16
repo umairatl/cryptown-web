@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../components/axios/axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useAuthContext } from '../../hooks/useAuthContext';
@@ -9,6 +9,9 @@ const { user } = useAuthContext();
 const [isReply, setIsReply] = useState(false);
 
     const handleSubmitReply = postId => async (e) =>{
+      console.log(postId, "postId")
+      console.log(replyPost, "reply")
+
         e.preventDefault();
         console.log(postId)
         const response = await axios.post(
@@ -28,7 +31,7 @@ const [isReply, setIsReply] = useState(false);
         const json = await response.data;
     
         if (response.status === 200) {
-          alert("What is happening");
+          // alert("What is happening");
           window.location = "/forum";
         }
     }

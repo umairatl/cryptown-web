@@ -4,6 +4,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import Navbar from "../../components/navbar/navbar";
 import "../forumPage/forum.css";
 import ReplyForum from "../../components/replyForum/replyForum";
+import Reply from "../../components/replies/replies";
 
 const ForumPage = () => {
 const [postList, setPostList] = useState(null);
@@ -26,8 +27,11 @@ const [replyId, setReplyId] = useState();
         const objKeyArr = Object.keys(json["postsObj"]).map(
           (objKey) => json["postsObj"][objKey]
         );
-        console.log(objKeyArr.replies)
+        // const test = objKeyArr.map()
+        // console.log(objKeyArr.map)
         // console.log(Object.keys(objKeyArr.replies), "test");
+        console.log("TEST: ",objKeyArr.map((post) => post.replies))
+        console.log("TEST_2: ",objKeyArr)
         setList(objKeyArr);
       }
     };
@@ -52,7 +56,7 @@ const [replyId, setReplyId] = useState();
     const json = await response.data;
 
     if (response.status === 200) {
-      alert("What is happening");
+      // alert("What is happening");
       window.location = "/forum";
     }
 }
@@ -74,13 +78,10 @@ const [replyId, setReplyId] = useState();
             <div className="post-box">
               <p>{row.email}</p>
               <p>{row.post}</p>
-             <ReplyForum key={row.postid}/>
+              <p>{JSON.stringify(row.replies)}</p>
+             <ReplyForum key={row.postid} postId={row.postid}/>
             </div>
-            {/* { Object.keys(row.replies).foreach((reply) => { 
-            <div className="list-reply">
-              <p>{reply.subpostid}</p>
-              </div>
-            })} */}
+              {row.replies.map((reply) => <Reply reply={reply}/>)}
           </div>
           ))}
       </div>
