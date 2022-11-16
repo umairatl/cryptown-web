@@ -11,8 +11,8 @@
 
 .nav-up{
     padding-top: 2rem; 
-    padding-bottom: 2rem;
-    margin-bottom: 2rem; 
+    /* padding-bottom: 2rem; */
+    /* margin-bottom: 2rem;  */
     display: flex;
     color: white;
     justify-content: space-around;

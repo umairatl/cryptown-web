@@ -1,8 +1,101 @@
-.col-details{
+.details-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.top-info{
+    padding: 18px;
+    /* height: 30%; */
+    background-color: #abd8ff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.coin-content{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    /* margin: auto; */
+}
+
+.wrap-out{
+    margin: auto;
+    padding: 5%;
+}
+
+.wrap-out .price{
+    font-size: 3rem;
+    margin:auto 10%;
+    /* text-align: left; */
+    color: white;
+}
+
+.outer{
+    display: flex;
+    flex-direction: column;
+    background-color: #abd8ff;
+    border-radius: 50px;
+    margin: 20px auto;
+    justify-content: start;
+    text-align: left;
+    /* height: 400px; */
+}
+
+.coin-info-col{
+    width: 30rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    /* height: 500px; */
+    text-transform: uppercase;
+}
+
+.rank{
+    margin-left: 5%;
+    margin-top: 2%;
+    padding: 0.2px;
+}
+
+.details-market{
+    line-height: 7px;
+}
+
+.coin-info-col h1{
+    font-size: 3.5rem;
+    /* line-height: 10px ; */
+    margin-top: 10%;
+    color: #03254c; 
+    /* text-align: left; */
+}
+
+.desc-col{
+    font-size: 1.3rem;
+}
+
+.rank{
+    background-color: #03254c;
+    width: 100px;
+    border-radius: 25px;
+    font-size: 12pt;
+    color: white;
+    text-align: center;
+}
+
+.chart-col{
     margin: auto;
     text-align: justify;
     width: 50%;
     margin-top: 50px;
+}
+
+.chart-col h1{
+    text-transform: uppercase;
 }
 
 .con-1{

@@ -1,0 +1,13 @@
+.post-box{
+    /* width: '40px'; */
+    height: "20%";
+    /* background: lightblue; */
+    margin-bottom: 50px;
+}
+
+.post-col{
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

@@ -11,6 +11,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom";
 import { Pagination } from '@mui/material';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { useAuthContext } from '../../hooks/useAuthContext';
+
+
 import Navbar from "../../components/navbar/navbar";
 import Intro from '../../components/homeBanner/intro';
 import Footer from '../../components/footer/footer';
@@ -23,6 +27,12 @@ const Coin = ({}) => {
   const [tren, setTren] = useState(null);
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
+
+  const [watchList, setWatchList] = useState("");
+  const [error, setError] = useState(null);
+
+
+  const { user } = useAuthContext()
 
   useEffect(() => {
     const fetchCrypto = async () => {
@@ -57,31 +67,43 @@ const Coin = ({}) => {
     );
   };
 
-  const handleDragStart = (e) => e.preventDefault();
 
-const items = [];
+  const addToWatchlist = async (cryptoId) => {
+    const response = await axios.post('api/favourite/favourite-add',
+    {
+        'cryptoId': cryptoId
+    },
+    {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user}`,
+        }
+    })
+    
+    const json = await response.data
 
-const items1 = tren && tren.cryptoTrending.map((res) => 
-items.push(
-    <img src={res.image} onDragStart={handleDragStart} role="presentation" />,
-  ));
+    if (response.status === 200){
+        setWatchList(json)
+        // console.log(`${cryptoId} successfully added to favourite`, json)
+    }
+}
 
+  const handleWatchLists = async (cryptoId) => {
+    // e.stopPropagation()
+    // console.log(cryptoId)
+    try {
+      await addToWatchlist(cryptoId)
+      setError(null)
+      console.log(watchList)
+      alert(`${watchList["mssg"]}`)
+    } catch (error) {
+      console.log(error)
+      setError(error.response.data.error) 
+      alert(error.response.data.error)
+    }
+  }
 
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 }
-  ];
-
-  // tren && tren.cryptoTrending.map ((res)=> <div>
-  //     <img src={res.image} />
-  //     <button className="legend" onClick={() => {
-  //   navigation(`/coinDetail/${res.cryptoId}`);
-  // }}>{res.symbol}</button>
-  // </div>)
-
-// 
+  
   
   const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
       <img src={res.image} />
@@ -97,7 +119,7 @@ items.push(
       
       {/* first wrapper*/}
       <div className="carousel-col">
-      <AliceCarousel mouseTracking items={items} breakPoints={breakPoints}/>
+      {/* <AliceCarousel mouseTracking items={items} breakPoints={breakPoints}/> */}
 
     </div>
 
@@ -123,6 +145,7 @@ items.push(
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
+              <TableCell>Add to Watchlist</TableCell>
             </TableRow>
            </TableHead>
 
@@ -133,11 +156,9 @@ items.push(
             .map((data) => {
               // const marketCap = data.market_cap_rank > 0;
               return (
-                <TableRow key={data.name} style={{cursor:'pointer'}} 
-                onClick={() => {
+                <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
                   navigation(`/coinDetail/${data.cryptoId}`);
-                }}
-                >
+                }}>
                     <TableCell>{data.market_cap_rank}</TableCell>
                       <TableCell>
                         <img src={data.image} width='40px'></img>
@@ -146,7 +167,10 @@ items.push(
                         {data.name}
                         </TableCell>
                     <TableCell>${data.current_price}</TableCell>
+                    
+
                     <TableCell>{data.market_cap} </TableCell>
+                    {user && <button onClick={e => {e.stopPropagation(); handleWatchLists(data.cryptoId)}}>{data.cryptoId}</button>}
                   {/* </Link> */}
                 </TableRow>
                 )
