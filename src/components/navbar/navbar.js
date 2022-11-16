@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import {
-  Link,
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import '../navbar/navbar.css';
 import { FaUserCircle } from "react-icons/fa";
 import { useAuthContext } from '../../hooks/useAuthContext';
 import logo  from '../../asset/Assetlogo.png'
-
-// src/asset/Assetlogo.png
 
 const Navbar = () => {
     const { user } = useAuthContext()
@@ -18,6 +14,7 @@ const Navbar = () => {
           <nav className="nav-up">
           <ul>
          <Link to ='/market' className="nav-text"> 
+         {/* <img className='logoclass' src = { logo } width='60%' /> */}
          <img src = { logo } width='60%'/>
           </Link>
          </ul>

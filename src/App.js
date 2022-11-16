@@ -10,15 +10,17 @@ import NewsPage from './views/news/news';
 import Profile from './views/profilePage/profile';
 import CoinDetail from './views/coinDetail/coinDetail';
 import Login from './views/loginPage/login';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import NotFound from './components/notFound/notFound';
 import AuthLayout from './components/authLayout/authLayout';
 import MainLandingPage from './views/landingpage/mainlanding-page'
+import ForumPage from './views/forumPage/forum';
 
+import RedirectBack from './components/utils/redirectBack';
 
 function App() {
-  const { user } = useAuthContext()
+  const { user } = useAuthContext();
 
   return (
     <BrowserRouter>
@@ -30,19 +32,19 @@ function App() {
             </Route>
             <Route path="/coinDetail/:id" element = { <CoinDetail />}>
             </Route> 
-            <Route path="/forum" element = { user ? <Forum /> : <Navigate to="/login" />}>
+            <Route path="/forum" element = { user ? <Forum /> : <Navigate to="/login?redirect=/forum" />}>
             </Route>
             <Route path="/appList" element = { <AppList />}>
             </Route>
             <Route path="/news" element = { <NewsPage />}>
             </Route>
-            <Route path="/profile" element = { <Profile />}>
+            <Route path="/profile" element = {user ? <Profile /> : <Navigate to="/login?redirect=/profile" />}>
             </Route>
-            <Route path="/signup" element = { <Signup />}>
+            {/* <Route path="/signup" element = { !user ? <Signup /> :  <RedirectBack/>}>
+            </Route> */}
+            <Route path="/login" element = { !user ? <AuthLayout /> : <RedirectBack/>}>
             </Route>
-            <Route path="/login" element = { <AuthLayout />}>
-            </Route>
-            <Route path="/watchlist" element = { user ? <FavPage /> : <Navigate to="/login" />}>
+            <Route path="/watchlist" element = { user ? <FavPage /> : <Navigate to="/login?redirect=/watchlist" />}>
             </Route>
             <Route path='*' element={<NotFound />}/>
           </Routes>

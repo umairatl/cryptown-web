@@ -20,7 +20,8 @@ export default function HeaderLandingPage() {
               </div>
                
               <div className="imagecoin">
-                      <img src={phoneecrypto} alt="picture" />
+                      <img  id="bnce" src={phoneecrypto} alt="picture" />
+                      {/* <img src={phoneecrypto} alt="picture" /> */}
               </div>
                 
         </section>

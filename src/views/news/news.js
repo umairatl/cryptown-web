@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import axios from "../../components/axios/axios";
 import { Card, CardContent, Typography, CardActions, Button, CardMedia } from '@mui/material';
 import '../news/news.css';
-import HeaderHero from "../news/heroimage";
+// import HeaderHero from "../news/heroimage";
 import Navbar from '../../components/navbar/navbar'
+import AmbassadorSection from '../news/ambassador'
+import NewsGif from './gifheader';
+import SliderSectionNews from '../news/sliderpartner';
+import Footer from '../../components/footer/footer';
+import HeaderHero from "../news/heroimage";
 
 
 const NewsPage = () => {
@@ -26,10 +31,12 @@ const NewsPage = () => {
   
     return ( 
         
-        <div className='news-page'>
+      <div className='news-page'>
           <Navbar />
-          {/* <HeaderHero /> */}
-        <h1>NEWS</h1>
+          <NewsGif/>
+          <SliderSectionNews/>
+          
+        <h3 className="headernews">News<span id="colortext5"> Feed</span></h3>
         <div className='grid-container-news'>
           {news && news.news.map((row => (
 
@@ -42,20 +49,27 @@ const NewsPage = () => {
         image={row.image}
       />
       <CardContent>
+        <div className='title-col-news'>
         <Typography gutterBottom variant="h5" component="div">
           {row.name}
         </Typography>
+        </div>
+        <div className='subtitle-text'>
         <Typography variant="body2" color="text.secondary">
           {row.description}
         </Typography>
+        </div>
       </CardContent>
       <CardActions>
-        <Button size="small"><a href={row.url} target ="_blank">Learn more</a></Button>
+        <Button size="small"><a href={row.url} target ="_blank">Read more</a></Button>
       </CardActions>
     </Card>
+    
   </div>
   )))} 
 </div>
+<AmbassadorSection/>
+<Footer />
 </div>
 
 )}
