@@ -36,7 +36,7 @@ function App() {
             </Route>
             <Route path="/news" element = { <NewsPage />}>
             </Route>
-            <Route path="/profile" element = { <Profile />}>
+            <Route path="/profile" element = {user ? <Profile /> : <Navigate to="/login?redirect=/profile" />}>
             </Route>
             {/* <Route path="/signup" element = { !user ? <Signup /> :  <RedirectBack/>}>
             </Route> */}

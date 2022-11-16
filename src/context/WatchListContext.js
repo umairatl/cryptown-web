@@ -10,13 +10,13 @@ export const watchListReducer = (state, action) => {
             }
         case 'ADD_WATCHLIST':
             return {
-                watchLists: [...state.watchLists, action.payload]
+                watchLists: [action.payload, ...state.watchLists]
             }
         case 'DELETE_WATCHLIST':
             return {
                 // this "action.payload" would be an array of workout objects with the newly created workout
                 // workouts: state.workouts.filter((w) => w._id !== action.payload._id)
-                watchLists: state.watchLists.filter((watchList) => watchList["favid"] !== action.payload["favId"])
+                watchLists: state.watchLists.filter((watchList) => watchList["favid"] !== action.payload["favid"])
             }
         default:
             return state
@@ -36,7 +36,7 @@ export const WatchListContextsProvider = ({ children }) => {
     // when the "dispatch" function is called, the "useReducer"'s function (workoutReducer) would be called 
     // the values within the "dispatch" function is the "action"
     // dispatch({type: 'SET_WORKOUTS', payload: [{}, {}]})
-    console.log("WatchList Context State Delete: ", state)
+    // console.log("WatchList Context State Delete: ", state)
 
     return(
         <WatchListContexts.Provider value={{...state, dispatch}}>
