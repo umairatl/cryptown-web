@@ -18,10 +18,8 @@ const FavPage = () => {
     const { watchLists, dispatch } = useWatchListContexts()
     const { user } = useAuthContext()
 
-    // let [watchLists, setWatchLists] = useState([])
-
     useEffect(() => {
-    
+        console.log(watchLists)
         const fetchWatchLists = async () => {
         const response = await axios('api/favourite/favourite-list',
         {
@@ -38,7 +36,7 @@ const FavPage = () => {
           }
         };
 
-        if (user) {
+        if (user && watchLists === null) {
             fetchWatchLists();
         }
       }, [dispatch, user]);

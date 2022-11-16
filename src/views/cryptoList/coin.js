@@ -32,8 +32,30 @@ const Coin = ({}) => {
   const [watchList, setWatchList] = useState({});
   const [error, setError] = useState(null);
 
-  const { dispatch } = useWatchListContexts()
+  const { watchList: watchListContext, dispatch } = useWatchListContexts()
   const { user } = useAuthContext()
+
+  useEffect(() => {
+    const fetchWatchLists = async () => {
+    const response = await axios('api/favourite/favourite-list',
+    {
+        headers: {
+            'Authorization': `Bearer ${user}`,
+        }
+    })
+      const json = await response.data;
+
+      if (response.status === 200) {
+        // setWatchLists(json.favourites);
+        dispatch({type:"SET_WATCHLIST", payload: json.favourites})
+
+      }
+    };
+
+    if (user) {
+        fetchWatchLists();
+    }
+  }, [dispatch, user]);
 
   useEffect(() => {
     const fetchCrypto = async () => {
@@ -57,6 +79,7 @@ const Coin = ({}) => {
     };
     fetchCrypto();
     fetchCryptoTren();
+    // console.log(watchListContext)
   }, []);
 
   const cryptoFilter = () => {
@@ -93,6 +116,7 @@ const Coin = ({}) => {
 
     if (response.status === 200){
         setWatchList((prev) => ({ ...prev, ...json }))
+        console.log("ADD: ",json["newFavourite"])
         dispatch({type:"ADD_WATCHLIST", payload: json["newFavourite"]})
     }
   }

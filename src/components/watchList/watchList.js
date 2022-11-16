@@ -38,6 +38,7 @@ const WatchList = ({ watchlists }) => {
     
       if (response.status === 200){
         setDeleteWatchList(json)
+        console.log(deleteWatchList)
         dispatch({type:"DELETE_WATCHLIST", payload: json.deletedFavId})
       }
     }
