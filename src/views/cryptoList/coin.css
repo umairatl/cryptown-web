@@ -143,7 +143,9 @@ img#gif1{
 
 @media screen and (max-width: 37.5rem){
   .Carousel {
-    width: 30rem;
+    width: 20rem;
+    margin-left: 5rem;
+    /* background-color:  pink; */
     
   }
   

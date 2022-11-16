@@ -24,7 +24,7 @@ const Navbar = () => {
         <ul className="nav-right">
             <Link to ='/market' className="nav-text">  Market </Link>
             <Link to = '/watchlist' className="nav-text"> Watchlist </Link>
-            <Link to ='/forum' className="nav-text">  Forum </Link>
+            {/* <Link to ='/forum' className="nav-text">  Forum </Link> */}
             <Link to = '/news' className="nav-text">  News </Link>
             <Link to = '/appList' className="nav-text"> Exchange </Link>
         </ul>
@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <ul className="nav-right">
             <Link to ='/market' className="nav-text">  Market </Link>
-            <Link to ='/forum' className="nav-text">  Forum </Link>
+            {/* <Link to ='/forum' className="nav-text">  Forum </Link> */}
             <Link to = '/news' className="nav-text">  News </Link>
             <Link to = '/appList' className="nav-text"> Exchange </Link>
             <Link to = '/login' className="nav-text"> Login </Link>
