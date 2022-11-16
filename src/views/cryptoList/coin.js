@@ -32,7 +32,7 @@ const Coin = ({}) => {
   const [watchList, setWatchList] = useState({});
   const [error, setError] = useState(null);
 
-  const { watchList: watchListContext, dispatch } = useWatchListContexts()
+  const { watchLists: watchListContext, dispatch } = useWatchListContexts()
   const { user } = useAuthContext()
 
   useEffect(() => {

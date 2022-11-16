@@ -5,6 +5,7 @@ export const WatchListContexts = createContext()
 export const watchListReducer = (state, action) => {
     switch (action.type) {
         case 'SET_WATCHLIST':
+            console.log("State:", state.watchLists)
             return {
                 watchLists: action.payload
             }
