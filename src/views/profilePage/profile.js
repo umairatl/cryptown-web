@@ -197,7 +197,7 @@ const Profile = () => {
       )  : (
         <ProgressBar />
       )}
-      {/* <button>Log out</button> */}
+      <button onClick={handleClick}>Log out</button>
     </div>
   );
 };

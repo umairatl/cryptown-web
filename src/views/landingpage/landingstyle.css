@@ -38,8 +38,9 @@
 
 .landing h1#landingheaderOne{
     font-family: var(--Lexend);
-    font-size: 3.7rem;
-    color:#ffffff
+    font-size: 35px;
+    color: #666;
+    text-align: center
 }
 
 

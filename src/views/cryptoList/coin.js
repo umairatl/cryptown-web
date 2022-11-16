@@ -11,11 +11,18 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom";
 import { Pagination } from '@mui/material';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { useAuthContext } from '../../hooks/useAuthContext';
+
+
 import Navbar from "../../components/navbar/navbar";
 import Intro from '../../components/homeBanner/intro';
-import Footer from '../../components/footer/footer';
+import Footer from '../../components/footer/footer'
+import RollingSection from "./rollingcoin";
+
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { useWatchListContexts } from "../../hooks/useWatchListContext";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -23,6 +30,34 @@ const Coin = ({}) => {
   const [tren, setTren] = useState(null);
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
+
+  const [watchList, setWatchList] = useState({});
+  const [error, setError] = useState(null);
+
+  const { watchList: watchListContext, dispatch } = useWatchListContexts()
+  const { user } = useAuthContext()
+
+  useEffect(() => {
+    const fetchWatchLists = async () => {
+    const response = await axios('api/favourite/favourite-list',
+    {
+        headers: {
+            'Authorization': `Bearer ${user}`,
+        }
+    })
+      const json = await response.data;
+
+      if (response.status === 200) {
+        // setWatchLists(json.favourites);
+        dispatch({type:"SET_WATCHLIST", payload: json.favourites})
+
+      }
+    };
+
+    if (user) {
+        fetchWatchLists();
+    }
+  }, [dispatch, user]);
 
   useEffect(() => {
     const fetchCrypto = async () => {
@@ -46,6 +81,7 @@ const Coin = ({}) => {
     };
     fetchCrypto();
     fetchCryptoTren();
+    // console.log(watchListContext)
   }, []);
 
   const cryptoFilter = () => {
@@ -57,7 +93,53 @@ const Coin = ({}) => {
     );
   };
 
-  const handleDragStart = (e) => e.preventDefault();
+
+  const addToWatchlist = async (cryptoId, coinName, image_url) => {
+
+    if (!user) {
+      setError("Please log in to use this feature")
+      return 
+    }
+
+    const response = await axios.post('api/favourite/favourite-add',
+    {
+      "cryptoId": cryptoId,
+      "coinName": coinName,
+      "image_url": image_url
+    },
+    {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user}`,
+        }
+    })
+
+    const json = await response.data
+
+    if (response.status === 200){
+        setWatchList((prev) => ({ ...prev, ...json }))
+        console.log("ADD: ",json["newFavourite"])
+        dispatch({type:"ADD_WATCHLIST", payload: json["newFavourite"]})
+    }
+  }
+
+  const handleWatchLists = async (cryptoId, coinName, image_url) => {
+    // e.stopProawaitpagation()
+    // console.log(cryptoId)
+    try {
+      await addToWatchlist(cryptoId, coinName, image_url)
+      setError(null)
+      // console.log("watch list", watchList)
+      alert(`${watchList["mssg"]}`)
+    } catch (error) {
+      console.log(error)
+      setError(error.response.data.error) 
+      alert(error.response.data.error)
+    }
+  }
+
+  
+const handleDragStart = (e) => e.preventDefault();
 
 const items = [];
 
@@ -94,10 +176,28 @@ items.push(
     <div className="main-page">
 
       <Navbar /> 
+    {/* //   <div className="Carousel">
+    //   <Carousel autoPlay interval="3000" axis="horizontal" infiniteLoop centerMode autoFocus stopOnHover>
+    //     {trends}
+                
+    //   </Carousel>
+    //   </div>
+    // <br/>
+    // <br/>
+    // <br/>
+    // <RollingSection/>
+    // <br/>
+    // <br/>
+    // <br/>
+    // <br/>  
+    // <div className="coin-app">
+    //   <div className="coinsearchFilter-search">
+    //     <h3 className="headercointable">Market<span id="colortext6"> Trend</span> </h3>
+    //     <h1 className="coin-text">Search</h1> */}
       
       {/* first wrapper*/}
       <div className="carousel-col">
-      <AliceCarousel mouseTracking items={items} breakPoints={breakPoints}/>
+      {/* <AliceCarousel mouseTracking items={items} breakPoints={breakPoints}/> */}
 
     </div>
 
@@ -123,6 +223,7 @@ items.push(
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
+              {user && <TableCell>Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
 
@@ -133,11 +234,9 @@ items.push(
             .map((data) => {
               // const marketCap = data.market_cap_rank > 0;
               return (
-                <TableRow key={data.name} style={{cursor:'pointer'}} 
-                onClick={() => {
+                <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
                   navigation(`/coinDetail/${data.cryptoId}`);
-                }}
-                >
+                }}>
                     <TableCell>{data.market_cap_rank}</TableCell>
                       <TableCell>
                         <img src={data.image} width='40px'></img>
@@ -147,6 +246,9 @@ items.push(
                         </TableCell>
                     <TableCell>${data.current_price}</TableCell>
                     <TableCell>{data.market_cap} </TableCell>
+                    {user && <TableCell>
+                                <button onClick={async (e) => {e.stopPropagation(); await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
+                             </TableCell>}
                   {/* </Link> */}
                 </TableRow>
                 )

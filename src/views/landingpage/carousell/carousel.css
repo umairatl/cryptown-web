@@ -28,8 +28,13 @@ margin: 0 auto;
 .arrow{
   background-color: #fff;
   position: absolute;
+<<<<<<< HEAD
+  cursor: pointer;
+  z-index: 10;
+=======
 cursor: pointer;
 z-index: 10;
+>>>>>>> 9e51a8c6e1a5c850774038d69d3a13cef671bc24
 }
 
 .arrow svg{
@@ -61,4 +66,38 @@ h3.headercarousal{
 
 span#colortext3{
     color: #0000ff;
+}
+
+
+
+@media (min-width: 480px) and (max-width:801px) {
+
+  .Carousallanding {
+    margin: -3rem auto;
+  }
+
+  h3.headercarousal{
+    font-size: 2.9rem;
+  }
+  .slick-list{
+    padding: 0px;
+  }
+  .slick-track{
+    width: 1820px;
+    opacity: 1;
+    transform: translate3d(-390px, 0px, 0px);
+  }
+  .slick-slide.slick-cloned{
+    width: 130px;
+  }
+
+  .slide{
+    width: 100%;
+    display: inline-block;
+  }
+
+  .slide img{
+    width:20rem;
+  }
+
 }

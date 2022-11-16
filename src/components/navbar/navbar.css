@@ -11,8 +11,8 @@
 
 .nav-up{
     padding-top: 2rem; 
-    padding-bottom: 2rem;
-    margin-bottom: 2rem; 
+    /* padding-bottom: 2rem; */
+    /* margin-bottom: 2rem;  */
     display: flex;
     color: white;
     justify-content: space-around;
@@ -79,6 +79,28 @@ button{
     height: 40px; */
 
     text-transform: uppercase;
+}
+
+
+
+
+
+@media (min-width: 480px) and (max-width:801px) {
+
+    .nav-up{
+
+        overflow: hidden;
+        font-size: 1;
+    }
+
+    .nav-text{
+    margin-left: 0rem;
+    font-size: 1rem;
+}
+    img.logoclass{
+        width: 100px;
+    }
+
 }
 
 

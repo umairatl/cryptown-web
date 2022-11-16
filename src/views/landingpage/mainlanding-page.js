@@ -1,20 +1,27 @@
 import React from "react";
 import Who from "./who/who";
-import HeaderLandingPage from "./landingpage";
+// import HeaderLandingPage from "./landingpage";
 import Navbar from "../../components/navbar/navbar";
 import AboutLandingPage from "./about/aboutlp";
 import Carousallp from "./carousell/carousellp";
 import Footer from "../../components/footer/footer";
+import TeamCard from "./team/team";
+import CityAnimation from "./CityAnimation/cityanimation";
+import LpAnimation from "./HeaderAnimation/headeranimationlp";
 
 
 const MainLandingPage = () => {
   return (
     <section>
       <Navbar/>
-      <HeaderLandingPage/>
-      <Who/>
+       <LpAnimation/>
+       {/* <HeaderLandingPage/> */}
+       <Who/>
       <AboutLandingPage/>
       <Carousallp/>
+      <TeamCard/>
+      <br/>
+      <CityAnimation/>
       <Footer/>
       {/* <br></br> */}
 
