@@ -1,0 +1,53 @@
+.containerfour {
+  margin: 15px auto;
+  max-width: 500px;
+}
+
+h1#typingheader {
+  font-size: 56px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  color:#b91d73;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.word {
+  display: block;
+}
+
+.word span {
+  color: #060707;
+  position: relative;
+}
+
+.word span::after {
+  content: "";
+  width: 8px;
+  height: 100%;
+  background: #060707;
+  display: block;
+  position: absolute;
+  right: -10px;
+  top: 0;
+  animation: blink 0.5s ease infinite alternate-reverse;
+}
+
+@keyframes blink {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0%;
+  }
+}
+
+.word.empty {
+  visibility: hidden;
+}
+
+.word.empty span::after {
+  visibility: visible;
+  right: 0;
+}

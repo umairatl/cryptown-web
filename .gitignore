@@ -24,6 +24,7 @@ yarn-error.log*
 
 .env
 
+src/asset/
 src/asset/Textnewsblue.gif
 src/asset/Rendernews.gif
 src/asset/RotatingCyclinder.gif
