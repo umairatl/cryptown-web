@@ -20,6 +20,7 @@ import Intro from '../../components/homeBanner/intro';
 import Footer from '../../components/footer/footer';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { useWatchListContexts } from "../../hooks/useWatchListContext";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -28,10 +29,10 @@ const Coin = ({}) => {
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
 
-  const [watchList, setWatchList] = useState("");
+  const [watchList, setWatchList] = useState({});
   const [error, setError] = useState(null);
 
-
+  const { dispatch } = useWatchListContexts()
   const { user } = useAuthContext()
 
   useEffect(() => {
@@ -68,10 +69,18 @@ const Coin = ({}) => {
   };
 
 
-  const addToWatchlist = async (cryptoId) => {
+  const addToWatchlist = async (cryptoId, coinName, image_url) => {
+
+    if (!user) {
+      setError("Please log in to use this feature")
+      return 
+    }
+
     const response = await axios.post('api/favourite/favourite-add',
     {
-        'cryptoId': cryptoId
+      "cryptoId": cryptoId,
+      "coinName": coinName,
+      "image_url": image_url
     },
     {
         headers: {
@@ -79,22 +88,22 @@ const Coin = ({}) => {
             'Authorization': `Bearer ${user}`,
         }
     })
-    
+
     const json = await response.data
 
     if (response.status === 200){
-        setWatchList(json)
-        // console.log(`${cryptoId} successfully added to favourite`, json)
+        setWatchList((prev) => ({ ...prev, ...json }))
+        dispatch({type:"ADD_WATCHLIST", payload: json["newFavourite"]})
     }
-}
+  }
 
-  const handleWatchLists = async (cryptoId) => {
-    // e.stopPropagation()
+  const handleWatchLists = async (cryptoId, coinName, image_url) => {
+    // e.stopProawaitpagation()
     // console.log(cryptoId)
     try {
-      await addToWatchlist(cryptoId)
+      await addToWatchlist(cryptoId, coinName, image_url)
       setError(null)
-      console.log(watchList)
+      // console.log("watch list", watchList)
       alert(`${watchList["mssg"]}`)
     } catch (error) {
       console.log(error)
@@ -104,6 +113,31 @@ const Coin = ({}) => {
   }
 
   
+const handleDragStart = (e) => e.preventDefault();
+
+const items = [];
+
+const items1 = tren && tren.cryptoTrending.map((res) => 
+items.push(
+    <img src={res.image} onDragStart={handleDragStart} role="presentation" />,
+  ));
+
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 }
+  ];
+
+  // tren && tren.cryptoTrending.map ((res)=> <div>
+  //     <img src={res.image} />
+  //     <button className="legend" onClick={() => {
+  //   navigation(`/coinDetail/${res.cryptoId}`);
+  // }}>{res.symbol}</button>
+  // </div>)
+
+// 
   
   const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
       <img src={res.image} />
@@ -145,7 +179,7 @@ const Coin = ({}) => {
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
-              <TableCell>Add to Watchlist</TableCell>
+              {user && <TableCell>Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
 
@@ -167,10 +201,10 @@ const Coin = ({}) => {
                         {data.name}
                         </TableCell>
                     <TableCell>${data.current_price}</TableCell>
-                    
-
                     <TableCell>{data.market_cap} </TableCell>
-                    {user && <button onClick={e => {e.stopPropagation(); handleWatchLists(data.cryptoId)}}>{data.cryptoId}</button>}
+                    {user && <TableCell>
+                                <button onClick={async (e) => {e.stopPropagation(); await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
+                             </TableCell>}
                   {/* </Link> */}
                 </TableRow>
                 )

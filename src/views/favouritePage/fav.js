@@ -11,11 +11,14 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { useWatchListContexts } from '../../hooks/useWatchListContext';
 
 
 const FavPage = () => {
-    let [watchLists, setWatchLists] = useState([])
+    const { watchLists, dispatch } = useWatchListContexts()
     const { user } = useAuthContext()
+
+    // let [watchLists, setWatchLists] = useState([])
 
     useEffect(() => {
     
@@ -27,15 +30,19 @@ const FavPage = () => {
             }
         })
           const json = await response.data;
-    
+
           if (response.status === 200) {
-            setWatchLists(json.favourites);
+            // setWatchLists(json.favourites);
+            dispatch({type:"SET_WATCHLIST", payload: json.favourites})
+
           }
         };
-        fetchWatchLists();
-      }, []);
+
+        if (user) {
+            fetchWatchLists();
+        }
+      }, [dispatch, user]);
     
-    console.log(watchLists)
     return ( 
         <div className='test'>
             <Navbar />
@@ -44,15 +51,15 @@ const FavPage = () => {
                 <Table aria-label="simple table" stickyHeader>
                     <TableHead>
                         <TableRow>
-                        <TableCell>Ranking</TableCell>
                         <TableCell>Image</TableCell>
                         <TableCell>Name</TableCell>
+                        <TableCell>ID</TableCell>
                         <TableCell>Remove from Watchlist</TableCell>
                         </TableRow>
                     </TableHead>
 
                     <TableBody>
-                        {watchLists && watchLists.map(watchList => <WatchList watchlists={watchList}/>)}
+                        {watchLists && watchLists.map(watchList => <WatchList key={watchList["favid"]} watchlists={watchList}/>)}
                     </TableBody>
                 </Table>    
             </TableContainer>
