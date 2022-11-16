@@ -32,7 +32,6 @@ const FavPage = () => {
           const json = await response.data;
 
           if (response.status === 200) {
-            // setWatchLists(json.favourites);
             dispatch({type:"SET_WATCHLIST", payload: json.favourites})
 
           }

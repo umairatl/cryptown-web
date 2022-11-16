@@ -3,18 +3,14 @@ import axios from "../../components/axios/axios";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Navbar from "../../components/navbar/navbar";
 import "../forumPage/forum.css";
+import ReplyForum from "../../components/replyForum/replyForum";
 
 const ForumPage = () => {
 const [postList, setPostList] = useState(null);
-const [error, setError] = useState("");
 const { user } = useAuthContext();
 const [list, setList] = useState(null);
 const [newPost, setNewPost] = useState('');
-const [isEnable, setIsEnable] = useState(false);
-
-var date = new Date();
-
-console.log(date)
+const [replyId, setReplyId] = useState();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -30,7 +26,8 @@ console.log(date)
         const objKeyArr = Object.keys(json["postsObj"]).map(
           (objKey) => json["postsObj"][objKey]
         );
-        console.log(objKeyArr);
+        console.log(objKeyArr.replies)
+        // console.log(Object.keys(objKeyArr.replies), "test");
         setList(objKeyArr);
       }
     };
@@ -58,7 +55,8 @@ console.log(date)
       alert("What is happening");
       window.location = "/forum";
     }
-  };
+}
+
 
   return (
     <div className="forum">
@@ -69,14 +67,21 @@ console.log(date)
         <input type ='text' placeholder='Post your thought' value={newPost} onChange={(e) => setNewPost(e.target.value)}/><br></br>
       <button disabled={!newPost} >Post</button>
       </form>
-
         <h1>FORUM FEED</h1>
         {list &&
           list.map((row) => (
+            <div className="list-forum">
             <div className="post-box">
               <p>{row.email}</p>
               <p>{row.post}</p>
+             <ReplyForum key={row.postid}/>
             </div>
+            {/* { Object.keys(row.replies).foreach((reply) => { 
+            <div className="list-reply">
+              <p>{reply.subpostid}</p>
+              </div>
+            })} */}
+          </div>
           ))}
       </div>
     </div>
