@@ -31,10 +31,8 @@ const NewsPage = () => {
           {/* <HeaderHero /> */}
         <h1>NEWS</h1>
         <div className='grid-container-news'>
-          {news && news.news.map((row => (
-
-     
-            <div className='grid-item-news'>
+          {news && news.news.map((row, index) => (
+            <div key={index} className='grid-item-news'>
         <Card sx={{ maxWidth: 345 }}> 
       <CardMedia
         component="img"
@@ -54,7 +52,7 @@ const NewsPage = () => {
       </CardActions>
     </Card>
   </div>
-  )))} 
+  ))} 
 </div>
 </div>
 
