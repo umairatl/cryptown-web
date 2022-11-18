@@ -62,7 +62,7 @@ table{
     line-height: 35px;
     text-align: left;
     margin: 6% auto;
-    width: 65%;
+    width: 70%;
 }
 
 table td{
@@ -96,7 +96,6 @@ table td{
 
 .chart-col{
 margin: auto;
-height: 1000px;
 }
 
 .wrap-out-2{
@@ -114,7 +113,7 @@ height: 1000px;
 }
 
 .ex-h1{
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
 }
 
