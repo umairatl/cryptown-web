@@ -135,7 +135,11 @@ filter: blur(5px);
 
 @media screen and (max-width: 800px) {
     .content {
+<<<<<<< HEAD
         width: 50vw;
+=======
+        width: 40vw;
+>>>>>>> 9e51a8c6e1a5c850774038d69d3a13cef671bc24
     }
 }
 
