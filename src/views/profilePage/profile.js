@@ -17,17 +17,26 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { useForm } from "antd/es/form/Form";
 import ProgressBar from "../../components/progressBar/proressBar";
+import { Link } from 'react-router-dom';
+import { useProfileContext } from "../../hooks/useProfileContext";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Profile = () => {
-  const { user } = useAuthContext();
   const { logout } = useLogout();
-  const [data, setData] = useState();
+  // const [data, setData] = useState();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [isShow, setShow] = useState(false);
   const [open, setOpen] = React.useState(false);
   var { handleSubmit } = useForm();
+  
+  const navigate = useNavigate()
+
+  const { user } = useAuthContext();
+  const { profile, dispatch } = useProfileContext()
 
   //   fetch user data
   useEffect(() => {
@@ -40,12 +49,17 @@ const Profile = () => {
 
       const json = await response.data;
 
+      console.log(json)
       if (response.status === 200) {
-        setData(json);
+        // setData(json);
         setUsername(json.username);
+        dispatch({ type: "SET_PROFILE", payload: {email: json["email"], username: json["username"]} })
       }
     };
-    fetchUserProfile();
+
+    if (user) {
+      fetchUserProfile();
+    }
   }, []);
 
   // update user data
@@ -70,7 +84,9 @@ const Profile = () => {
 
     if (response.status === 200) {
       alert("Profile Updated Successfully");
-      window.location = "/market";
+      dispatch({ type: "SET_PROFILE", payload: {email: json["email"], username: json["username"]} })
+      navigate("/market")
+      // window.location = "/market";
     }
   };
 
@@ -96,7 +112,7 @@ const Profile = () => {
   return (
     <div className="profile">
       <Navbar />
-      {data ? (
+      {profile ? (
         <div className="test">
           <div>
             {/* <h1>PROFILE PAGE</h1> */}
@@ -105,8 +121,13 @@ const Profile = () => {
                 <div className="overlay">
                     <h1>PROFILE</h1>
                   <h1>
-                    <FaUserCircle /> {data?.username}
+                    <FaUserCircle /> {profile?.username}
                   </h1>
+                 <h1>
+                    <Link to="/profile/userPosts" className="links">
+                      Posts
+                    </Link>
+                  </h1> 
                   {/* <h1>{data?.username}</h1> */}
                 </div>
               </div>
@@ -117,7 +138,7 @@ const Profile = () => {
                   className="login"
                 >
                   <h2>Email:</h2>
-                  <p>{data?.email}</p>
+                  <p>{profile?.email}</p>
                   <br></br>
 
                   <h2>Username:</h2>

@@ -46,18 +46,13 @@ const [isReply, setIsReply] = useState(false);
 
     return ( 
     <div>
-              <button onClick={updateReply}>Reply</button>
-
-{isReply ? 
+      <button onClick={updateReply}>Reply</button>
+      {isReply ? 
         <form className='login' onSubmit={handleSubmitReply(postId)}>
         <input type ='text' placeholder='Post your thought' value={replyPost} onChange={(e) => setReplyPost(e.target.value)}/><br></br>
         <button >Post</button>
         </form>
-     : null}
-
-
-
-
+        : null}
     </div> );
 }
  

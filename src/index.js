@@ -7,6 +7,8 @@ import "react-alice-carousel/lib/scss/alice-carousel.scss";
 import { AuthContextProvider } from "./context/AuthContext";
 import { WatchListContextsProvider } from "./context/WatchListContext";
 import { ForumContextProvider } from "./context/ForumContext";
+import { UserPostsProvider } from "./context/UserPostContext";
+import { ProfileContextProvider } from "./context/ProfileContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -15,7 +17,11 @@ root.render(
     <AuthContextProvider>
       <WatchListContextsProvider>
         <ForumContextProvider>
-        <App />
+          <UserPostsProvider>
+            <ProfileContextProvider>
+              <App />
+            </ProfileContextProvider>
+          </UserPostsProvider>
         </ForumContextProvider>
       </WatchListContextsProvider>
     </AuthContextProvider>

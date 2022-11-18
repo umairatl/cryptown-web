@@ -9,6 +9,7 @@ import Forum from './views/forumPage/forum';
 import NewsPage from './views/news/news';
 import Profile from './views/profilePage/profile';
 import CoinDetail from './views/coinDetail/coinDetail';
+import UserPosts from './views/profilePage/userPostsPage/userPosts';
 import Login from './views/loginPage/login';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
@@ -38,13 +39,15 @@ function App() {
             </Route>
             <Route path="/news" element = { <NewsPage />}>
             </Route>
-            <Route path="/profile" element = {user ? <Profile /> : <Navigate to="/login?redirect=/profile" />}>
+            <Route exact path="/profile" element = {user ? <Profile /> : <Navigate to="/login?redirect=/profile" />}>
             </Route>
             {/* <Route path="/signup" element = { !user ? <Signup /> :  <RedirectBack/>}>
             </Route> */}
             <Route path="/login" element = { !user ? <AuthLayout /> : <RedirectBack/>}>
             </Route>
             <Route path="/watchlist" element = { user ? <FavPage /> : <Navigate to="/login?redirect=/watchlist" />}>
+            </Route>
+            <Route exact path="/profile/userPosts" element = { user ? <UserPosts /> : <Navigate to="/login?redirect=/profile/userPosts" />}>
             </Route>
             <Route path='*' element={<NotFound />}/>
           </Routes>
