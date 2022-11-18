@@ -14,6 +14,7 @@ const Navbar = () => {
           <nav className="nav-up">
           <ul>
          <Link to ='/market' className="nav-text"> 
+         {/* <img className='logoclass' src = { logo } width='60%' /> */}
          <img src = { logo } width='60%'/>
           </Link>
          </ul>
@@ -40,7 +41,7 @@ const Navbar = () => {
 
         <ul className="nav-right">
             <Link to ='/market' className="nav-text">  Market </Link>
-            <Link to ='/forum' className="nav-text">  Forum </Link>
+            <Link to ='/forum' className="nav-text">  Forum   </Link>
             <Link to = '/news' className="nav-text">  News </Link>
             <Link to = '/appList' className="nav-text"> Exchange </Link>
             <Link to = '/login' className="nav-text"> Login </Link>

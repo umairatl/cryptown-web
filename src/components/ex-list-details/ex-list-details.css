@@ -1,0 +1,27 @@
+
+.exchange-list-col{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    width: 70%;
+    margin: auto;
+}
+
+.col{
+    display: inline-block;
+    border-radius: 40px;
+    background-color: #abd8ff;
+    font-size: 2rem;
+    margin: 4% auto;
+    height: 20vh;
+    width: 30vh;
+}
+
+.title{
+    margin: auto;
+    text-align: center;
+}
+
+button{
+    color: black
+}

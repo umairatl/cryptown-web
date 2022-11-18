@@ -82,3 +82,25 @@ button{
 }
 
 
+
+
+
+@media (min-width: 480px) and (max-width:801px) {
+
+    .nav-up{
+
+        overflow: hidden;
+        font-size: 1;
+    }
+
+    .nav-text{
+    margin-left: 0rem;
+    font-size: 1rem;
+}
+    img.logoclass{
+        width: 100px;
+    }
+
+}
+
+

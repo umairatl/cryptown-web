@@ -17,7 +17,9 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 
 import Navbar from "../../components/navbar/navbar";
 import Intro from '../../components/homeBanner/intro';
-import Footer from '../../components/footer/footer';
+import Footer from '../../components/footer/footer'
+import RollingSection from "./rollingcoin";
+
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
@@ -174,6 +176,24 @@ items.push(
     <div className="main-page">
 
       <Navbar /> 
+    {/* //   <div className="Carousel">
+    //   <Carousel autoPlay interval="3000" axis="horizontal" infiniteLoop centerMode autoFocus stopOnHover>
+    //     {trends}
+                
+    //   </Carousel>
+    //   </div>
+    // <br/>
+    // <br/>
+    // <br/>
+    // <RollingSection/>
+    // <br/>
+    // <br/>
+    // <br/>
+    // <br/>  
+    // <div className="coin-app">
+    //   <div className="coinsearchFilter-search">
+    //     <h3 className="headercointable">Market<span id="colortext6"> Trend</span> </h3>
+    //     <h1 className="coin-text">Search</h1> */}
       
       {/* first wrapper*/}
       <div className="carousel-col">

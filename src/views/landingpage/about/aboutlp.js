@@ -7,7 +7,7 @@ export default function AboutLandingPage() {
 
 <section class="about" id="about">
 
-    <h1 class="headingabout"> about the app </h1>
+    {/* <h1 class="headingabout"> about the app </h1> */}
 
     <div class="column">
 
@@ -15,10 +15,10 @@ export default function AboutLandingPage() {
         </div>
 
         <div class="contentabout">
-            <h3>Easy And Perfect Solution <span id="colortext">For Your Business App</span></h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit aperiam iure dolor hic aperiam.<br/> 
-            Nulla placeat deserunt saepe repudiandae veniam soluta minima dolor hic  iure.  <br/> 
-            Nulla placeat deserunt saepe repudiandae veniam soluta minima </p>
+            <h3 className="headeraboutus">About <span id="colortext"> Cryptown</span></h3>
+            <p id="lpparagraph">Launched in 2018, Cryptown provides comprehensive and details about cryptocurrency<br/>
+            With a core focus on sharing knowledge about cryptocurrency details and platforms<br/> 
+            Experience the power of cryptocurrency today and discover more about crypto.</p>
            
         </div>
 
@@ -30,3 +30,4 @@ export default function AboutLandingPage() {
 
 );
 };
+
