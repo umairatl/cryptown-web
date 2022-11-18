@@ -143,11 +143,14 @@ button:hover{
 }
 
 
+ /* Mobile  */
+@media (min-width: 768px) and (max-width:1008px) {
 
 
+}
 
-
-@media (min-width: 641px) and (max-width:1007px) {
+ /* Tablet  */
+@media (min-width: 768px) and (max-width:1008px) {
 
 button#lpheaderbutton {
     height: 39px;
