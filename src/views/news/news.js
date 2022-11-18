@@ -9,11 +9,8 @@ import AmbassadorSection from '../news/ambassador'
 import NewsGif from './gifheader';
 import SliderSectionNews from '../news/sliderpartner';
 import Footer from '../../components/footer/footer';
-=======
 import HeaderHero from "../news/heroimage";
-import Navbar from '../../components/navbar/navbar'
 
->>>>>>> 9e51a8c6e1a5c850774038d69d3a13cef671bc24
 
 const NewsPage = () => {
   var [news, setNewsList] = useState(null);
@@ -34,19 +31,12 @@ const NewsPage = () => {
   
     return ( 
         
-<<<<<<< HEAD
       <div className='news-page'>
           <Navbar />
           <NewsGif/>
           <SliderSectionNews/>
           
         <h3 className="headernews">News<span id="colortext5"> Feed</span></h3>
-=======
-        <div className='news-page'>
-          <Navbar />
-          {/* <HeaderHero /> */}
-        <h1>NEWS</h1>
->>>>>>> 9e51a8c6e1a5c850774038d69d3a13cef671bc24
         <div className='grid-container-news'>
           {news && news.news.map((row => (
 
