@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 import { AuthContextProvider } from "./context/AuthContext";
 import { WatchListContextsProvider } from "./context/WatchListContext";
+import { ForumContextProvider } from "./context/ForumContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <AuthContextProvider>
       <WatchListContextsProvider>
+        <ForumContextProvider>
         <App />
+        </ForumContextProvider>
       </WatchListContextsProvider>
     </AuthContextProvider>
   </React.StrictMode>
