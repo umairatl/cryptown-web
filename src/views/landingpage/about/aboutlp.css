@@ -16,10 +16,10 @@ span#colortext{
 
 .about{
     background:url(../../../asset/whatpng-01.png) no-repeat;
-    
     background-size: cover;
     background-position: center;
     padding-bottom: 22rem;
+    margin-top: 150px;
 }
 
 .about .column{
@@ -57,3 +57,32 @@ span#colortext{
 .about .column .contentabout .buttons a:last-child{
     margin-left: 2rem;
 }
+
+
+
+
+@media (min-width: 641px) and (max-width:1007px) {
+
+    .about{
+        background:url(../../../asset/whatpng-01.png) no-repeat;
+        background-size: cover;
+        margin: 80px 0;
+    }
+
+    .about .column .contentabout h3{
+        font-size: 3rem;
+        /* color:#666; */
+        color: #000;
+    }
+
+    p#lpparagraph{
+        font-size: 15px;
+        color: black;
+        text-align: -webkit-center;
+    }
+
+}
+
+
+
+

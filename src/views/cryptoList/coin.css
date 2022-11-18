@@ -13,15 +13,21 @@
   border-bottom: 1px solid #000000;
   width: 900px;
   text-decoration: none;
+.coin-input {
+  border-radius: 5px;
+  height: 31px;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
 }
 
-.coin {
-  display: flex;
-  align-items: center;
-  padding-right: 24px;
-  text-decoration: none;
+.crimson-text {
+  color: #1f51ff;
+}
 
-  min-width: 300px;
+.coin-text > :nth-child(1) {
+  font-weight: 200;
+  font-size: 2rem;
+  color: var(--black);
 }
 
 .coin h1 {
@@ -40,15 +46,31 @@
 .coin-symbol {
   text-transform: uppercase;
   text-decoration: none;
+.coin-text {
+  text-align: center;
 }
 
-.coin-data {
-  display: flex;
-  text-align: right;
-  justify-content: space-between;
-  text-decoration: none;
+.sectionTitle {
+  font-size: 50px;
+  text-align: center;
+}
 
-  width: 100%;
+
+img#gif1{
+  display: block;
+  max-width: 18vw;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}   
+
+
+.coin-app{
+  margin-top: 1rem;
+  padding-top: 1rem;
 }
 
 .coin-price {
@@ -69,14 +91,64 @@
 .coin-percent {
   width: 100px;
   text-decoration: none;
+.main-page{
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem !important; */
+/* } */
+
+.carousel-col{
+  width: 700px;
+  height: 500px;
+  margin: 0 auto;
 }
 
-.red {
-  color: #ff0202;
+.sec-wrap{
+  margin: 0 auto;
+  /* justify-content: center; */
 }
 
-.green {
-  color: #05a300;
+.set-coinList{
+  width: 100rem
+}
+
+.skill {
+  padding: 0 0 50px 0;
+  position: relative;
+}
+
+.skill-bx {
+  /* background: #151515; */
+  color: black;
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: -60px;
+}
+
+.skill h2 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.skill p {
+    color: black;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px 0 75px 0;
+}
+
+.skill-slider {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.skill-slider .item img {
+  width: 50%;
+  margin: 0 auto 15px auto;
 }
 
 
@@ -165,6 +237,29 @@ img#gif1{
   color: black;
   border-radius: 64px;
   text-align: center;
+} 
+
+
+
+h3.headercointable{
+    color: #000000;
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+span#colortext6{
+    color: #0000ff;
+}
+
+
+
+.coin-app{
+
+  background-image: url('/src/asset/bluepink2.png');
+  background-size: cover;
+  background-position: center;
   padding: 60px 50px;
   margin-top: -60px;
 }
@@ -198,9 +293,12 @@ img#gif1{
 }
 
 
-.container{
+/* .container{ */
+/* issue here  */
+/* .container{
     width: 50%;
     margin: auto;
     padding-bottom: 20%;
     padding-top: 10%;
 }
+} */

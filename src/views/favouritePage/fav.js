@@ -13,7 +13,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useWatchListContexts } from '../../hooks/useWatchListContext';
 
-
 const FavPage = () => {
     const { watchLists, dispatch } = useWatchListContexts()
     const { user } = useAuthContext()
@@ -31,7 +30,6 @@ const FavPage = () => {
 
           if (response.status === 200) {
             dispatch({type:"SET_WATCHLIST", payload: json.favourites})
-
           }
         };
 

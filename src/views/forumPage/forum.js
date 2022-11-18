@@ -73,12 +73,12 @@ const [replyId, setReplyId] = useState();
       </form>
         <h1>FORUM FEED</h1>
         {list &&
-          list.map((row) => (
-            <div className="list-forum">
+          list.map((row, index) => (
+            <div key={index} className="list-forum">
             <div className="post-box">
               <p>{row.email}</p>
               <p>{row.post}</p>
-              <p>{JSON.stringify(row.replies)}</p>
+              {/* <p>{JSON.stringify(row.replies)}</p> */}
              <ReplyForum key={row.postid} postId={row.postid}/>
             </div>
               {row.replies.map((reply) => <Reply reply={reply}/>)}

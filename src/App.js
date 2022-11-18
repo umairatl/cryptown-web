@@ -15,6 +15,8 @@ import { useAuthContext } from './hooks/useAuthContext';
 import NotFound from './components/notFound/notFound';
 import AuthLayout from './components/authLayout/authLayout';
 import MainLandingPage from './views/landingpage/mainlanding-page'
+import ForumPage from './views/forumPage/forum';
+
 import RedirectBack from './components/utils/redirectBack';
 
 function App() {
