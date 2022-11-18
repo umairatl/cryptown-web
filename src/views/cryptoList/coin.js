@@ -34,7 +34,7 @@ const Coin = ({}) => {
   const [watchList, setWatchList] = useState({});
   const [error, setError] = useState(null);
 
-  const { watchList: watchListContext, dispatch } = useWatchListContexts()
+  const { watchLists: watchListContext, dispatch } = useWatchListContexts()
   const { user } = useAuthContext()
 
   useEffect(() => {
@@ -84,8 +84,8 @@ const Coin = ({}) => {
     // console.log(watchListContext)
   }, []);
 
-  const cryptoFilter = () => {
-    return crypto?.cryptoList.filter(
+  const cryptoFilter = (cryptoList) => {
+    return cryptoList.filter(
       (f) =>
         f.name.toLowerCase().includes(search) ||
         f.symbol.toLowerCase().includes(search) ||
@@ -228,8 +228,8 @@ items.push(
            </TableHead>
 
         <TableBody>
-        {crypto &&
-            cryptoFilter()
+        {  crypto && search === ''?
+            crypto.cryptoList
             .slice((page - 1) * 10, (page - 1) * 10 + 10)
             .map((data) => {
               // const marketCap = data.market_cap_rank > 0;
@@ -253,13 +253,38 @@ items.push(
                 </TableRow>
                 )
             }
-            )}
+            )
+
+            :
+            crypto && cryptoFilter(crypto.cryptoList).map((crypto) => {
+                return(
+                  <TableRow key={crypto.name} style={{cursor:'pointer'}} onClick={() => {
+                    navigation(`/coinDetail/${crypto.cryptoId}`);
+                  }}>
+                      <TableCell>{crypto.market_cap_rank}</TableCell>
+                        <TableCell>
+                          <img src={crypto.image} width='40px'></img>
+                        </TableCell>
+                      <TableCell>
+                          {crypto.name}
+                          </TableCell>
+                      <TableCell>${crypto.current_price}</TableCell>
+                      <TableCell>{crypto.market_cap} </TableCell>
+                      {user && <TableCell>
+                                  <button onClick={async (e) => {e.stopPropagation(); await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>{crypto.cryptoId}</button>
+                               </TableCell>}
+                    {/* </Link> */}
+                  </TableRow>
+                )
+              })
+            }
         </TableBody>
       </Table>
     </TableContainer>
 
       <Pagination
-                count={(cryptoFilter()?.length / 10).toFixed(0)}
+                // count={(cryptoFilter()?.length / 10).toFixed(0)}
+                count={(crypto?.cryptoList.length / 10).toFixed(0)}
                 style={{
                   padding: 20,
                   width: "100%",
