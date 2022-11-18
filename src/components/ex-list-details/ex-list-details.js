@@ -11,13 +11,14 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(name, trend_url) {
-  return { name, trend_url};
+function createData(name, trade_url) {
+  return { name, trade_url};
 }
 
 const Exchange_Market = ({exchange}) => {
   const [data, setData] = useState([]);
   var [rows] = []
+  console.log(exchange, "exchange")
   
   function createData(name) {
     return { name };
@@ -26,7 +27,7 @@ const Exchange_Market = ({exchange}) => {
     useEffect(() => {
       exchange && exchange.forEach(res =>
         rows.push(
-            createData(res.name, res.trend_url))
+            createData(res.name, res.trade_url))
         ) 
         console.log(exchange, "243")
     }, []);
@@ -35,11 +36,11 @@ const Exchange_Market = ({exchange}) => {
     <div className="exchange-list-col">
 
 <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ maxWidth: 600 }} size="large">
         <TableHead>
           <TableRow>
-            <TableCell>Exchange Name</TableCell>
-            <TableCell align="right">Calories</TableCell>
+            <TableCell><b>Exchange Name</b></TableCell>
+            <TableCell align="right"><b>Visit Website</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -51,8 +52,9 @@ const Exchange_Market = ({exchange}) => {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.trend_url}</TableCell>
+              <TableCell align="right"><button  className="btn-ex-list" onClick = {() => {
+                 window.open(row.trade_url, '_blank');
+                }}>Website</button></TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -72,4 +74,4 @@ const Exchange_Market = ({exchange}) => {
     </div> );
 }
  
-export default Exchange_Market;
+export default (Exchange_Market);
