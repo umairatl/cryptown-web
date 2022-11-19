@@ -6,13 +6,19 @@ import '../HeaderAnimation/headeranimation.css';
 
 
 export default function LpAnimation() {
-  React.useEffect(()=>{
-    let e=document.getElementById("myVideo");
-    document.body.addEventListener("click",function a(){
-      document.body.removeEventListener("click",a);
-      e.play();
-    })
-  },[])
+  // React.useEffect(()=>{
+  //   let e=document.getElementById("myVideo");
+  //   document.body.addEventListener("click",function a(){
+  //     document.body.removeEventListener("click",a);
+  //     e.play();
+  //   })
+  // },[])
+
+
+
+
+
+
   // const [is_mounted, setMounted] = React.useState(false)
   //   const video_ref = React.useRef();
 
@@ -54,9 +60,9 @@ export default function LpAnimation() {
     // </div>
     // </div>
     <div className="jimvideo">
-    <video autoplay muted loop id="myVideo">
+    <video autoPlay loop muted id="myVideo">
       
-      <source src={videoanimation} type="video/mp4"/>
+      <source type="video/mp4" src={videoanimation} />
    
       Your browser does not support HTML5 video.
     </video>

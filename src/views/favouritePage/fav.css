@@ -12,3 +12,24 @@ body {
     bottom:0px;
     left:0px;
   } */
+
+.test{
+  margin: 100px 100px;
+}
+
+h3.textwlheader{
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+span#colortextsix{
+    color: #0000ff;
+}
+
+
+.shadoweffect{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+
+}
