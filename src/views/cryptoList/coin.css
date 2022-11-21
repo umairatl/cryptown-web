@@ -1,166 +1,24 @@
-/* .coin-container {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.coin-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  height: 80px;
-  border-bottom: 1px solid #000000;
-  width: 900px;
-  text-decoration: none;
-.coin-input {
-  border-radius: 5px;
-  height: 31px;
-  padding: 2px 23px 2px 30px;
-  outline: 0;
-}
-
-.crimson-text {
-  color: #1f51ff;
-}
-
-.coin-text > :nth-child(1) {
-  font-weight: 200;
-  font-size: 2rem;
-  color: var(--black);
-}
-
-.coin h1 {
-  font-size: 16px;
-  width: 150px;
-  text-decoration: none;
-}
-
-.coin img {
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
-  text-decoration: none;
-}
-
-.coin-symbol {
-  text-transform: uppercase;
-  text-decoration: none;
-.coin-text {
-  text-align: center;
-}
-
-.sectionTitle {
-  font-size: 50px;
-  text-align: center;
-}
-
-
-img#gif1{
-  display: block;
-  max-width: 18vw;
-}
-
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}   
-
-
-.coin-app{
-  margin-top: 1rem;
-  padding-top: 1rem;
-}
-
-.coin-price {
-  width: 110px;
-  text-decoration: none;
-}
-
-.coin-volume {
-  width: 155px;
-  text-decoration: none;
-}
-
-.coin-marketcap {
-  width: 230px;
-  text-decoration: none;
-}
-
-.coin-percent {
-  width: 100px;
-  text-decoration: none;
-.main-page{
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4rem !important; */
-/* } */
-
-.carousel-col{
-  width: 700px;
-  height: 500px;
-  margin: 0 auto;
-}
-
 .sec-wrap{
-  margin: 0 auto;
-  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  /* background: #14578e; */
 }
 
-.set-coinList{
-  width: 100rem
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root{
+  background: #dee6fa !important;
+  overflow-x: visible !important;
 }
 
-.skill {
-  padding: 0 0 50px 0;
-  position: relative;
+.css-y8ay40-MuiTableCell-root{
+background: #14578e !important;
+color: white !important;
+height: 2rem !important;
+font-size: 1.2rem !important;
+/* text-transform: uppercase; */
 }
-
-.skill-bx {
-  /* background: #151515; */
-  color: black;
-  border-radius: 64px;
-  text-align: center;
-  padding: 60px 50px;
-  margin-top: -60px;
-}
-
-.skill h2 {
-    font-size: 45px;
-    font-weight: 700;
-}
-
-.skill p {
-    color: black;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    margin: 14px 0 75px 0;
-}
-
-.skill-slider {
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-}
-
-.skill-slider .item img {
-  width: 50%;
-  margin: 0 auto 15px auto;
-}
-
-
-
-/* .search-col { */
-  /* border: 1px solid grey;
-  border-radius: 5px;
-  height: 20px;
-  width: 100%; */
-  /* width: 3rem;   */
-  /* text-align: center; */
-/* } */
 
 .coin-input {
   border-radius: 5px;
@@ -206,12 +64,6 @@ img#gif1{
   padding-top: 1rem;
 }
 
-.main-page{
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4rem !important; */
-}
 
 .carousel-col{
   width: 700px;
@@ -227,18 +79,6 @@ img#gif1{
 .set-coinList{
   width: 100rem
 }
-
-.skill {
-  padding: 0 0 50px 0;
-  position: relative;
-}
-.skill-bx {
-  /* background: #151515; */
-  color: black;
-  border-radius: 64px;
-  text-align: center;
-} 
-
 
 
 h3.headercointable{
@@ -263,26 +103,6 @@ span#colortext6{
   padding: 60px 50px;
   margin-top: -60px;
 }
-.skill h2 {
-    font-size: 45px;
-    font-weight: 700;
-}
-.skill p {
-    color: black;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    margin: 14px 0 75px 0;
-}
-.skill-slider {
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-}
-.skill-slider .item img {
-  width: 50%;
-  margin: 0 auto 15px auto;
-}
 
 .background-image-left {
   top: 28%;
@@ -292,13 +112,26 @@ span#colortext6{
   z-index: -4;
 }
 
-
-/* .container{ */
-/* issue here  */
-/* .container{
-    width: 50%;
-    margin: auto;
-    padding-bottom: 20%;
-    padding-top: 10%;
+.btn-coin{
+  padding: 10px 20px;
+  color: white;
+  background: #14578e;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  /* border: 1px solid #8f7cec; */
+  margin: auto;
+  border-radius: 5px;
+  width: 58%;
 }
-} */
+
+.btn-coin:hover{
+  background: #8f7cec;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #8F7CEC, 0 0 25px #8f7cec, 0 0 50px #8f7cec, 0 0 100px #8f7cec;
+
+}

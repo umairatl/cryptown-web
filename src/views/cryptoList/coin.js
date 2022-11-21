@@ -13,16 +13,14 @@ import { useNavigate } from "react-router-dom";
 import { Pagination } from '@mui/material';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useAuthContext } from '../../hooks/useAuthContext';
-
-
 import Navbar from "../../components/navbar/navbar";
 import Intro from '../../components/homeBanner/intro';
 import Footer from '../../components/footer/footer'
 import RollingSection from "./rollingcoin";
-
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
+// import { FaStar } from "react-icons/fa";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -81,7 +79,6 @@ const Coin = ({}) => {
     };
     fetchCrypto();
     fetchCryptoTren();
-    // console.log(watchListContext)
   }, []);
 
   const cryptoFilter = (cryptoList) => {
@@ -92,7 +89,6 @@ const Coin = ({}) => {
         f.cryptoId.toLowerCase().includes(search)
     );
   };
-
 
   const addToWatchlist = async (cryptoId, coinName, image_url) => {
 
@@ -148,23 +144,6 @@ items.push(
     <img src={res.image} onDragStart={handleDragStart} role="presentation" />,
   ));
 
-
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 }
-  ];
-
-  // tren && tren.cryptoTrending.map ((res)=> <div>
-  //     <img src={res.image} />
-  //     <button className="legend" onClick={() => {
-  //   navigation(`/coinDetail/${res.cryptoId}`);
-  // }}>{res.symbol}</button>
-  // </div>)
-
-// 
-  
   const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
       <img src={res.image} />
       <button className="legend" onClick={() => {
@@ -174,33 +153,7 @@ items.push(
 
   return (
     <div className="main-page">
-
       <Navbar /> 
-    {/* //   <div className="Carousel">
-    //   <Carousel autoPlay interval="3000" axis="horizontal" infiniteLoop centerMode autoFocus stopOnHover>
-    //     {trends}
-                
-    //   </Carousel>
-    //   </div>
-    // <br/>
-    // <br/>
-    // <br/>
-    // <RollingSection/>
-    // <br/>
-    // <br/>
-    // <br/>
-    // <br/>  
-    // <div className="coin-app">
-    //   <div className="coinsearchFilter-search">
-    //     <h3 className="headercointable">Market<span id="colortext6"> Trend</span> </h3>
-    //     <h1 className="coin-text">Search</h1> */}
-      
-      {/* first wrapper*/}
-      <div className="carousel-col">
-      {/* <AliceCarousel mouseTracking items={items} breakPoints={breakPoints}/> */}
-
-    </div>
-
       {/* second wrapper */}
       <div className="sec-wrap">
         <div className="search-col">
@@ -247,9 +200,9 @@ items.push(
                     <TableCell>${data.current_price}</TableCell>
                     <TableCell>{data.market_cap} </TableCell>
                     {user && <TableCell>
-                                <button onClick={async (e) => {e.stopPropagation(); await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
+                      <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
+                        await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
                              </TableCell>}
-                  {/* </Link> */}
                 </TableRow>
                 )
             }
@@ -271,8 +224,9 @@ items.push(
                       <TableCell>${crypto.current_price}</TableCell>
                       <TableCell>{crypto.market_cap} </TableCell>
                       {user && <TableCell>
-                                  <button onClick={async (e) => {e.stopPropagation(); await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>{crypto.cryptoId}</button>
-                               </TableCell>}
+                        <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
+                          await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>{crypto.cryptoId}</button>
+                      </TableCell>}
                     {/* </Link> */}
                   </TableRow>
                 )
@@ -283,7 +237,6 @@ items.push(
     </TableContainer>
 
       <Pagination
-                // count={(cryptoFilter()?.length / 10).toFixed(0)}
                 count={(crypto?.cryptoList.length / 10).toFixed(0)}
                 style={{
                   padding: 20,
@@ -296,9 +249,12 @@ items.push(
                   window.scroll(0, 450);
                 }}
               />
-        </div>
-        </div>
       <Intro />
+        </div>
+
+        </div>
+
+
       <Footer />
     </div>
   );
