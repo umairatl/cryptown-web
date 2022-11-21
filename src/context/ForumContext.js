@@ -12,9 +12,9 @@ export const forumReducer = (state, action) => {
       return {
         forumList: [action.payload, ...state.forumList],
       };
-    case "ADD_REPLY_POST":
+    case "DELETE_POST":
       return {
-        forumList: [action.payload, ...state.forumList],
+        forumList: state.forumList.filter((forumList) => forumList["postid"] !== action.payload["postid"])
       };
     default:
       return state;

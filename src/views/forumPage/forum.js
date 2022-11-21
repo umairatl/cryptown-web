@@ -5,13 +5,19 @@ import Navbar from "../../components/navbar/navbar";
 import "../forumPage/forum.css";
 import ReplyForum from "../../components/replyForum/replyForum";
 import Reply from "../../components/replies/replies";
+import { useForumContext } from '../../hooks/useForumContext';
+import { useUserPostsContext } from "../../hooks/useUserPostsContext";
+
 
 const ForumPage = () => {
 const [postList, setPostList] = useState(null);
-const { user } = useAuthContext();
-const [list, setList] = useState(null);
+// const [list, setList] = useState(null);
 const [newPost, setNewPost] = useState('');
 const [replyId, setReplyId] = useState();
+
+const { user } = useAuthContext();
+const { forumList, dispatch } = useForumContext();
+const { postLists, dispatch: userPostDispatch } = useUserPostsContext()
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -30,13 +36,20 @@ const [replyId, setReplyId] = useState();
         // const test = objKeyArr.map()
         // console.log(objKeyArr.map)
         // console.log(Object.keys(objKeyArr.replies), "test");
-        console.log("TEST: ",objKeyArr.map((post) => post.replies))
-        console.log("TEST_2: ",objKeyArr)
-        setList(objKeyArr);
+        // console.log("TEST: ",objKeyArr.map((post) => post.replies))
+        // console.log("TEST_2: ",objKeyArr)
+        // setList(objKeyArr);
+        if (response.status === 200 ) {
+          dispatch({ type: "SET_POSTS", payload: objKeyArr })
+        }
+
       }
     };
-    fetchPosts();
-  }, []);
+
+    if (user && forumList === null) {
+      fetchPosts();
+    }
+  }, [dispatch, user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,8 +69,12 @@ const [replyId, setReplyId] = useState();
     const json = await response.data;
 
     if (response.status === 200) {
-      // alert("What is happening");
-      window.location = "/forum";
+      dispatch({ type: "ADD_POST", payload: json["newPost"] })
+
+      if (postLists !== null) {
+        userPostDispatch({ type: "ADD_POST", payload: json["newPost"] })
+      }
+      setNewPost('')
     }
 }
 
@@ -72,8 +89,8 @@ const [replyId, setReplyId] = useState();
       <button disabled={!newPost} >Post</button>
       </form>
         <h1>FORUM FEED</h1>
-        {list &&
-          list.map((row, index) => (
+        {forumList &&
+          forumList.map((row, index) => (
             <div key={index} className="list-forum">
             <div className="post-box">
               <p>{row.email}</p>
