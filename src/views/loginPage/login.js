@@ -1,10 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import {useLogin} from '../../hooks/useLogin';
-import {Link} from "react-router-dom";
-import img from '../../asset/signup.png'
-import '../../views/loginPage/login.css'
-import logo from '../../asset/Assetlogo.png'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -19,7 +15,6 @@ const Login = () => {
 
 return (
   <div>
-  {/* <img src={logo} width='80%'/> */}
 		<h5>LOGIN</h5>
     <form className='login' onSubmit={handleSubmit}>
         <input type ='email' placeholder='Enter your email' onChange={(e) => setEmail(e.target.value)} value={email}/><br></br>
@@ -29,8 +24,6 @@ return (
       <p>{status}</p>
       </form>
     </div>
-)
-
-}
+)}
 
 export default Login

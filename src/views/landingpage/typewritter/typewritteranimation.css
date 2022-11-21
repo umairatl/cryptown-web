@@ -8,7 +8,8 @@ h1#typingheader {
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
-  color: #fff;
+  color:#b91d73;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .word {

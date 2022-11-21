@@ -1,71 +1,109 @@
-// import React from "react";
-
-// import { useState } from "react";
-// import {useForumContext} from '../../hooks/useForumCOntext';
-
-// const Forum = () => {
-//   const { dispatch } = useForumContext();
-//   const [email, setEmail] = useState('');
-//   const [comments, setComments] = useState([]);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault()
-
-//     const workout = {title, load, reps}
-//     const response = await fetch('/api/workouts', {
-//       method: 'POST',
-//       body: JSON.stringify(workout),
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     })
-//     const json = await response.json()
-
-//     if (!response.ok) {
-//       setError(json.error)
-//       setEmptyFields(json.emptyFields)
-//     }
-//     if (response.ok) {
-//       setTitle('')
-//       setLoad('')
-//       setReps('')
-//       setError(null)
-//       setEmptyFields([])
-//       console.log('new forum added', json)
-//       dispatch({type: 'POST_FORUM', payload: json})
-//     }
-//   }
+import { useEffect, useState } from "react";
+import axios from "../../components/axios/axios";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Navbar from "../../components/navbar/navbar";
+import "../forumPage/forum.css";
+import ReplyForum from "../../components/replyForum/replyForum";
+import Reply from "../../components/replies/replies";
+import { useForumContext } from '../../hooks/useForumContext';
+import { useUserPostsContext } from "../../hooks/useUserPostsContext";
 
 
-//   const addComment = comment => {
-//         setEmail(userName(parseInt((Math.random() * 10) + 1)))
-//         setComments([... comments,{
-//             "post": "THIS IS A TEST MAIN POST 44444444!!!",
-//             "dateTime": "2022-11-03T05:38:12.168Z"
-//         }])
-//     }
+const ForumPage = () => {
+const [postList, setPostList] = useState(null);
+// const [list, setList] = useState(null);
+const [newPost, setNewPost] = useState('');
+const [replyId, setReplyId] = useState();
 
-//         const updateLikes = new_comment => {
-//         const index = comments.findIndex( comment => comment.id === new_comment.id )
-//         const copyComments = [...comments]
-//         copyComments[index].likes += 1;
-//         copyComments.sort((a, b) => b.likes-a.  likes)
-//         setComments(copyComments)
-//     }
+const { user } = useAuthContext();
+const { forumList, dispatch } = useForumContext();
+const { postLists, dispatch: userPostDispatch } = useUserPostsContext()
 
-//     const updatedisLikes = new_comment => {
-//         const index = comments.findIndex( comment => comment.id === new_comment.id )
-//         const copyComments = [...comments]
-//         copyComments[index].dislikes -= 1;
-//         copyComments.sort((a, b) => b.dislikes-a.dislikes)
-//         setComments(copyComments)
-//     }    
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await axios("api/post/getPosts", {
+        headers: {
+          Authorization: `Bearer ${user}`,
+        },
+      });
+      const json = await response.data;
+
+      if (response.status === 200) {
+        setPostList(json);
+        const objKeyArr = Object.keys(json["postsObj"]).map(
+          (objKey) => json["postsObj"][objKey]
+        );
+        // const test = objKeyArr.map()
+        // console.log(objKeyArr.map)
+        // console.log(Object.keys(objKeyArr.replies), "test");
+        // console.log("TEST: ",objKeyArr.map((post) => post.replies))
+        // console.log("TEST_2: ",objKeyArr)
+        // setList(objKeyArr);
+        if (response.status === 200 ) {
+          dispatch({ type: "SET_POSTS", payload: objKeyArr })
+        }
+
+      }
+    };
+
+    if (user && forumList === null) {
+      fetchPosts();
+    }
+  }, [dispatch, user]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await axios.post(
+      "api/post/addPost",
+      {
+        post: newPost ,
+        dateTime: "2022-11-03T05:38:12.168Z"
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${user}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const json = await response.data;
+
+    if (response.status === 200) {
+      dispatch({ type: "ADD_POST", payload: json["newPost"] })
+
+      if (postLists !== null) {
+        userPostDispatch({ type: "ADD_POST", payload: json["newPost"] })
+      }
+      setNewPost('')
+    }
+}
 
 
-//     return ( 
-//     <div>
+  return (
+    <div className="forum">
+      <Navbar />
+      <h1>FORUM PAGE</h1>
+      <div className="post-col">
+      <form className='login' onSubmit={handleSubmit}>
+        <input type ='text' placeholder='Post your thought' value={newPost} onChange={(e) => setNewPost(e.target.value)}/><br></br>
+      <button disabled={!newPost} >Post</button>
+      </form>
+        <h1>FORUM FEED</h1>
+        {forumList &&
+          forumList.map((row, index) => (
+            <div key={index} className="list-forum">
+            <div className="post-box">
+              <p>{row.email}</p>
+              <p>{row.post}</p>
+              {/* <p>{JSON.stringify(row.replies)}</p> */}
+             <ReplyForum key={row.postid} postId={row.postid}/>
+            </div>
+              {row.replies.map((reply) => <Reply reply={reply}/>)}
+          </div>
+          ))}
+      </div>
+    </div>
+  );
+};
 
-//     </div> );
-// }
- 
-// export default Forum;
+export default ForumPage;

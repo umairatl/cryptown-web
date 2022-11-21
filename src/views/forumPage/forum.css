@@ -1,74 +1,17 @@
-body, p {
-  margin: 0;
-  font-family: -apple-system, 'Roboto', sans-serif;
+.post-box{
+    /* width: '40px'; */
+    height: "20%";
+    background: wheat;
+    margin-bottom: 50px;
 }
-ul {
-  list-style: none;
-  padding: 0;
-}
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  width: 100%;
-}
-.app-container {
-  padding: 1.5em;
-  background-color: antiquewhite;
-  width: 60%;
-}
-.form-container {
-  background-color: rgb(252, 242, 228);
-  border-radius: 5px;
-  padding: 15px;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-}
-.post-input, .post-input:focus-visible {
-  background-color: rgb(252, 242, 228);
-  min-height: 120px;
-  border:none;
-  padding: 5px;
-}
-.post-button {
-  width: 50%;
-}
-.btn-default {
-  padding: 8px 8px;
-  border-radius: 6px;
-  border: none;
-  background-color: #0083e8;
-  color: #fff;
-  font-weight: 600;
-  margin-top: 12px;
-  cursor: pointer;
-  transition: all ease-in 0.2s;
-}
-.btn-default:hover {
-  background-color: #016dc0;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
-}
-.item-container {
-  margin-bottom: 8px;
-  border-bottom: 2px solid rgb(252, 242, 228);
-}
-.post-main {
-  font-size: 11pt;
-  color: rgb(173, 131, 72);
-}
-.post-time {
-  margin-left: 5px;
-  font-size: 8pt;
-  color: rgb(143, 143, 143);
-}
-.post-secondary {
-  margin: 8px 8px;
 
+.post-col{
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
-.errorText {
-  color: red;
-  letter-spacing: 2px;
+
+.list-forum{
+    background-color: aliceblue;
 }
