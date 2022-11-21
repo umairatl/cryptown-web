@@ -20,6 +20,7 @@ import RollingSection from "./rollingcoin";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
+import MarketingSection from "./marketing/marketingSec";
 // import { FaStar } from "react-icons/fa";
 
 const Coin = ({}) => {
@@ -253,8 +254,8 @@ items.push(
         </div>
 
         </div>
-
-
+      
+      <MarketingSection/>
       <Footer />
     </div>
   );
