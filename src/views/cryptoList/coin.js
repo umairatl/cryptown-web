@@ -20,7 +20,8 @@ import RollingSection from "./rollingcoin";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
-// import { FaStar } from "react-icons/fa";
+import Carousel_Slide from "../../components/trending_carousel/carousel_ui";
+
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -34,6 +35,7 @@ const Coin = ({}) => {
 
   const { watchLists: watchListContext, dispatch } = useWatchListContexts()
   const { user } = useAuthContext()
+
 
   useEffect(() => {
     const fetchWatchLists = async () => {
@@ -134,26 +136,31 @@ const Coin = ({}) => {
     }
   }
 
-  
 const handleDragStart = (e) => e.preventDefault();
-
 const items = [];
 
-const items1 = tren && tren.cryptoTrending.map((res) => 
-items.push(
-    <img src={res.image} onDragStart={handleDragStart} role="presentation" />,
-  ));
+const SLIDE_INFO = [];
+  const items1 = tren && tren.cryptoTrending.map((res) => {
+  const obj = {
+    img : res.image,
+    coinName : res.name,
+  }
+  SLIDE_INFO.push(obj)
+  // console.log(SLIDE_INFO, "TEST")
+});
 
-  const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
-      <img src={res.image} />
-      <button className="legend" onClick={() => {
-    navigation(`/coinDetail/${res.cryptoId}`);
-  }}>{res.symbol}</button>
-  </div>)
+  //     <button className="legend" onClick={() => {
+  //   navigation(`/coinDetail/${res.cryptoId}`);
+  // }}>{res.symbol}</button>
+  // </div>)
+
 
   return (
     <div className="main-page">
-      <Navbar /> 
+      <Navbar />
+      <Carousel_Slide list={SLIDE_INFO}/>
+
+
       {/* second wrapper */}
       <div className="sec-wrap">
         <div className="search-col">

@@ -1,0 +1,16 @@
+.carousel-col{
+    background: beige;
+    border-radius: 5px;
+    padding: 75px 50p;
+    /* margin: 0px 25px; */
+    width: 60rem;
+    box-shadow: 20px 20px 20px black;
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto;
+}
+
+svg {
+    height: 30px;
+    cursor: pointer;
+}
