@@ -22,6 +22,8 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 import Carousel_Slide from "../../components/trending_carousel/carousel_ui";
 
+import MarketingSection from "./marketing/marketingSec";
+// import { FaStar } from "react-icons/fa";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -260,8 +262,8 @@ const SLIDE_INFO = [];
         </div>
 
         </div>
-
-
+      
+      <MarketingSection/>
       <Footer />
     </div>
   );

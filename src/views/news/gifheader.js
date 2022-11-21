@@ -6,21 +6,21 @@ import '../news/gifheader.css';
 
 
 export default function NewsGif() {
-  React.useEffect(()=>{
-    let e=document.getElementById("myVideo2");
-    document.body.addEventListener("click",function a(){
-      document.body.removeEventListener("click",a);
-      e.play();
-    })
-  },[])
+  // React.useEffect(()=>{
+  //   let e=document.getElementById("myVideo2");
+  //   document.body.addEventListener("click",function a(){
+  //     document.body.removeEventListener("click",a);
+  //     e.play();
+  //   })
+  // },[])
 
 
 return (
 
   <div className="jimvideo2">
-    <video autoplay muted loop id="myVideo2">
+    <video autoPlay loop muted id="myVideo2">
       
-      <source src={videogifnews} type="video/mp4"/>
+      <source type="video/mp4" src={videogifnews} />
    
       Your browser does not support HTML5 video.
     </video>
