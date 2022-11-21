@@ -1,0 +1,140 @@
+:root{
+--gradient-1: linear-gradient(to bottom right, rgb(107,107,255),blue);
+
+--gradient-2: linear-gradient(to bottom right, rgb(80,80,255),rgb(253,119,119));
+
+--gradient-3: linear-gradient(to bottom right, rgb(255,207,145),rgb(255,111,92));
+
+--gradient-4: linear-gradient(to bottom right, #2af598, #009efd);
+
+}
+
+
+
+.marketingservices{
+    margin-top: -80px;
+    margin-bottom: 80px;
+}
+
+
+
+.marketingcontainer{
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.grid-wrapper,
+.services-content{
+    flex-basis: 50%;
+}
+
+.grid-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(auto,40%));
+    grid-gap: 2em;
+    padding: 3rem;
+    max-width: 30%;
+    justify-content: space-between;
+
+}
+
+
+.grid-box{
+    height: 200px;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.438);
+}
+
+.mobileapp{
+    background: var(--gradient-1);
+}
+
+.webdesign{
+    background: var(--gradient-2);
+}
+
+.marketing{
+    background: var(--gradient-3);
+}
+
+
+.branding{
+    background: var(--gradient-4);
+}
+
+
+.grid-box img{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    animation: scaleup 6s ease-in-out infinite;
+
+}
+
+
+.grid-box h1{
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+
+
+
+.services-content{
+
+    padding: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 6;
+    max-width: 40%;
+}
+
+.services-content h1{
+
+    font-size: 3.5rem;;
+    margin-bottom: 30px;
+}
+
+
+.services-content p{
+
+    padding-right: 6rem;
+    margin-bottom: 30px;
+
+}
+
+span#colortext13{
+     color: #0000ff;
+}
+
+
+.circle img{
+    position: absolute;
+    top: -10%;
+    left: 5%;
+    width: 760px;
+    z-index: -1;
+    animation: scaleup 6s ease-in-out infinite;
+
+}
+
+
+/* Animations */
+
+@keyframes scaleup{
+   0%{
+        transform: scale(1.2);
+   }
+   50%{
+        transform: scale(1);
+   }
+   100%{
+        transform: scale(1.2);
+   }
+}

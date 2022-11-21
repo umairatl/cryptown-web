@@ -23,6 +23,7 @@ import RollingSection from "./rollingcoin";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
+import MarketingSection from "./marketing/marketingSec";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -299,6 +300,7 @@ items.push(
         </div>
         </div>
       <Intro />
+      <MarketingSection/>
       <Footer />
     </div>
   );

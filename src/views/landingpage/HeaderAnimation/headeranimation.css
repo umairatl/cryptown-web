@@ -56,8 +56,8 @@
 .jimvideo{
 
   /* position: fixed; */
-  right: 0;
-  bottom: 0;
+  /* right: 0;
+  bottom: 0; */
   min-width: 100%; 
   min-height: 100%;
 
@@ -73,10 +73,10 @@ video#myVideo{
 
 
 button#lpheaderbutton{
-  position: relative;
+  position: absolute;
   height: 80px;
   width: 300px;
-  margin: 0 35px;
+  /* margin: 0 35px; */
   border-radius: 50px;
   border: none;
   outline: none;
@@ -88,12 +88,14 @@ button#lpheaderbutton{
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.5s;
-  top: -479px;
-  right: -1030px;
+  top: 65%;
+  right: 50%;
+  margin-right: -180px;
+  margin-top: 181px;
 }
 
 
-button#lpheaderbutton:first-child:hover{
+button#lpheaderbutton:hover{
   background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
   background-size: 400%;
 }
@@ -102,7 +104,7 @@ button#lpheaderbutton:first-child:hover{
 
 
 
-button#lpheaderbutton:first-child:before{
+button#lpheaderbutton:before{
 
 content: '';
   position: absolute;
@@ -122,7 +124,7 @@ content: '';
 
 
 
-button#lpheaderbutton:first-child:hover:before{
+button#lpheaderbutton:hover:before{
   opacity: 1;
   z-index: -1;
 }

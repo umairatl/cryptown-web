@@ -68,7 +68,7 @@ const CustomerReview = () => {
                 </div>
                 <div className="review dark">
                 <h4>An overall wonderful and rewarding experience</h4>
-                <p>“ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”</p>
+                <p>“ Thank you for the wonderful experience! I now have a job I really enjoy. ”</p>
                 </div>
             </div>
             
@@ -84,7 +84,7 @@ const CustomerReview = () => {
                 </div>
                 <div className="review">
                 <h4>Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and learning from their experiences was easy.</h4>
-                <p>“ The staff seem genuinely concerned about my progress which I find really refreshing. The program gave me the confidence necessary to be able to go out in the world and present myself as a capable junior developer. The standard is above the rest. You will get the personal attention you need from an incredible community of smart and amazing people. ”</p>
+                <p>“ The staff seem genuinely concerned about my progress which I find really refreshing. The program gave me the confidence necessary to be able to go out in the world and present myself as a capable junior developer.”</p>
                 </div>
             </div>
             </div>

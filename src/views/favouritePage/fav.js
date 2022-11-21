@@ -13,6 +13,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useWatchListContexts } from '../../hooks/useWatchListContext';
 import WatchlistHeaderSection from '../../components/watchList/watchlistheadersec/watchlistheader';
+import Footer from '../../components/footer/footer';
 
 const FavPage = () => {
     const { watchLists, dispatch } = useWatchListContexts()
@@ -40,7 +41,7 @@ const FavPage = () => {
       }, [dispatch, user]);
     
     return ( 
-            <div>
+        <div>
             <Navbar />
             <WatchlistHeaderSection/>
             <div className='test'>
@@ -61,8 +62,11 @@ const FavPage = () => {
                     </TableBody>
                 </Table>    
             </TableContainer>
+            
         </div>
+        <Footer/>
         </div>
+        
      );
 }
  

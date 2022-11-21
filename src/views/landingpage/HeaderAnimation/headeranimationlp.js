@@ -66,10 +66,8 @@ export default function LpAnimation() {
    
       Your browser does not support HTML5 video.
     </video>
-
-     <div class="buttonslp">
       <button id="lpheaderbutton">Learn More</button>
-    </div>
+    
     
     </div>
   );
