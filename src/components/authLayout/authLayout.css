@@ -631,4 +631,12 @@ label input[type="checkbox"] {
 }
 }
 
+/**/
 
+
+@media (min-width: 91rem)and  (max-width: 120rem){
+  .box-form .right button {
+    margin-left: 0.5rem;
+
+}
+}
