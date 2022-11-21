@@ -339,11 +339,9 @@ label input[type="checkbox"] {
 @media (max-width: 26.66rem){
   .box-form .right {
     padding-left: 5vw;
-    /* overflow: hidden; */
     width: 75vw;
     height: 20rem;
     padding-right: 4vw;
-    /* padding-top: 1vh; */
 }
 }
 
