@@ -1,42 +1,71 @@
-import { useEffect, useState } from "react";
-import axios from "../../components/axios/axios";
-import {  useAuthContext } from '../../hooks/useAuthContext'
-import Navbar from '../../components/navbar/navbar'
+// import React from "react";
+
+// import { useState } from "react";
+// import {useForumContext} from '../../hooks/useForumCOntext';
+
+// const Forum = () => {
+//   const { dispatch } = useForumContext();
+//   const [email, setEmail] = useState('');
+//   const [comments, setComments] = useState([]);
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault()
+
+//     const workout = {title, load, reps}
+//     const response = await fetch('/api/workouts', {
+//       method: 'POST',
+//       body: JSON.stringify(workout),
+//       headers: {
+//         'Content-Type': 'application/json'
+//       }
+//     })
+//     const json = await response.json()
+
+//     if (!response.ok) {
+//       setError(json.error)
+//       setEmptyFields(json.emptyFields)
+//     }
+//     if (response.ok) {
+//       setTitle('')
+//       setLoad('')
+//       setReps('')
+//       setError(null)
+//       setEmptyFields([])
+//       console.log('new forum added', json)
+//       dispatch({type: 'POST_FORUM', payload: json})
+//     }
+//   }
 
 
-const ForumPage = () => {
-    const [crypto, setCrypto] = useState(null);
-    const [error, setError] = useState('');
-    const {user} = useAuthContext()
+//   const addComment = comment => {
+//         setEmail(userName(parseInt((Math.random() * 10) + 1)))
+//         setComments([... comments,{
+//             "post": "THIS IS A TEST MAIN POST 44444444!!!",
+//             "dateTime": "2022-11-03T05:38:12.168Z"
+//         }])
+//     }
 
-    useEffect(() => {
-        const fetchCrypto = async () => {
-            const response = await axios('api/crypto/cryptoList')
-            const json = await response.data
-    
-            if (response.status === 200) {
-                setCrypto(json)
-            }
-        }
-        if(user){
-          fetchCrypto()
-        }
+//         const updateLikes = new_comment => {
+//         const index = comments.findIndex( comment => comment.id === new_comment.id )
+//         const copyComments = [...comments]
+//         copyComments[index].likes += 1;
+//         copyComments.sort((a, b) => b.likes-a.  likes)
+//         setComments(copyComments)
+//     }
 
-        if(!user){
-          setError('You must be logged in')
-        }
-      }, [user])
+//     const updatedisLikes = new_comment => {
+//         const index = comments.findIndex( comment => comment.id === new_comment.id )
+//         const copyComments = [...comments]
+//         copyComments[index].dislikes -= 1;
+//         copyComments.sort((a, b) => b.dislikes-a.dislikes)
+//         setComments(copyComments)
+//     }    
 
 
-  return (
-    <div className="forum">
-      <Navbar />
-      <h1>FORUM PAGE</h1>
-      <h1>{error}</h1>
-      <h2>{crypto && <div>{crypto.mssg}</div>}</h2>
-      {/* {crypto && crypto.cryptoList.map(res => <div>{res.name}</div>)} */}
-    </div>
-  );
-};
+//     return ( 
+//     <div>
 
-export default ForumPage;
+//     </div> );
+// }
+ 
+// export default Forum;

@@ -140,3 +140,11 @@ img#gif1{
   height: 500px;
   text-align: center;
 } 
+
+@media screen and (max-width: 37.5rem){
+  .Carousel {
+    width: 30rem;
+    
+  }
+  
+}

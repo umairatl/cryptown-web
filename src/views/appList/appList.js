@@ -72,7 +72,7 @@ import Navbar from '../../components/navbar/navbar';
             <TableCell>Ranking</TableCell>
             <TableCell></TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Cuntry</TableCell>
+            <TableCell>Country</TableCell>
             <TableCell>Established</TableCell>
             <TableCell align="right">Trust Score</TableCell>
             <TableCell align="right">Trade Volume 24h BTC</TableCell>
@@ -83,8 +83,13 @@ import Navbar from '../../components/navbar/navbar';
             <TableRow key={row.name} style={{cursor:'pointer'}}
             onClick = {() => {
                 //get the address bar or set the address
-                document.location = row.url
-                }}>
+                 window.open(row.url, '_blank');
+
+                // document.location = row.url;
+                // <a href={row.url} target ="_blank"></a> 
+                
+                }}>  
+
             
               {/* <TableCell component="th" scope="row">
                 {row.name}
