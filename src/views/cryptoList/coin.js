@@ -254,7 +254,8 @@ items.push(
         </div>
 
         </div>
-      <Intro />
+      
+      <MarketingSection/>
       <Footer />
     </div>
   );
