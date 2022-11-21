@@ -96,8 +96,8 @@ const Profile = () => {
   };
 
   //logout user
-  const handleClick = () => {
-    logout();
+  const handleClick = async () => {
+    await logout();
   };
 
   //dialog box
