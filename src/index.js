@@ -5,12 +5,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 import { AuthContextProvider } from "./context/AuthContext";
+import { WatchListContextsProvider } from "./context/WatchListContext";
+import { ForumContextProvider } from "./context/ForumContext";
+import { UserPostsProvider } from "./context/UserPostContext";
+import { ProfileContextProvider } from "./context/ProfileContext";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <App />
+      <WatchListContextsProvider>
+        <ForumContextProvider>
+          <UserPostsProvider>
+            <ProfileContextProvider>
+              <App />
+            </ProfileContextProvider>
+          </UserPostsProvider>
+        </ForumContextProvider>
+      </WatchListContextsProvider>
     </AuthContextProvider>
   </React.StrictMode>
 );

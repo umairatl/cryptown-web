@@ -1,0 +1,57 @@
+.exchange-list-col{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    width: 70%;
+    margin: auto;
+}
+
+.css-1ex1afd-MuiTableCell-root{
+    font-size: 1.2rem !important;
+}
+
+.css-1ygcj2i-MuiTableCell-root{
+    font-size: 1.3rem !important;
+}
+
+.css-1azl6jz-MuiTableCell-root{
+    font-size: 1.3rem !important;
+}
+
+.col{
+    display: inline-block;
+    border-radius: 40px;
+    background-color: #abd8ff;
+    font-size: 2rem;
+    margin: 4% auto;
+    height: 20vh;
+    width: 30vh;
+}
+
+.title{
+    margin: auto;
+    text-align: center;
+}
+
+.btn-ex-list{
+    padding: 10px 20px;
+    color: black;
+    background: #abd8ff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border: 1px solid #8f7cec;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.btn-ex-list:hover{
+    background: #8f7cec;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #8F7CEC, 0 0 25px #8f7cec, 0 0 50px #8f7cec, 0 0 100px #8f7cec;
+
+}

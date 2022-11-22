@@ -30,7 +30,7 @@ export const useSignup = () => {
                 const json = await response.data
         
                 if (response.status === 200) {
-                 localStorage.setItem('user', JSON.stringify(json))
+                 localStorage.setItem('user', JSON.stringify(json.userJwt))
 
                  
 
@@ -38,7 +38,7 @@ export const useSignup = () => {
                  console.log("windows 1")
                  setIsLoading(false)
                  console.log("windows 2")
-                 window.location = '/';
+                 window.location = '/market';
                  console.log("windows")
                }
            

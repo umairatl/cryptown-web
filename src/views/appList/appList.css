@@ -1,3 +1,21 @@
 .set-appList{
     margin: 100px 100px;
 }
+
+h3.exlistsecheader{
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+span#colortextnine{
+    color: #0000ff;
+}
+
+
+
+
+p#exlistparagraph{
+    text-align: center;
+}

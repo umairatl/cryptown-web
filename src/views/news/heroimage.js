@@ -1,6 +1,6 @@
 import "../news/heroimage.css";
 
-import pic from "../../asset/city1.png";
+// import pic from "../../asset/city1.png";
 export default function HeaderHero() {
   return (
   <div class="hero-setting">

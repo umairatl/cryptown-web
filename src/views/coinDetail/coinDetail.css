@@ -1,23 +1,122 @@
-.col-details{
-    margin: auto;
-    text-align: justify;
-    width: 50%;
-    margin-top: 50px;
+.top-info{
+    padding: 18px;
+    background-color: #abd8ff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
 }
 
-.con-1{
-    height: 300px;
-    width: 400px;
-    border-radius: 20px;
-    /* background: #a2bfd8; */
+.details-layout{
+    /* height: 1000px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.coin-info-col1{
+    margin-top: 5%;
+    width: 40%;
+}
+
+.coin-info-col2{
+    width: 60%;
+    margin-top: 5%;
+    /* background-color: antiquewhite; */
+
+}
+
+.wrap-out{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #abd8ff;
+    border-radius: 70px;
+    margin: auto;
+    line-height: 2px;
+}
+
+.first-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.first-row img{
+    margin: 3% 7% 0% 34%;
+
+}
+
+.first-row-2{
+    margin: auto 0;
+}
+
+.wrap-out h1{
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-top: 8%;
+}
+
+table{
+    border-collapse: collapse;
+    line-height: 35px;
+    text-align: left;
+    margin: 6% auto;
+    width: 70%;
+}
+
+table td{
+    text-align: right;
+}
+
+.title-col{
+    margin: auto;
+}
+
+.price{
+    margin: auto
+}
+
+.desc-col{
+    text-align: justify;
+    width: 80%;
+}
+
+.desc-col h1{
+    text-transform: uppercase;
+}
+
+.desc-col .para{
+    font-size: 1.3rem;
+}
+
+.desc-col .para a{
+    color:  #557897;
+}
+
+.chart-col{
+margin: auto;
+}
+
+.wrap-out-2{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #abd8ff;
+    border-radius: 70px;
+    margin: 20% auto;
+    line-height: 2px;
+}
+
+.wrap-out-2 h1{
+    margin: 15% auto 0%;
+}
+
+.ex-h1{
+    /* margin: auto; */
     text-align: center;
 }
 
-.con-2{
-    height: 60px;
-    width:400px;
-    border-radius: 20px;
-    background:  #abd8ff; 
-    color: black;
-    font-size: 1.6rem;
+.det{
+    width: 500px;
 }

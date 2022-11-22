@@ -75,7 +75,7 @@
 
 .App {
   margin: 0;
-  /* overflow: hidden; */
+  overflow: hidden; 
   color: var(--black);
 }
 
