@@ -22,7 +22,18 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 // import { FaStar } from "react-icons/fa";
 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination as pagination, Autoplay } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { create } from "@mui/material/styles/createTransitions";
+
+
 const Coin = ({}) => {
+
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [tren, setTren] = useState(null);
@@ -151,10 +162,30 @@ items.push(
   }}>{res.symbol}</button>
   </div>)
 
+  function createSlide(crypto) {
+    return (
+      <SwiperSlide key={crypto.cryptoId}>
+        <img className="img" src={crypto.image} alt="" />
+      </SwiperSlide>
+    );
+  }
+
   return (
     <div className="main-page">
       <Navbar /> 
       {/* second wrapper */}
+
+      <Swiper
+      modules={[Navigation, pagination, Autoplay]}
+      slidesPerView={2}
+      navigation
+      autoplay={{ delay: 1000, disableOnInteraction: false }}
+      pagination={{ clickable: true }}
+    >
+    
+    {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}
+    </Swiper>
+
       <div className="sec-wrap">
         <div className="search-col">
           <input
