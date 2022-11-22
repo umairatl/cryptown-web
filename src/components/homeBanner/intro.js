@@ -20,7 +20,8 @@ const Intro = () => {
           
         </div>
         <Link to="/coinDetail" smooth={true} spy={true}>
-          <button className="button i-button">Learn More</button>
+          {/* <button className="button i-button">Learn More</button> */}
+          <button id="coinheaderbutton">Learn More</button>
         </Link>
       </div>
       <div className="i-right">

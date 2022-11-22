@@ -7,6 +7,13 @@ import ReplyForum from "../../components/replyForum/replyForum";
 import Reply from "../../components/replies/replies";
 import { useForumContext } from '../../hooks/useForumContext';
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
+import ForumHeaderSection from "./forumHeader/forumhead";
+import front from "../../asset/front.jfif";
+import photocamera1 from "../../asset/photo-camera.png";
+import videocamera1 from "../../asset/video-camera.png";
+import videocamera2 from "../../asset/video-cameraTwo.png";
+import smilingface from "../../asset/smiling-face.png";
+
 
 
 const ForumPage = () => {
@@ -82,13 +89,17 @@ const { postLists, dispatch: userPostDispatch } = useUserPostsContext()
   return (
     <div className="forum">
       <Navbar />
-      <h1>FORUM PAGE</h1>
+      <ForumHeaderSection/>
+      {/* <h1>FORUM PAGE</h1> */}
+      <br/>
+      <br/>
       <div className="post-col">
       <form className='login' onSubmit={handleSubmit}>
         <input type ='text' placeholder='Post your thought' value={newPost} onChange={(e) => setNewPost(e.target.value)}/><br></br>
       <button disabled={!newPost} >Post</button>
       </form>
         <h1>FORUM FEED</h1>
+        
         {forumList &&
           forumList.map((row, index) => (
             <div key={index} className="list-forum">
@@ -107,3 +118,24 @@ const { postLists, dispatch: userPostDispatch } = useUserPostsContext()
 };
 
 export default ForumPage;
+
+
+
+
+
+
+<div class="frem">
+        <div class="logo-name">
+            <div class="logo">
+                <img src="./front.jfif" alt=""/>
+            </div>
+            <p>What do you want share</p>
+        </div>
+        <div class="text-area" contenteditable data-placeholder="Write here"></div>
+        <div class="bottom-cont">
+            <a href="#"><img src="./photo-camera.png" alt="" style="margin-right: 9px;"/>Add Photo</a>
+            <a href="#"><img src="./video-camera (1).png" alt="" style="margin-right: 9px;"/>Add Video</a>
+            <a href="#"><img src="./smiling-face.png" alt=""/></a>
+            <a href="#"><img src="./video-camera.png" alt=""/></a>
+        </div>
+</div>
