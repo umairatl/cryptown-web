@@ -20,7 +20,7 @@ const [isReply, setIsReply] = useState(false);
           {
             postId : postId,
             post: replyPost ,
-            dateTime: "2022-11-03T05:38:12.168Z"
+            dateTime: new Date().toISOString()
           },
           {
             headers: {
