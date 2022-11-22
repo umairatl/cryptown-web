@@ -127,15 +127,15 @@ export default ForumPage;
 <div class="frem">
         <div class="logo-name">
             <div class="logo">
-                <img src="./front.jfif" alt=""/>
+                <img src={front} alt=""/>
             </div>
             <p>What do you want share</p>
         </div>
         <div class="text-area" contenteditable data-placeholder="Write here"></div>
         <div class="bottom-cont">
-            <a href="#"><img src="./photo-camera.png" alt="" style="margin-right: 9px;"/>Add Photo</a>
-            <a href="#"><img src="./video-camera (1).png" alt="" style="margin-right: 9px;"/>Add Video</a>
-            <a href="#"><img src="./smiling-face.png" alt=""/></a>
-            <a href="#"><img src="./video-camera.png" alt=""/></a>
+            <a href="#"><img src={photocamera1} alt="" style="margin-right: 9px;"/>Add Photo</a>
+            <a href="#"><img src={videocamera1} alt="" style="margin-right: 9px;"/>Add Video</a>
+            <a href="#"><img src={smilingface} alt=""/></a>
+            <a href="#"><img src={videocamera2} alt=""/></a>
         </div>
 </div>

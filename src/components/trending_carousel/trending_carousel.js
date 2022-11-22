@@ -3,13 +3,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
 import './trending_carousel.css'
 import ProgressBar from "../progressBar/proressBar";
 const TrendingTable = ({trending}) => {
@@ -24,7 +18,7 @@ const TrendingTable = ({trending}) => {
 //           const obj = {
 //             img : row.img,
 //             coinName : row.coinName,
-//             symbol: row.symbol
+//           #  symbol: row.symbol
 //           }
 //           arr.push(obj)
 //           setVal(arr)
