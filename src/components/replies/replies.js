@@ -1,7 +1,9 @@
+const entities = require("entities");
+
 const Reply = ({ reply }) => {
     return ( 
         <div>
-            <h2>{reply.subpost}</h2>
+            <h2>{entities.decodeHTML(reply.subpost)}</h2>
         </div>
      );
 }

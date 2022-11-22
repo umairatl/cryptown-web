@@ -7,6 +7,7 @@ import ReplyForum from "../../components/replyForum/replyForum";
 import Reply from "../../components/replies/replies";
 import { useForumContext } from '../../hooks/useForumContext';
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
+const entities = require("entities");
 
 
 const ForumPage = () => {
@@ -94,7 +95,7 @@ const { postLists, dispatch: userPostDispatch } = useUserPostsContext()
             <div key={index} className="list-forum">
             <div className="post-box">
               <p>{row.email}</p>
-              <p>{row.post}</p>
+              <p>{entities.decodeHTML(row.post)}</p>
               {/* <p>{JSON.stringify(row.replies)}</p> */}
              <ReplyForum key={row.postid} postId={row.postid}/>
             </div>
