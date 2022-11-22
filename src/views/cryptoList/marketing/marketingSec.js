@@ -10,7 +10,7 @@ const MarketingSection = () => {
 
 
     return (
-
+        
         <section className="marketingservices">
             <div className="marketingcontainer">
                 <div className="grid-wrapper">
@@ -33,9 +33,9 @@ const MarketingSection = () => {
                         </div>
                 </div>
             <div className="services-content"> 
-            <div className="circle">
+            {/* <div className="circle">
                 <img src={cricles} alt=''/>
-            </div>
+            </div> */}
                     <h1> We Are Best <span id="colortext13"> Known For</span></h1> 
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
