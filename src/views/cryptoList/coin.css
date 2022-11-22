@@ -99,7 +99,7 @@ padding: 21px !important;
 }
 
 .main-page{
-  background: linear-gradient(135deg, #3d1d90, #550c6d, #8ac1ee, #03254c);
+  /* background: linear-gradient(135deg, #3d1d90, #550c6d, #8ac1ee, #03254c); */
 }
 
 
@@ -208,3 +208,10 @@ span#colortext6{
   border-radius: 40px;
   overflow: hidden; */
 }
+
+
+.carousel-2{
+  width: 50%;
+  margin: auto;
+}
+

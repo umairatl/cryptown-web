@@ -20,7 +20,7 @@ import RollingSection from "./rollingcoin";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
-
+import TrendingTable from '../../components/trending_carousel/trending_carousel'
 import MarketingSection from "./marketing/marketingSec";
 // import { FaStar } from "react-icons/fa";
 
@@ -31,8 +31,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { create } from "@mui/material/styles/createTransitions";
-
+import { margin } from "@mui/system";
+ 
 
 const Coin = ({}) => {
 
@@ -184,6 +184,7 @@ const formatter = new Intl.NumberFormat('en-US', {
     return (
       <SwiperSlide key={crypto.cryptoId}>
         <img className="img" src={crypto.image} alt="" />
+        <h1 style={{textAlign : 'center', marginBottom: '60px'}}>{crypto.name}</h1>
       </SwiperSlide>
     );
   }
@@ -195,17 +196,6 @@ const formatter = new Intl.NumberFormat('en-US', {
       <Intro />
 
       {/* second wrapper */}
-
-      <Swiper
-      modules={[Navigation, pagination, Autoplay]}
-      slidesPerView={2}
-      navigation
-      autoplay={{ delay: 1000, disableOnInteraction: false }}
-      pagination={{ clickable: true }}
-    >
-    
-    {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}
-    </Swiper>
 
       <div className="sec-wrap">
         <h1>Cryptocurrency Prices by Market Cap</h1>
@@ -316,7 +306,25 @@ const formatter = new Intl.NumberFormat('en-US', {
         <TrendingTable trending={SLIDE_INFO} />
       {/* <SlideShow trending= {SLIDE_INFO} /> */}
       {/* </div> */}
+
+
       </div>
+      <div className="carousel-2">
+
+      <Swiper
+      modules={[Navigation, pagination, Autoplay]}
+      slidesPerView={3}
+      spaceBetween={165}
+      navigation
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      centeredSlides={false}
+      centerInsufficientSlides={true}
+      pagination={{ clickable: true }}
+    >
+    <div className="trend-car">
+    {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}</div>
+    </Swiper>
+    </div>
 
       <MarketingSection/>
       <Footer />
