@@ -11,10 +11,17 @@ import { FaArrowLeft } from "react-icons/fa";
 import SlideShow from "../../components/carousel-slideshow/slideshow";
 import { Row } from "antd";
 import Exchange_Market from "../../components/ex-list-details/ex-list-details";
+import {useRef} from 'react';
+
 
 const CoinDetail = () => {
   const { id } = useParams();
   var [detail, setDetail] = useState(null);
+  const scollToRef = useRef();
+
+ 
+
+
 
   useEffect(() => {
     const fetchCoinDetail = async () => {
@@ -43,34 +50,65 @@ const CoinDetail = () => {
 
   return (
     <div>
+
+
       <Navbar />
       <div className="top-info">
         <Link to = '/market'><FaArrowLeft /> Back</Link>
-        <p>Crypto</p>
+      
         <p>
-          Current Price USD :{" "}
-          <span>{detail && detail.cryptoDetails.current_price_usd}</span>
+          Current Price:{" "}
+          <span>${detail && detail.cryptoDetails.current_price_usd}</span>
         </p>
         <p>
-          Markets : <span>test</span>
+          Market Cap :{""}
+          <span>${detail && detail.cryptoDetails.market_cap_usd}</span>
         </p>
         <p>
-          Markets : <span>test</span>
+          Volume : <span>${detail && detail.cryptoDetails.total_volume_usd}</span>
         </p>
       </div>
 
+      <div className="scroll_to_about">
+      <a href="#about">
+      <button onClick={() => scollToRef.current.scrollIntoView()}>
+        Learn More
+      </button>
+
+
+
+
+      </a>
+      
+    </div>
+
+
+
       {/* second */}
       <div className="details-layout">
+        
+
+                  
+          <p>Rank #{detail && detail.cryptoDetails.market_cap_rank}</p>
+          <p>{detail && detail.cryptoDetails.symbol}</p>
+
+          <div className="wrap-out-img">   
+          
+          </div>
 
 
         <div className="coin-info-col1">
+
+
+
           <div className="wrap-out">
            
             <div className="first-row">
-              <img src={detail && detail.cryptoDetails.image} width="150px" />
+              <img src={detail && detail.cryptoDetails.image} width="400px" />
+              
               <div className="first-row-2">
-              <p>Rank #{detail && detail.cryptoDetails.market_cap_rank}</p>
-              <p>{detail && detail.cryptoDetails.symbol}</p>
+              
+              
               </div>    
               </div>
             
@@ -87,12 +125,12 @@ const CoinDetail = () => {
                     <td>$ {detail && detail.cryptoDetails.market_cap_usd}</td>
                 </tr>
                 <tr>
-                    <th>24H Trading Valume</th>
-                    <td></td>
+                    <th>24H Trading Volume</th>
+                    <td>$ {detail && detail.cryptoDetails.total_volume_usd}</td>
                 </tr>
                 <tr>
                     <th>Fully Diluted Valuation</th>
-                    <td></td>
+                    <td>$ {detail && detail.cryptoDetails.fully_diluted_valuation_usd}</td>
                 </tr>
                 <tr>
                     <th>Circulating Supply</th>
@@ -119,7 +157,11 @@ const CoinDetail = () => {
        </div> */}
         {/* heree */}
         </div>
+              <div className="chart-col">
+          <CoinChart cryptoId={id} />
+          </div>
 
+<section id='about'>
         <div className="coin-info-col2">    
         <div className="desc-col">
           <h1>About {id}</h1>
@@ -134,10 +176,10 @@ const CoinDetail = () => {
           </div>
 
         </div>
+        </section>
       </div>
-      <div className="chart-col">
-          <CoinChart cryptoId={id} />
-          </div>
+      
+
             <h1 className="ex-h1"> EXCHANGE LIST</h1>
             <Exchange_Market exchange={detail && detail.cryptoDetails.exchange} />
       <Footer />
