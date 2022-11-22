@@ -1,0 +1,35 @@
+.trending-card{
+    /* width: 0rem; */
+    margin: 15px 15px 15px;
+    border-radius: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    transform:rotate(45deg);
+    /* background: red; */
+}
+
+.test{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 16px;
+    margin-right: 321px;
+    margin-left: 321px;
+    margin-bottom: 21vh;
+    flex-wrap: wrap;
+}
+
+/* .trending-card{
+
+} */
+
+.coin-name{
+    width: 3rem;
+}
+
+.css-1oqv2c0-MuiPaper-root-MuiCard-root{
+    width: 50v;
+    /* text-transform: up; */
+}
