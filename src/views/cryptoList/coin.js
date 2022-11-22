@@ -20,7 +20,6 @@ import RollingSection from "./rollingcoin";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
-import Carousel_Slide from "../../components/trending_carousel/carousel_ui";
 
 import MarketingSection from "./marketing/marketingSec";
 // import { FaStar } from "react-icons/fa";
@@ -146,33 +145,48 @@ const SLIDE_INFO = [];
   const obj = {
     img : res.image,
     coinName : res.name,
+    symbol: res.symbol
   }
   SLIDE_INFO.push(obj)
-  // console.log(SLIDE_INFO, "TEST")
 });
 
-  //     <button className="legend" onClick={() => {
-  //   navigation(`/coinDetail/${res.cryptoId}`);
-  // }}>{res.symbol}</button>
-  // </div>)
+
+
+
+// Create our number formatter.
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
+
+
+
+
+
 
 
   return (
     <div className="main-page">
       <Navbar />
-      <Carousel_Slide list={SLIDE_INFO}/>
 
+      <Intro />
 
       {/* second wrapper */}
       <div className="sec-wrap">
+        <h1>Cryptocurrency Prices by Market Cap</h1>
         <div className="search-col">
           <input
             className="coin-input"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search Coin"
+            placeholder="Search Market Coin"
           />
+           <i class="fa fa-search"></i>
         </div>
 
         <div className="set-coinList">
@@ -181,11 +195,11 @@ const SLIDE_INFO = [];
           <TableHead>
             <TableRow>
               <TableCell>Ranking</TableCell>
-              <TableCell></TableCell>
+              {/* <TableCell sx={{width: '0px'}}></TableCell> */}
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
-              {user && <TableCell>Add to Watchlist</TableCell>}
+              {user && <TableCell align="right">Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
 
@@ -199,18 +213,19 @@ const SLIDE_INFO = [];
                 <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
                   navigation(`/coinDetail/${data.cryptoId}`);
                 }}>
-                    <TableCell>{data.market_cap_rank}</TableCell>
-                      <TableCell>
-                        <img src={data.image} width='40px'></img>
-                      </TableCell>
+                    <TableCell sx={{width: '100px', textAlign: 'center'}}>{data.market_cap_rank}</TableCell>
+                      {/* <TableCell>
+                        <img src={data.image} width='45px'></img>
+                      </TableCell> */}
                     <TableCell>
-                        {data.name}
+                   <div className="name-col"> <img src={data.image} width='45px'></img> <span> {data.name} </span> </div>
                         </TableCell>
-                    <TableCell>${data.current_price}</TableCell>
-                    <TableCell>{data.market_cap} </TableCell>
-                    {user && <TableCell>
+                    <TableCell>{formatter.format(data.current_price)}
+                      </TableCell>
+                    <TableCell>{formatter.format(data.market_cap)} </TableCell>
+                    {user && <TableCell align="right">
                       <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
-                        await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
+                        await handleWatchLists(data.cryptoId, data.name, data.image)}}>add</button>
                              </TableCell>}
                 </TableRow>
                 )
@@ -223,18 +238,18 @@ const SLIDE_INFO = [];
                   <TableRow key={crypto.name} style={{cursor:'pointer'}} onClick={() => {
                     navigation(`/coinDetail/${crypto.cryptoId}`);
                   }}>
-                      <TableCell>{crypto.market_cap_rank}</TableCell>
-                        <TableCell>
+                      <TableCell sx={{width: '100px', textAlign: 'center'}}> {crypto.market_cap_rank}</TableCell>
+                        {/* <TableCell>
                           <img src={crypto.image} width='40px'></img>
-                        </TableCell>
+                        </TableCell> */}
                       <TableCell>
-                          {crypto.name}
+                      <div className="name-col"> <img src={crypto.image} width='45px'></img> <span> {crypto.name} </span> </div>
                           </TableCell>
-                      <TableCell>${crypto.current_price}</TableCell>
-                      <TableCell>{crypto.market_cap} </TableCell>
-                      {user && <TableCell>
+                      <TableCell>{formatter.format(crypto.current_price)}</TableCell>
+                      <TableCell >{formatter.format(crypto.market_cap)}</TableCell>
+                      {user && <TableCell align="right">
                         <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
-                          await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>{crypto.cryptoId}</button>
+                          await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>Like</button>
                       </TableCell>}
                     {/* </Link> */}
                   </TableRow>
@@ -258,11 +273,20 @@ const SLIDE_INFO = [];
                   window.scroll(0, 450);
                 }}
               />
-      <Intro />
         </div>
 
         </div>
       
+
+
+<div className="sec-wrap">
+      {/* <div className="set-coinList"> */}
+        <h1> Trending Coins</h1>
+        <TrendingTable trending={SLIDE_INFO} />
+      {/* <SlideShow trending= {SLIDE_INFO} /> */}
+      {/* </div> */}
+      </div>
+
       <MarketingSection/>
       <Footer />
     </div>

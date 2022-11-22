@@ -1,7 +1,8 @@
 .Intro {
   display: flex;
   height: 60vh;
-  padding-top: 5rem;
+  padding-top: 9rem;
+  /* background-color: #24262b; */
 }
 
 /* left side styling */
@@ -51,8 +52,8 @@
 .i-right > :nth-child(1) {
   transform: scale(0.69);
   left: -15%;
-  margin-top: -28%;
-  margin-left: 150px;
+  margin-top: -23%;
+  margin-left: 156px;
 }
 
 
