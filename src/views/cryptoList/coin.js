@@ -228,7 +228,7 @@ const formatter = new Intl.NumberFormat('en-US', {
         <div className="set-coinList">
         <TableContainer component={Paper}>
         <Table aria-label="simple table" stickyHeader>
-          <TableHead>
+          <TableHead className='table-head'>
             <TableRow>
               <TableCell>Ranking</TableCell>
               {/* <TableCell sx={{width: '0px'}}></TableCell> */}

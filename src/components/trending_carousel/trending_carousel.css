@@ -34,12 +34,12 @@
 } */
 
 
-.css-1q04urf{
+/* .css-1q04urf{
     background: none !important;
     width: 13rem;
     height: 12rem;
     border: 27px solid none!important;
-}
+} */
 
 /* .trending-card{
 
@@ -64,4 +64,11 @@
     margin-top: 81px;
     font-size: 18pt;
 
+}
+
+.trending-card__test{
+    background: none !important;
+    width: 13rem;
+    height: 12rem;
+    border: 27px solid none!important;
 }
