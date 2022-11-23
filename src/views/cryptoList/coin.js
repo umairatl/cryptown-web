@@ -251,18 +251,18 @@ const formatter = new Intl.NumberFormat('en-US', {
                 <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
                   navigation(`/coinDetail/${data.cryptoId}`);
                 }}>
-                    <TableCell sx={{width: '100px', textAlign: 'center'}}>{data.market_cap_rank}</TableCell>
+                    <TableCell  sx={{width: '100px', textAlign: 'center'}}>{data.market_cap_rank}</TableCell>
                       {/* <TableCell>
                         <img src={data.image} width='45px'></img>
                       </TableCell> */}
-                    <TableCell className="overflow-table line-height-t">
+                    <TableCell className="overflow-table line-height-t row-tbl-coin">
                    <div className="name-col"> <img src={data.image} width='45px'></img> <span> {data.name} </span> </div>
                         </TableCell>
-                    <TableCell>{formatter.format(data.current_price)}
+                    <TableCell className="row-tbl-coin">{formatter.format(data.current_price)}
                       </TableCell>
-                      <TableCell>{formatter.format(data.total_volume)}
+                      <TableCell className="row-tbl-coin">{formatter.format(data.total_volume)}
                       </TableCell>
-                    <TableCell>{formatter.format(data.market_cap)} </TableCell>
+                    <TableCell className="row-tbl-coin">{formatter.format(data.market_cap)} </TableCell>
                     {user && <TableCell align="center">
                       <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
                         await handleWatchLists(data.cryptoId, data.name, data.image)}}>add</button>
@@ -276,14 +276,11 @@ const formatter = new Intl.NumberFormat('en-US', {
                     navigation(`/coinDetail/${crypto.cryptoId}`);
                   }}>
                       <TableCell sx={{width: '100px', textAlign: 'center'}}> {crypto.market_cap_rank}</TableCell>
-                        {/* <TableCell>
-                          <img src={crypto.image} width='40px'></img>
-                        </TableCell> */}
                       <TableCell>
-                      <div className="name-col"> <img src={crypto.image} width='45px'></img> <span> {crypto.name} </span> </div>
+                      <div className="name-col row-tbl-coin"> <img src={crypto.image} width='45px'></img> <span> {crypto.name} </span> </div>
                           </TableCell>
-                      <TableCell>{formatter.format(crypto.current_price)}</TableCell>
-                      <TableCell >{formatter.format(crypto.market_cap)}</TableCell>
+                      <TableCell className="row-tbl-coin">{formatter.format(crypto.current_price)}</TableCell>
+                      <TableCell className="row-tbl-coin">{formatter.format(crypto.market_cap)}</TableCell>
                       {user && <TableCell align="right">
                         <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
                           await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>Like</button>
