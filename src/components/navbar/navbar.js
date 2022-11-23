@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
-import {
-  Link,
-} from "react-router-dom";
+import React, { Component, useEffect, useState } from 'react';
+import {Link} from "react-router-dom";
 import '../navbar/navbar.css';
 import { FaUserCircle } from "react-icons/fa";
 import { useAuthContext } from '../../hooks/useAuthContext';
-import logo  from '../../asset/Assetlogo.png'
-
-// src/asset/Assetlogo.png
+import logo  from '../../asset/logoA.png'
 
 const Navbar = () => {
-    const { user } = useAuthContext()
+    const { user } = useAuthContext();
+    const [name, setName] = useState('');
+
+    useEffect(()  => {
+      const updateName = localStorage.getItem('username');
+      if (updateName){
+        setName(updateName.slice(1, -1));
+      }
+    }, [])
+
 
     return (
       <div className='first-col'>
@@ -18,6 +23,7 @@ const Navbar = () => {
           <nav className="nav-up">
           <ul>
          <Link to ='/market' className="nav-text"> 
+         {/* <img className='logoclass' src = { logo } width='60%' /> */}
          <img src = { logo } width='60%'/>
           </Link>
          </ul>
@@ -30,8 +36,9 @@ const Navbar = () => {
         </ul>
         <ul className="nav-right">
         <Link to = '/profile' className="nav-text">
-            <FaUserCircle />
+            <FaUserCircle /> <span className='name-col'>{name}</span>
         </Link>
+        <Link to = '/appList' className="nav-text"> Logout </Link>
         </ul>
         </nav>
         )}

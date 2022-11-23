@@ -1,0 +1,156 @@
+      
+      /* *{
+        margin: 0;
+        padding: 0;
+      } */
+      
+      
+      .cardmembers{
+         position:relative;
+         width:200px;
+         height:300px;
+         border-radius:0px 10px 10px 0px;
+         background:#f4f4f4;
+         justify-content: center;
+         align-items: center;
+         display: flex;
+         perspective: 100em;
+         margin:25px;
+         box-shadow:30px 40px 40px rgba(0,0,0,0.2);
+}
+      .cover5{
+         position:absolute;
+         top:0px;
+         left:0px;
+         width:100%;
+         height:100%;
+         background: dodgerblue;
+         transform-style: preserve-3d;
+         transform-origin: left;
+         transition:transform 1s;
+         border-radius:0px 10px 10px 0px;
+         font-size:30px;
+         font-weight: bold;
+      }
+      
+      .cardmembers:hover .cover5{
+         transform:rotateY(-120deg);
+      }
+      .coverFront, .coverBack{
+         position:absolute;
+         width:100%;
+         height:100%;
+         justify-content: center;
+         align-items:center;
+         display: flex;
+      }
+      .coverFront{
+         background: linear-gradient( 109.6deg, #05D6D9 11.2%, #F907FC 91.1% );
+
+         text-align: center;
+         border-radius: 0px 10px 10px 0px ;
+         color:#333;
+      }
+      .coverBack{
+         background: linear-gradient( 109.6deg, #05D6D9 11.2%, #F907FC 91.1% );
+         border-radius: 10px 0px 0px 10px;
+         transform:rotateY(180deg);
+      }
+      .sh_img{
+         width:100px;
+      }
+      .sh_btn{
+         border:0px;
+         background: dodgerblue;
+         border-radius: 5px;
+         padding:10px 20px;
+         color:#fff;
+         /* margin-top:10px; */
+      }
+
+.lastlayercontainer{
+        
+        min-height:50vh;
+        margin: -45px;
+   
+}
+.lastlayer{
+         justify-content:center;
+         align-items:center;
+         display:flex;
+         font-family:Arial, Helvetica, sans-serif;
+}
+
+
+h3.headerteamm{
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+span#colortext4{
+    color: #0000ff;
+}
+
+.coverFrontText {
+    z-index: 1;
+}
+
+section#lp{
+            
+      background: url('/src/asset/cropimg.png') no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: -1.2%;
+
+    }
+
+
+
+@media (min-width: 480px) and (max-width:801px) {
+
+   h3.headerteamm{
+      font-size: 2.9rem;
+   }
+
+   .lastlayer{
+      display:inline-block;
+      overflow: hidden;
+      margin-top: -35px;
+   }
+
+     .cardmembers{
+         position:relative;
+         height:300px;
+         border-radius:0px 10px 10px 0px;
+         background:#f4f4f4;
+         justify-content: center;
+         align-items: center;
+         margin:25px;
+         box-shadow:30px 40px 40px rgba(0,0,0,0.2);
+      }  
+      
+      .stylingcard{
+         padding: 20px;
+      }  
+
+      .sh_img {
+         width: 150px;
+         display: flex;
+         justify-content: center;
+      }
+
+
+      .cardmembers{
+         position:sticky;
+         border-radius:0px 10px 10px 0px;
+         background:#f4f4f4;
+         justify-content: center;
+         align-items: center;
+         margin:25px;
+         box-shadow:30px 40px 40px rgba(0,0,0,0.2);
+}
+
+
+}

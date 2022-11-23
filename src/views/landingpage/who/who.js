@@ -13,16 +13,16 @@ export default function Who() {
   return (
         <div className="section2">
             <h3 className="headersize">Our Core<span id="colortext2"> Values</span></h3>
-        <section className="section1">
+        <section className="section1who">
             <div className="container1">
                 <div className="card">
                     <div className="icon">
                         {/* <ion-icon name="globe"></ion-icon>         */}
                         <FaGlobeAmericas style={{color:"white", fontSize:"100px"}}/>
                     <div className="content">
-                        <h2 id="cardheader">Card One</h2>
-                        <p id="pheader">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <h2 id="cardheader">Connection</h2>
+                        <p id="pheader">Teamwork and mutual trust are the foundations of connection in workplace,
+                        finding common ground of others’ ideas, ambitions, histories, and beliefs.     </p>
                     </div>
                     </div>
                 </div>
@@ -33,9 +33,9 @@ export default function Who() {
                    
                     <div className="content">
                         
-                        <h2 id="cardheader">Card Two</h2>
-                        <p id="pheader">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <h2 id="cardheader">Integrity</h2>
+                        <p id="pheader">We believe that nothing is more important than our reputation, and behaving with the
+                         highest levels of integrity is fundamental to who we are.</p>
                    
                     </div>
                     </div>
@@ -45,9 +45,9 @@ export default function Who() {
                         <ImBubbles2 style={{color:"white", fontSize:"100px"}}/>
                     <div className="content">
                         
-                        <h2 id="cardheader">Card Three</h2>
-                        <p id="pheader">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <h2 id="cardheader">Service</h2>
+                        <p id="pheader">Being service-minded or customer-oriented means that you care about providing a 
+                        quality experience to the clients you serve. </p>
                     
                     </div>
                     </div>

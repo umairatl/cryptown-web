@@ -1,14 +1,29 @@
-/* html,
-body {
-  margin: 0px;
-  height: 100%;
+  .fav-page{
+    color: black;
+  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+
+
+
+
+  }
+
+.test{
+  margin: 100px 100px;
 }
 
-.test {
-    background:red;
-    position:absolute;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
-  } */
+h3.textwlheader{
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+span#colortextsix{
+    color: #0000ff;
+}
+
+
+.shadoweffect{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+
+}
