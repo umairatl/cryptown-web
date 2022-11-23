@@ -10,8 +10,6 @@ const TrendingTable = ({popular}) => {
     const [val, setVal] = useState('');
     const theme = useTheme();
 
-    console.log(popular, "popular")
-
 //     useEffect(() => {
 //         const arr = []
 //         const updateVal = trending && trending.map((row) => {

@@ -5,34 +5,92 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useEffect, useState } from "react";
+import { LocalConvenienceStoreOutlined } from "@mui/icons-material";
 
 const ATH_ATL = (detail) => {
-console.log(detail.detail.ath.change_percentage_myr,  "detail")
+    const [data, setData] = useState(detail.detail[0]);
+    const [currency, setCurrency] = useState('');
+
+    useEffect(() => {
+        setCurrency(detail.detail[1])
+    }, [detail])
 
 
+    console.log(currency, 'currency')
 
     return ( 
         <div>
-<Card sx={{ minWidth: 275 }}>
+        {data? 
+        <div>
+
+        { currency == 20 ? 
+
+        <div>
+  <Card className="card-atl">
+      <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          All Time High (ATH) 
+        </Typography>
+
+        <Typography className="ath_price" variant="h3"  component="div">
+       {data.ath.myr} </Typography>
+        <Typography className="ath_percentage_col" variant="body1">
+       MYR Change Percentage :  <br></br> {data.ath.change_percentage_myr} 
+        </Typography>
+      </CardContent>
+    </Card>
+
+
+    <Card className="card-atl">
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           All Time Low (ATL)
         </Typography>
-        <Typography variant="h5" component="div">
-          {detail.detail.ath.change_percentage_myr}
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+
+        <Typography className="ath_price" variant="h3" component="div">
+       {data.atl.myr} </Typography>
+        <Typography className="ath_percentage_col" variant="body1">
+        Change Percentage : <br></br> {data.atl.change_percentage_myr} 
         </Typography>
       </CardContent>
-      
-    </Card>
+    </Card></div>
+     : 
+     <div>
+     <Card className="card-atl">
+         <CardContent>
+           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+             All Time High (ATH)
+           </Typography>
+   
+           <Typography className="ath_price" variant="h3"  component="div">
+          {data.ath.usd} </Typography>
+           <Typography className="ath_percentage_col" variant="body1">
+           Change Percentage :  <br></br> {data.ath.change_percentage_usd} 
+           </Typography>
+         </CardContent>
+       </Card>
+   
+   
+       <Card className="card-atl">
+         <CardContent>
+           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+             All Time Low (ATL)
+           </Typography>
+   
+           <Typography className="ath_price" variant="h3" component="div">
+          {data.atl.usd} </Typography>
+           <Typography className="ath_percentage_col" variant="body1">
+           Change Percentage : <br></br> {data.atl.change_percentage_usd} 
+           </Typography>
+         </CardContent>
+       </Card></div>
+}
+</div>
+        : null }
+        
         </div>
+        
      );
 }
  
