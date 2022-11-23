@@ -193,6 +193,19 @@ span#colortext6{
 
 }
 
+
+.main-page{ 
+  background: url(../../asset/platform.png) no-repeat;
+  object-fit: contain;
+  background-size: 100% 100%;
+/* background: -webkit-linear-gradient(to right, #6f0162, #212980); 
+background: linear-gradient(to right, #6f0162, #212980);  */
+
+}
+
+
+
+
 .carousel-col-1{
   /* display: inline-block;
     border-radius: 40px;

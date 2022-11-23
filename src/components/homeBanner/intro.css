@@ -21,19 +21,21 @@
   gap: 0.25rem;
 }
 .i-name > :nth-child(1) {
-  color: var(--black);
+  color: white;
   font-weight: bold;
   font-size: 3rem;
 }
 .i-name > :nth-child(2) {
-  color: var(--blue);
-  font-weight: bold;
   font-size: 3rem;
+  background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 950;
 }
 .i-name > :nth-child(3) {
   font-weight: 200;
   font-size: 2rem;
-  color: var(--black);
+  color: white;
   margin-top: 10px;
 }
 .i-button {
@@ -59,4 +61,82 @@
 
 span#span-center{
   text-align: justify;
+}
+
+
+
+
+
+
+
+button#coinheaderbutton{
+  position: absolute;
+  height: 80px;
+  width: 300px;
+  /* margin: 0 35px; */
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.5s;
+  /* top: 65%;
+  right: 50%;
+  margin-right: -180px;
+  margin-top: 181px; */
+}
+
+
+button#coinheaderbutton:hover{
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+
+
+
+
+
+button#coinheaderbutton:before{
+
+content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+
+
+}
+
+
+
+
+button#coinheaderbutton:hover:before{
+  opacity: 1;
+  z-index: -1;
+}
+
+
+
+button:hover{
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+@keyframes glow {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
 }
