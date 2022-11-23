@@ -43,9 +43,71 @@ const CoinDetail = () => {
 
   return (
     <div>
+    <div className="coin-detail">
       <Navbar />
+      <div className="back-col">
+                <Link to = '/market'><FaArrowLeft /> <span>Back</span></Link> 
+                </div>
       <div className="top-info">
-        <Link to = '/market'><FaArrowLeft /> Back</Link>
+
+        <div className="left-det">
+        <div className="d-left">
+        <div className="d-name">
+          <span>{id} ({detail && detail.cryptoDetails.symbol})</span>
+            <span>${detail && detail.cryptoDetails.current_price_usd} USD</span>
+            <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}</span>
+            <div className="table-detail">
+
+<table>
+    <tr>
+        <th>Market Cap</th>
+        <td>$ {detail && detail.cryptoDetails.market_cap_usd}</td>
+    </tr>
+    <tr>
+        <th>24H Trading Valume</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Fully Diluted Valuation</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Circulating Supply</th>
+        <td>$ {detail && detail.cryptoDetails.circulating_supply}</td>
+    </tr>
+    <tr>
+        <th>Total Supply</th>
+        <td>$ {detail && detail.cryptoDetails.total_supply}</td>
+    </tr>
+    <tr>
+        <th>Max Supply</th>
+        <td>$ {detail && detail.cryptoDetails.max_supply}</td>
+    </tr>
+</table>
+</div>
+       </div> </div>
+        
+<h1></h1>
+        </div>
+        <div className="right-col">
+        <img src={detail && detail.cryptoDetails.image} width="350px" />
+
+
+
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        {/* <Link to = '/market'><FaArrowLeft /> Back</Link>
         <p>Crypto</p>
         <p>
           Current Price USD :{" "}
@@ -56,7 +118,7 @@ const CoinDetail = () => {
         </p>
         <p>
           Markets : <span>test</span>
-        </p>
+        </p> */}
       </div>
 
       {/* second */}

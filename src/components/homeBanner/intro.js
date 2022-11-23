@@ -19,10 +19,11 @@ const Intro = () => {
             </span>
           
         </div>
-        <Link to="/coinDetail" smooth={true} spy={true}>
+        {/* <Link to="/coinDetail" smooth={true} spy={true}> */}
           {/* <button className="button i-button">Learn More</button> */}
-          <button id="coinheaderbutton">Learn More</button>
-        </Link>
+          <a href="#marketlist">
+          <button id="coinheaderbutton">market Coins</button></a>
+        {/* </Link> */}
       </div>
       <div className="i-right">
         <img src={phonee} alt="picture" />
