@@ -38,6 +38,7 @@ const Coin = ({}) => {
 
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
+  const [popular, setPopular] = useState("")
   const [tren, setTren] = useState(null);
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
@@ -79,6 +80,8 @@ const Coin = ({}) => {
 
       if (response.status === 200) {
         setCrypto(json);
+        const takePopular = json.cryptoList.slice(0,10)
+        setPopular(takePopular)
       }
     };
 
@@ -148,9 +151,6 @@ const Coin = ({}) => {
     }
   }
 
-const handleDragStart = (e) => e.preventDefault();
-const items = [];
-
 const SLIDE_INFO = [];
   const items1 = tren && tren.cryptoTrending.map((res) => {
   const obj = {
@@ -160,6 +160,11 @@ const SLIDE_INFO = [];
   }
   SLIDE_INFO.push(obj)
 });
+
+// const POPULAR_LIST = [];
+// const items = 
+
+
 
 
 
@@ -175,16 +180,12 @@ const formatter = new Intl.NumberFormat('en-US', {
 });
 
 
-
-
-
-
-
   function createSlide(crypto) {
     return (
-      <SwiperSlide key={crypto.cryptoId}>
-        <img className="img" src={crypto.image} alt="" />
-        <h1 style={{textAlign : 'center', marginBottom: '60px'}}>{crypto.name}</h1>
+      <SwiperSlide key={crypto.cryptoId}     onClick={() => {
+        navigation(`/coinDetail/${crypto.cryptoId}`)}}>
+        <img className="img" src={crypto.image}  width='200px' alt="" />
+        <h1 style={{textAlign : 'center', marginBottom: '50px', color: 'black', fontSize: '1.5rem'}}>{crypto.name}</h1>
       </SwiperSlide>
     );
   }
@@ -197,8 +198,16 @@ const formatter = new Intl.NumberFormat('en-US', {
 
       {/* second wrapper */}
 
+
+          <section id='marketlist'>
       <div className="sec-wrap">
-        <h1>Cryptocurrency Prices by Market Cap</h1>
+      <div className="title-market">
+      <div className="t-left">
+        <div className="t-name">
+            <span>Cryptorrency Prices by Market Cap</span>
+        <span> The indicator that measures the total value of a cryptocurrency</span>
+       </div> </div>
+       </div>
         <div className="search-col">
           <input
             className="coin-input"
@@ -220,7 +229,9 @@ const formatter = new Intl.NumberFormat('en-US', {
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
-              {user && <TableCell align="right">Add to Watchlist</TableCell>}
+              <TableCell>24 Volume Price</TableCell>
+
+              {user && <TableCell >Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
 
@@ -243,8 +254,10 @@ const formatter = new Intl.NumberFormat('en-US', {
                         </TableCell>
                     <TableCell>{formatter.format(data.current_price)}
                       </TableCell>
+                      <TableCell>{formatter.format(data.total_volume)}
+                      </TableCell>
                     <TableCell>{formatter.format(data.market_cap)} </TableCell>
-                    {user && <TableCell align="right">
+                    {user && <TableCell align="center">
                       <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
                         await handleWatchLists(data.cryptoId, data.name, data.image)}}>add</button>
                              </TableCell>}
@@ -294,37 +307,56 @@ const formatter = new Intl.NumberFormat('en-US', {
                   window.scroll(0, 450);
                 }}
               />
+              
         </div>
-
         </div>
+        </section>
       
 
 
 <div className="sec-wrap">
-      {/* <div className="set-coinList"> */}
-        <h1> Trending Coins</h1>
-        <TrendingTable trending={SLIDE_INFO} />
-      {/* <SlideShow trending= {SLIDE_INFO} /> */}
-      {/* </div> */}
-
-
+<div className="title-market">
+      <div className="t-left">
+        <div className="t-name">
+          
+            <span>Popular Coins</span>
+        <span> The current top 10 coins in the market</span>
+       </div> </div>
+       </div>
+       {popular ? <TrendingTable popular={popular} />: null }
       </div>
+
+
+<div class='trending-wrap'>
+      {/* <div className="title-market"> */}
+      <div className="t-left">
+        <div className="t-name">
+            <span style={{color: 'black', marginTop: '4rem'}}>Trending Coins</span>
+        <span> Find out what are the trending coins in the market currently</span>
+       </div> </div>
+      
+       {/* </div> */}
       <div className="carousel-2">
 
       <Swiper
       modules={[Navigation, pagination, Autoplay]}
       slidesPerView={3}
-      spaceBetween={165}
+      spaceBetween={180}
       navigation
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       centeredSlides={false}
       centerInsufficientSlides={true}
       pagination={{ clickable: true }}
+
+     
     >
     <div className="trend-car">
-    {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}</div>
+    {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}
+    </div>
     </Swiper>
     </div>
+    </div>
+  
 
       <MarketingSection/>
       <Footer />

@@ -6,11 +6,11 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import './trending_carousel.css'
 import ProgressBar from "../progressBar/proressBar";
-const TrendingTable = ({trending}) => {
+const TrendingTable = ({popular}) => {
     const [val, setVal] = useState('');
     const theme = useTheme();
 
-    console.log(trending, "trending")
+    console.log(popular, "popular")
 
 //     useEffect(() => {
 //         const arr = []
@@ -27,20 +27,26 @@ const TrendingTable = ({trending}) => {
 
     return ( 
         <div>
-            {trending ? 
+            {popular ? 
 
 
         <div className="test">
-          {trending && trending.map((row) => (
+          {popular && popular.map((row) => (
             <div className="trending-card">
               <Card sx={{ display: 'flex' }}>
               <CardMedia
+               className="image-popular"
                 component="img"
-                sx={{ width: 151 }}
-                image={row.img}
+                sx={{ width: 100, height:100, marginTop: 1, marginLeft: 1.3 }}
+                image={row.image}
                 alt="Live from space album cover"
-              />
-              <Box >
+              /> <br></br>
+              <p className="coin-name">{row.name}</p>
+              <p className="coin-name"></p>
+
+              {/* <p className="coin-name">{row.name}</p> */}
+
+              <Box > 
                 {/* <CardContent>
                   <Typography component="div" variant="h5">
                    <div className="coin-name"> {row.symbol} </div>

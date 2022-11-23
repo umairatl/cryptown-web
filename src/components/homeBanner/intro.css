@@ -1,7 +1,12 @@
 .Intro {
   display: flex;
   height: 60vh;
-  padding-top: 9rem;
+  padding-top: 10rem;
+  padding-left: 4vh;
+  padding-bottom: 6rem;
+  background: url(../../asset/wave_grid.png);
+  background-repeat: no-repeat;
+  background-size: 2112px;
   /* background-color: #24262b; */
 }
 
@@ -58,26 +63,17 @@
   margin-left: 156px;
 }
 
-
 span#span-center{
   text-align: justify;
 }
-
-
-
-
-
-
 
 button#coinheaderbutton{
   position: absolute;
   height: 80px;
   width: 300px;
-  /* margin: 0 35px; */
   border-radius: 50px;
   border: none;
   outline: none;
-  background: #111;
   color: #fff;
   font-size: 20px;
   font-weight: 500;
@@ -85,24 +81,20 @@ button#coinheaderbutton{
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.5s;
+  /* background: #111; */
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+
   /* top: 65%;
   right: 50%;
   margin-right: -180px;
   margin-top: 181px; */
 }
 
-
-button#coinheaderbutton:hover{
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+button#coinheaderbutton{
   background-size: 400%;
 }
 
-
-
-
-
 button#coinheaderbutton:before{
-
 content: '';
   position: absolute;
   background: inherit;
@@ -114,21 +106,22 @@ content: '';
   filter: blur(20px);
   opacity: 0;
   transition: opacity 0.5s;
-
-
 }
 
-
-
-
-button#coinheaderbutton:hover:before{
+button#coinheaderbutton:before{
   opacity: 1;
   z-index: -1;
 }
 
+button#coinheaderbutton:hover{
+  background: black;
+  color: white;
+  background-size: 400%;
+}
 
 
-button:hover{
+
+button{
   z-index: 1;
   animation: glow 8s linear infinite;
 }

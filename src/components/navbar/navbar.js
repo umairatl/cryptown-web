@@ -1,12 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import '../navbar/navbar.css';
 import { FaUserCircle } from "react-icons/fa";
 import { useAuthContext } from '../../hooks/useAuthContext';
-import logo  from '../../asset/Assetlogo.png'
+import logo  from '../../asset/logoA.png'
 
 const Navbar = () => {
-    const { user } = useAuthContext()
+    const { user } = useAuthContext();
+    const [name, setName] = useState(null);
+
+
+    useEffect(()  => {
+      const updateName = localStorage.getItem('username');
+      
+      setName(updateName.slice(1, -1));
+    }, [])
+
 
     return (
       <div className='first-col'>
@@ -27,8 +36,9 @@ const Navbar = () => {
         </ul>
         <ul className="nav-right">
         <Link to = '/profile' className="nav-text">
-            <FaUserCircle />
+            <FaUserCircle /> <span className='name-col'>{name}</span>
         </Link>
+        <Link to = '/appList' className="nav-text"> Logout </Link>
         </ul>
         </nav>
         )}

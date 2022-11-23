@@ -21,6 +21,18 @@
     flex-wrap: wrap;
 }
 
+.image-popular{
+    transform:rotate(-45deg);
+    /* width: 50px !important; */
+}
+
+.css-1oqv2c0-MuiPaper-root-MuiCard-root{
+    background: none !important;
+    width: 13rem;
+    height: 12rem;
+    border: 27px solid none!important;
+}
+
 /* .trending-card{
 
 } */
@@ -32,4 +44,16 @@
 .css-1oqv2c0-MuiPaper-root-MuiCard-root{
     width: 50v;
     /* text-transform: up; */
+}
+
+.css-1rorjgf-MuiCardMedia-root{
+    background: black;
+}
+
+.coin-name{
+    color: white;
+    transform:rotate(-45deg);
+    margin-top: 81px;
+    font-size: 18pt;
+
 }
