@@ -8,14 +8,15 @@
 }
 
 /* table */
-
-.css-11xur9t-MuiPaper-root-MuiTableContainer-root{
-  /* background: #dee6fa !important; */
+.overflow-table{
   overflow-x: visible !important;
-  /* font-weight: bold !important; */
 }
 
-.css-y8ay40-MuiTableCell-root{
+/* .css-11xur9t-MuiPer-root-MuiTableContainer-root{
+  overflow-x: visible !important;
+} */
+
+.table_h{
 /* background: #14578e !important; */
 /* color:  !important; */
 color: white !important;
@@ -26,23 +27,28 @@ padding: 21px !important;
 /* text-transform: uppercase; */
 }
 
-.css-1ex1afd-MuiTableCell-root{
+.line-height-t{
   line-height: 7px !important;
 }
+/* 
+.css-1ex1afd-MuiTableCell-root{
+  line-height: 7px !important;
 
-.css-i02g0k-MuiTableCell-root{
+} */
+
+/* .css-i02g0k-MuiTableCell-root{
   color: white !important;
 background: black !important;
 height: 2rem !important;
 font-size: 1.2rem !important;
 padding: 21px !important;
-/* margin-right: 7rem !important */
-}
+} */
 
-.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root{
+/* .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root{
 color: white !important;
+background-color: blue;
 font-size: 1rem !;
-}
+} */
 
 .name-col span{
   margin-left: 1rem;

@@ -226,22 +226,22 @@ const formatter = new Intl.NumberFormat('en-US', {
         </div>
 
         <div className="set-coinList">
-        <TableContainer component={Paper}>
-        <Table aria-label="simple table" stickyHeader>
-          <TableHead className='table-head'>
-            <TableRow>
-              <TableCell>Ranking</TableCell>
+        <TableContainer className="overflow-table" component={Paper}>
+        <Table  aria-label="simple table" stickyHeader>
+          <TableHead >
+            <TableRow >
+              <TableCell className='table_h'>Ranking</TableCell>
               {/* <TableCell sx={{width: '0px'}}></TableCell> */}
-              <TableCell>Name</TableCell>
-              <TableCell>Price</TableCell>
-              <TableCell>Market Cap</TableCell>
-              <TableCell>24 Volume Price</TableCell>
+              <TableCell className='table_h'>Name</TableCell>
+              <TableCell className='table_h'>Price</TableCell>
+              <TableCell className='table_h'>Market Cap</TableCell>
+              <TableCell className='table_h'>24 Volume Price</TableCell>
 
-              {user && <TableCell >Add to Watchlist</TableCell>}
+              {user && <TableCell className='table_h'>Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
 
-        <TableBody>
+        <TableBody >
         {  crypto && search === ''?
             crypto.cryptoList
             .slice((page - 1) * 10, (page - 1) * 10 + 10)
@@ -255,7 +255,7 @@ const formatter = new Intl.NumberFormat('en-US', {
                       {/* <TableCell>
                         <img src={data.image} width='45px'></img>
                       </TableCell> */}
-                    <TableCell>
+                    <TableCell className="overflow-table line-height-t">
                    <div className="name-col"> <img src={data.image} width='45px'></img> <span> {data.name} </span> </div>
                         </TableCell>
                     <TableCell>{formatter.format(data.current_price)}
@@ -338,7 +338,7 @@ const formatter = new Intl.NumberFormat('en-US', {
       </div>
 
 
-<div class='trending-wrap'>
+<div className='trending-wrap'>
       {/* <div className="title-market"> */}
       <div className="t-left">
         <div className="t-name">
