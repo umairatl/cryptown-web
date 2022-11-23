@@ -7,13 +7,13 @@ import logo  from '../../asset/logoA.png'
 
 const Navbar = () => {
     const { user } = useAuthContext();
-    const [name, setName] = useState(null);
-
+    const [name, setName] = useState('');
 
     useEffect(()  => {
       const updateName = localStorage.getItem('username');
-      
-      setName(updateName.slice(1, -1));
+      if (updateName){
+        setName(updateName.slice(1, -1));
+      }
     }, [])
 
 

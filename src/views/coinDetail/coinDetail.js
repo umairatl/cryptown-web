@@ -8,15 +8,18 @@ import DOMPurify from "dompurify";
 import Footer from "../../components/footer/footer";
 import {Link} from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import SlideShow from "../../components/carousel-slideshow/slideshow";
-import { Row } from "antd";
 import Exchange_Market from "../../components/ex-list-details/ex-list-details";
 import {useRef} from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import ATH_ATL from "../../components/ath/atl/ath_atl";
 
 const CoinDetail = () => {
   const { id } = useParams();
   var [detail, setDetail] = useState(null);
-  const scollToRef = useRef();
+  const scollToRef = useRef();  const [currency, setCurrency] = useState('10');
 
   useEffect(() => {
     const fetchCoinDetail = async () => {
@@ -36,22 +39,38 @@ const CoinDetail = () => {
 
       if (response.status === 200) {
         setDetail(json);
-        // console.log(json.cryptoDetails);
       }
     };
     fetchCoinDetail();
   }, []);
   
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
 
   return (
-    <><div>
+    <div>
 
 
       <div className="coin-detail">
         <Navbar />
         <div className="back-col">
           <Link to='/market'><FaArrowLeft /> <span>Back</span></Link>
+        <FormControl sx={{ m: 1, minWidth: 120, color: 'white', background: 'white' }} size="small">
+      <InputLabel id="demo-select-small"></InputLabel>
+      <Select
+        labelId="demo-select-small"
+        id="demo-select-small"
+        value={currency}
+        label="Currency"
+        onChange={handleChange}>
+        <MenuItem value={10}>USD</MenuItem>
+        <MenuItem value={20}>MYR</MenuItem>
+      </Select>
+    </FormControl>
         </div>
+
+
         <div className="top-info">
           {/* <Link to = '/market'><FaArrowLeft /> Back</Link> */}
 
@@ -60,11 +79,45 @@ const CoinDetail = () => {
             <div className="d-left">
               <div className="d-name">
                 <span>{id} ({detail && detail.cryptoDetails.symbol})</span>
-                <span>${detail && detail.cryptoDetails.current_price_usd} USD</span>
+
+                
+                {/* price */}
+                  { currency === 20 ?  <span> RM
+                  {detail && detail.cryptoDetails.current_price_myr} </span> :  
+                  <span> $
+                  {detail && detail.cryptoDetails.current_price_usd} USD</span>}
                 <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}</span>
                 <div className="table-detail">
 
+                  {/* table */}
+                  {currency === 20 ? 
                   <table>
+                    <tr>
+                      <th>Market Cap</th>
+                      <td>RM {detail && detail.cryptoDetails.market_cap_myr}</td>
+                    </tr>
+                    <tr>
+                      <th>24H Trading Volume</th>
+                      <td>RM {detail && detail.cryptoDetails.total_volume_myr}</td>
+                    </tr>
+                    <tr>
+                      <th>Fully Diluted Valuation</th>
+                      <td>RM {detail && detail.cryptoDetails.fully_diluted_valuation_myr}</td>
+                    </tr>
+                    <tr>
+                      <th>Circulating Supply</th>
+                      {/* <td>RM {detail && detail.cryptoDetails.circulating_myr}</td> */}
+                    </tr>
+                    <tr>
+                      <th>Total Supply</th>
+                      <td>{detail && detail.cryptoDetails.total_supply}</td>
+                    </tr>
+                    <tr>
+                      <th>Max Supply</th>
+                      <td>{detail && detail.cryptoDetails.max_supply}</td>
+                    </tr>
+                  </table>
+                  : <table>
                     <tr>
                       <th>Market Cap</th>
                       <td>$ {detail && detail.cryptoDetails.market_cap_usd}</td>
@@ -83,16 +136,16 @@ const CoinDetail = () => {
                     </tr>
                     <tr>
                       <th>Total Supply</th>
-                      <td>$ {detail && detail.cryptoDetails.total_supply}</td>
+                      <td>{detail && detail.cryptoDetails.total_supply}</td>
                     </tr>
                     <tr>
                       <th>Max Supply</th>
-                      <td>$ {detail && detail.cryptoDetails.max_supply}</td>
+                      <td>{detail && detail.cryptoDetails.max_supply}</td>
                     </tr>
-                  </table>
+                  </table> }
                   <a href="#about">
                     <button onClick={() => scollToRef.current.scrollIntoView()}>
-                      Learn More
+                      View More
                     </button></a>
                 </div>
               </div> </div>
@@ -100,6 +153,8 @@ const CoinDetail = () => {
             <h1></h1>
           </div>
           <div className="right-col">
+
+
             <img src={detail && detail.cryptoDetails.image} width="350px" />
 
 
@@ -112,8 +167,19 @@ const CoinDetail = () => {
       {/* second */}
       <div className="chart-col">
         <CoinChart cryptoId={id} />
-      </div>
+      
 
+
+
+
+
+
+
+
+
+
+      </div>
+<div className="btm-details">
       <section id='about'>
         <div className="coin-info-col2">
           <div className="desc-col">
@@ -130,7 +196,21 @@ const CoinDetail = () => {
 
         </div>
       </section>
-    </div><h1 className="ex-h1"> EXCHANGE LIST</h1><Exchange_Market exchange={detail && detail.cryptoDetails.exchange} /><Footer /></>
+      
+      <ATH_ATL detail = {detail && detail.cryptoDetails}/>
+
+
+
+
+
+
+
+      <div className="ex-detail">
+   <h1 className="ex-h1"> EXCHANGE LIST</h1>
+   <Exchange_Market exchange={detail && detail.cryptoDetails.exchange} /><Footer /> 
+      </div>
+   </div>
+   </div>
   
   );
 };

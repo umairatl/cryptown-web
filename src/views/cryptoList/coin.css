@@ -197,12 +197,10 @@ span#colortext6{
 
 
 .main-page{ 
-  background: url(../../asset/platform.png) no-repeat;
+  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+  /* background: url(../../asset/platform.png) no-repeat; */
   object-fit: contain;
   background-size: 100% 100%;
-/* background: -webkit-linear-gradient(to right, #6f0162, #212980); 
-background: linear-gradient(to right, #6f0162, #212980);  */
-
 }
 
 

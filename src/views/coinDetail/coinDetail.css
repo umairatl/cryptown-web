@@ -100,39 +100,14 @@
     width: 50rem;
   }
 
+  /* .table-col{
+    margin-left: 300px;
+  } */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .btm-details{
+    height: fit-content   ;
+  }
 
 
 
@@ -160,7 +135,7 @@ margin-top: 5rem;
 
 .coin-info-col2{
     width: 100%;
-    height: 60rem;
+    height: fit-content;
     
     /* background-color: antiquewhite; */
 
@@ -231,16 +206,29 @@ table td{
 
 .desc-col{
     text-align: justify;
-    width: 80%;
-    margin-left: 10%;
+    width: 60%;
+    margin: auto;
+    height: fit-content;
+    color: white;
+    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+    padding: 4rem;
+    border-radius: 5rem;
+    /* margin-left: 10%; */
 }
 
 .desc-col h1{
     text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 0px;
+    background: -webkit-linear-gradient(115deg,#fc00ff,#3ad0d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 950;
 }
 
 .desc-col .para{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .desc-col .para a{
@@ -265,8 +253,17 @@ table td{
 
 .ex-h1{
     /* margin: auto; */
+    background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
     text-align: center;
 }
+
+/* .ex-detail{
+  background: black;
+  margin-top: 0px;
+} */
 
 .det{
     width: 500px;
@@ -282,4 +279,9 @@ table td{
     margin-left: 100%;
     width: 400rem;
     margin-left: 55rem;
+}
+
+.btm-details .css-pwngrv-MuiPaper-root-MuiCard-root{
+  width: 22rem !important;
+  height: fit-content !important;
 }

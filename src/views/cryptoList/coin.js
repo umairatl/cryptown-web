@@ -262,10 +262,7 @@ const formatter = new Intl.NumberFormat('en-US', {
                         await handleWatchLists(data.cryptoId, data.name, data.image)}}>add</button>
                              </TableCell>}
                 </TableRow>
-                )
-            }
-            )
-
+                )})
             :
             crypto && cryptoFilter(crypto.cryptoList).map((crypto) => {
                 return(
@@ -346,10 +343,7 @@ const formatter = new Intl.NumberFormat('en-US', {
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       centeredSlides={false}
       centerInsufficientSlides={true}
-      pagination={{ clickable: true }}
-
-     
-    >
+      pagination={{ clickable: true }} >
     <div className="trend-car">
     {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}
     </div>
