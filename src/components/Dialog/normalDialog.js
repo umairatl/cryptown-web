@@ -7,16 +7,27 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useState } from 'react';
 import { useDialogContext } from '../../hooks/useDialogContext';
 
-const NormalDialog = ({dialogTitle, dialogMessage}) => {
-    const { user_post, dispatch } = useDialogContext()
+const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
+    const { userPost, addToWatchList, dispatch } = useDialogContext()
+
+    const handleOpen = () => {
+        switch (type) {
+            case "USER_POST":
+                return userPost
+            case "ADD_TO_WATCHLIST": 
+                return addToWatchList
+            default:
+                return
+        }
+    }
     
     const handleClose = () => {
-        dispatch({type: "USER_POST"})
+        return dispatch({type: type})
     }
     
     return ( <div>
         <Dialog
-        open={user_post}
+        open={handleOpen}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"

@@ -11,10 +11,16 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { useWatchListContexts } from '../../hooks/useWatchListContext';
+import {useWatchListContexts } from '../../hooks/useWatchListContext';
+import { useDialogContext } from '../../hooks/useDialogContext';
+import NormalDialog from '../../components/Dialog/normalDialog';
+
 
 const FavPage = () => {
+    const [ message, setMessage ] = useState("")
+
     const { watchLists, dispatch } = useWatchListContexts()
+    const { removeWatchlist: removeWatchListDialog } = useDialogContext()
     const { user } = useAuthContext()
 
     useEffect(() => {
@@ -29,6 +35,11 @@ const FavPage = () => {
           const json = await response.data;
 
           if (response.status === 200) {
+            if (json.favourites.length === 0) {
+                setMessage(json.mssg)
+            } else {
+                setMessage("")
+            }
             dispatch({type:"SET_WATCHLIST", payload: json.favourites})
           }
         };
@@ -37,6 +48,8 @@ const FavPage = () => {
             fetchWatchLists();
         }
       }, [dispatch, user]);
+
+      
     
     return ( 
         <div className='test'>
@@ -52,12 +65,19 @@ const FavPage = () => {
                         <TableCell>Remove from Watchlist</TableCell>
                         </TableRow>
                     </TableHead>
-
                     <TableBody>
-                        {watchLists && watchLists.map(watchList => <WatchList key={watchList["favid"]} watchlists={watchList}/>)}
+                        { watchLists && watchLists.map(watchList => <WatchList key={watchList["favid"]} watchlists={watchList}/>)}
                     </TableBody>
                 </Table>    
             </TableContainer>
+            { message && watchLists.length === 0 && <h1>{message}</h1> }
+            { removeWatchListDialog ?
+                <NormalDialog 
+                type="REMOVE_FROM_WATCHLIST"
+                dialogTitle="Remove from watchlist" 
+                dialogMessage="Remove from watchlist successful"
+                /> : null
+            }
         </div>
      );
 }

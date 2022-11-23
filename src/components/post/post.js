@@ -16,7 +16,7 @@ const Post = ({ post }) => {
 
     const { forumList, dispatch } = useForumContext()
     const { dispatch: userPostsDispatch } = useUserPostsContext()
-    const { user_post, dispatch: dialogDispatch } = useDialogContext()
+    const { userPost, dispatch: dialogDispatch } = useDialogContext()
 
     const { user } = useAuthContext()
 

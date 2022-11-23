@@ -4,7 +4,11 @@ export const DialogContext = createContext();
 export const dialogReducer = (state, action) => {
   switch (action.type) {
     case "USER_POST":
-      return { user_post: !state.user_post };
+      return { userPost: !state.userPost };
+    case "ADD_TO_WATCHLIST":
+      return { addToWatchlist: !state.addToWatchlist };
+    case "REMOVE_FROM_WATCHLIST":
+      return { removeWatchlist: !state.removeWatchlist };
     default:
       return state;
   }
@@ -12,7 +16,9 @@ export const dialogReducer = (state, action) => {
 
 export const DialogContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dialogReducer, {
-    user_post: false,
+    userPost: false,
+    addToWatchlist: false,
+    removeWatchlist: false
   });
 
   return (

@@ -20,6 +20,9 @@ import RollingSection from "./rollingcoin";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
+import { useDialogContext } from "../../hooks/useDialogContext";
+import NormalDialog from "../../components/Dialog/normalDialog";
+
 // import { FaStar } from "react-icons/fa";
 
 
@@ -44,6 +47,7 @@ const Coin = ({}) => {
   const [error, setError] = useState(null);
 
   const { watchLists: watchListContext, dispatch } = useWatchListContexts()
+  const { addToWatchlist: addWatchListDialog, dispatch: dialogContext } = useDialogContext()
   const { user } = useAuthContext()
 
   useEffect(() => {
@@ -137,11 +141,13 @@ const Coin = ({}) => {
       await addToWatchlist(cryptoId, coinName, image_url)
       setError(null)
       // console.log("watch list", watchList)
-      alert(`${watchList["mssg"]}`)
+      dialogContext({type:"ADD_TO_WATCHLIST"})
+      // alert(`${watchList["mssg"]}`)
     } catch (error) {
       console.log(error)
       setError(error.response.data.error) 
-      alert(error.response.data.error)
+      dialogContext({type:"ADD_TO_WATCHLIST"})
+      // alert(error.response.data.error)
     }
   }
 
@@ -266,6 +272,14 @@ items.push(
         </TableBody>
       </Table>
     </TableContainer>
+
+      { addWatchListDialog ?
+        <NormalDialog 
+        type="ADD_TO_WATCHLIST"
+        dialogTitle="Add to Watchlist" 
+        dialogMessage={!error ? watchList["mssg"] : error}
+        /> : null
+      }
 
       <Pagination
                 count={(crypto?.cryptoList.length / 10).toFixed(0)}

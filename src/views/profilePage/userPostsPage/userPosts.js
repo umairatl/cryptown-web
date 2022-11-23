@@ -15,7 +15,7 @@ const UserPosts = () => {
 
     const { user } = useAuthContext();
     const { postLists, dispatch } = useUserPostsContext()
-    const { user_post } = useDialogContext()
+    const { userPost } = useDialogContext()
 
 
     useEffect(() => {
@@ -61,8 +61,9 @@ const UserPosts = () => {
                 {postLists && postLists.map((post) => <Post key={post["postId"]} post={post}/>)}
                 {error && <h2>{error}</h2>}
 
-                { user_post ?
+                { userPost ?
                   <NormalDialog 
+                  type="USER_POST"
                   dialogTitle="Delete Post" 
                   dialogMessage="Delete Successful"
                   /> : null
