@@ -42,7 +42,10 @@ const FavPage = () => {
     
     return ( 
         <div>
+            <div className='fav-page'>
+
             <Navbar />
+            </div>
             <WatchlistHeaderSection/>
             <div className='test'>
            <h3 className="textwlheader">Your <span id="colortextsix"> Favourites</span></h3>

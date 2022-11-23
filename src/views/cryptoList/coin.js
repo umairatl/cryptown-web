@@ -20,6 +20,7 @@ import RollingSection from "./rollingcoin";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
+import TrendingTable from '../../components/trending_carousel/trending_carousel'
 import MarketingSection from "./marketing/marketingSec";
 // import { FaStar } from "react-icons/fa";
 
@@ -30,13 +31,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { create } from "@mui/material/styles/createTransitions";
-
+import { margin } from "@mui/system";
+ 
 
 const Coin = ({}) => {
 
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
+  const [popular, setPopular] = useState("")
   const [tren, setTren] = useState(null);
   const navigation = useNavigate();
   const [page, setPage] = useState(1);
@@ -46,6 +48,7 @@ const Coin = ({}) => {
 
   const { watchLists: watchListContext, dispatch } = useWatchListContexts()
   const { user } = useAuthContext()
+
 
   useEffect(() => {
     const fetchWatchLists = async () => {
@@ -77,6 +80,8 @@ const Coin = ({}) => {
 
       if (response.status === 200) {
         setCrypto(json);
+        const takePopular = json.cryptoList.slice(0,10)
+        setPopular(takePopular)
       }
     };
 
@@ -146,56 +151,72 @@ const Coin = ({}) => {
     }
   }
 
-  
-const handleDragStart = (e) => e.preventDefault();
+const SLIDE_INFO = [];
+  const items1 = tren && tren.cryptoTrending.map((res) => {
+  const obj = {
+    img : res.image,
+    coinName : res.name,
+    symbol: res.symbol
+  }
+  SLIDE_INFO.push(obj)
+});
 
-const items = [];
+// const POPULAR_LIST = [];
+// const items = 
 
-const items1 = tren && tren.cryptoTrending.map((res) => 
-items.push(
-    <img src={res.image} onDragStart={handleDragStart} role="presentation" />,
-  ));
 
-  const trends =  tren && tren.cryptoTrending.map ((res)=> <div>
-      <img src={res.image} />
-      <button className="legend" onClick={() => {
-    navigation(`/coinDetail/${res.cryptoId}`);
-  }}>{res.symbol}</button>
-  </div>)
+
+
+
+
+// Create our number formatter.
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
+
 
   function createSlide(crypto) {
     return (
-      <SwiperSlide key={crypto.cryptoId}>
-        <img className="img" src={crypto.image} alt="" />
+      <SwiperSlide key={crypto.cryptoId}     onClick={() => {
+        navigation(`/coinDetail/${crypto.cryptoId}`)}}>
+        <img className="img" src={crypto.image}  width='200px' alt="" />
+        <h1 style={{textAlign : 'center', marginBottom: '50px', color: 'black', fontSize: '1.5rem'}}>{crypto.name}</h1>
       </SwiperSlide>
     );
   }
 
   return (
     <div className="main-page">
-      <Navbar /> 
+      <Navbar />
+
+      <Intro />
+
       {/* second wrapper */}
 
-      <Swiper
-      modules={[Navigation, pagination, Autoplay]}
-      slidesPerView={2}
-      navigation
-      autoplay={{ delay: 1000, disableOnInteraction: false }}
-      pagination={{ clickable: true }}
-    >
-    
-    {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}
-    </Swiper>
 
+          <section id='marketlist'>
       <div className="sec-wrap">
+      <div className="title-market">
+      <div className="t-left">
+        <div className="t-name">
+            <span>Cryptorrency Prices by Market Cap</span>
+        <span> The indicator that measures the total value of a cryptocurrency</span>
+       </div> </div>
+       </div>
         <div className="search-col">
           <input
             className="coin-input"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search Coin"
+            placeholder="Search Market Coin"
           />
+           <i class="fa fa-search"></i>
         </div>
 
         <div className="set-coinList">
@@ -204,11 +225,13 @@ items.push(
           <TableHead>
             <TableRow>
               <TableCell>Ranking</TableCell>
-              <TableCell></TableCell>
+              {/* <TableCell sx={{width: '0px'}}></TableCell> */}
               <TableCell>Name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Market Cap</TableCell>
-              {user && <TableCell>Add to Watchlist</TableCell>}
+              <TableCell>24 Volume Price</TableCell>
+
+              {user && <TableCell >Add to Watchlist</TableCell>}
             </TableRow>
            </TableHead>
 
@@ -222,42 +245,42 @@ items.push(
                 <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
                   navigation(`/coinDetail/${data.cryptoId}`);
                 }}>
-                    <TableCell>{data.market_cap_rank}</TableCell>
-                      <TableCell>
-                        <img src={data.image} width='40px'></img>
-                      </TableCell>
+                    <TableCell sx={{width: '100px', textAlign: 'center'}}>{data.market_cap_rank}</TableCell>
+                      {/* <TableCell>
+                        <img src={data.image} width='45px'></img>
+                      </TableCell> */}
                     <TableCell>
-                        {data.name}
+                   <div className="name-col"> <img src={data.image} width='45px'></img> <span> {data.name} </span> </div>
                         </TableCell>
-                    <TableCell>${data.current_price}</TableCell>
-                    <TableCell>{data.market_cap} </TableCell>
-                    {user && <TableCell>
+                    <TableCell>{formatter.format(data.current_price)}
+                      </TableCell>
+                      <TableCell>{formatter.format(data.total_volume)}
+                      </TableCell>
+                    <TableCell>{formatter.format(data.market_cap)} </TableCell>
+                    {user && <TableCell align="center">
                       <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
-                        await handleWatchLists(data.cryptoId, data.name, data.image)}}>{data.cryptoId}</button>
+                        await handleWatchLists(data.cryptoId, data.name, data.image)}}>add</button>
                              </TableCell>}
                 </TableRow>
-                )
-            }
-            )
-
+                )})
             :
             crypto && cryptoFilter(crypto.cryptoList).map((crypto) => {
                 return(
                   <TableRow key={crypto.name} style={{cursor:'pointer'}} onClick={() => {
                     navigation(`/coinDetail/${crypto.cryptoId}`);
                   }}>
-                      <TableCell>{crypto.market_cap_rank}</TableCell>
-                        <TableCell>
+                      <TableCell sx={{width: '100px', textAlign: 'center'}}> {crypto.market_cap_rank}</TableCell>
+                        {/* <TableCell>
                           <img src={crypto.image} width='40px'></img>
-                        </TableCell>
+                        </TableCell> */}
                       <TableCell>
-                          {crypto.name}
+                      <div className="name-col"> <img src={crypto.image} width='45px'></img> <span> {crypto.name} </span> </div>
                           </TableCell>
-                      <TableCell>${crypto.current_price}</TableCell>
-                      <TableCell>{crypto.market_cap} </TableCell>
-                      {user && <TableCell>
+                      <TableCell>{formatter.format(crypto.current_price)}</TableCell>
+                      <TableCell >{formatter.format(crypto.market_cap)}</TableCell>
+                      {user && <TableCell align="right">
                         <button className="btn-coin" onClick={async (e) => {e.stopPropagation(); 
-                          await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>{crypto.cryptoId}</button>
+                          await handleWatchLists(crypto.cryptoId, crypto.name, crypto.image)}}>Like</button>
                       </TableCell>}
                     {/* </Link> */}
                   </TableRow>
@@ -281,11 +304,54 @@ items.push(
                   window.scroll(0, 450);
                 }}
               />
-      <Intro />
+              
         </div>
-
         </div>
+        </section>
       
+
+
+<div className="sec-wrap">
+<div className="title-market">
+      <div className="t-left">
+        <div className="t-name">
+          
+            <span>Popular Coins</span>
+        <span> The current top 10 coins in the market</span>
+       </div> </div>
+       </div>
+       {popular ? <TrendingTable popular={popular} />: null }
+      </div>
+
+
+<div class='trending-wrap'>
+      {/* <div className="title-market"> */}
+      <div className="t-left">
+        <div className="t-name">
+            <span style={{color: 'black', marginTop: '4rem'}}>Trending Coins</span>
+        <span> Find out what are the trending coins in the market currently</span>
+       </div> </div>
+      
+       {/* </div> */}
+      <div className="carousel-2">
+
+      <Swiper
+      modules={[Navigation, pagination, Autoplay]}
+      slidesPerView={3}
+      spaceBetween={180}
+      navigation
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      centeredSlides={false}
+      centerInsufficientSlides={true}
+      pagination={{ clickable: true }} >
+    <div className="trend-car">
+    {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}
+    </div>
+    </Swiper>
+    </div>
+    </div>
+  
+
       <MarketingSection/>
       <Footer />
     </div>

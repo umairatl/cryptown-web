@@ -4,3 +4,13 @@
     /* margin-top: 10%; */
     margin: 5% auto 5%;
 }
+
+.line-chart h1{
+        /* margin: auto; */
+        background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+}

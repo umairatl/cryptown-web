@@ -1,27 +1,142 @@
-.top-info{
-    padding: 18px;
-    background-color: #abd8ff;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    text-decoration: none;
+.coin-detail{
+    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+  height: fit-content   ;
 }
+  
+  .back-col{
+    font-size: 1.5rem;
+    margin-left: 5rem;
+    /* color: white !important; */
+  }
+
+  .back-col span{
+    color: white;
+  }
+
+.top-info{
+    height: fit-content;
+     padding: 18px;
+    /* /*background-color: #abd8ff;  */
+     display: flex;
+    flex-direction: row;
+    /* background: url(../../asset/session-001.jpg);
+    background-repeat: no-repeat; */
+
+    /* align-items: center; */
+    justify-content: space-between;
+    /* text-decoration: none; */ 
+}
+
+
+.left-det{
+    width: 90rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-left: 5rem;
+
+
+}
+
+
+.d-left {
+    display: flex;
+    /* position: relative; */
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 100px;
+    margin-right: -50px;
+  }
+  .d-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .d-name > :nth-child(1) {
+    /* text-align: c; */
+    color: white;
+    font-weight: bold;
+    font-size: 5rem;
+    text-transform: uppercase;
+  }
+  .d-name > :nth-child(2) {
+    background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: 950;
+  }
+  .d-name > :nth-child(3) {
+    font-weight: 200;
+    font-size: 2rem;
+    color: white;
+    margin-top: 10px;
+  }
+  .d-button {
+    width: 21rem;
+    height: 4rem;
+  }
+  
+  .d-right {
+    flex: 1;
+    /* position: relative; */
+  }
+  .d-right > * {
+    position: absolute;
+    z-index: 1;
+  }
+  .d-right > :nth-child(1) {
+    transform: scale(0.69);
+    left: -15%;
+    margin-top: -23%;
+    margin-left: 156px;
+  }
+
+  .right-col{
+    margin-left: 5rem;
+    margin-top: 5rem;
+    /* background: url(../../asset//wave_grid.png); */
+    background-size: 50rem;
+    width: 50rem;
+  }
+
+  /* .table-col{
+    margin-left: 300px;
+  } */
+
+
+  .btm-details{
+    height: fit-content   ;
+  }
+
+
+
+
+
+
+
+
 
 .details-layout{
     /* height: 1000px; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .coin-info-col1{
     margin-top: 5%;
-    width: 40%;
+    width: 80%;
+    
+}
+
+.chart-col{
+margin-top: 5rem;
 }
 
 .coin-info-col2{
-    width: 60%;
-    margin-top: 5%;
+    width: 100%;
+    height: fit-content;
+    
     /* background-color: antiquewhite; */
 
 }
@@ -29,12 +144,14 @@
 .wrap-out{
     display: flex;
     flex-direction: column;
-    width: 60%;
-    background-color: #abd8ff;
+    width: 100%;
+    /* background-color: #abd8ff; */
     border-radius: 70px;
     margin: auto;
     line-height: 2px;
 }
+
+
 
 .first-row{
     display: flex;
@@ -48,9 +165,13 @@
 }
 
 .first-row-2{
-    margin: auto 0;
+    margin-left: 60rem
 }
 
+.wrap-out img{
+    width: 10rem;
+    margin-left: 75rem;
+}
 .wrap-out h1{
     font-size: 2.2rem;
     text-transform: uppercase;
@@ -58,15 +179,21 @@
 }
 
 table{
+     font-weight: 100;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 10px;
+    /* font-size: 14pt;
+    color: white; */
     border-collapse: collapse;
     line-height: 35px;
     text-align: left;
-    margin: 6% auto;
-    width: 70%;
+    /* margin: 6% auto; */
+    width: 50%;
 }
 
 table td{
-    text-align: right;
+    /* text-align: right; */
 }
 
 .title-col{
@@ -79,24 +206,36 @@ table td{
 
 .desc-col{
     text-align: justify;
-    width: 80%;
+    width: 60%;
+    margin: auto;
+    height: fit-content;
+    color: white;
+    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+    padding: 4rem;
+    border-radius: 5rem;
+    /* margin-left: 10%; */
 }
 
 .desc-col h1{
     text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 0px;
+    background: -webkit-linear-gradient(115deg,#fc00ff,#3ad0d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 950;
 }
 
 .desc-col .para{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .desc-col .para a{
     color:  #557897;
 }
 
-.chart-col{
-margin: auto;
-}
+
 
 .wrap-out-2{
     display: flex;
@@ -114,9 +253,35 @@ margin: auto;
 
 .ex-h1{
     /* margin: auto; */
+    background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
     text-align: center;
 }
 
+/* .ex-detail{
+  background: black;
+  margin-top: 0px;
+} */
+
 .det{
     width: 500px;
+}
+
+.scroll_to_about{
+    width: 600px;
+    
+}     
+
+.wrap-out img{
+    flex-direction: row-reverse;
+    margin-left: 100%;
+    width: 400rem;
+    margin-left: 55rem;
+}
+
+.btm-details .css-pwngrv-MuiPaper-root-MuiCard-root{
+  width: 22rem !important;
+  height: fit-content !important;
 }

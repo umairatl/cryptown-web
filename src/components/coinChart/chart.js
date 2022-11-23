@@ -133,6 +133,7 @@ const Chart = ({ cryptoId }) => {
 
   return (
     <div className="line-chart">
+      <h1>PRICE CHART of {cryptoId}</h1>
       <ToggleButtonGroup
         color="primary"
         value={time}
