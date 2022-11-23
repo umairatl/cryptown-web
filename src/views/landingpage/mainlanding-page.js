@@ -8,6 +8,7 @@ import Footer from "../../components/footer/footer";
 import TeamCard from "./team/team";
 import CityAnimation from "./CityAnimation/cityanimation";
 import LpAnimation from "./HeaderAnimation/headeranimationlp";
+import CustomerReview from "./customerreviews/customerfeedback";
 
 
 const MainLandingPage = () => {
@@ -21,7 +22,8 @@ const MainLandingPage = () => {
       <Carousallp/>
       <TeamCard/>
       <br/>
-      <CityAnimation/>
+      {/* <CityAnimation/> */}
+      <CustomerReview/>
       <Footer/>
       {/* <br></br> */}
 

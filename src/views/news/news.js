@@ -32,39 +32,41 @@ const NewsPage = () => {
     return ( 
         
       <div className='news-page'>
-          <Navbar />
-          <NewsGif/>
-          <SliderSectionNews/>
-          
-        <h3 className="headernews">News<span id="colortext5"> Feed</span></h3>
-        <div className='grid-container-news'>
-          {news && news.news.map((row, index) => (
-            <div key={index} className='grid-item-news'>
-        <Card sx={{ maxWidth: 345 }}> 
-      <CardMedia
-        component="img"
-        height="140"
-        image={row.image}
-      />
-      <CardContent>
-        <div className='title-col-news'>
-        <Typography gutterBottom variant="h5" component="div">
-          {row.name}
-        </Typography>
-        </div>
-        <div className='subtitle-text'>
-        <Typography variant="body2" color="text.secondary">
-          {row.description}
-        </Typography>
-        </div>
-      </CardContent>
-      <CardActions>
-        <Button size="small"><a href={row.url} target ="_blank">Read more</a></Button>
-      </CardActions>
-    </Card>
+                <Navbar />
+                <NewsGif/>
+                <SliderSectionNews/>
+            <div className='bgnews'> 
+              <h3 className="headernews">News<span id="colortext5"> Feed</span></h3>
+              <div className='grid-container-news'>
+                {news && news.news.map((row, index) => (
+                  <div key={index} className='grid-item-news'>
+            <Card sx={{ maxWidth: 345 }}> 
+            <CardMedia
+              component="img"
+              height="140"
+              image={row.image}
+            />
+            <CardContent>
+              <div className='title-col-news'>
+                <Typography gutterBottom variant="h5" component="div">
+                  {row.name}
+                </Typography>
+              </div>
+              <div className='subtitle-text'>
+                <Typography variant="body2" color="text.secondary">
+                  {row.description}
+                </Typography>
+              </div>
+            </CardContent>
+            <CardActions>
+              <Button size="small"><a href={row.url} target ="_blank">Read more</a></Button>
+            </CardActions>
+          </Card>
     
-  </div>
+        </div>
+        
   ))} 
+</div>
 </div>
 <AmbassadorSection/>
 <Footer />

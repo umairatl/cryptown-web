@@ -15,16 +15,22 @@ import {useWatchListContexts } from '../../hooks/useWatchListContext';
 import { useDialogContext } from '../../hooks/useDialogContext';
 import NormalDialog from '../../components/Dialog/normalDialog';
 
+import WatchlistHeaderSection from '../../components/watchList/watchlistheadersec/watchlistheader';
+import Footer from '../../components/footer/footer';
 
 const FavPage = () => {
-    const [ message, setMessage ] = useState("")
 
     const { watchLists, dispatch } = useWatchListContexts()
     const { removeWatchlist: removeWatchListDialog } = useDialogContext()
     const { user } = useAuthContext()
 
+    const [username, setUsername] = useState("")
+
+    useEffect(()=>{
+        setUsername(localStorage.getItem("username").slice(1, -1))
+    }, [])
+    
     useEffect(() => {
-        console.log(watchLists)
         const fetchWatchLists = async () => {
         const response = await axios('api/favourite/favourite-list',
         {
@@ -35,11 +41,6 @@ const FavPage = () => {
           const json = await response.data;
 
           if (response.status === 200) {
-            if (json.favourites.length === 0) {
-                setMessage(json.mssg)
-            } else {
-                setMessage("")
-            }
             dispatch({type:"SET_WATCHLIST", payload: json.favourites})
           }
         };
@@ -52,10 +53,15 @@ const FavPage = () => {
       
     
     return ( 
-        <div className='test'>
+        <div>
+            <div className='fav-page'>
+
             <Navbar />
-            <h1>Watchlist Page</h1>
-            <TableContainer component={Paper}>
+            </div>
+            <WatchlistHeaderSection/>
+            <div className='test'>
+           <h3 className="textwlheader">Your <span id="colortextsix"> Favourites</span></h3>
+            <TableContainer component={Paper} className="shadoweffect">
                 <Table aria-label="simple table" stickyHeader>
                     <TableHead>
                         <TableRow>
@@ -70,7 +76,9 @@ const FavPage = () => {
                     </TableBody>
                 </Table>    
             </TableContainer>
-            { message && watchLists.length === 0 && <h1>{message}</h1> }
+            { watchLists && watchLists.length === 0 && <h1>{username} has no watchlists</h1> }
+
+            
             { removeWatchListDialog ?
                 <NormalDialog 
                 type="REMOVE_FROM_WATCHLIST"
@@ -78,7 +86,11 @@ const FavPage = () => {
                 dialogMessage="Remove from watchlist successful"
                 /> : null
             }
+            
         </div>
+        <Footer/>
+        </div>
+        
      );
 }
  

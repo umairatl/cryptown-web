@@ -23,7 +23,7 @@ const TeamCard = () => {
       <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
          <h1>ADITYA</h1>
          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            An excellent , open-minded trader/programmer that willing to consider all possible options. 
          </p>
          
       </div>
@@ -42,7 +42,9 @@ const TeamCard = () => {
       <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
          <h1>CLEMENT</h1>
          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            A talented group leader/programmer with results oriented and pragmatic approaches.
+            He is also the CEO for CRYPTOWN.
+
          </p>
       </div>
       <div className="cover5">
@@ -60,7 +62,8 @@ const TeamCard = () => {
       <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
          <h1>DERRICK</h1>
          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            A designer & programmer demonstrates resourceful and ambitious at the same time
+             finding solutions, get creative, and solve problems
          </p>
       </div>
       <div className="cover5">
@@ -78,7 +81,8 @@ const TeamCard = () => {
                   <div style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
                <h1>VERN</h1>
                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+               A designer & programmer that demonstrates an unwavering resolve to do whatever 
+               must be done to produce best long-term results.
                </p>
             </div>
             <div className="cover5">
@@ -96,7 +100,8 @@ const TeamCard = () => {
                      <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
                   <h1>BEGUM</h1>
                   <p>
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                     A driven & reliable programmer always working toward a new goal and trying to achieve more
+                     as well as helping others.
                   </p>
                </div>
                <div className="cover5">

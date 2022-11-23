@@ -12,6 +12,11 @@ import TableRow from '@mui/material/TableRow';
 import '../appList/appList.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar/navbar';
+import ExchangeListHeader from './applistheader/appListheader';
+import Counter from './counterSec/counter';
+import RollingSection from '../cryptoList/rollingcoin';
+import BasicSteps from './steps/basicsteps';
+import Footer from '../../components/footer/footer';
 
   function createData(rank, name, year, score, country, trade_volume) {
     return { rank, name, year, score, country, trade_volume };
@@ -53,18 +58,22 @@ import Navbar from '../../components/navbar/navbar';
       return (
         <div>
         <Navbar />
+        <ExchangeListHeader/>
+        
         <div className='set-appList'>
             {/* <img src = 
             'https://asset.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'>
             </img> */}
 
 
-            <h1>Exchange <span>List</span></h1>
+             <h3 className="exlistsecheader">List of <span id="colortextnine"> Platform</span></h3> 
 
-             <p>Here are the list of several platform that can help you discover about cryptocurrency more</p>
+
+             <p id="exlistparagraph">Here are the list of several platform that can help you discover about cryptocurrency more</p>
+             <RollingSection/>
              <br></br>
 
-
+            
             <TableContainer component={Paper}>
       <Table aria-label="simple table" stickyHeader>
         <TableHead>
@@ -113,6 +122,9 @@ import Navbar from '../../components/navbar/navbar';
 
     
     </div>
+    <Counter/>
+    <BasicSteps/>
+    <Footer/>
     </div>
   );
 }
