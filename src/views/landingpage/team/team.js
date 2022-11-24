@@ -20,7 +20,7 @@ const TeamCard = () => {
    <h3 className="headerteamm">Meet<span id="colortext4"> Our</span> Team</h3>
 <div className="lastlayer">
   <div className="cardmembers">
-      <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
+      <div className="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
          <h1>ADITYA</h1>
          <p>
             An excellent , open-minded trader/programmer that willing to consider all possible options. 
@@ -39,7 +39,7 @@ const TeamCard = () => {
       </div>
    </div>
    <div className="cardmembers">
-      <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
+      <div className="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
          <h1>CLEMENT</h1>
          <p>
             A talented group leader/programmer with results oriented and pragmatic approaches.
@@ -59,7 +59,7 @@ const TeamCard = () => {
       </div>
    </div>
    <div className="cardmembers">
-      <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
+      <div className="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
          <h1>DERRICK</h1>
          <p>
             A designer & programmer demonstrates resourceful and ambitious at the same time
@@ -97,7 +97,7 @@ const TeamCard = () => {
             </div>
          </div>
         <div className="cardmembers">
-                     <div classname="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
+                     <div className="stylingcard" style={{padding: "20px", textalign: "center", fontsize:"12px"}}>
                   <h1>BEGUM</h1>
                   <p>
                      A driven & reliable programmer always working toward a new goal and trying to achieve more

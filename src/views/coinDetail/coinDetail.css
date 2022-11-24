@@ -1,16 +1,26 @@
 .coin-detail{
-    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
-  height: fit-content   ;
+   background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+   min-height: fit-content;
+   /* height: 47rem; */
 }
   
   .back-col{
     font-size: 1.5rem;
     margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem
     /* color: white !important; */
   }
 
   .back-col span{
     color: white;
+  }
+
+  .table-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem
   }
 
 .top-info{
@@ -19,8 +29,13 @@
     /* /*background-color: #abd8ff;  */
      display: flex;
     flex-direction: row;
-    /* background: url(../../asset/session-001.jpg);
-    background-repeat: no-repeat; */
+    background-size: 50rem ;
+  background: url(../../asset/wave_grid.png);
+  background-repeat: no-repeat;
+  background-size: 132rem 60rem;
+  /* background:; */
+
+   /*  background-repeat: no-repeat; */
 
     /* align-items: center; */
     justify-content: space-between;
@@ -29,12 +44,14 @@
 
 
 .left-det{
-    width: 90rem;
+    width: 60rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
     margin-left: 5rem;
+}
 
-
+.back-col .img-logo{
+  width: 100px;
 }
 
 
@@ -95,44 +112,26 @@
   .right-col{
     margin-left: 5rem;
     margin-top: 5rem;
+    
+
     /* background: url(../../asset//wave_grid.png); */
-    background-size: 50rem;
+    background-size: 60rem;
     width: 50rem;
   }
 
+  /* .table-col{
+    margin-left: 300px;
+  } */
 
 
+  .btm-details{
+    height: fit-content   ;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .btn-vm{
+    width: 17rem !important;
+    height: 4rem !important;
+  }
 
 
 
@@ -160,7 +159,7 @@ margin-top: 5rem;
 
 .coin-info-col2{
     width: 100%;
-    height: 60rem;
+    height: fit-content;
     
     /* background-color: antiquewhite; */
 
@@ -204,9 +203,9 @@ margin-top: 5rem;
 }
 
 table{
-     font-weight: 100;
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
+    font-weight: 100;
+    font-size: 1.4rem;
+    color: white;
     margin-top: 10px;
     /* font-size: 14pt;
     color: white; */
@@ -214,10 +213,13 @@ table{
     line-height: 35px;
     text-align: left;
     /* margin: 6% auto; */
-    width: 50%;
+    width: 65rem;
+    /* border: 2px solid #3b0054; */
 }
 
-table td{
+table tr{
+  /* border: 2px solid #3b0054; */
+  
     /* text-align: right; */
 }
 
@@ -231,16 +233,29 @@ table td{
 
 .desc-col{
     text-align: justify;
-    width: 80%;
-    margin-left: 10%;
+    width: 60%;
+    margin: auto;
+    height: fit-content;
+    color: white;
+    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+    padding: 4rem;
+    border-radius: 5rem;
+    /* margin-left: 10%; */
 }
 
 .desc-col h1{
     text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 0px;
+    background: -webkit-linear-gradient(115deg,#fc00ff,#3ad0d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 950;
 }
 
 .desc-col .para{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .desc-col .para a{
@@ -265,8 +280,17 @@ table td{
 
 .ex-h1{
     /* margin: auto; */
+    background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
     text-align: center;
 }
+
+/* .ex-detail{
+  background: black;
+  margin-top: 0px;
+} */
 
 .det{
     width: 500px;
@@ -282,4 +306,50 @@ table td{
     margin-left: 100%;
     width: 400rem;
     margin-left: 55rem;
+}
+
+.btm-details .css-pwngrv-MuiPaper-root-MuiCard-root{
+  width: 22rem !important;
+  height: fit-content !important;
+}
+
+.icon_back{
+  margin-top: 0.8rem
+}
+
+.image_logo{
+  margin-top: 3rem;
+  margin-right: 0px;
+  /* margin-left: 4rem */
+}
+
+
+/* ATL/ATH Component */
+.card-atl{
+  max-width: 280px;
+  margin-left: 9rem;
+  width: 20rem ;
+  height: 10rem;
+  margin-bottom: 3.5rem;
+}
+
+.ath_price{
+  background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-size: 3rem; */
+  text-align: center;
+}
+
+.ath_percentage_col{
+  color: black;
+  font-weight: bold;
+  /* font-size: 6rem; */
+  text-align: center;
+  /* margin-top: 20rem; */
+}
+
+.left-det .btn-coin{
+margin-left: 2rem;
+margin-bottom: 1rem;
 }

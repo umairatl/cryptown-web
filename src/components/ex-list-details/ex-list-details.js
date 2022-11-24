@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import './ex-list-details.css';
-import { FaUserCircle } from "react-icons/fa";
-
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -18,7 +16,6 @@ function createData(name, trade_url) {
 const Exchange_Market = ({exchange}) => {
   const [data, setData] = useState([]);
   var [rows] = []
-  console.log(exchange, "exchange")
   
   function createData(name) {
     return { name };
@@ -29,7 +26,6 @@ const Exchange_Market = ({exchange}) => {
         rows.push(
             createData(res.name, res.trade_url))
         ) 
-        console.log(exchange, "243")
     }, []);
 
     return (

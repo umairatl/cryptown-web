@@ -3,19 +3,24 @@
     flex-direction: row;
     color: black;
     width: 70%;
-    margin: auto;
+    margin: 0px auto;
 }
 
-.css-1ex1afd-MuiTableCell-root{
+.exchange-list-col .css-1ex1afd-MuiTableCell-root{
     font-size: 1.2rem !important;
 }
 
-.css-1ygcj2i-MuiTableCell-root{
+.exchange-list-col .css-1ygcj2i-MuiTableCell-root{
     font-size: 1.3rem !important;
 }
 
-.css-1azl6jz-MuiTableCell-root{
+.exchange-list-col .css-1azl6jz-MuiTableCell-root{
     font-size: 1.3rem !important;
+}
+
+.exchange-list-col.exchange-list-col .css-11xur9t-MuiPaper-root-MuiTableContainer-root{
+    width: 41% !important;
+    margin: 0px auto 3rem !important;
 }
 
 .col{

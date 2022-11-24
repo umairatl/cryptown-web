@@ -1,21 +1,23 @@
 .sec-wrap{
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 3rem auto 0px;
   justify-content: center;
   align-items: center;
+  text-align: center;
   /* background: #14578e; */
 }
 
 /* table */
-
-.css-11xur9t-MuiPaper-root-MuiTableContainer-root{
-  /* background: #dee6fa !important; */
+.overflow-table{
   overflow-x: visible !important;
-  /* font-weight: bold !important; */
 }
 
-.css-y8ay40-MuiTableCell-root{
+/* .css-11xur9t-MuiPer-root-MuiTableContainer-root{
+  overflow-x: visible !important;
+} */
+
+.table_h{
 /* background: #14578e !important; */
 /* color:  !important; */
 color: white !important;
@@ -26,23 +28,33 @@ padding: 21px !important;
 /* text-transform: uppercase; */
 }
 
-.css-1ex1afd-MuiTableCell-root{
+.line-height-t{
   line-height: 7px !important;
 }
 
-.css-i02g0k-MuiTableCell-root{
+.row-tbl-coin{
+  font-size: 1.2rem !important;
+}
+
+/* 
+.css-1ex1afd-MuiTableCell-root{
+  line-height: 7px !important;
+
+} */
+
+/* .css-i02g0k-MuiTableCell-root{
   color: white !important;
 background: black !important;
 height: 2rem !important;
 font-size: 1.2rem !important;
 padding: 21px !important;
-/* margin-right: 7rem !important */
-}
+} */
 
-.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root{
+/* .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root{
 color: white !important;
+background-color: blue;
 font-size: 1rem !;
-}
+} */
 
 .name-col span{
   margin-left: 1rem;
@@ -126,11 +138,6 @@ img#gif1{
   margin: 0 auto;
 }
 
-.sec-wrap{
-  margin: 0 auto;
-  /* justify-content: center; */
-}
-
 .set-coinList{
   width: 100rem;
   margin-top: -22pt;
@@ -197,12 +204,10 @@ span#colortext6{
 
 
 .main-page{ 
-  background: url(../../asset/platform.png) no-repeat;
+  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+  /* background: url(../../asset/platform.png) no-repeat; */
   object-fit: contain;
   background-size: 100% 100%;
-/* background: -webkit-linear-gradient(to right, #6f0162, #212980); 
-background: linear-gradient(to right, #6f0162, #212980);  */
-
 }
 
 
@@ -259,7 +264,7 @@ background: linear-gradient(to right, #6f0162, #212980);  */
   width: 50%;
   margin-bottom: 2rem;
   margin-top: 4rem;
-  text-align: center;
+  /* text-align: center; */
   
   /* justify-content: center; */
   /* text-align: center; */
@@ -273,8 +278,8 @@ background: linear-gradient(to right, #6f0162, #212980);  */
   flex: 1;
   flex-direction: column;
   gap: 2rem;
-  margin-left: 6.25rem;
-  margin-right: -3.125px;
+  /* margin-left: 100px; */
+  margin-right: -50px;
 }
 .t-name {
   display: flex;
@@ -318,19 +323,4 @@ background: linear-gradient(to right, #6f0162, #212980);  */
   left: -15%;
   margin-top: -23%;
   margin-left: 156px;
-}
-
-
-@media (min-width: 19rem) and (max-width:26.66){
-.Intro {
-    
-    height: 60vh;
-    padding-top: 10rem;
-    padding-left: 1.5rem;
-    padding-bottom: 6rem;
-    background: url(http://localhost:3000/static/media/wave_grid.1f5f7ef….png);
-    background-repeat: no-repeat;
-    background-size: 2112px;
-    /* background-color: #24262b; */
-}
 }

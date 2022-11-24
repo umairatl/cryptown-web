@@ -20,6 +20,7 @@ import ProgressBar from "../../components/progressBar/proressBar";
 import { Link } from 'react-router-dom';
 import { useProfileContext } from "../../hooks/useProfileContext";
 import { useNavigate } from 'react-router-dom';
+import ConditionalDialog from "../../components/Dialog/conditionalDialog";
 
 
 
@@ -65,7 +66,7 @@ const Profile = () => {
   // update user data
   handleSubmit = async (e) => {
     console.log("innnn");
-    e.preventDefault();
+    // e.preventDefault();
     const response = await axios.patch(
       "api/user/update",
       {
@@ -184,7 +185,7 @@ const Profile = () => {
 
                   {/* <button>Submit</button> */}
                   <div>
-                    <Button variant="outlined" onClick={handleClickOpen}>
+                    {/* <Button variant="outlined" onClick={handleClickOpen}>
                       Submit
                     </Button>
                     <Dialog
@@ -208,7 +209,13 @@ const Profile = () => {
                           Proceed
                         </Button>
                       </DialogActions>
-                    </Dialog>
+                    </Dialog> */}
+                    <ConditionalDialog 
+                      handleSubmit={handleSubmit} 
+                      dialogButton="Submit"
+                      dialogTitle="Update Profile" 
+                      dialogMessage="Please confirm if you want to proceed to update your profile" 
+                    />
                   </div>
                 </form>
               </div>
