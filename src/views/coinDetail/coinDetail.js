@@ -48,14 +48,37 @@ const CoinDetail = () => {
     setCurrency(event.target.value);
   };
 
+  // var updateATH_ATL = () => {
+  //   console.log(currency, 'fka')
+  //      return (detail && <ATH_ATL detail = {[ detail.cryptoDetails, currency]} />)
+  //   }
+
+  // useEffect(() => {
+  //   updateATH_ATL()
+  //   console.log(currency)
+  // }, [currency])
+
+  // Create our number formatter.
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
+
+const formatterMY = new Intl.NumberFormat('ms-MY', {
+  style: 'currency',
+  currency: 'MYR',
+});
+
   return (
     <div>
-
-
       <div className="coin-detail">
         <Navbar />
+    
+        <div className="top-info">
+
         <div className="back-col">
-          <Link to='/market'><FaArrowLeft /> <span>Back</span></Link>
+          <div className="table-flex">
+          <Link className="icon_back" to='/market'><FaArrowLeft /> <span>Back</span></Link>
         <FormControl sx={{ m: 1, minWidth: 120, color: 'white', background: 'white' }} size="small">
       <InputLabel id="demo-select-small"></InputLabel>
       <Select
@@ -68,10 +91,17 @@ const CoinDetail = () => {
         <MenuItem value={20}>MYR</MenuItem>
       </Select>
     </FormControl>
+    </div>
+    <img className="image_logo" src={detail && detail.cryptoDetails.image} />
+
+    <a href="#about">
+                    <button className="btn-vm" id='coinheaderbutton' onClick={() => scollToRef.current.scrollIntoView()}>
+                      More info
+                    </button></a>
         </div>
 
 
-        <div className="top-info">
+
           {/* <Link to = '/market'><FaArrowLeft /> Back</Link> */}
 
 
@@ -82,71 +112,66 @@ const CoinDetail = () => {
 
                 
                 {/* price */}
-                  { currency === 20 ?  <span> RM
-                  {detail && detail.cryptoDetails.current_price_myr} </span> :  
-                  <span> $
-                  {detail && detail.cryptoDetails.current_price_usd} USD</span>}
-                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}</span>
+                  { currency === 20 ?  <span> 
+                  {formatterMY.format(detail && detail.cryptoDetails.current_price_myr)} </span> :  
+                  <span> 
+                  {formatter.format(detail && detail.cryptoDetails.current_price_usd)}</span>}
+                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}
+                <button className="btn-coin">Add to Wishlist</button> 
+                </span>
                 <div className="table-detail">
 
                   {/* table */}
                   {currency === 20 ? 
                   <table>
+                    <tbody>
                     <tr>
                       <th>Market Cap</th>
-                      <td>RM {detail && detail.cryptoDetails.market_cap_myr}</td>
-                    </tr>
-                    <tr>
+                      <td>{formatterMY.format(detail && detail.cryptoDetails.market_cap_myr)}</td>
                       <th>24H Trading Volume</th>
-                      <td>RM {detail && detail.cryptoDetails.total_volume_myr}</td>
+                      <td>{formatterMY.format(detail && detail.cryptoDetails.total_volume_myr)}</td>
                     </tr>
                     <tr>
                       <th>Fully Diluted Valuation</th>
-                      <td>RM {detail && detail.cryptoDetails.fully_diluted_valuation_myr}</td>
-                    </tr>
-                    <tr>
+                      <td>{formatterMY.format(detail && detail.cryptoDetails.fully_diluted_valuation_myr)}</td>
                       <th>Circulating Supply</th>
                       {/* <td>RM {detail && detail.cryptoDetails.circulating_myr}</td> */}
                     </tr>
                     <tr>
                       <th>Total Supply</th>
                       <td>{detail && detail.cryptoDetails.total_supply}</td>
-                    </tr>
-                    <tr>
                       <th>Max Supply</th>
                       <td>{detail && detail.cryptoDetails.max_supply}</td>
                     </tr>
+                    <tr>
+                    </tr>
+                    </tbody>
                   </table>
-                  : <table>
-                    <tr>
-                      <th>Market Cap</th>
-                      <td>$ {detail && detail.cryptoDetails.market_cap_usd}</td>
-                    </tr>
-                    <tr>
-                      <th>24H Trading Volume</th>
-                      <td>$ {detail && detail.cryptoDetails.total_volume_usd}</td>
-                    </tr>
-                    <tr>
-                      <th>Fully Diluted Valuation</th>
-                      <td>$ {detail && detail.cryptoDetails.fully_diluted_valuation_usd}</td>
-                    </tr>
-                    <tr>
-                      <th>Circulating Supply</th>
-                      <td>$ {detail && detail.cryptoDetails.circulating_supply}</td>
-                    </tr>
-                    <tr>
-                      <th>Total Supply</th>
-                      <td>{detail && detail.cryptoDetails.total_supply}</td>
-                    </tr>
-                    <tr>
-                      <th>Max Supply</th>
-                      <td>{detail && detail.cryptoDetails.max_supply}</td>
-                    </tr>
-                  </table> }
-                  <a href="#about">
-                    <button onClick={() => scollToRef.current.scrollIntoView()}>
-                      View More
-                    </button></a>
+                  :  <table>
+                    <tbody>
+                  <tr>
+                    <th>Market Cap</th>
+                    <td>{formatter.format(detail && detail.cryptoDetails.market_cap_usd)}</td>
+                    <th>24H Trading Volume</th>
+                    <td>{formatter.format(detail && detail.cryptoDetails.total_volume_usd)}</td>
+                  </tr>
+                  <tr>
+                    <th>Fully Diluted Valuation</th>
+                    <td>{formatter.format(detail && detail.cryptoDetails.fully_diluted_valuation_usd)}</td>
+                    <th>Circulating Supply</th>
+                    <td>{formatter.format(detail && detail.cryptoDetails.circulating_supply)}</td>
+                  </tr>
+                  <tr>
+                    <th>Total Supply</th>
+                    <td>{detail && detail.cryptoDetails.total_supply}</td>
+                    <th>Max Supply</th>
+                    <td>{detail && detail.cryptoDetails.max_supply}</td>
+                  </tr>
+                  <tr>
+                  </tr>
+                  </tbody>
+                </table> }
+                
                 </div>
               </div> </div>
 
@@ -154,8 +179,21 @@ const CoinDetail = () => {
           </div>
           <div className="right-col">
 
+        
+        { currency === 20 ? 
+           detail && <ATH_ATL detail = {[ detail.cryptoDetails, 20]} />
+           : detail && <ATH_ATL detail = {[ detail.cryptoDetails, 10]} />
+        }
 
-            <img src={detail && detail.cryptoDetails.image} width="350px" />
+
+
+  {/* {
+    useEffect(()=> {
+     return (detail && <ATH_ATL detail = {[ detail.cryptoDetails, currency]} />)
+    }, [currency])
+ } */}
+
+            {/* <img src={detail && detail.cryptoDetails.image} width="350px" /> */}
 
 
 
@@ -197,7 +235,6 @@ const CoinDetail = () => {
         </div>
       </section>
       
-      <ATH_ATL detail = {detail && detail.cryptoDetails}/>
 
 
 

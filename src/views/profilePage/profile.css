@@ -12,6 +12,11 @@
     height: 80vh;
 }
 
+.profile{
+  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+
+}
+
 a{
 	text-decoration:none;
 }

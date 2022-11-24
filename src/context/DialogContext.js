@@ -13,6 +13,8 @@ export const dialogReducer = (state, action) => {
       return { loginMssg: !state.loginMssg };
     case "SIGNUP_MSSG":
       return { signupMssg: !state.signupMssg };
+    case "REPLY_ERROR":
+      return { replyError: !state.replyError };
     default:
       return state;
   }
@@ -24,7 +26,8 @@ export const DialogContextProvider = ({ children }) => {
     addToWatchlist: false,
     removeWatchlist: false,
     loginMssg: false,
-    signupMssg: false
+    signupMssg: false,
+    replyError: false
   });
 
   return (

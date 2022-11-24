@@ -14,6 +14,7 @@ const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
             removeWatchlist, 
             loginMssg, 
             signupMssg,
+            replyError,
             dispatch } = useDialogContext()
 
     const handleOpen = () => {
@@ -28,6 +29,8 @@ const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
                 return loginMssg
             case "SIGNUP_MSSG":
                 return signupMssg
+            case "REPLY_ERROR":
+                return replyError
             default:
                 return
         }

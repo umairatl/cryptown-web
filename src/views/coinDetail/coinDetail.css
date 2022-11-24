@@ -1,16 +1,26 @@
 .coin-detail{
-    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
-  height: fit-content   ;
+   background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+   min-height: fit-content;
+   /* height: 47rem; */
 }
   
   .back-col{
     font-size: 1.5rem;
     margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem
     /* color: white !important; */
   }
 
   .back-col span{
     color: white;
+  }
+
+  .table-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem
   }
 
 .top-info{
@@ -19,8 +29,13 @@
     /* /*background-color: #abd8ff;  */
      display: flex;
     flex-direction: row;
-    /* background: url(../../asset/session-001.jpg);
-    background-repeat: no-repeat; */
+    background-size: 50rem ;
+  background: url(../../asset/wave_grid.png);
+  background-repeat: no-repeat;
+  background-size: 132rem 60rem;
+  /* background:; */
+
+   /*  background-repeat: no-repeat; */
 
     /* align-items: center; */
     justify-content: space-between;
@@ -29,12 +44,14 @@
 
 
 .left-det{
-    width: 90rem;
+    width: 60rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
     margin-left: 5rem;
+}
 
-
+.back-col .img-logo{
+  width: 100px;
 }
 
 
@@ -95,8 +112,10 @@
   .right-col{
     margin-left: 5rem;
     margin-top: 5rem;
+    
+
     /* background: url(../../asset//wave_grid.png); */
-    background-size: 50rem;
+    background-size: 60rem;
     width: 50rem;
   }
 
@@ -107,6 +126,11 @@
 
   .btm-details{
     height: fit-content   ;
+  }
+
+  .btn-vm{
+    width: 17rem !important;
+    height: 4rem !important;
   }
 
 
@@ -179,8 +203,8 @@ margin-top: 5rem;
 }
 
 table{
-     font-weight: 100;
-    font-size: 1.2rem;
+    font-weight: 100;
+    font-size: 1.4rem;
     color: white;
     margin-top: 10px;
     /* font-size: 14pt;
@@ -189,10 +213,13 @@ table{
     line-height: 35px;
     text-align: left;
     /* margin: 6% auto; */
-    width: 50%;
+    width: 65rem;
+    /* border: 2px solid #3b0054; */
 }
 
-table td{
+table tr{
+  /* border: 2px solid #3b0054; */
+  
     /* text-align: right; */
 }
 
@@ -284,4 +311,45 @@ table td{
 .btm-details .css-pwngrv-MuiPaper-root-MuiCard-root{
   width: 22rem !important;
   height: fit-content !important;
+}
+
+.icon_back{
+  margin-top: 0.8rem
+}
+
+.image_logo{
+  margin-top: 3rem;
+  margin-right: 0px;
+  /* margin-left: 4rem */
+}
+
+
+/* ATL/ATH Component */
+.card-atl{
+  max-width: 280px;
+  margin-left: 9rem;
+  width: 20rem ;
+  height: 10rem;
+  margin-bottom: 3.5rem;
+}
+
+.ath_price{
+  background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-size: 3rem; */
+  text-align: center;
+}
+
+.ath_percentage_col{
+  color: black;
+  font-weight: bold;
+  /* font-size: 6rem; */
+  text-align: center;
+  /* margin-top: 20rem; */
+}
+
+.left-det .btn-coin{
+margin-left: 2rem;
+margin-bottom: 1rem;
 }
