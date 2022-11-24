@@ -56,10 +56,17 @@ const Post = ({ post }) => {
       }
     }
 
+    let dayOpt = { weekday: 'long' }
+    let yearOpt = { year: 'numeric', month: 'numeric', day: 'numeric' }
+    let timeOpt = { hour: 'numeric', minute: 'numeric' }
+
     return ( 
         <div key={post.postId} className="list-forum">
             <div className="post-box">
                 <p>{post.email}</p>
+                <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", yearOpt).toString()}</p>
+                <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", timeOpt).toString().substring(12)}</p>
+                <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", dayOpt).toString()}</p>
                 <p>{entities.decodeHTML(post.post)}</p>
                 {/* <button onClick={() => handleDeletePost(post.postid)}>Delete</button> */}
                 
