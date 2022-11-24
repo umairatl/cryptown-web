@@ -32,7 +32,7 @@
 }
 .i-name > :nth-child(2) {
   font-size: 3rem;
-  background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+  background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 950;
@@ -63,11 +63,11 @@
   margin-left: 156px;
 }
 
-span#span-center{
+span#span-center {
   text-align: justify;
 }
 
-button#coinheaderbutton{
+button#coinheaderbutton {
   position: absolute;
   height: 80px;
   width: 300px;
@@ -90,12 +90,12 @@ button#coinheaderbutton{
   margin-top: 181px; */
 }
 
-button#coinheaderbutton{
+button#coinheaderbutton {
   background-size: 400%;
 }
 
-button#coinheaderbutton:before{
-content: '';
+button#coinheaderbutton:before {
+  content: "";
   position: absolute;
   background: inherit;
   top: -5px;
@@ -108,28 +108,26 @@ content: '';
   transition: opacity 0.5s;
 }
 
-button#coinheaderbutton:before{
+button#coinheaderbutton:before {
   opacity: 1;
   z-index: -1;
 }
 
-button#coinheaderbutton:hover{
+button#coinheaderbutton:hover {
   background: black;
   color: white;
   background-size: 400%;
 }
 
-
-
-button{
+button {
   z-index: 1;
   animation: glow 8s linear infinite;
 }
 @keyframes glow {
-  0%{
+  0% {
     background-position: 0%;
   }
-  100%{
+  100% {
     background-position: 400%;
   }
 }

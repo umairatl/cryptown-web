@@ -9,7 +9,7 @@ import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
 import ForumHeaderSection from "./forumHeader/forumhead";
 import imground from "../../asset/imageempty.png";
-
+import Footer from "../../components/footer/footer";
 const entities = require("entities");
 
 const ForumPage = () => {
@@ -85,98 +85,112 @@ const ForumPage = () => {
   let timeOpt = { hour: "numeric", minute: "numeric" };
 
   return (
-    <div className="forum">
-      <Navbar />
-      <ForumHeaderSection />
-      {/* <h1>FORUM PAGE</h1> */}
-      <br />
-      <br />
-
-      {/* <div className="containerpost"> */}
-
-      {/* </div> */}
-      <div className="post-col">
-        <form className="login" onSubmit={handleSubmit}>
-          <div className="containerforforum">
-            <input
-              type="text"
-              id="contentforum"
-              placeholder="Post your thought"
-              value={newPost}
-              onChange={(e) => setNewPost(e.target.value)}
-            />
-            <br></br>
-            <button className="bn632-hover bn20" disabled={!newPost}>
-              Post
-            </button>
-          </div>
-        </form>
+    <div classname="tagging">
+      <div className="forum">
+        <Navbar />
+        <ForumHeaderSection />
+        {/* <h1>FORUM PAGE</h1> */}
         <br />
         <br />
 
-        {/* Styling for forum feed*/}
-        <div className="bg34">
-          <h3 className="textfrmheader">
-            Forum<span id="colortext17"> Feed</span>
-          </h3>
+        {/* <div className="containerpost"> */}
 
+        {/* </div> */}
+        <div className="post-col">
+          <form
+            className="login"
+            onSubmit={handleSubmit}
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
+            <div className="containerforforum">
+              <input
+                type="text"
+                id="contentforum"
+                placeholder="Post your thought"
+                value={newPost}
+                onChange={(e) => setNewPost(e.target.value)}
+              />
+              <br></br>
+              <button className="bn632-hover bn20" disabled={!newPost}>
+                Post
+              </button>
+            </div>
+          </form>
+          <br />
           <br />
 
-          <br />
-          {/* <div className="postfbackground"> */}
+          {/* Styling for forum feed*/}
+          <div className="bg34">
+            <h3
+              className="textfrmheader"
+              data-aos="fade-down"
+              data-aos-duration="3000"
+            >
+              Forum<span id="colortext17"> Feed</span>
+            </h3>
 
-          {forumList &&
-            forumList.map((row, index) => (
-              <div className="containerfrm">
-                <div key={index} className="list-forum" id="forumboxbg">
-                  <div className="post-box">
-                    <div className="containerthree">
-                      <div className="divsidebyside">
-                        <img id="imground" src={imground} alt="image" />
-                      </div>
-                      <div className="divbolding1">
-                        <p className="bolding1"> {row.username}</p>
-                        <p className="bolding2"> {row.email}</p>
-                      </div>
-                    </div>
-                    <hr
-                      classname="styleline"
-                      style={{
-                        border: "0",
-                        height: "0",
-                        borderTop: "1px solid rgba(0, 0, 0, 0.1)",
-                        borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
-                      }}
-                    />
-                    <div className="textalignment">
-                      <div className="mainpost">
-                        <p className="bolding4">
-                          {entities.decodeHTML(row.post)}
-                        </p>
-                      </div>
-                      <div className="datetimes">
-                        <p className="bolding7">
-                          {new Date(row.postdatetime)
-                            .toLocaleDateString("en-MY", yearOpt)
-                            .toString()}
-                        </p>
-                        <p className="bolding8">
-                          {new Date(row.postdatetime)
-                            .toLocaleDateString("en-MY", timeOpt)
-                            .toString()
-                            .substring(12)}
-                        </p>
-                        <p className="bolding9">
-                          {new Date(row.postdatetime)
-                            .toLocaleDateString("en-MY", dayOpt)
-                            .toString()}
-                        </p>
-                      </div>
-                    </div>
+            <br />
 
-                    {/* <p className="bolding3">Date: {row.postdatetime}</p> <br /> */}
+            <br />
+            {/* <div className="postfbackground"> */}
 
-                    {/* <div className="datetimes">
+            {forumList &&
+              forumList.map((row, index) => (
+                <div
+                  className="containerfrm"
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                >
+                  <div key={index} className="list-forum" id="forumboxbg">
+                    <div className="post-box">
+                      <div className="containerthree">
+                        <div className="divsidebyside">
+                          <img id="imground" src={imground} alt="image" />
+                        </div>
+                        <div className="divbolding1">
+                          <p className="bolding1"> {row.username}</p>
+                          <p className="bolding2"> {row.email}</p>
+                        </div>
+                      </div>
+                      <hr
+                        classname="styleline"
+                        style={{
+                          border: "0",
+                          height: "0",
+                          borderTop: "1px solid rgba(0, 0, 0, 0.1)",
+                          borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
+                        }}
+                      />
+                      <div className="textalignment">
+                        <div className="mainpost">
+                          <p className="bolding4">
+                            {entities.decodeHTML(row.post)}
+                          </p>
+                        </div>
+                        <div className="datetimes">
+                          <p className="bolding7">
+                            {new Date(row.postdatetime)
+                              .toLocaleDateString("en-MY", yearOpt)
+                              .toString()}
+                          </p>
+                          <p className="bolding8">
+                            {new Date(row.postdatetime)
+                              .toLocaleDateString("en-MY", timeOpt)
+                              .toString()
+                              .substring(12)}
+                          </p>
+                          <p className="bolding9">
+                            {new Date(row.postdatetime)
+                              .toLocaleDateString("en-MY", dayOpt)
+                              .toString()}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* <p className="bolding3">Date: {row.postdatetime}</p> <br /> */}
+
+                      {/* <div className="datetimes">
                         <p className="bolding7">
                           {new Date(row.postdatetime)
                             .toLocaleDateString("en-MY", yearOpt)
@@ -196,37 +210,41 @@ const ForumPage = () => {
                       </div>
                     </div> */}
 
-                    {/* <p>{JSON.stringify(row.replies)}</p> */}
-                    <div className="tab">
-                      <input
-                        id={"tab-" + index}
-                        type="checkbox"
-                        key={index}
-                      ></input>
-                      <label for={"tab-" + index}>List of Replies</label>
-                      {row.replies.map((reply) => (
-                        // <Reply reply={reply} />
+                      {/* <p>{JSON.stringify(row.replies)}</p> */}
+                      <div className="tab">
+                        <input
+                          id={"tab-" + index}
+                          type="checkbox"
+                          key={index}
+                        ></input>
+                        <label for={"tab-" + index}>List of Replies</label>
+                        {row.replies.map((reply) => (
+                          // <Reply reply={reply} />
 
-                        <div class="contentforumm">
-                          <Reply reply={reply} />
-                        </div>
-                      ))}
+                          <div class="contentforumm">
+                            <Reply reply={reply} />
+                          </div>
+                        ))}
+                      </div>
+                      <ReplyForum key={row.postid} postId={row.postid} />
                     </div>
-                    <ReplyForum key={row.postid} postId={row.postid} />
-                  </div>
-                  {/* {row.replies.map((reply) => (
+                    {/* {row.replies.map((reply) => (
                   <Reply reply={reply} />
                 ))} */}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
+          {/* <div id="post-bg2"></div> */}
+          {/* </div> */}
         </div>
-        {/* <div id="post-bg2"></div> */}
-        {/* </div> */}
-      </div>
-      {/* <div class="blob-wobble1"></div>
+        {/* <div class="blob-wobble1"></div>
       <br />
       <div class="blob-wobble2"></div> */}
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };
