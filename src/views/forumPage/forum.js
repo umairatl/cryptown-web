@@ -9,6 +9,8 @@ import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
 import ForumHeaderSection from "./forumHeader/forumhead";
 
+const entities = require("entities");
+
 const ForumPage = () => {
   const [postList, setPostList] = useState(null);
   // const [list, setList] = useState(null);
@@ -124,7 +126,10 @@ const ForumPage = () => {
                 <div key={index} className="list-forum" id="forumboxbg">
                   <div className="post-box">
                     <p className="bolding">User: {row.email}</p> <br />
-                    <p className="bolding">Subject: {row.post}</p>
+                    <p className="bolding">Username: {row.username}</p> <br />
+                    <p className="bolding">
+                      Subject: {entities.decodeHTML(row.post)}
+                    </p>
                     {/* <p>{JSON.stringify(row.replies)}</p> */}
                     {row.replies.map((reply) => (
                       <Reply reply={reply} />
@@ -149,3 +154,21 @@ const ForumPage = () => {
 };
 
 export default ForumPage;
+
+{
+  /* <form className='login' onSubmit={handleSubmit}>
+        <input type ='text' placeholder='Post your thought' value={newPost} onChange={(e) => setNewPost(e.target.value)}/><br></br>
+      <button disabled={!newPost} >Post</button>
+      </form>
+        <h1>FORUM FEED</h1>
+        
+        {forumList &&
+          forumList.map((row, index) => (
+            <div key={index} className="list-forum">
+            <div className="post-box">
+              <p>{row.email}</p>
+              <p>{entities.decodeHTML(row.post)}</p>
+             <ReplyForum key={row.postid} postId={row.postid}/>
+            </div>
+              {row.replies.map((reply) => <Reply reply={reply}/>)} */
+}

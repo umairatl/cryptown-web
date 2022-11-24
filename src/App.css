@@ -59,6 +59,12 @@
     padding: 0.5rem 1rem;
   }
 } */
+
+html,body{
+scroll-behavior: smooth;
+}
+
+
 :root {
   --yellow: #f5c32c;
   --orange: #fca61f;
@@ -115,3 +121,6 @@
 .App-link {
   color: #61dafb;
 }
+
+
+

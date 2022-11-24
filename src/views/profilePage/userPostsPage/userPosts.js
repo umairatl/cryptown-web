@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "../../../components/axios/axios";
 import Post from "../../../components/post/post";
 import { useUserPostsContext } from "../../../hooks/useUserPostsContext";
+import NormalDialog from "../../../components/Dialog/normalDialog";
+import { useDialogContext } from "../../../hooks/useDialogContext";
 
 
 const UserPosts = () => {
@@ -13,6 +15,8 @@ const UserPosts = () => {
 
     const { user } = useAuthContext();
     const { postLists, dispatch } = useUserPostsContext()
+    const { userPost } = useDialogContext()
+
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -56,6 +60,14 @@ const UserPosts = () => {
                 <h1>YOUR POSTS</h1>
                 {postLists && postLists.map((post) => <Post key={post["postId"]} post={post}/>)}
                 {error && <h2>{error}</h2>}
+
+                { userPost ?
+                  <NormalDialog 
+                  type="USER_POST"
+                  dialogTitle="Delete Post" 
+                  dialogMessage="Delete Successful"
+                  /> : null
+                }
             </div>
         </div>
      );

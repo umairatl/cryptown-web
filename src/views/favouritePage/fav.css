@@ -1,17 +1,11 @@
-/* html,
-body {
-  margin: 0px;
-  height: 100%;
-}
+  .fav-page{
+    color: black;
+  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
 
-.test {
-    background:red;
-    position:absolute;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
-  } */
+
+
+
+  }
 
 .test{
   margin: 100px 100px;

@@ -40,7 +40,7 @@ const NewsPage = () => {
               <div className='grid-container-news'>
                 {news && news.news.map((row, index) => (
                   <div key={index} className='grid-item-news'>
-            <Card sx={{ maxWidth: 345 }}> 
+            <Card  className='news-box' sx={{ maxWidth: 345 }}> 
             <CardMedia
               component="img"
               height="140"

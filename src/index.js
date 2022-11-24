@@ -9,6 +9,7 @@ import { WatchListContextsProvider } from "./context/WatchListContext";
 import { ForumContextProvider } from "./context/ForumContext";
 import { UserPostsProvider } from "./context/UserPostContext";
 import { ProfileContextProvider } from "./context/ProfileContext";
+import { DialogContextProvider } from "./context/DialogContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,7 +20,9 @@ root.render(
         <ForumContextProvider>
           <UserPostsProvider>
             <ProfileContextProvider>
-              <App />
+              <DialogContextProvider>
+                <App />
+              </DialogContextProvider>
             </ProfileContextProvider>
           </UserPostsProvider>
         </ForumContextProvider>

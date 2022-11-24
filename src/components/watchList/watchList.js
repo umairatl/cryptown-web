@@ -6,6 +6,7 @@ import axios from "../axios/axios";
 import { useState } from "react";
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useWatchListContexts } from '../../hooks/useWatchListContext';
+import { useDialogContext } from '../../hooks/useDialogContext';
 import WatchlistHeaderSection from '../watchList/watchlistheadersec/watchlistheader';
 
 
@@ -17,6 +18,7 @@ const WatchList = ({ watchlists }) => {
     const [error, setError] = useState(null)
     const navigation = useNavigate()
 
+    const { removeWatchlist: removeWatchListDialog, dispatch: dispatchDialogContext } = useDialogContext()
     const { dispatch } = useWatchListContexts()
     const { user } = useAuthContext()
 
@@ -45,15 +47,16 @@ const WatchList = ({ watchlists }) => {
       }
     }
     
-    const handleDeleteWatchLists = async (cryptoId, coinName, image_url) => {
+    const handleDeleteWatchLists = async (favId) => {
       try {
-        await deleteWatchlist(cryptoId, coinName, image_url)
+        await deleteWatchlist(favId)
         setError(null)
-        alert(`${deleteWatchList["mssg"]}`)
+        dispatchDialogContext({type: "REMOVE_FROM_WATCHLIST"})
+        // alert(`${deleteWatchList["mssg"]}`)
       } catch (error) {
         console.log(error)
         setError(error.response.data.error) 
-        alert(error.response.data.error)
+        // alert(error.response.data.error)
       }
     }
             

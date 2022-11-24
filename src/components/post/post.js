@@ -4,13 +4,19 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useState } from "react";
 import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
+import ConditionalDialog from "../Dialog/conditionalDialog";
+import NormalDialog from "../Dialog/normalDialog";
+import { useEffect } from "react";
+import { useDialogContext } from "../../hooks/useDialogContext";
+const entities = require("entities");
 
 const Post = ({ post }) => {
   const [postDelete, setPostDelete] = useState({});
   const [error, setError] = useState(null);
 
   const { forumList, dispatch } = useForumContext();
-  const { postLists, dispatch: userPostsDispatch } = useUserPostsContext();
+  const { dispatch: userPostsDispatch } = useUserPostsContext();
+  const { userPost, dispatch: dialogDispatch } = useDialogContext();
 
   const { user } = useAuthContext();
 
@@ -42,11 +48,10 @@ const Post = ({ post }) => {
     try {
       await deletePost(postId);
       setError(null);
-      alert(`${postDelete["mssg"]}`);
+      dialogDispatch({ type: "USER_POST" });
     } catch (error) {
       console.log(error);
       setError(error.response.data.error);
-      alert(error.response.data.error);
     }
   };
 
@@ -54,8 +59,14 @@ const Post = ({ post }) => {
     <div key={post.postId} className="list-forum">
       <div className="post-box">
         <p>{post.email}</p>
-        <p>{post.post}</p>
-        <button onClick={() => handleDeletePost(post.postid)}>Delete</button>
+        <p>{entities.decodeHTML(post.post)}</p>
+        {/* <button onClick={() => handleDeletePost(post.postid)}>Delete</button> */}
+        <ConditionalDialog
+          handleSubmit={() => handleDeletePost(post.postid)}
+          dialogButton="Delete"
+          dialogTitle="Delete Post"
+          dialogMessage="Do you want to delete your post."
+        />
       </div>
       {post.replies.map((reply) => (
         <Reply reply={reply} />
