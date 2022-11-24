@@ -4,10 +4,10 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useState } from "react";
 import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
-import ConditionalDialog from "../Dialog/conditionalDialog";
-import NormalDialog from "../Dialog/normalDialog";
-import { useEffect } from "react";
 import { useDialogContext } from "../../hooks/useDialogContext";
+import '../post/post.css';
+
+
 const entities = require("entities");
 
 const Post = ({ post }) => {
@@ -55,22 +55,28 @@ const Post = ({ post }) => {
     }
   };
 
+  // console.log(post, "posttt")
+
   return (
-    <div key={post.postId} className="list-forum">
-      <div className="post-box">
+    <div key={post.postId} className="list-forum-1">
+      <div className="wrap-post-user">
+      <div className="profile-post">
+
         <p>{post.email}</p>
-        <p>{entities.decodeHTML(post.post)}</p>
-        {/* <button onClick={() => handleDeletePost(post.postid)}>Delete</button> */}
-        <ConditionalDialog
+        {/* <ConditionalDialog
           handleSubmit={() => handleDeletePost(post.postid)}
           dialogButton="Delete"
           dialogTitle="Delete Post"
           dialogMessage="Do you want to delete your post."
-        />
+        /> */}
+        <p>{entities.decodeHTML(post.postdatetime)}</p>
+      <p>delet</p>
       </div>
-      {post.replies.map((reply) => (
+      <p>{entities.decodeHTML(post.post)}</p>
+      {/* {post.replies.map((reply) => (
         <Reply reply={reply} />
-      ))}
+        ))} */}
+    </div>
     </div>
   );
 };

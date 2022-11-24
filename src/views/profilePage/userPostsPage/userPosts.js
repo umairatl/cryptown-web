@@ -49,15 +49,10 @@ const UserPosts = () => {
 
 
     return ( 
-        <div>
-            <Navbar />
-            <h1>
-                <Link to="/profile" className="links">
-                    Profile
-                </Link>
-            </h1>
             <div className="post-col">
-                <h1>YOUR POSTS</h1>
+                <h1>MY POSTS</h1>
+                <div>
+                    <div className="post-cont">
                 {postLists && postLists.map((post) => <Post key={post["postId"]} post={post}/>)}
                 {error && <h2>{error}</h2>}
 
@@ -68,8 +63,9 @@ const UserPosts = () => {
                   dialogMessage="Delete Successful"
                   /> : null
                 }
+                </div>
+                </div>
             </div>
-        </div>
      );
 }
  
