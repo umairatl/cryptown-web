@@ -15,19 +15,19 @@ const MarketingSection = () => {
            <div className="marketingcontainer">
                <div className="grid-wrapper">
                   
-                       <div className"grid-box mobileapp">
+                       <div class="grid-box mobileapp">
                            <img src={mobileappimg} alt=""/>
                            <h1>Mobile App</h1>
                        </div>
-                       <div className"grid-box webdesign">
+                       <div class="grid-box webdesign">
                            <img src={webdesignimg} alt=""/>
                            <h1>Cryptocurrency</h1>
                        </div>
-                       <div className"grid-box marketing">
+                       <div class="grid-box marketing">
                            <img src={marketingimg} alt=""/>
                            <h1>Marketing</h1>
                        </div>
-                       <div className"grid-box branding">
+                       <div class="grid-box branding">
                            <img src={brandingimg} alt=""/>
                            <h1>Branding</h1>
                        </div>

@@ -112,7 +112,9 @@ const Profile = () => {
 
   return (
     <div className="profile">
+    <div className="profile-top">
       <Navbar />
+      </div>
       {profile ? (
         <div className="test">
           <div>
@@ -183,33 +185,7 @@ const Profile = () => {
                     </div>
                   ) : null}
 
-                  {/* <button>Submit</button> */}
                   <div>
-                    {/* <Button variant="outlined" onClick={handleClickOpen}>
-                      Submit
-                    </Button>
-                    <Dialog
-                      open={open}
-                      onClose={handleClose}
-                      aria-labelledby="alert-dialog-title"
-                      aria-describedby="alert-dialog-description"
-                    >
-                      <DialogTitle id="alert-dialog-title">
-                        {"Confirmation"}
-                      </DialogTitle>
-                      <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
-                          Please confirm if you want to proceed to update your
-                          profile
-                        </DialogContentText>
-                      </DialogContent>
-                      <DialogActions>
-                        <Button onClick={handleClose}>Back</Button>
-                        <Button onClick={handleSubmit}  autoFocus>
-                          Proceed
-                        </Button>
-                      </DialogActions>
-                    </Dialog> */}
                     <ConditionalDialog 
                       handleSubmit={handleSubmit} 
                       dialogButton="Submit"
