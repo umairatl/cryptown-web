@@ -3,10 +3,10 @@ import "../news/heroimage.css";
 // import pic from "../../asset/city1.png";
 export default function HeaderHero() {
   return (
-  <div class="hero-setting">
+  <div className="hero-setting">
     {/* <img id="hero-imageid"src={pic} alt="picture" /> */}
    
-  <div class="hero-text">
+  <div className="hero-text">
     <h1 style={{fontsize:'50px'}} >I am John Doe</h1>
     <p>And I'm a Photographer</p>
     <button>Hire me</button>

@@ -18,7 +18,7 @@ const WatchlistHeaderSection = () => {
         </div>
         <div className="containerwatchlistheader">
             <div className="home_header_info">
-               <h1><span class="textwl">WATCHLIST</span></h1>  
+               <h1><span className="textwl">WATCHLIST</span></h1>  
                 <p>Watchlist is a page where you could view all the desired crypto coins that you have saved. 
                   You can always views your added crypto at here .</p>
             </div>

@@ -146,9 +146,9 @@ const ForumPage = () => {
         {/* <div id="post-bg2"></div> */}
         {/* </div> */}
       </div>
-      {/* <div class="blob-wobble1"></div>
+      {/* <div className"blob-wobble1"></div>
       <br />
-      <div class="blob-wobble2"></div> */}
+      <div className"blob-wobble2"></div> */}
     </div>
   );
 };
@@ -170,5 +170,35 @@ export default ForumPage;
               <p>{entities.decodeHTML(row.post)}</p>
              <ReplyForum key={row.postid} postId={row.postid}/>
             </div>
+              {row.replies.map((reply) => <Reply reply={reply}/>)}
+          </div>
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export default ForumPage;
+
+
+
+
+
+
+<div className="frem">
+        <div className="logo-name">
+            <div className="logo">
+                <img src={front} alt=""/>
+            </div>
+            <p>What do you want share</p>
+        </div>
+        <div className="text-area" contenteditable data-placeholder="Write here"></div>
+        <div className="bottom-cont">
+            <a href="#"><img src={photocamera1} alt="" style="margin-right: 9px;"/>Add Photo</a>
+            <a href="#"><img src={videocamera1} alt="" style="margin-right: 9px;"/>Add Video</a>
+            <a href="#"><img src={smilingface} alt=""/></a>
+            <a href="#"><img src={videocamera2} alt=""/></a>
+        </div>
+</div>
               {row.replies.map((reply) => <Reply reply={reply}/>)} */
 }

@@ -10,7 +10,7 @@ export default function HeaderLandingPage() {
         <section className="site-title">
               <div className="containercontent">
                 {/* <div className="site-background" data-aos="fade-up" data-aos-delay="100"> */}
-                    <span class="text">Cryptown</span>
+                    <span className="text">Cryptown</span>
                     <h1 id="landingheaderOne">The Best Collection of Crpyto Coins Where</h1>
                     {/* <h3>Amazing Platform</h3> */}
                      <Typewritter/>
