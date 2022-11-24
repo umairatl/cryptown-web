@@ -273,8 +273,8 @@ background: linear-gradient(to right, #6f0162, #212980);  */
   flex: 1;
   flex-direction: column;
   gap: 2rem;
-  margin-left: 100px;
-  margin-right: -50px;
+  margin-left: 6.25rem;
+  margin-right: -3.125px;
 }
 .t-name {
   display: flex;
@@ -318,4 +318,19 @@ background: linear-gradient(to right, #6f0162, #212980);  */
   left: -15%;
   margin-top: -23%;
   margin-left: 156px;
+}
+
+
+@media (min-width: 19rem) and (max-width:26.66){
+.Intro {
+    
+    height: 60vh;
+    padding-top: 10rem;
+    padding-left: 1.5rem;
+    padding-bottom: 6rem;
+    background: url(http://localhost:3000/static/media/wave_grid.1f5f7ef….png);
+    background-repeat: no-repeat;
+    background-size: 2112px;
+    /* background-color: #24262b; */
+}
 }

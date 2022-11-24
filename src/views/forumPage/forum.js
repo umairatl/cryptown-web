@@ -124,15 +124,15 @@ export default ForumPage;
 
 
 
-<div class="frem">
-        <div class="logo-name">
-            <div class="logo">
+<div className="frem">
+        <div className="logo-name">
+            <div className="logo">
                 <img src={front} alt=""/>
             </div>
             <p>What do you want share</p>
         </div>
-        <div class="text-area" contenteditable data-placeholder="Write here"></div>
-        <div class="bottom-cont">
+        <div className="text-area" contenteditable data-placeholder="Write here"></div>
+        <div className="bottom-cont">
             <a href="#"><img src={photocamera1} alt="" style="margin-right: 9px;"/>Add Photo</a>
             <a href="#"><img src={videocamera1} alt="" style="margin-right: 9px;"/>Add Video</a>
             <a href="#"><img src={smilingface} alt=""/></a>

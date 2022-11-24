@@ -5,16 +5,15 @@ export default function AboutLandingPage() {
   return (
 
 
-<section class="about" id="about">
+<section className="about" id="about">
 
-    {/* <h1 class="headingabout"> about the app </h1> */}
 
-    <div class="column">
+    <div className="column">
 
-        <div class="image">
+        <div className="image">
         </div>
 
-        <div class="contentabout">
+        <div className="contentabout">
             <h3 className="headeraboutus">About <span id="colortext"> Cryptown</span></h3>
             <p id="lpparagraph">Launched in 2018, Cryptown provides comprehensive and details about cryptocurrency<br/>
             With a core focus on sharing knowledge about cryptocurrency details and platforms<br/> 

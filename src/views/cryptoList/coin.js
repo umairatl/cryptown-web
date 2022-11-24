@@ -216,7 +216,7 @@ const formatter = new Intl.NumberFormat('en-US', {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search Market Coin"
           />
-           <i class="fa fa-search"></i>
+           <i className="fa fa-search"></i>
         </div>
 
         <div className="set-coinList">
@@ -327,7 +327,7 @@ const formatter = new Intl.NumberFormat('en-US', {
       </div>
 
 
-<div class='trending-wrap'>
+<div className='trending-wrap'>
       {/* <div className="title-market"> */}
       <div className="t-left">
         <div className="t-name">
