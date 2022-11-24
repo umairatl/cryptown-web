@@ -16,9 +16,6 @@ const ATH_ATL = (detail) => {
         setCurrency(detail.detail[1])
     }, [detail])
 
-
-    console.log(currency, 'currency')
-
     return ( 
         <div>
         {data? 

@@ -70,7 +70,6 @@ const Coin = ({}) => {
 
       }
     };
-
     if (user) {
         fetchWatchLists();
     }
@@ -188,7 +187,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 
   function createSlide(crypto) {
     return (
-      <SwiperSlide key={crypto.cryptoId}     onClick={() => {
+      <SwiperSlide key={crypto.cryptoId} onClick={() => {
         navigation(`/coinDetail/${crypto.cryptoId}`)}}>
         <img className="img" src={crypto.image}  width='200px' alt="" />
         <h1 style={{textAlign : 'center', marginBottom: '50px', color: 'black', fontSize: '1.5rem'}}>{crypto.name}</h1>
@@ -246,15 +245,11 @@ const formatter = new Intl.NumberFormat('en-US', {
             crypto.cryptoList
             .slice((page - 1) * 10, (page - 1) * 10 + 10)
             .map((data) => {
-              // const marketCap = data.market_cap_rank > 0;
               return (
                 <TableRow key={data.name} style={{cursor:'pointer'}} onClick={() => {
                   navigation(`/coinDetail/${data.cryptoId}`);
                 }}>
                     <TableCell  sx={{width: '100px', textAlign: 'center'}}>{data.market_cap_rank}</TableCell>
-                      {/* <TableCell>
-                        <img src={data.image} width='45px'></img>
-                      </TableCell> */}
                     <TableCell className="overflow-table line-height-t row-tbl-coin">
                    <div className="name-col"> <img src={data.image} width='45px'></img> <span> {data.name} </span> </div>
                         </TableCell>
@@ -326,12 +321,11 @@ const formatter = new Intl.NumberFormat('en-US', {
 <div className="title-market">
       <div className="t-left">
         <div className="t-name">
-          
             <span>Popular Coins</span>
         <span> The current top 10 coins in the market</span>
        </div> </div>
        </div>
-       {popular ? <TrendingTable popular={popular} />: null }
+       {popular ? <TrendingTable popular={popular}/>: null }
       </div>
 
 
@@ -350,7 +344,7 @@ const formatter = new Intl.NumberFormat('en-US', {
       modules={[Navigation, pagination, Autoplay]}
       slidesPerView={3}
       spaceBetween={180}
-      navigation
+      // navigation
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       centeredSlides={false}
       centerInsufficientSlides={true}

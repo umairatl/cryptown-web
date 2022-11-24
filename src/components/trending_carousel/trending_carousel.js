@@ -29,8 +29,8 @@ const TrendingTable = ({popular}) => {
 
 
         <div className="test">
-          {popular && popular.map((row) => (
-            <div className="trending-card">
+          {popular && popular.map((row, index) => (
+            <div className="trending-card" key={index}>
               <Card className='trending-card__test' sx={{ display: 'flex' }}>
               <CardMedia
                className="image-popular"

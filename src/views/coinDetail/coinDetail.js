@@ -122,6 +122,7 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                   {/* table */}
                   {currency === 20 ? 
                   <table>
+                    <tbody>
                     <tr>
                       <th>Market Cap</th>
                       <td>{formatterMY.format(detail && detail.cryptoDetails.market_cap_myr)}</td>
@@ -142,8 +143,10 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                     </tr>
                     <tr>
                     </tr>
+                    </tbody>
                   </table>
                   :  <table>
+                    <tbody>
                   <tr>
                     <th>Market Cap</th>
                     <td>{formatter.format(detail && detail.cryptoDetails.market_cap_usd)}</td>
@@ -164,6 +167,7 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                   </tr>
                   <tr>
                   </tr>
+                  </tbody>
                 </table> }
                 
                 </div>
