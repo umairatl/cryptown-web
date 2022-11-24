@@ -1,11 +1,11 @@
 const entities = require("entities");
 
 const Reply = ({ reply }) => {
-    return ( 
-        <div>
-            <h2>{entities.decodeHTML(reply.subpost)}</h2>
-        </div>
-     );
-}
- 
+  return (
+    <div>
+      <p>{entities.decodeHTML(reply.subpost)}</p>
+    </div>
+  );
+};
+
 export default Reply;
