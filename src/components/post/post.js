@@ -6,6 +6,7 @@ import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import '../post/post.css';
+import ConditionalDialog from "../Dialog/conditionalDialog";
 
 
 const entities = require("entities");
@@ -63,19 +64,21 @@ const Post = ({ post }) => {
       <div className="profile-post">
 
         <p>{post.email}</p>
-        {/* <ConditionalDialog
+        <ConditionalDialog
           handleSubmit={() => handleDeletePost(post.postid)}
           dialogButton="Delete"
           dialogTitle="Delete Post"
           dialogMessage="Do you want to delete your post."
-        /> */}
-        <p>{entities.decodeHTML(post.postdatetime)}</p>
-      <p>delet</p>
+        />
+        {/* <p>{entities.decodeHTML(post.postdatetime)}</p> */}
+      {/* <p>delet</p> */}
       </div>
+      <div className="forum-text">
       <p>{entities.decodeHTML(post.post)}</p>
       {/* {post.replies.map((reply) => (
         <Reply reply={reply} />
         ))} */}
+        </div>
     </div>
     </div>
   );
