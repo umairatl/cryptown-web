@@ -324,8 +324,10 @@ const formatter = new Intl.NumberFormat('en-US', {
     <div className="trend-car">
     {tren && tren["cryptoTrending"].map(crypto => createSlide(crypto))}</div>
     </Swiper>
+    <br/>
+    <br/>
+    <br/>
     </div>
-
       <MarketingSection/>
       <Footer />
     </div>
