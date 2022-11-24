@@ -6,28 +6,23 @@ import AboutLandingPage from "./about/aboutlp";
 import Carousallp from "./carousell/carousellp";
 import Footer from "../../components/footer/footer";
 import TeamCard from "./team/team";
-import CityAnimation from "./CityAnimation/cityanimation";
 import LpAnimation from "./HeaderAnimation/headeranimationlp";
 import CustomerReview from "./customerreviews/customerfeedback";
-
 
 const MainLandingPage = () => {
   return (
     <section>
-      <Navbar/>
-       <LpAnimation/>
-       {/* <HeaderLandingPage/> */}
-       <Who/>
-      <AboutLandingPage/>
-      <Carousallp/>
-      <TeamCard/>
-      <br/>
-      {/* <CityAnimation/> */}
-      <CustomerReview/>
-      <Footer/>
+      <Navbar />
+      <LpAnimation />
+      {/* <HeaderLandingPage/> */}
+      <Who />
+      <AboutLandingPage />
+      <Carousallp />
+      <TeamCard />
+      <br />
+      <CustomerReview />
+      <Footer />
       {/* <br></br> */}
-
-     
     </section>
   );
 };

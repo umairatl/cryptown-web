@@ -79,6 +79,10 @@ const ForumPage = () => {
     }
   };
 
+  let dayOpt = { weekday: "long" };
+  let yearOpt = { year: "numeric", month: "numeric", day: "numeric" };
+  let timeOpt = { hour: "numeric", minute: "numeric" };
+
   return (
     <div className="forum">
       <Navbar />
@@ -112,7 +116,7 @@ const ForumPage = () => {
         {/* Styling for forum feed*/}
         <div className="bg34">
           <h3 className="textfrmheader">
-            <span id="colortext16"> Forum</span> Feed
+            Forum<span id="colortext17"> Feed</span>
           </h3>
 
           <br />
@@ -125,11 +129,38 @@ const ForumPage = () => {
               <div className="containerfrm">
                 <div key={index} className="list-forum" id="forumboxbg">
                   <div className="post-box">
-                    <p className="bolding">User: {row.email}</p> <br />
-                    <p className="bolding">Username: {row.username}</p> <br />
-                    <p className="bolding">
-                      Subject: {entities.decodeHTML(row.post)}
-                    </p>
+                    <div className="divbolding1">
+                      <p className="bolding1">Username: {row.username}</p>
+                      <p className="bolding2">User: {row.email}</p>
+                    </div>
+                    <div className="textalignment">
+                      <div className="mainpost">
+                        <p className="bolding4">
+                          {entities.decodeHTML(row.post)}
+                        </p>
+                      </div>
+                      {/* <p className="bolding3">Date: {row.postdatetime}</p> <br /> */}
+
+                      <div className="datetimes">
+                        <p className="bolding7">
+                          {new Date(row.postdatetime)
+                            .toLocaleDateString("en-MY", yearOpt)
+                            .toString()}
+                        </p>
+                        <p className="bolding8">
+                          {new Date(row.postdatetime)
+                            .toLocaleDateString("en-MY", timeOpt)
+                            .toString()
+                            .substring(12)}
+                        </p>
+                        <p className="bolding9">
+                          {new Date(row.postdatetime)
+                            .toLocaleDateString("en-MY", dayOpt)
+                            .toString()}
+                        </p>
+                      </div>
+                    </div>
+
                     {/* <p>{JSON.stringify(row.replies)}</p> */}
                     {row.replies.map((reply) => (
                       <Reply reply={reply} />

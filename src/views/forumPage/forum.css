@@ -224,14 +224,16 @@ h3.textfrmheader {
     sans-serif;
 }
 
-span#colortext16 {
-  color: #0000ff;
+span#colortext17 {
+  background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .bg34 {
   background: url(../../asset/blackpink.png) no-repeat;
   background-size: cover;
-  /* z-index: -1; */
+  z-index: 1;
   margin-top: -2%;
 }
 /* .blob-wobble1 {
@@ -290,3 +292,12 @@ span#colortext16 {
     transform: scale(0.95) rotate(-9deg);
   }
 } */
+
+.wrap-outer-p .replytext {
+  color: #00ffff;
+  margin-bottom: -15px;
+}
+
+.textalignment {
+  text-align: left;
+}
