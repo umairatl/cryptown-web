@@ -110,10 +110,10 @@ import Footer from '../../components/footer/footer';
                 <TableCell>
                     {row.name}
                     </TableCell>
-                <TableCell>{row.country}</TableCell>
-                <TableCell>{row.year_established}</TableCell>
-                <TableCell align="right">{row.trust_score} / 10</TableCell>
-                <TableCell align="right">{row.trade_volume_24h_btc}</TableCell>
+                <TableCell>{row.country !== null ? row.country : "N/A"}</TableCell>
+                <TableCell>{row.year_established !== null ? row.year_established : "N/A"}</TableCell>
+                <TableCell align="right">{row.trust_score !== null ? row.trust_score : "N/A"} / 10</TableCell>
+                <TableCell align="right">{row.trade_volume_24h_btc !== null ? row.trade_volume_24h_btc : "N/A"}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -122,7 +122,6 @@ import Footer from '../../components/footer/footer';
 
     
     </div>
-    <Counter/>
     <BasicSteps/>
     <Footer/>
     </div>
