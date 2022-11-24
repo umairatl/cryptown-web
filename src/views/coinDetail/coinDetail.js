@@ -116,7 +116,9 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                   {formatterMY.format(detail && detail.cryptoDetails.current_price_myr)} </span> :  
                   <span> 
                   {formatter.format(detail && detail.cryptoDetails.current_price_usd)}</span>}
-                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}</span>
+                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}
+                <button className="btn-coin">Add to Wishlist</button> 
+                </span>
                 <div className="table-detail">
 
                   {/* table */}
