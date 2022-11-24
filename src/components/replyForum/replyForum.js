@@ -45,11 +45,15 @@ const ReplyForum = ({ postId }) => {
 
   return (
     <div>
-      {!isReply ? (
+      {/* {!isReply ? (
         <button className="bn633-hover bn201" onClick={updateReply}>
           Reply
         </button>
-      ) : null}
+      ) : null} */}
+
+      <button className="bn633-hover bn201" onClick={updateReply}>
+        Reply
+      </button>
       {isReply ? (
         <form className="login" onSubmit={handleSubmitReply(postId)}>
           <input
