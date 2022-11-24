@@ -56,9 +56,9 @@ p.bolding2 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
-  background: #000000;
+  /* background: #000000; */
   color: #ffffff;
-  box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000;
+  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
 }
 
 p.bolding3 {
@@ -74,9 +74,9 @@ p.bolding4 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
-  background: #000000;
+  /* background: #000000; */
   color: #ffffff;
-  box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000;
+  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
   font-size: 1em;
 }
 
@@ -140,12 +140,30 @@ input#replyforumid {
   overflow: hidden;
 } */
 
-.divbolding1 {
+/* .divbolding1 {
   display: flex;
-  /* align-content: center; */
-  justify-content: space-between;
-}
+  /* align-content: center; not using*/
+/* justify-content: space-between; */
+/* }  */
 
 .mainpost {
+  /* margin-top: 5%; */
+  text-align: left;
+}
+
+.sectionforreply {
   margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+form.login {
+  margin-bottom: 2%;
+}
+
+.spacing29 {
+  margin-top: 2%;
+}
+
+button#posting {
+  margin-left: -2%;
 }

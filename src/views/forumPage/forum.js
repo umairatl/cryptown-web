@@ -8,6 +8,7 @@ import Reply from "../../components/replies/replies";
 import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
 import ForumHeaderSection from "./forumHeader/forumhead";
+import imground from "../../asset/imageempty.png";
 
 const entities = require("entities");
 
@@ -129,18 +130,30 @@ const ForumPage = () => {
               <div className="containerfrm">
                 <div key={index} className="list-forum" id="forumboxbg">
                   <div className="post-box">
-                    <div className="divbolding1">
-                      <p className="bolding1">Username: {row.username}</p>
-                      <p className="bolding2">User: {row.email}</p>
+                    <div className="containerthree">
+                      <div className="divsidebyside">
+                        <img id="imground" src={imground} alt="image" />
+                      </div>
+                      <div className="divbolding1">
+                        <p className="bolding1"> {row.username}</p>
+                        <p className="bolding2"> {row.email}</p>
+                      </div>
                     </div>
+                    <hr
+                      classname="styleline"
+                      style={{
+                        border: "0",
+                        height: "0",
+                        borderTop: "1px solid rgba(0, 0, 0, 0.1)",
+                        borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
+                      }}
+                    />
                     <div className="textalignment">
                       <div className="mainpost">
                         <p className="bolding4">
                           {entities.decodeHTML(row.post)}
                         </p>
                       </div>
-                      {/* <p className="bolding3">Date: {row.postdatetime}</p> <br /> */}
-
                       <div className="datetimes">
                         <p className="bolding7">
                           {new Date(row.postdatetime)
@@ -161,10 +174,44 @@ const ForumPage = () => {
                       </div>
                     </div>
 
+                    {/* <p className="bolding3">Date: {row.postdatetime}</p> <br /> */}
+
+                    {/* <div className="datetimes">
+                        <p className="bolding7">
+                          {new Date(row.postdatetime)
+                            .toLocaleDateString("en-MY", yearOpt)
+                            .toString()}
+                        </p>
+                        <p className="bolding8">
+                          {new Date(row.postdatetime)
+                            .toLocaleDateString("en-MY", timeOpt)
+                            .toString()
+                            .substring(12)}
+                        </p>
+                        <p className="bolding9">
+                          {new Date(row.postdatetime)
+                            .toLocaleDateString("en-MY", dayOpt)
+                            .toString()}
+                        </p>
+                      </div>
+                    </div> */}
+
                     {/* <p>{JSON.stringify(row.replies)}</p> */}
-                    {row.replies.map((reply) => (
-                      <Reply reply={reply} />
-                    ))}
+                    <div className="tab">
+                      <input
+                        id={"tab-" + index}
+                        type="checkbox"
+                        key={index}
+                      ></input>
+                      <label for={"tab-" + index}>List of Replies</label>
+                      {row.replies.map((reply) => (
+                        // <Reply reply={reply} />
+
+                        <div class="contentforumm">
+                          <Reply reply={reply} />
+                        </div>
+                      ))}
+                    </div>
                     <ReplyForum key={row.postid} postId={row.postid} />
                   </div>
                   {/* {row.replies.map((reply) => (
@@ -202,4 +249,14 @@ export default ForumPage;
              <ReplyForum key={row.postid} postId={row.postid}/>
             </div>
               {row.replies.map((reply) => <Reply reply={reply}/>)} */
+}
+
+{
+  /* <div className="tab">
+  <input id="tab-1" type="checkbox"></input>
+  <label for="tab-1">List of Replies</label>
+  <div class="contentforumm">
+    <Reply reply={reply} />
+  </div>
+</div> */
 }
