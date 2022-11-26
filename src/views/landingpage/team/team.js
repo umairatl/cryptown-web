@@ -20,11 +20,11 @@ const TeamCard = () => {
         <div className="lastlayer">
           <div className="cardmembers">
             <div
-              classname="stylingcard"
+              className="stylingcard"
               style={{ padding: "20px", textalign: "center", fontsize: "12px" }}
             >
               <h1>ADITYA</h1>
-              <p>
+              <p className="texttstyle">
                 An excellent , open-minded trader/programmer that willing to
                 consider all possible options.
               </p>
@@ -42,11 +42,11 @@ const TeamCard = () => {
           </div>
           <div className="cardmembers">
             <div
-              classname="stylingcard"
+              className="stylingcard"
               style={{ padding: "20px", textalign: "center", fontsize: "12px" }}
             >
               <h1>CLEMENT</h1>
-              <p>
+              <p className="texttstyle">
                 A talented group leader/programmer with results oriented and
                 pragmatic approaches. He is also the CEO for CRYPTOWN.
               </p>
@@ -64,11 +64,11 @@ const TeamCard = () => {
           </div>
           <div className="cardmembers">
             <div
-              classname="stylingcard"
+              className="stylingcard"
               style={{ padding: "20px", textalign: "center", fontsize: "12px" }}
             >
               <h1>DERRICK</h1>
-              <p>
+              <p className="texttstyle">
                 A designer & programmer demonstrates resourceful and ambitious
                 at the same time finding solutions, get creative, and solve
                 problems
@@ -87,10 +87,11 @@ const TeamCard = () => {
           </div>
           <div className="cardmembers">
             <div
+              className="stylingcard"
               style={{ padding: "20px", textalign: "center", fontsize: "12px" }}
             >
               <h1>VERN</h1>
-              <p>
+              <p className="texttstyle">
                 A designer & programmer that demonstrates an unwavering resolve
                 to do whatever must be done to produce best long-term results.
               </p>
@@ -108,11 +109,11 @@ const TeamCard = () => {
           </div>
           <div className="cardmembers">
             <div
-              classname="stylingcard"
+              className="stylingcard"
               style={{ padding: "20px", textalign: "center", fontsize: "12px" }}
             >
               <h1>BEGUM</h1>
-              <p>
+              <p className="texttstyle">
                 A driven & reliable programmer always working toward a new goal
                 and trying to achieve more as well as helping others.
               </p>

@@ -296,8 +296,9 @@ span#colortext17 {
 } */
 
 .wrap-outer-p .replytext {
-  color: #a020f0;
+  color: #000000;
   margin-bottom: -15px;
+  font-size: 2rem;
 }
 
 .textalignment {
@@ -328,26 +329,49 @@ span#colortext17 {
   /* (C1) DIMENSIONS */
   position: relative; /* required for (f2) position:absolute */
   display: block;
-  width: 100%;
+  width: 150%;
   margin-top: 10px;
   padding: 10px;
-  margin-left: -2px;
+  margin-left: -148px;
 
   /* (C2) COSMETICS */
   font-weight: 700;
   color: #fff;
-  background: #301934;
+  /* background: #301934; */
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
   cursor: pointer;
+
+  border-radius: 12px;
 }
 
 /* (D) TAB CONTENT - HIDDEN BY DEFAULT */
 /* css animation will not work with auto height */
 /* this is why we use max-height instead */
 .tab .contentforumm {
-  background: #000000;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+  background-blend-mode: multiply, multiply;
   overflow: hidden;
   transition: max-height 0.3s;
   max-height: 0;
+  border-radius: 12px;
+  margin-left: -25%;
+  width: 150%;
 }
 .tab .contentforumm p {
   padding: 10px;
