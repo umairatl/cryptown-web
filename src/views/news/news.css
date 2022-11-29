@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 100px 350px;
+    margin: auto;
     flex-wrap: wrap;
 }
 

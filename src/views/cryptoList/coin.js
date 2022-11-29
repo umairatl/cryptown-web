@@ -228,7 +228,7 @@ const Coin = ({}) => {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search Market Coin"
             />
-            <i class="fa fa-search"></i>
+            <i className="fa fa-search"></i>
           </div>
 
           <div className="set-coinList">

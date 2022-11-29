@@ -154,3 +154,13 @@ section#lp{
 
 
 }
+
+
+@media (min-width:16rem) and (max-width:26.66rem){
+.lastlayer {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+}
+}

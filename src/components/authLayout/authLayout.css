@@ -7,7 +7,7 @@ body {
 .back-1{
     background: linear-gradient(135deg, #14578e, #550c6d, #8ac1ee, #03254c);
 	animation:gradient 10s ease infinite;
-	background-size: cover;
+	background-size: 100%;
     font-family: "Open Sans", sans-serif;
     color: #333333;
     position:absolute;
