@@ -28,6 +28,25 @@
   height: 70vh;
 }
 
-.allheaderforum {
-  height: 70vh;
+
+.allheaderforum{
+    height: 70vh;
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+    #videoforumid {
+    width: -webkit-fill-available;
+    max-height: fit-content;
+    object-fit: cover;
+    height: auto;
+}
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+
+html:not(.no-js) [data-aos^=fade][data-aos^=fade].aos-animate {
+    
+    transform: none;
+    height: auto;
+}
 }

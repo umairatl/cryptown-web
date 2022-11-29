@@ -76,3 +76,16 @@
     height: 12rem;
     border: 27px solid none!important;
 }
+
+@media (min-width:16rem) and (max-width:26.66rem){
+    .test {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    flex-wrap: wrap;
+}
+}
