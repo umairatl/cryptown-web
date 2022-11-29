@@ -780,6 +780,7 @@ img#imground {
   position: relative;
   left: -64%;
   text-align: left;
+  bottom: -25px;
 }
 
 /* hr.styleline {
