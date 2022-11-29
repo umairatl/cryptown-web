@@ -9,9 +9,6 @@ import { useWatchListContexts } from '../../hooks/useWatchListContext';
 import { useDialogContext } from '../../hooks/useDialogContext';
 import WatchlistHeaderSection from '../watchList/watchlistheadersec/watchlistheader';
 
-
-// src/asset/Assetlogo.png
-
 const WatchList = ({ watchlists }) => {
   
     const [deleteWatchList, setDeleteWatchList] = useState({})

@@ -31,8 +31,7 @@ export const useSignup = () => {
         
                 if (response.status === 200) {
                  localStorage.setItem('user', JSON.stringify(json.userJwt))
-
-                 
+                 localStorage.setItem('username', JSON.stringify(json.user))
 
                  dispatch({type: 'LOGIN', payload: json})
                  console.log("windows 1")

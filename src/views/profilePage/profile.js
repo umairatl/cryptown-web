@@ -65,8 +65,8 @@ const Profile = () => {
   const [isShow, setShow] = useState(false);
   const [open, setOpen] = React.useState(false);
   var { handleSubmit } = useForm();
-
-
+  const [showPass, setShowPass] = useState(false);
+  const [showPass2, setShowPass2] = useState(false);
   
   const navigate = useNavigate()
 
@@ -215,23 +215,20 @@ const Profile = () => {
                     <div>
                       <div>
                         <h2>Password:</h2>
-                        <input
-                          type="text"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                        />
+                        <div className='flex-pass'>
+      <input type = {showPass ? 'text' : 'password'} placeholder='Create Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
+      <span class="material-symbols-outlined" onClick={(e) => setShowPass(!showPass)}> visibility </span></div>
+
                         <br></br>
 
                         <h2>Confirm Password:</h2>
-                        <input
-                          type="text"
-                          value={confirmPass}
-                          onChange={(e) => setConfirmPass(e.target.value)}
-                        />
+                        <div className='flex-pass'>
+      <input type = {showPass2 ? 'text' : 'password'} placeholder='Confirm Password' onChange={(e) => setConfirmPass(e.target.value)} value={confirmPass}/>
+      <span class="material-symbols-outlined" onClick={(e) => setShowPass2(!showPass2)}> visibility </span></div>
+     
                         <br></br>
                       </div>
                     </div>
-                  {/* ) : null} */}
 
                   <div className="profile-tab"> 
                     <ConditionalDialog className='btn-submit'

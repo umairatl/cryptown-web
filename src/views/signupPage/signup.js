@@ -1,9 +1,6 @@
 import './signup.css'
 import { useSignup } from "../../hooks/useSignup"
 import { useState, useEffect } from 'react';
-import {Link} from "react-router-dom";
-import img from '../../asset/signup.png'
-import logo from '../../asset/Assetlogo.png'
 import { useDialogContext } from '../../hooks/useDialogContext';
 import NormalDialog from '../../components/Dialog/normalDialog';
 
@@ -12,6 +9,8 @@ const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPass, setconfirmPass] = useState('');
+  const [showPass, setShowPass] = useState(false);
+  const [showPass2, setShowPass2] = useState(false);
 
   //ui 
   const toRotate = [ "Traders!"];
@@ -20,12 +19,11 @@ const Signup = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
+
+
   const dataperiod = 2000;
-
   const {signup, error, status, isLoading} = useSignup();
-
   const { signupMssg, dispatch:dialogDispatch } = useDialogContext()
-
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -76,18 +74,22 @@ const Signup = () => {
       5. Minimum 1 Lower Letter
   `
 
-
 return (
      <div>
 		<h5>SIGNUP</h5>
     <form className='signup' onSubmit={handleSubmit}>
       <input type ='email' placeholder='Enter your Email' onChange={(e) => setEmail(e.target.value)} value={email}/>
       <input type ='username' placeholder='Create Username' onChange={(e) => setUsername(e.target.value)} value={username}/>
-      <input type ='password' placeholder='Create Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
-      <input type ='confirmPass' placeholder='Confirm Password' onChange={(e) => setconfirmPass(e.target.value)} value={confirmPass}/>
+      
+      <div className='flex-pass'>
+      <input type = {showPass ? 'text' : 'password'} placeholder='Create Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
+      <span class="material-symbols-outlined" onClick={(e) => setShowPass(!showPass)}> visibility </span></div>
+
+      <div className='flex-pass'>
+      <input type = {showPass2 ? 'text' : 'password'} placeholder='Confirm Password' onChange={(e) => setconfirmPass(e.target.value)} value={confirmPass}/>
+      <span class="material-symbols-outlined" onClick={(e) => setShowPass2(!showPass2)}> visibility </span></div>
+     
       <button disabled={isLoading}>Sign up</button>
-      {/* {error && <div className='error'>{error}</div>}
-      <p>{status}</p> */}
       { signupMssg ?
         <NormalDialog 
         type="SIGNUP_MSSG"

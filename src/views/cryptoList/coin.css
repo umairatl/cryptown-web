@@ -91,8 +91,9 @@ font-size: 1rem !;
 }
 
 .fa-search:before {
-  margin-left: 18px;
+  margin-left: 12px;
   font-size: 1.5rem;
+  color: white;
 }
 
 .sec-wrap h1 {
@@ -316,6 +317,15 @@ span#colortext6 {
   left: -15%;
   margin-top: -23%;
   margin-left: 156px;
+}
+
+.pagination-cont{
+  padding: 20px;
+    width: 97.5% !important;
+    display: flex;
+    justify-content: center;
+    color: white !important;
+    background: white;
 }
 
 /* 
