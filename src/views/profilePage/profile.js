@@ -7,12 +7,6 @@ import axios from "../../components/axios/axios";
 import "../profilePage/profile.css";
 import { FaUserCircle } from "react-icons/fa";
 import Checkbox from "@mui/material/Checkbox";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { useForm } from "antd/es/form/Form";
@@ -21,8 +15,46 @@ import { Link } from 'react-router-dom';
 import { useProfileContext } from "../../hooks/useProfileContext";
 import { useNavigate } from 'react-router-dom';
 import ConditionalDialog from "../../components/Dialog/conditionalDialog";
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import UserPosts from "./userPostsPage/userPosts";
+import Footer from "../../components/footer/footer";
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`verticalz-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired
+};
+
+function a11yProps(index) {
+  return {
+    id: `vertical-tab-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`
+  };
+}
 
 const Profile = () => {
   const { logout } = useLogout();
@@ -33,11 +65,19 @@ const Profile = () => {
   const [isShow, setShow] = useState(false);
   const [open, setOpen] = React.useState(false);
   var { handleSubmit } = useForm();
+
+
   
   const navigate = useNavigate()
 
   const { user } = useAuthContext();
-  const { profile, dispatch } = useProfileContext()
+  const { profile, dispatch } = useProfileContext();
+  const [value, setValue] = React.useState(0);
+  var [nav, setNav]  = useState('profile');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   //   fetch user data
   useEffect(() => {
@@ -96,11 +136,6 @@ const Profile = () => {
     setShow(!isShow);
   };
 
-  //logout user
-  const handleClick = async () => {
-    await logout();
-  };
-
   //dialog box
   const handleClickOpen = () => {
     setOpen(true);
@@ -110,36 +145,49 @@ const Profile = () => {
     setOpen(false);
   };
 
+
+  function handleNav(update){
+    setNav(update)
+  }
+
   return (
     <div className="profile">
-    <div className="profile-top">
       <Navbar />
-      </div>
-      {profile ? (
-        <div className="test">
-          <div>
-            {/* <h1>PROFILE PAGE</h1> */}
+      <div className="bckgrnd-profile">
+      {/* <div class="sidebar"> */}
+  {/* <a class="active" onClick={() => handleNav('profile')}>My Profile</a>
+  <a onClick={() => handleNav('post')}>My Posts</a> */}
+{/* </div> */}
+
+{/* <div class="content">    */}
+{ nav === 'profile' ? 
+<div>
+<div className="t-left">
+            {/* <div className="t-name">
+              <span></span>
+              <span> My Profile Page</span>
+            </div> */}
+          </div>
+{profile ?  (
+        <div className="test2" id='user_profile'>
+          <div className="profile-cont">
             <div className="box-form-1">
               <div className="left">
                 <div className="overlay">
-                    <h1>PROFILE</h1>
-                  <h1>
-                    <FaUserCircle /> {profile?.username}
-                  </h1>
-                 <h1>
-                    <Link to="/profile/userPosts" className="links">
-                      Posts
-                    </Link>
-                  </h1> 
-                  {/* <h1>{data?.username}</h1> */}
+                   
+                <div className="post" id='user_posts'>
+        <UserPosts />
+      </div> 
                 </div>
               </div>
 
               <div className="right">
                 <form
                   id="submit_data"
-                  className="login"
-                >
+                  className="login" >
+                    <h1>USER DETAILS</h1>
+
+
                   <h2>Email:</h2>
                   <p>{profile?.email}</p>
                   <br></br>
@@ -148,10 +196,9 @@ const Profile = () => {
                   <input
                     type="text"
                     value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
+                    onChange={(e) => setUsername(e.target.value)}  />
                   <br></br>
-                  <FormGroup>
+                  {/* <FormGroup>
                     <FormControlLabel
                       control={
                         <Checkbox
@@ -161,9 +208,10 @@ const Profile = () => {
                       }
                       label="Update My Password"
                     />
-                  </FormGroup>
+                  </FormGroup> */}
 
-                  {isShow ? (
+                  {/* {isShow ? 
+                  ( */}
                     <div>
                       <div>
                         <h2>Password:</h2>
@@ -183,10 +231,10 @@ const Profile = () => {
                         <br></br>
                       </div>
                     </div>
-                  ) : null}
+                  {/* ) : null} */}
 
-                  <div>
-                    <ConditionalDialog 
+                  <div className="profile-tab"> 
+                    <ConditionalDialog className='btn-submit'
                       handleSubmit={handleSubmit} 
                       dialogButton="Submit"
                       dialogTitle="Update Profile" 
@@ -201,7 +249,14 @@ const Profile = () => {
       )  : (
         <ProgressBar />
       )}
-      <button onClick={handleClick}>Log out</button>
+  </div> 
+  : 
+  <div>
+    
+    </div>
+}
+<Footer />
+</div>
     </div>
   );
 };

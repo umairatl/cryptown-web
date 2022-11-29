@@ -1,3 +1,7 @@
+.main-page .first-col{
+  background: none !important;
+}
+
 .sec-wrap{
   display: flex;
   flex-direction: column;

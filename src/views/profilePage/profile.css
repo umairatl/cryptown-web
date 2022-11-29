@@ -1,7 +1,7 @@
 .box-form-1 {
     margin: 10vh auto;
-    width: 60vw;
-    background: #FFFFFF;
+    width: 80vw;
+    /* background: #FFFFFF; */
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -9,12 +9,13 @@
     align-items: stretch;
     justify-content: space-between;
     box-shadow: 0 0 20px 6px #090b6f85;
-    height: 80vh;
 }
 
 .profile{
-  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
-
+  /* background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424); */
+  height: fit-content;
+  /* padding-bottom: 5rem; */
+  /* padding-bottom: 4rem; */
 }
 
 a{
@@ -33,21 +34,24 @@ a{
 
 .box-form-1 div {
   height: auto;
+  /* background: white; */
 }
 
 .box-form-1 .left {
-    color: #FFFFFF;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(../../asset/session-001.jpg);
+    /* color: #FFFFFF; */
+    background: pink !important;
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    /* background-image: url(../../asset/session-001.jpg); */
     overflow: hidden;
     width: 70%;
     align-items: center;
     justify-content: center;
     font-size: 0.5rem;
-}
-
-.box-form-1 .left .overlay {
+  }
+  
+  .box-form-1 .left .overlay {
+  background-color: #00094B;
   padding: 30px;
   /* width: 100%; */
   height: 100%;
@@ -66,21 +70,34 @@ a{
 
 .profile button{
   background: #3b5998;
-  color: #FFFFFF;
-  margin-top: 10px;
-  padding: 10px 40px;
-  border-radius: 100px;
+    color: #FFFFFF;
+    margin-top: 8px;
+    margin-right: 1rem;
+    padding: 3px 13px;
+    border-radius: 100px;
+    display: inline-block;
   display: inline-block;
   box-shadow: 0 3px 6px 1px #042d4657;
 }
 
 .box-form-1 .right {
-    padding-left: 5vw;
-    overflow: hidden;
-    width: 75vw;
-    height: 100vh;
-    padding-right: 4vw;
-    padding-top: 6vh;
+  padding-left: 5vw;
+  overflow: hidden;
+  width: 50vw;
+  height: 65vh;
+  padding-right: 6vw;
+  padding-top: 6vh;
+  background: white;
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px) */
+}
+
+profile-cont{
+  /* background-size: cover; */
+  background-image: url(../../asset/session-001.jpg); 
+  background-position: right bottom;
+  /* height: 100%; */
+  /* background-repeat: no-repeat; */
 }
 
 @media (max-width: 980px) {
@@ -113,32 +130,14 @@ a{
   outline: none;
   border-bottom: 2px solid #B0B3B9;
 }
-/* 
-.box-form-1 label {
-  display: block;
-  position: relative;
-  margin-left: 30px;
-}
-
-.box-form-1 label::before {
-    content: ' \f00c';
-    position: absolute;
-    font-family: FontAwesome;
-    background: transparent;
-    border: 3px solid #05032d;
-    border-radius: 4px;
-    color: transparent;
-    left: -30px; */
-    /* transition: all 0.2s linear;
-} */
-
 
 .box-form-1 .right button {
     /* float: center; */
     color: #fff;
-    margin-top: 40px;
-    margin-left: 40px;
+    margin: 40px 100px;
+    /* margin-left: 40px; */
     font-size: 16px;
+    height: 52px;
     /* padding: 12px 35px; */
     border-radius: 50px;
     display: inline-block;
@@ -149,4 +148,84 @@ a{
     background-image: linear-gradient(135deg, #1015b5 10%, #03254c 100%);
 }
 
+.sidebar {
+  margin: 1rem;
+  padding: 1rem;
+  width: 18rem;
+  /* background-color: #f1f1f1; */
+  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+  
+  /* position: fixed; */
+  /* height: 100%; */
+  overflow: auto;
+}
 
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 20rem;
+  padding: 1px 16px;
+  height: 1000px;
+  align-items: center;
+}
+
+.profile-tab{
+  margin-left: 6rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.login h1{
+text-align: center;
+}
+
+.bckgrnd-profile{
+  background-size: 132rem;
+  /* background-image: url('/src/asset/wave_grid.png'); */
+  background-repeat: no-repeat;
+  background-position: right bottom
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+
+/* POST CONTAINER */
+.post-col{
+  background: none !important;
+}
+
+.post-col h1{
+  color: white;
+  margin-bottom: 2rem;
+}
