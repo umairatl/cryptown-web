@@ -32,7 +32,7 @@ margin-bottom: 1rem;
   text-align: center;
 }
 
-.post-box{
+.post-box__user{
   display: flex;
   flex-direction: row;
   justify-content: space-between;

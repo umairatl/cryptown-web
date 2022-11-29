@@ -14,7 +14,7 @@
 
 /* table */
 .overflow-table {
-  overflow-x: visible !important;
+  overflow-x: auto;
 }
 
 /* .css-11xur9t-MuiPer-root-MuiTableContainer-root{

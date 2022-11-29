@@ -127,7 +127,7 @@ const Post = ({ onCustomClick, post }) => {
           onClick={() => {
             handlePostClick(post.postid);
           }}
-          className="post-box"
+          className="post-box__user"
         >
           <p>
             <FaUserCircle /> {name}
