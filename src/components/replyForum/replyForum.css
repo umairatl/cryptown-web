@@ -42,13 +42,77 @@
   position: relative;
 } */
 
-p.bolding {
+p.bolding1 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
   background: #000000;
   color: #ffffff;
   box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000;
+  justify-content: left;
+  /* margin-right: 70%; */
+}
+p.bolding2 {
+  font-weight: bolder;
+  display: inline;
+  padding: 0.25em 0.5em;
+  /* background: #000000; */
+  color: #ffffff;
+  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
+}
+
+p.bolding3 {
+  font-weight: bolder;
+  display: inline;
+  padding: 0.25em 0.5em;
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000;
+}
+
+p.bolding4 {
+  font-weight: bolder;
+  display: inline;
+  padding: 0.25em 0.5em;
+  /* background: #000000; */
+  color: #ffffff;
+  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
+  font-size: 1em;
+}
+
+p.bolding7 {
+  font-weight: bolder;
+  display: inline;
+  padding: 0.25em 0.5em;
+  /* background: #000000; */
+  color: #ffffff;
+  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
+  font-size: 30%;
+}
+
+p.bolding8 {
+  font-weight: bolder;
+  display: inline;
+  padding: 0.25em 0.5em;
+  /* background: #000000; */
+  color: #ffffff;
+  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
+  font-size: 30%;
+}
+
+p.bolding9 {
+  font-weight: bolder;
+  display: inline;
+  padding: 0.25em 0.5em;
+  /* background: #000000; */
+  color: #ffffff;
+  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
+  font-size: 30%;
+}
+
+.p-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .forum {
@@ -75,3 +139,27 @@ input#replyforumid {
   position: relative;
   overflow: hidden;
 } */
+
+/* .divbolding1 {
+  display: flex;
+  /* align-content: center; not using*/
+/* justify-content: space-between; */
+/* }  */
+
+.mainpost {
+  /* margin-top: 5%; */
+  text-align: left;
+}
+
+.sectionforreply {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+form.login {
+  margin-bottom: 2%;
+}
+
+.spacing29 {
+  margin-top: 2%;
+}
