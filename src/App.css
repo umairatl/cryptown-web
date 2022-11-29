@@ -60,11 +60,11 @@
   }
 } */
 
-html,body{
-scroll-behavior: smooth;
-/* background: #eff7f8; */
+html,
+body {
+  scroll-behavior: smooth;
+  /* background: #eff7f8; */
 }
-
 
 :root {
   --yellow: #f5c32c;
@@ -82,7 +82,7 @@ scroll-behavior: smooth;
 
 .App {
   margin: 0;
-  overflow: hidden; 
+  overflow: hidden;
   color: var(--black);
 }
 
@@ -122,6 +122,3 @@ scroll-behavior: smooth;
 .App-link {
   color: #61dafb;
 }
-
-
-

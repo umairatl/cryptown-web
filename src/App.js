@@ -26,6 +26,8 @@ import RedirectBack from "./components/utils/redirectBack";
 function App() {
   const { user } = useAuthContext();
 
+  console.log(window.gtag);
+
   useEffect(() => {
     googleAnalyticsActions.initGoogleAnalytics("UA-250253272-1");
   }, []);
