@@ -109,11 +109,11 @@ const Post = ({ onCustomClick, post }) => {
 
   // // post.email
 
-  // const handlePostClick = (postId) => {
-  //   dialogDispatch({type: "USER_POST_PROFILE"})
-  //   setPostId(postId)
-  //   setShow(true)
-  // }
+  const handlePostClick = (postId) => {
+    dialogDispatch({ type: "USER_POST_PROFILE" });
+    setPostId(postId);
+    setShow(true);
+  };
 
   return (
     <div
