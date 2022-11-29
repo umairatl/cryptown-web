@@ -1,3 +1,9 @@
+.coin-detail .first-col{
+  background: none !important;
+}
+
+
+
 .coin-detail{
    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
    min-height: fit-content;

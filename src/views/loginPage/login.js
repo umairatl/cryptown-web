@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import NormalDialog from '../../components/Dialog/normalDialog';
+import { useDialogContext } from '../../hooks/useDialogContext';
 import {useLogin} from '../../hooks/useLogin';
 
 const Login = () => {
@@ -7,10 +9,13 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const {login, isLoading, error, status} = useLogin()
 
+  const { loginMssg, dispatch:dialogDispatch } = useDialogContext()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     await login(email, password)
+    dialogDispatch({type:"LOGIN_MSSG"})
 }
 
 return (
@@ -20,8 +25,13 @@ return (
         <input type ='email' placeholder='Enter your email' onChange={(e) => setEmail(e.target.value)} value={email}/><br></br>
         <input type ='password' placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} value={password}/><br></br>
       <button disabled={isLoading}>Login</button>
-      {error && <div className='error'>{error}</div>}
-      <p>{status}</p>
+      { loginMssg ?
+        <NormalDialog 
+        type="LOGIN_MSSG"
+        dialogTitle={status} 
+        dialogMessage={error}
+        /> : null
+      }
       </form>
     </div>
 )}

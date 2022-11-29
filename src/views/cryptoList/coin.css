@@ -1,4 +1,8 @@
-.sec-wrap{
+.main-page .first-col {
+  background: none !important;
+}
+
+.sec-wrap {
   display: flex;
   flex-direction: column;
   margin: 3rem auto 0px;
@@ -9,7 +13,7 @@
 }
 
 /* table */
-.overflow-table{
+.overflow-table {
   overflow-x: visible !important;
 }
 
@@ -17,22 +21,22 @@
   overflow-x: visible !important;
 } */
 
-.table_h{
-/* background: #14578e !important; */
-/* color:  !important; */
-color: white !important;
-background: black !important;
-height: 2rem !important;
-font-size: 1.2rem !important;
-padding: 21px !important;
-/* text-transform: uppercase; */
+.table_h {
+  /* background: #14578e !important; */
+  /* color:  !important; */
+  color: white !important;
+  background: black !important;
+  height: 2rem !important;
+  font-size: 1.2rem !important;
+  padding: 21px !important;
+  /* text-transform: uppercase; */
 }
 
-.line-height-t{
+.line-height-t {
   line-height: 7px !important;
 }
 
-.row-tbl-coin{
+.row-tbl-coin {
   font-size: 1.2rem !important;
 }
 
@@ -56,7 +60,7 @@ background-color: blue;
 font-size: 1rem !;
 } */
 
-.name-col span{
+.name-col span {
   margin-left: 1rem;
   margin-top: 0px;
   font-size: 1.2rem;
@@ -77,7 +81,7 @@ font-size: 1rem !;
   font-size: 12pt;
 }
 
-.search-col{
+.search-col {
   background-color: #000000;
   width: 473px;
   color: wheat;
@@ -91,8 +95,8 @@ font-size: 1rem !;
   font-size: 1.5rem;
 }
 
-.sec-wrap h1{
-  color: wheat
+.sec-wrap h1 {
+  color: wheat;
 }
 
 .crimson-text {
@@ -114,7 +118,7 @@ font-size: 1rem !;
   text-align: center;
 }
 
-img#gif1{
+img#gif1 {
   display: block;
   max-width: 18vw;
 }
@@ -123,45 +127,40 @@ img#gif1{
   display: flex;
   align-items: center;
   justify-content: center;
-}   
+}
 
-
-.coin-app{
+.coin-app {
   margin-top: 1rem;
   padding-top: 1rem;
 }
 
-
-.carousel-col{
+.carousel-col {
   width: 700px;
   height: 500px;
   margin: 0 auto;
 }
 
-.set-coinList{
+.set-coinList {
   width: 100rem;
   margin-top: -22pt;
   /* margin-top: -49pt; */
 }
 
-
-h3.headercointable{
-    color: #000000;
-    text-align: center;
-    font-size: 3.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+h3.headercointable {
+  color: #000000;
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
-
-span#colortext6{
-    color: #0000ff;
+span#colortext6 {
+  color: #0000ff;
 }
 
-
-
-.coin-app{
-
-  background-image: url('/src/asset/bluepink2.png');
+.coin-app {
+  background-image: url("/src/asset/bluepink2.png");
   background-size: cover;
   background-position: center;
   padding: 60px 50px;
@@ -176,7 +175,7 @@ span#colortext6{
   z-index: -4;
 }
 
-.btn-coin{
+.btn-coin {
   padding: 7px 0px;
   color: white;
   background: #14578e;
@@ -184,7 +183,7 @@ span#colortext6{
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   letter-spacing: 4px;
   /* text-align: center; */
   /* border: 1px solid #8f7cec; */
@@ -194,26 +193,22 @@ span#colortext6{
   width: 27%;
 }
 
-.btn-coin:hover{
+.btn-coin:hover {
   background: #8f7cec;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #8F7CEC, 0 0 25px #8f7cec, 0 0 50px #8f7cec, 0 0 100px #8f7cec;
-
+  box-shadow: 0 0 5px #8f7cec, 0 0 25px #8f7cec, 0 0 50px #8f7cec,
+    0 0 100px #8f7cec;
 }
 
-
-.main-page{ 
-  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+.main-page {
+  background: linear-gradient(60deg, #242424, #3b0054, #00094b, #242424);
   /* background: url(../../asset/platform.png) no-repeat; */
   object-fit: contain;
   background-size: 100% 100%;
 }
 
-
-
-
-.carousel-col-1{
+.carousel-col-1 {
   /* display: inline-block;
     border-radius: 40px;
     background-color: #abd8ff;
@@ -228,15 +223,13 @@ span#colortext6{
   border-radius: 40px;
   overflow: hidden; */
   /* background: url(../../asset/platform.png) no-repeat; */
-  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+  background: linear-gradient(60deg, #242424, #3b0054, #00094b, #242424);
 
   object-fit: contain;
   background-size: 100% 100%;
-
 }
 
-
-.carousel-2{
+.carousel-2 {
   width: 70%;
   margin: 5rem auto;
   color: white;
@@ -244,28 +237,28 @@ span#colortext6{
 
 /* title */
 
-#marketlist{
+#marketlist {
   margin-top: 5rem;
 }
 
-.trending-wrap{
+.trending-wrap {
   background-color: white;
   width: 70%;
   border-radius: 7rem;
   margin: 0px auto 7rem;
-   /* margin-left: 28rem;  */
+  /* margin-left: 28rem;  */
   /* margin: auto; */
   text-align: center;
   /* margin-bottom: 4rem !important; */
   /* align-items: center; */
 }
 
-.title-market{
+.title-market {
   width: 50%;
   margin-bottom: 2rem;
   margin-top: 4rem;
   /* text-align: center; */
-  
+
   /* justify-content: center; */
   /* text-align: center; */
   /* text-align: center; */
@@ -293,7 +286,7 @@ span#colortext6{
   font-size: 2.4rem;
 }
 .t-name > :nth-child(2) {
-  background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+  background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2rem;

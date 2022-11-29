@@ -34,6 +34,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { margin } from "@mui/system";
+import CoinListTable from "../../components/tables/CoinListTable";
 
 const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
@@ -255,104 +256,15 @@ const Coin = ({}) => {
                   {crypto && search === ""
                     ? crypto.cryptoList
                         .slice((page - 1) * 10, (page - 1) * 10 + 10)
-                        .map((data) => {
+                        .map((crypto) => {
                           return (
-                            <TableRow
-                              key={data.name}
-                              style={{ cursor: "pointer" }}
-                              onClick={() => {
-                                navigation(`/coinDetail/${data.cryptoId}`);
-                              }}
-                            >
-                              <TableCell
-                                sx={{ width: "100px", textAlign: "center" }}
-                              >
-                                {data.market_cap_rank}
-                              </TableCell>
-                              <TableCell className="overflow-table line-height-t row-tbl-coin">
-                                <div className="name-col">
-                                  {" "}
-                                  <img src={data.image} width="45px"></img>{" "}
-                                  <span> {data.name} </span>{" "}
-                                </div>
-                              </TableCell>
-                              <TableCell className="row-tbl-coin">
-                                {formatter.format(data.current_price)}
-                              </TableCell>
-                              <TableCell className="row-tbl-coin">
-                                {formatter.format(data.total_volume)}
-                              </TableCell>
-                              <TableCell className="row-tbl-coin">
-                                {formatter.format(data.market_cap)}{" "}
-                              </TableCell>
-                              {user && (
-                                <TableCell align="center">
-                                  <button
-                                    className="btn-coin"
-                                    onClick={async (e) => {
-                                      e.stopPropagation();
-                                      await handleWatchLists(
-                                        data.cryptoId,
-                                        data.name,
-                                        data.image
-                                      );
-                                    }}
-                                  >
-                                    add
-                                  </button>
-                                </TableCell>
-                              )}
-                            </TableRow>
+                            <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user}/>
                           );
                         })
                     : crypto &&
                       cryptoFilter(crypto.cryptoList).map((crypto) => {
                         return (
-                          <TableRow
-                            key={crypto.name}
-                            style={{ cursor: "pointer" }}
-                            onClick={() => {
-                              navigation(`/coinDetail/${crypto.cryptoId}`);
-                            }}
-                          >
-                            <TableCell
-                              sx={{ width: "100px", textAlign: "center" }}
-                            >
-                              {" "}
-                              {crypto.market_cap_rank}
-                            </TableCell>
-                            <TableCell>
-                              <div className="name-col row-tbl-coin">
-                                {" "}
-                                <img src={crypto.image} width="45px"></img>{" "}
-                                <span> {crypto.name} </span>{" "}
-                              </div>
-                            </TableCell>
-                            <TableCell className="row-tbl-coin">
-                              {formatter.format(crypto.current_price)}
-                            </TableCell>
-                            <TableCell className="row-tbl-coin">
-                              {formatter.format(crypto.market_cap)}
-                            </TableCell>
-                            {user && (
-                              <TableCell align="right">
-                                <button
-                                  className="btn-coin"
-                                  onClick={async (e) => {
-                                    e.stopPropagation();
-                                    await handleWatchLists(
-                                      crypto.cryptoId,
-                                      crypto.name,
-                                      crypto.image
-                                    );
-                                  }}
-                                >
-                                  Like
-                                </button>
-                              </TableCell>
-                            )}
-                            {/* </Link> */}
-                          </TableRow>
+                          <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user}/>
                         );
                       })}
                 </TableBody>
