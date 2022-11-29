@@ -1,20 +1,20 @@
 html,
 body {
-  margin: 0;
+  margin: 0px;
   height: 100vh;
 }
 
 .back-1{
     background: linear-gradient(135deg, #14578e, #550c6d, #8ac1ee, #03254c);
 	animation:gradient 10s ease infinite;
-	background-size: 100%;
+	background-size: 900% 900%;
     font-family: "Open Sans", sans-serif;
     color: #333333;
     position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
     /* background-image: url(../../asset/Asset5.png);                                                                                                */
 }
 
@@ -46,6 +46,16 @@ body {
 
 a{
 	text-decoration:none;
+}
+
+.flex-pass{
+  display: flex;
+  flex-direction: row;
+}
+
+.material-symbols-outlined{
+  cursor: pointer;
+  margin-top: 37px
 }
 
 @media (max-width: 980px) {
@@ -212,7 +222,7 @@ width: 100px;
   overflow: hidden;
 }
 .box-form .right input {
-  width: 100%;
+  width: 87%;
   padding: 10px;
   margin-top: 25px;
   font-size: 16px;

@@ -40,9 +40,6 @@ export const useSignup = () => {
                  localStorage.setItem('user', JSON.stringify(json.userJwt))
                  localStorage.setItem('username', JSON.stringify(json.user))
 
-
-                 
-
                  dispatch({type: 'LOGIN', payload: json["userJwt"]})
                  profileDispatch({ type: "SET_PROFILE", payload: {email: json["email"], username: json["user"]}})
 

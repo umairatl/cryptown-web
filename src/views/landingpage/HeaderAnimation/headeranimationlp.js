@@ -1,6 +1,7 @@
 import React from "react";
 import videoanimation from "../../../asset/intro.mp4";
 import "../HeaderAnimation/headeranimation.css";
+import {Link} from "react-router-dom";
 
 export default function LpAnimation() {
   // React.useEffect(()=>{
@@ -55,7 +56,7 @@ export default function LpAnimation() {
         <source type="video/mp4" src={videoanimation} />
         Your browser does not support HTML5 video.
       </video>
-      <button id="lpheaderbutton">Learn More</button>
+      <Link to ='/market'> <button  id="lpheaderbutton">Learn More</button> </Link>
     </div>
   );
 }

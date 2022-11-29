@@ -280,7 +280,7 @@ const Coin = ({}) => {
               />
             ) : null}
 
-            <Pagination
+            <Pagination className="pagination-cont"
               count={(crypto?.cryptoList.length / 10).toFixed(0)}
               style={{
                 padding: 20,
