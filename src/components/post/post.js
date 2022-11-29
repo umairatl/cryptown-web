@@ -46,7 +46,7 @@ const Post = ({ onCustomClick, post }) => {
 
     const json = await response.data;
 
-    if (response.status === 200 && forumList !== null) {
+    if (response.status === 200 ) {
       setPostDelete(json);
       dispatch({ type: "DELETE_POST", payload: json.deletedPostId });
       userPostsDispatch({ type: "DELETE_POST", payload: json.deletedPostId });
