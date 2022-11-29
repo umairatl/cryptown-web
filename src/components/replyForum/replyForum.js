@@ -3,11 +3,19 @@ import "../../components/replyForum/replyForum.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import NormalDialog from '../../components/Dialog/normalDialog';
+import { useDialogContext } from '../../hooks/useDialogContext';
+
 
 const ReplyForum = ({ postId }) => {
   const [replyPost, setReplyPost] = useState("");
-  const { user } = useAuthContext();
   const [isReply, setIsReply] = useState(false);
+  const [error, setError] = useState("");
+  
+
+  const { user } = useAuthContext();
+  const { replyError, dispatch:dialogDispatch } = useDialogContext()
+
 
   const handleSubmitReply = (postId) => async (e) => {
     console.log(postId, "postId");
@@ -15,26 +23,33 @@ const ReplyForum = ({ postId }) => {
 
     e.preventDefault();
     console.log(postId);
-    const response = await axios.post(
-      "api/post/addSubPost",
-      {
-        postId: postId,
-        post: replyPost,
-        dateTime: new Date().toISOString(),
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${user}`,
-          "Content-Type": "application/json",
+    try {
+      const response = await axios.post(
+        "api/post/addSubPost",
+        {
+          postId: postId,
+          post: replyPost,
+          dateTime: new Date().toISOString(),
         },
+        {
+          headers: {
+            Authorization: `Bearer ${user}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const json = await response.data;
+  
+      if (response.status === 200) {
+        // alert("What is happening");
+        setError("")
+        window.location = "/forum";
       }
-    );
-    const json = await response.data;
-
-    if (response.status === 200) {
-      // alert("What is happening");
-      window.location = "/forum";
+    } catch (error) {
+      dialogDispatch({ type: "REPLY_ERROR" })
+      setError(error.response.data.error)
     }
+    
   };
 
   const updateReply = () => {
@@ -42,6 +57,10 @@ const ReplyForum = ({ postId }) => {
     setIsReply(true);
     // setReplyId(id)
   };
+
+  useEffect(() => {
+    console.log("Error:", replyError)
+  }, [error])
 
   return (
     <div>
@@ -64,6 +83,14 @@ const ReplyForum = ({ postId }) => {
           <button onClick={() => setIsReply(false)}>Cancel</button>
         </form>
       ) : null}
+
+      { replyError && error ?
+        <NormalDialog 
+        type="REPLY_ERROR"
+        dialogTitle="Failed to Add Post"
+        dialogMessage={error}
+        /> : null
+      }
     </div>
   );
 };

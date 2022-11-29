@@ -9,12 +9,12 @@
     align-items: stretch;
     justify-content: space-between;
     box-shadow: 0 0 20px 6px #090b6f85;
-    /* height: 80vh; */
 }
 
 .profile{
-  background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
-  /* height: fit-content; */
+  /* background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424); */
+  height: fit-content;
+  /* padding-bottom: 5rem; */
   /* padding-bottom: 4rem; */
 }
 
@@ -70,10 +70,12 @@ a{
 
 .profile button{
   background: #3b5998;
-  color: #FFFFFF;
-  margin-top: 10px;
-  padding: 10px 40px;
-  border-radius: 100px;
+    color: #FFFFFF;
+    margin-top: 8px;
+    margin-right: 1rem;
+    padding: 3px 13px;
+    border-radius: 100px;
+    display: inline-block;
   display: inline-block;
   box-shadow: 0 3px 6px 1px #042d4657;
 }
@@ -86,11 +88,14 @@ a{
   padding-right: 6vw;
   padding-top: 6vh;
   background: white;
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px) */
 }
 
 profile-cont{
-  background-size: cover;
+  /* background-size: cover; */
   background-image: url(../../asset/session-001.jpg); 
+  background-position: right bottom;
   /* height: 100%; */
   /* background-repeat: no-repeat; */
 }
@@ -129,9 +134,10 @@ profile-cont{
 .box-form-1 .right button {
     /* float: center; */
     color: #fff;
-    margin-top: 40px;
-    margin-left: 40px;
+    margin: 40px 100px;
+    /* margin-left: 40px; */
     font-size: 16px;
+    height: 52px;
     /* padding: 12px 35px; */
     border-radius: 50px;
     display: inline-block;
@@ -190,8 +196,9 @@ text-align: center;
 
 .bckgrnd-profile{
   background-size: 132rem;
-  background-image: url('/src/asset/wave_grid.png');
+  /* background-image: url('/src/asset/wave_grid.png'); */
   background-repeat: no-repeat;
+  background-position: right bottom
 }
 
 @media screen and (max-width: 700px) {
@@ -216,4 +223,9 @@ text-align: center;
 /* POST CONTAINER */
 .post-col{
   background: none !important;
+}
+
+.post-col h1{
+  color: white;
+  margin-bottom: 2rem;
 }

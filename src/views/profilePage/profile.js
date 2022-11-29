@@ -21,6 +21,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import UserPosts from "./userPostsPage/userPosts";
+import Footer from "../../components/footer/footer";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -254,6 +255,7 @@ const Profile = () => {
     
     </div>
 }
+<Footer />
 </div>
     </div>
   );

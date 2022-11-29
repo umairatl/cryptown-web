@@ -77,7 +77,11 @@ const ForumPage = () => {
       }
       setNewPost("");
     }
-  };
+}
+
+  let dayOpt = { weekday: 'long' }
+  let yearOpt = { year: 'numeric', month: 'numeric', day: 'numeric' }
+  let timeOpt = { hour: 'numeric', minute: 'numeric' }
 
   return (
     <div className="forum">
@@ -167,6 +171,10 @@ export default ForumPage;
             <div key={index} className="list-forum">
             <div className="post-box">
               <p>{row.email}</p>
+              <p>{row.username}</p>
+              <p>{new Date(row.postdatetime).toLocaleDateString("en-MY", yearOpt).toString()}</p>
+              <p>{new Date(row.postdatetime).toLocaleDateString("en-MY", timeOpt).toString().substring(12)}</p>
+              <p>{new Date(row.postdatetime).toLocaleDateString("en-MY", dayOpt).toString()}</p>
               <p>{entities.decodeHTML(row.post)}</p>
              <ReplyForum key={row.postid} postId={row.postid}/>
             </div>
@@ -198,7 +206,7 @@ export default ForumPage;
             <a href="#"><img src={videocamera1} alt="" style="margin-right: 9px;"/>Add Video</a>
             <a href="#"><img src={smilingface} alt=""/></a>
             <a href="#"><img src={videocamera2} alt=""/></a>
-        </div>
+        </div>]
 </div>
               {row.replies.map((reply) => <Reply reply={reply}/>)} */
 }
