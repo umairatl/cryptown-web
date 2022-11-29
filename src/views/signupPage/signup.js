@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import img from '../../asset/signup.png'
 import logo from '../../asset/Assetlogo.png'
+import { useDialogContext } from '../../hooks/useDialogContext';
+import NormalDialog from '../../components/Dialog/normalDialog';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -21,6 +23,9 @@ const Signup = () => {
   const dataperiod = 2000;
 
   const {signup, error, status, isLoading} = useSignup();
+
+  const { signupMssg, dispatch:dialogDispatch } = useDialogContext()
+
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -59,7 +64,17 @@ const Signup = () => {
     e.preventDefault()
 
     await signup(email, username, password, confirmPass)
+    dialogDispatch({type: "SIGNUP_MSSG"})
   }
+
+  let passwordRequirementMssg = `
+    Password Requirements:
+      1. Minimum 8 characters
+      2. Minimum 1 number
+      3. Minimum 1 symbol
+      4. Minimum 1 Uppercase Letter
+      5. Minimum 1 Lower Letter
+  `
 
 
 return (
@@ -68,11 +83,18 @@ return (
     <form className='signup' onSubmit={handleSubmit}>
       <input type ='email' placeholder='Enter your Email' onChange={(e) => setEmail(e.target.value)} value={email}/>
       <input type ='username' placeholder='Create Username' onChange={(e) => setUsername(e.target.value)} value={username}/>
-      <input type ='password' placeholder='Crate Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
-      <input type ='confirmPass' placeholder='Confrim Password' onChange={(e) => setconfirmPass(e.target.value)} value={confirmPass}/>
+      <input type ='password' placeholder='Create Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
+      <input type ='confirmPass' placeholder='Confirm Password' onChange={(e) => setconfirmPass(e.target.value)} value={confirmPass}/>
       <button disabled={isLoading}>Sign up</button>
-      {error && <div className='error'>{error}</div>}
-      <p>{status}</p>
+      {/* {error && <div className='error'>{error}</div>}
+      <p>{status}</p> */}
+      { signupMssg ?
+        <NormalDialog 
+        type="SIGNUP_MSSG"
+        dialogTitle={status} 
+        dialogMessage={error === "Password is too weak" ?<div><b>{error}</b>{passwordRequirementMssg}</div> : error}
+        /> : null
+      }
    </form>
     </div>
 

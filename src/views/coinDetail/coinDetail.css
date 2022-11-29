@@ -1,3 +1,9 @@
+.coin-detail .first-col{
+  background: none !important;
+}
+
+
+
 .coin-detail{
    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
    min-height: fit-content;
@@ -326,7 +332,7 @@ table tr{
 
 /* ATL/ATH Component */
 .card-atl{
-  max-width: 275px;
+  max-width: 280px;
   margin-left: 9rem;
   width: 20rem ;
   height: 10rem;
@@ -347,4 +353,9 @@ table tr{
   /* font-size: 6rem; */
   text-align: center;
   /* margin-top: 20rem; */
+}
+
+.left-det .btn-coin{
+margin-left: 2rem;
+margin-bottom: 1rem;
 }

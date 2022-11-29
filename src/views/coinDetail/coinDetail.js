@@ -15,11 +15,24 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import ATH_ATL from "../../components/ath/atl/ath_atl";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useWatchListContexts } from "../../hooks/useWatchListContext";
+import { useDialogContext } from "../../hooks/useDialogContext";
+import NormalDialog from "../../components/Dialog/normalDialog";
 
 const CoinDetail = () => {
   const { id } = useParams();
-  var [detail, setDetail] = useState(null);
+  let [detail, setDetail] = useState(null);
+  let [error, setError] = useState(null) 
+  const [watchList, setWatchList] = useState({});
+
   const scollToRef = useRef();  const [currency, setCurrency] = useState('10');
+
+  const { watchLists: watchListContext, dispatch } = useWatchListContexts();
+  const { addToWatchlist: addWatchListDialog, dispatch: dialogContext } =
+    useDialogContext();
+  const { user } = useAuthContext();
+
 
   useEffect(() => {
     const fetchCoinDetail = async () => {
@@ -46,6 +59,53 @@ const CoinDetail = () => {
   
   const handleChange = (event) => {
     setCurrency(event.target.value);
+  };
+  
+  const addToWatchlist = async (cryptoId, coinName, image_url) => {
+    if (!user) {
+      setError("Please log in to use this feature");
+      return;
+    }
+
+    const response = await axios.post(
+      "api/favourite/favourite-add",
+      {
+        cryptoId: cryptoId,
+        coinName: coinName,
+        image_url: image_url,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user}`,
+        },
+      }
+    );
+
+    const json = await response.data;
+
+    if (response.status === 200) {
+      setWatchList((prev) => ({ ...prev, ...json }));
+      console.log("ADD: ", json["newFavourite"]);
+      dispatch({ type: "ADD_WATCHLIST", payload: json["newFavourite"] });
+    }
+  };
+
+  const handleWatchLists = async (cryptoId, coinName, image_url) => {
+    // e.stopProawaitpagation()
+    // console.log(cryptoId)
+    try {
+      await addToWatchlist(cryptoId, coinName, image_url);
+      setError(null);
+      // console.log("watch list", watchList)
+      dialogContext({ type: "ADD_TO_WATCHLIST" });
+      // alert(`${watchList["mssg"]}`)
+    } catch (error) {
+      console.log(error);
+      setError(error.response.data.error);
+      dialogContext({ type: "ADD_TO_WATCHLIST" });
+      // alert(error.response.data.error)
+    }
   };
 
   // var updateATH_ATL = () => {
@@ -116,7 +176,21 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                   {formatterMY.format(detail && detail.cryptoDetails.current_price_myr)} </span> :  
                   <span> 
                   {formatter.format(detail && detail.cryptoDetails.current_price_usd)}</span>}
-                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}</span>
+                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}
+
+                { detail &&  
+                  <button  onClick={() => handleWatchLists(detail.cryptoDetails.cryptoId, detail.cryptoDetails.name, detail.cryptoDetails.image)} className="btn-coin">Add to Wishlist</button> 
+                }
+
+                {addWatchListDialog ? (
+                  <NormalDialog 
+                    type="ADD_TO_WATCHLIST"
+                    dialogTitle="Add to Watchlist"
+                    dialogMessage={!error ? watchList["mssg"] : error}
+                  />
+                  ) : null
+                }
+                </span>
                 <div className="table-detail">
 
                   {/* table */}
@@ -182,6 +256,7 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
            detail && <ATH_ATL detail = {[ detail.cryptoDetails, 20]} />
            : detail && <ATH_ATL detail = {[ detail.cryptoDetails, 10]} />
         }
+        
 
 
 

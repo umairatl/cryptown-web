@@ -12,6 +12,7 @@ import Footer from "../../components/footer/footer";
 import TeamCard from "./team/team";
 import LpAnimation from "./HeaderAnimation/headeranimationlp";
 import CustomerReview from "./customerreviews/customerfeedback";
+import Counter from "../appList/counterSec/counter";
 
 const MainLandingPage = () => {
   return (
