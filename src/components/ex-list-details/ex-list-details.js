@@ -35,7 +35,7 @@ const Exchange_Market = ({exchange}) => {
       <Table sx={{ maxWidth: 600 }} size="large">
         <TableHead>
           <TableRow>
-            <TableCell><b>Exchange Name</b></TableCell>
+            <TableCell className="exchange"><b>Exchange Name</b></TableCell>
             <TableCell align="right"><b>Visit Website</b></TableCell>
           </TableRow>
         </TableHead>
