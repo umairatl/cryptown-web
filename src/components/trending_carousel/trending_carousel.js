@@ -10,8 +10,6 @@ const TrendingTable = ({popular}) => {
     const [val, setVal] = useState('');
     const theme = useTheme();
 
-    console.log(popular, "popular")
-
 //     useEffect(() => {
 //         const arr = []
 //         const updateVal = trending && trending.map((row) => {
@@ -31,9 +29,9 @@ const TrendingTable = ({popular}) => {
 
 
         <div className="test">
-          {popular && popular.map((row) => (
-            <div className="trending-card">
-              <Card sx={{ display: 'flex' }}>
+          {popular && popular.map((row, index) => (
+            <div className="trending-card" key={index}>
+              <Card className='trending-card__test' sx={{ display: 'flex' }}>
               <CardMedia
                className="image-popular"
                 component="img"

@@ -26,11 +26,23 @@
     /* width: 50px !important; */
 }
 
-.css-1oqv2c0-MuiPaper-root-MuiCard-root{
+/* .css-1oqv2c0-MuiPaper-root-MuiCard-root{
     background: none !important;
     width: 13rem;
     height: 12rem;
     border: 27px solid none!important;
+} */
+
+
+/* .css-1q04urf{
+    background: none !important;
+    width: 13rem;
+    height: 12rem;
+    border: 27px solid none!important;
+} */
+
+.css-1q04urf{
+    background: none !important;
 }
 
 /* .trending-card{
@@ -56,4 +68,11 @@
     margin-top: 81px;
     font-size: 18pt;
 
+}
+
+.trending-card__test{
+    background: none !important;
+    width: 13rem;
+    height: 12rem;
+    border: 27px solid none!important;
 }

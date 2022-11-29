@@ -20,6 +20,7 @@ import ProgressBar from "../../components/progressBar/proressBar";
 import { Link } from 'react-router-dom';
 import { useProfileContext } from "../../hooks/useProfileContext";
 import { useNavigate } from 'react-router-dom';
+import ConditionalDialog from "../../components/Dialog/conditionalDialog";
 
 
 
@@ -65,7 +66,7 @@ const Profile = () => {
   // update user data
   handleSubmit = async (e) => {
     console.log("innnn");
-    e.preventDefault();
+    // e.preventDefault();
     const response = await axios.patch(
       "api/user/update",
       {
@@ -111,7 +112,9 @@ const Profile = () => {
 
   return (
     <div className="profile">
+    <div className="profile-top">
       <Navbar />
+      </div>
       {profile ? (
         <div className="test">
           <div>
@@ -182,33 +185,13 @@ const Profile = () => {
                     </div>
                   ) : null}
 
-                  {/* <button>Submit</button> */}
                   <div>
-                    <Button variant="outlined" onClick={handleClickOpen}>
-                      Submit
-                    </Button>
-                    <Dialog
-                      open={open}
-                      onClose={handleClose}
-                      aria-labelledby="alert-dialog-title"
-                      aria-describedby="alert-dialog-description"
-                    >
-                      <DialogTitle id="alert-dialog-title">
-                        {"Confirmation"}
-                      </DialogTitle>
-                      <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
-                          Please confirm if you want to proceed to update your
-                          profile
-                        </DialogContentText>
-                      </DialogContent>
-                      <DialogActions>
-                        <Button onClick={handleClose}>Back</Button>
-                        <Button onClick={handleSubmit}  autoFocus>
-                          Proceed
-                        </Button>
-                      </DialogActions>
-                    </Dialog>
+                    <ConditionalDialog 
+                      handleSubmit={handleSubmit} 
+                      dialogButton="Submit"
+                      dialogTitle="Update Profile" 
+                      dialogMessage="Please confirm if you want to proceed to update your profile" 
+                    />
                   </div>
                 </form>
               </div>

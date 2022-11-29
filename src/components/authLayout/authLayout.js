@@ -80,7 +80,7 @@ return (
         </div>
 	</div>
 
-  <div class="right">
+  <div className="right">
   <img src={logo} width='80%'/>
     { authType === 'login' ? 
     <div >

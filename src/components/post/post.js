@@ -4,64 +4,109 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useState } from "react";
 import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
-
+import ConditionalDialog from "../Dialog/conditionalDialog";
+import NormalDialog from "../Dialog/normalDialog";
+import { useEffect } from "react";
+import { useDialogContext } from "../../hooks/useDialogContext";
+const entities = require("entities");
 
 const Post = ({ post }) => {
-    const [postDelete, setPostDelete] = useState({})
-    const [error, setError] = useState(null)
+  const [postDelete, setPostDelete] = useState({});
+  const [error, setError] = useState(null);
 
-    const { forumList, dispatch } = useForumContext()
-    const { postLists, dispatch: userPostsDispatch } = useUserPostsContext()
+  const { forumList, dispatch } = useForumContext();
+  const { dispatch: userPostsDispatch } = useUserPostsContext();
+  const { userPost, dispatch: dialogDispatch } = useDialogContext();
 
-    const { user } = useAuthContext()
+  const { user } = useAuthContext();
 
-    const deletePost = async (postId) => {
-      if (!user) {
-        return
-      }
-
-      const response = await axios.delete('api/post/post-delete',
-      {
-          headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${user}`,
-          },
-          data: {
-            "postId": postId,
-          }
-      })
-      
-      const json = await response.data
-    
-      if (response.status === 200 && forumList !== null){
-        setPostDelete(json)
-        dispatch({type:"DELETE_POST", payload: json.deletedPostId})
-        userPostsDispatch({type:"DELETE_POST", payload: json.deletedPostId})
-      }
-    }
-    
-    const handleDeletePost = async (postId) => {
-      try {
-        await deletePost(postId)
-        setError(null)
-        alert(`${postDelete["mssg"]}`)
-      } catch (error) {
-        console.log(error)
-        setError(error.response.data.error) 
-        alert(error.response.data.error)
-      }
+  const deletePost = async (postId) => {
+    if (!user) {
+      return;
     }
 
-    return ( 
-        <div key={post.postId} className="list-forum">
-            <div className="post-box">
-                <p>{post.email}</p>
-                <p>{post.post}</p>
-                <button onClick={() => handleDeletePost(post.postid)}>Delete</button>
-            </div>
-            {post.replies.map((reply) => <Reply reply={reply}/>)}
-        </div> 
-     );
-}
+    const response = await axios.delete("api/post/post-delete", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user}`,
+      },
+      data: {
+        postId: postId,
+      },
+    });
+
+    const json = await response.data;
+
+    if (response.status === 200 && forumList !== null) {
+      setPostDelete(json);
+      dispatch({ type: "DELETE_POST", payload: json.deletedPostId });
+      userPostsDispatch({ type: "DELETE_POST", payload: json.deletedPostId });
+    }
+  };
+
+  const handleDeletePost = async (postId) => {
+    try {
+      await deletePost(postId);
+      setError(null);
+      dialogDispatch({ type: "USER_POST" });
+    } catch (error) {
+      console.log(error);
+      setError(error.response.data.error);
+    }
+  };
+
+  let dayOpt = { weekday: 'long' }
+  let yearOpt = { year: 'numeric', month: 'numeric', day: 'numeric' }
+  let timeOpt = { hour: 'numeric', minute: 'numeric' }
+
+  return ( 
+      <div key={post.postId} className="list-forum">
+          <div className="post-box">
+              <p>{post.email}</p>
+              <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", yearOpt).toString()}</p>
+              <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", timeOpt).toString().substring(12)}</p>
+              <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", dayOpt).toString()}</p>
+              <p>{entities.decodeHTML(post.post)}</p>
+              {/* <button onClick={() => handleDeletePost(post.postid)}>Delete</button> */}
+              
+              <ConditionalDialog 
+                handleSubmit={() => handleDeletePost(post.postid)} 
+                dialogButton="Delete"
+                dialogTitle="Delete Post" 
+                dialogMessage="Do you want to delete your post."
+              />
+              
+          </div>
+          {post.replies.map((reply) => <Reply reply={reply}/>)}
+      </div> 
+    );
+};
+
+//     let dayOpt = { weekday: 'long' }
+//     let yearOpt = { year: 'numeric', month: 'numeric', day: 'numeric' }
+//     let timeOpt = { hour: 'numeric', minute: 'numeric' }
+
+//     return ( 
+//         <div key={post.postId} className="list-forum">
+//             <div className="post-box">
+//                 <p>{post.email}</p>
+//                 <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", yearOpt).toString()}</p>
+//                 <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", timeOpt).toString().substring(12)}</p>
+//                 <p>{new Date(post.postdatetime).toLocaleDateString("en-MY", dayOpt).toString()}</p>
+//                 <p>{entities.decodeHTML(post.post)}</p>
+//                 {/* <button onClick={() => handleDeletePost(post.postid)}>Delete</button> */}
+                
+//                 <ConditionalDialog 
+//                   handleSubmit={() => handleDeletePost(post.postid)} 
+//                   dialogButton="Delete"
+//                   dialogTitle="Delete Post" 
+//                   dialogMessage="Do you want to delete your post."
+//                 />
+                
+//             </div>
+//             {post.replies.map((reply) => <Reply reply={reply}/>)}
+//         </div> 
+//      );
+// }
  
 export default Post;

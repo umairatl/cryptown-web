@@ -9,6 +9,7 @@ import TeamCard from "./team/team";
 import CityAnimation from "./CityAnimation/cityanimation";
 import LpAnimation from "./HeaderAnimation/headeranimationlp";
 import CustomerReview from "./customerreviews/customerfeedback";
+import Counter from "../appList/counterSec/counter";
 
 
 const MainLandingPage = () => {
@@ -17,6 +18,7 @@ const MainLandingPage = () => {
       <Navbar/>
        <LpAnimation/>
        {/* <HeaderLandingPage/> */}
+       <Counter/>
        <Who/>
       <AboutLandingPage/>
       <Carousallp/>

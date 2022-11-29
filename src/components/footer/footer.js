@@ -67,7 +67,7 @@ const Footer = () => {
                 <FaInstagram/>
               </a>
               <a href="#">
-                {/* <i class='fab fa-linkedin-in fa-spin fa-3x'></i> */}
+                {/* <i className'fab fa-linkedin-in fa-spin fa-3x'></i> */}
                 <FaTwitter/>
               </a>
             </div>
