@@ -27,50 +27,76 @@ const Counter = ({className, ...rest}) => {
         <Fragment>
             <section className='counter'>
                 <div className='counter-row'>
-                 <div className='counter-column'>
-                    <strong data-number='206'>
-                        {userCount && <CountUp {...rest} start = {viewPortEntered ? null:0} end={userCount.userCount}>
-                            {({countUpRef}) => {
-                               return(
-                                    <VisibilitySensor
-                                    active = {!viewPortEntered}
-                                    onChange = {isVisible => {
-                                        if(isVisible){
-                                            setViewPortEntered(true);
-                                        }
-                                    }}
-                                    delayedCall
-                                    >
-                                    <span className='number' ref={countUpRef} />
-                                    </VisibilitySensor>
-                               )
-                            }}
-                        </CountUp>}
-                    </strong>
-                    <span> Registered <br/> Users </span>
-                </div>
-                 <div className='counter-column'>
-                    <strong data-number='27'>
-                    {userCount && <CountUp {...rest} start = {viewPortEntered ? null:0} end={userCount.activeUserCount}>
-                            {({countUpRef}) => {
-                               return(
-                                    <VisibilitySensor
-                                    active = {!viewPortEntered}
-                                    onChange = {isVisible => {
-                                        if(isVisible){
-                                            setViewPortEntered(true);
-                                        }
-                                    }}
-                                    delayedCall
-                                    >
-                                    <span className='number' ref={countUpRef} />
-                                    </VisibilitySensor>
-                               )
-                            }}
-                        </CountUp>}
-                    </strong>
-                    <span> Active <br/> Users </span>
-                </div>
+
+                <div className='counter-column'>
+                        <strong >
+                            {userCount && <CountUp {...rest} start = {viewPortEntered ? null:0} end={userCount.userCount}>
+                                {({countUpRef}) => {
+                                return(
+                                        <VisibilitySensor
+                                        active = {!viewPortEntered}
+                                        onChange = {isVisible => {
+                                            if(isVisible){
+                                                setViewPortEntered(true);
+                                            }
+                                        }}
+                                        delayedCall
+                                        >
+                                        <span className='number' ref={countUpRef} />
+                                        </VisibilitySensor>
+                                )
+                                }}
+                            </CountUp>}
+                        </strong>
+                        <span> Registered <br/> Users </span>
+                    </div>
+                 
+                    <div className='counter-column'>
+                        <strong data-number='206'>
+                            {userCount && <CountUp {...rest} start = {viewPortEntered ? null:0} end={userCount.activeUserCount}>
+                                {({countUpRef}) => {
+                                return(
+                                        <VisibilitySensor
+                                        active = {!viewPortEntered}
+                                        onChange = {isVisible => {
+                                            if(isVisible){
+                                                setViewPortEntered(true);
+                                            }
+                                        }}
+                                        delayedCall
+                                        >
+                                        <span className='number' ref={countUpRef} />
+                                        </VisibilitySensor>
+                                )
+                                }}
+                            </CountUp>}
+                        </strong>
+                        <span> Active <br/> Users </span>
+                    </div>
+
+                    <div className='counter-column'>
+                        <strong data-number='27'>
+                        {userCount && <CountUp {...rest} start = {viewPortEntered ? null:0} end={userCount.postsCount}>
+                                {({countUpRef}) => {
+                                return(
+                                        <VisibilitySensor
+                                        active = {!viewPortEntered}
+                                        onChange = {isVisible => {
+                                            if(isVisible){
+                                                setViewPortEntered(true);
+                                            }
+                                        }}
+                                        delayedCall
+                                        >
+                                        <span className='number' ref={countUpRef} />
+                                        </VisibilitySensor>
+                                )
+                                }}
+                            </CountUp>}
+                        </strong>
+                        <span> Number of <br/> Posts </span>
+                    </div>
+
                 </div>
             </section>
         </Fragment>
