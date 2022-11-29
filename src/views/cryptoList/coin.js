@@ -93,6 +93,7 @@ const Coin = ({}) => {
     };
     fetchCrypto();
     fetchCryptoTren();
+    console.log("USER_LIST: ", user)
   }, []);
 
   const cryptoFilter = (cryptoList) => {

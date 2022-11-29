@@ -1,13 +1,21 @@
 import { useState } from 'react'
 import axios from "../components/axios/axios";
 import { useAuthContext } from './useAuthContext'
+import { useProfileContext } from './useProfileContext';
+import { useNavigate } from "react-router-dom";
+
 
 
 export const useLogin = () => {
   const [error, setError] = useState(null)
   const [status, setStatus] = useState(null)
   const [isLoading, setIsLoading] = useState(null)
+
+  const { dispatch: profileDispatch } = useProfileContext()
   const { dispatch } = useAuthContext()
+
+  const navigation = useNavigate();
+
 
   /**
    * 
@@ -39,10 +47,13 @@ export const useLogin = () => {
       localStorage.setItem('username', JSON.stringify(json.user))
 
       // update the auth context
-      dispatch({type: 'LOGIN', payload: json})
+      dispatch({type: 'LOGIN', payload: json["userJwt"]})
+      profileDispatch({ type: "SET_PROFILE", payload: {email: json["email"], username: json["user"]}})
+
       // update loading state
       setIsLoading(false)
-      window.location = '/market';
+      navigation("/market")
+      // window.location = '/market';
     }
 
     } catch(error){

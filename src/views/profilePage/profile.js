@@ -22,6 +22,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import UserPosts from "./userPostsPage/userPosts";
 import Footer from "../../components/footer/footer";
+import { useDialogContext } from "../../hooks/useDialogContext";
+import NormalDialog from "../../components/Dialog/normalDialog";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,6 +74,7 @@ const Profile = () => {
 
   const { user } = useAuthContext();
   const { profile, dispatch } = useProfileContext();
+  const { userUpdate, dispatch: dispatchDialogContext } = useDialogContext() 
   const [value, setValue] = React.useState(0);
   var [nav, setNav]  = useState('profile');
 
@@ -97,9 +100,14 @@ const Profile = () => {
         dispatch({ type: "SET_PROFILE", payload: {email: json["email"], username: json["username"]} })
       }
     };
+    console.log("USER: " , user)
+    console.log("PROFILE: ", profile)
 
-    if (user) {
+
+    if (user && !profile) {
       fetchUserProfile();
+    } else {
+      setUsername(profile["username"])
     }
   }, []);
 
@@ -124,10 +132,9 @@ const Profile = () => {
     const json = await response.data;
 
     if (response.status === 200) {
-      alert("Profile Updated Successfully");
+      dispatchDialogContext({ type: "USER_UPDATE" })
+      localStorage.setItem("username", JSON.stringify(json["username"]))
       dispatch({ type: "SET_PROFILE", payload: {email: json["email"], username: json["username"]} })
-      navigate("/market")
-      // window.location = "/market";
     }
   };
 
@@ -255,6 +262,14 @@ const Profile = () => {
     
     </div>
 }
+
+  { userUpdate ?
+    <NormalDialog 
+    type="USER_UPDATE"
+    dialogTitle="Update Successful"
+    dialogMessage="Profile Updated Successfully"
+    /> : null
+  }
 <Footer />
 </div>
     </div>
