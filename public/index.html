@@ -33,12 +33,13 @@
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
+      window.gtag = (arguments) => {
         dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      };
 
-      gtag("config", "UA-250253272-1");
+      window.gtag("js", new Date());
+
+      window.gtag("config", "UA-250253272-1");
     </script>
 
     <!--
@@ -61,7 +62,7 @@
     <div id="root"></div>
     <!--
       This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+      If you open it dire ctly in the browser, you will see an empty page.
 
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.

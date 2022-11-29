@@ -17,6 +17,8 @@ export const dialogReducer = (state, action) => {
       return { replyError: !state.replyError };
     case "USER_POST_PROFILE":
       return { userPostProfile: !state.userPostProfile };
+    case "USER_UPDATE":
+      return { userUpdate: !state.userUpdate };
     default:
       return state;
   }
@@ -30,7 +32,8 @@ export const DialogContextProvider = ({ children }) => {
     loginMssg: false,
     signupMssg: false,
     replyError: false,
-    userPostProfile: false
+    userPostProfile: false,
+    userUpdate: false
   });
 
   return (

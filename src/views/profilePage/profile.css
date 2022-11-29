@@ -236,3 +236,157 @@ text-align: center;
   color: white;
   margin-bottom: 2rem;
 }
+
+
+/* phone */
+@media (min-width:16rem) and (max-width:26.66rem){
+  .box-form-1 div {
+    height: auto;
+    width: auto;
+    
+}
+
+
+}
+
+
+
+@media (min-width:16rem) and (max-width:26.66rem){
+  .box-form-1 .left .overlay {
+    background-color: #00094B;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+  .box-form-1 .left{
+    width: auto;
+  }
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+  .box-form-1{
+    display: block;
+  }
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+  .box-form-1 .right{
+    width: auto;
+    height:min-content
+  }
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+  .box-form-1 .right button{
+    width: 7rem;
+  }
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+  .profile-tab{
+    margin:auto;
+  }
+}
+
+@media (min-width: 16rem) and (max-width:26.66rem){
+  .box-form-1 .right button {
+    margin:auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 16rem) and (max-width:26.66rem){
+  .box-form-1 .right input {
+    padding: 0rem;
+
+  }
+}
+
+/*tablet*/
+
+
+@media (min-width:26.67rem) and (max-width:61.25rem){
+  .box-form-1 div {
+    height: auto;
+    width: auto;
+    
+}
+
+
+}
+
+
+
+@media (min-width:26.67rem) and (max-width:61.25rem){
+  .box-form-1 .left .overlay {
+    background-color: #00094B;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+}
+
+@media (min-width:26.67rem) and (max-width:61.25rem){
+  .box-form-1 .left{
+    width: auto;
+  }
+}
+
+@media (min-width:26.67rem) and (max-width:61.25rem){
+  .box-form-1{
+    display: block;
+  }
+}
+
+@media (min-width:26.67rem) and (max-width:61.25rem){
+  .box-form-1 .right{
+    width: auto;
+    height:min-content
+  }
+}
+
+@media (min-width:26.67rem) and (max-width:61.25rem){
+  .box-form-1 .right button{
+    width: 7rem;
+  }
+}
+
+@media (min-width:26.67rem) and (max-width:61.25rem){
+  .profile-tab{
+    margin:auto;
+  }
+}
+
+@media (min-width: 26.67rem) and (max-width:61.25rem){
+  .box-form-1 .right button {
+    margin:auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 26.67rem) and (max-width:61.25rem){
+  .box-form-1 .right input {
+    padding: 0rem;
+
+  }
+}
+
+/* laptop */
+
+@media (min-width: 61.26rem){
+  .post-cont{
+    width: auto;
+  }
+}
+
