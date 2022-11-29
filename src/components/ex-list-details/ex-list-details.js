@@ -16,7 +16,6 @@ function createData(name, trade_url) {
 const Exchange_Market = ({exchange}) => {
   const [data, setData] = useState([]);
   var [rows] = []
-  console.log(exchange, "exchange")
   
   function createData(name) {
     return { name };
@@ -27,7 +26,6 @@ const Exchange_Market = ({exchange}) => {
         rows.push(
             createData(res.name, res.trade_url))
         ) 
-        console.log(exchange, "243")
     }, []);
 
     return (
@@ -37,7 +35,7 @@ const Exchange_Market = ({exchange}) => {
       <Table sx={{ maxWidth: 600 }} size="large">
         <TableHead>
           <TableRow>
-            <TableCell><b>Exchange Name</b></TableCell>
+            <TableCell className="exchange"><b>Exchange Name</b></TableCell>
             <TableCell align="right"><b>Visit Website</b></TableCell>
           </TableRow>
         </TableHead>

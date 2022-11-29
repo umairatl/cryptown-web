@@ -9,15 +9,15 @@ import { useState } from 'react';
 const ConditionalDialog = ({handleSubmit, dialogButton, dialogTitle, dialogMessage}) => {
     const [open, setOpen] = useState(false);
 
-    const handleClickOpen = () => {
+    const handleClickOpen = (e) => {
       setOpen(true);
     };
   
-    const handleClose = () => {
+    const handleClose = (e) => {
       setOpen(false);
     };
   
-    return ( <div>
+    return ( <div onClick={e=>e.stopPropagation()}>
         <Button variant="outlined" onClick={handleClickOpen}>
             {dialogButton}
         </Button>
@@ -39,7 +39,7 @@ const ConditionalDialog = ({handleSubmit, dialogButton, dialogTitle, dialogMessa
             <Button onClick={handleClose}>
                 Back
             </Button>
-            <Button onClick={() => {handleSubmit(); handleClose()}} autoFocus>
+            <Button onClick={(e) => {handleSubmit(); handleClose()}} autoFocus>
                 Confirm
             </Button>
         </DialogActions>

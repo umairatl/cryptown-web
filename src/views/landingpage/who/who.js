@@ -19,7 +19,7 @@ export default function Who() {
                     <div className="icon">
                         {/* <ion-icon name="globe"></ion-icon>         */}
                         <FaGlobeAmericas style={{color:"white", fontSize:"100px"}}/>
-                    <div className="content">
+                    <div className="contentofcard">
                         <h2 id="cardheader">Connection</h2>
                         <p id="pheader">Teamwork and mutual trust are the foundations of connection in workplace,
                         finding common ground of others’ ideas, ambitions, histories, and beliefs.     </p>
@@ -31,7 +31,7 @@ export default function Who() {
                       
                         <AiOutlineRocket style={{color:"white", fontSize:"100px"}}/>
                    
-                    <div className="content">
+                    <div className="contentofcard">
                         
                         <h2 id="cardheader">Integrity</h2>
                         <p id="pheader">We believe that nothing is more important than our reputation, and behaving with the
@@ -43,7 +43,7 @@ export default function Who() {
                 <div className="card">
                     <div className="icon">
                         <ImBubbles2 style={{color:"white", fontSize:"100px"}}/>
-                    <div className="content">
+                    <div className="contentofcard">
                         
                         <h2 id="cardheader">Service</h2>
                         <p id="pheader">Being service-minded or customer-oriented means that you care about providing a 

@@ -77,3 +77,31 @@ span#colortext5{
     background-color: black;
     margin-bottom: -40px;
 }
+
+
+
+@media (min-width:16rem) and (max-width:24.66rem){
+h3.headerambassador{
+
+    font-size: 2rem;
+    
+    
+}
+}
+
+
+@media (min-width:16rem) and (max-width:26.66rem){
+p.pambassador {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    
+    margin: 3rem;
+}
+}
+
+@media (min-width:16rem) and (max-width:26.66rem){
+img.gif2 {
+    display: none;
+}
+}

@@ -1,16 +1,32 @@
+.coin-detail .first-col{
+  background: none !important;
+}
+
+
+
 .coin-detail{
-    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
-  height: fit-content   ;
+   background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+   min-height: fit-content;
+   /* height: 47rem; */
 }
   
   .back-col{
     font-size: 1.5rem;
     margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem
     /* color: white !important; */
   }
 
   .back-col span{
     color: white;
+  }
+
+  .table-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem
   }
 
 .top-info{
@@ -19,8 +35,13 @@
     /* /*background-color: #abd8ff;  */
      display: flex;
     flex-direction: row;
-    /* background: url(../../asset/session-001.jpg);
-    background-repeat: no-repeat; */
+    background-size: 50rem ;
+  background: url(../../asset/wave_grid.png);
+  background-repeat: no-repeat;
+  background-size: 132rem 60rem;
+  /* background:; */
+
+   /*  background-repeat: no-repeat; */
 
     /* align-items: center; */
     justify-content: space-between;
@@ -29,12 +50,14 @@
 
 
 .left-det{
-    width: 90rem;
+    width: 60rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
     margin-left: 5rem;
+}
 
-
+.back-col .img-logo{
+  width: 100px;
 }
 
 
@@ -95,8 +118,10 @@
   .right-col{
     margin-left: 5rem;
     margin-top: 5rem;
+    
+
     /* background: url(../../asset//wave_grid.png); */
-    background-size: 50rem;
+    background-size: 60rem;
     width: 50rem;
   }
 
@@ -107,6 +132,11 @@
 
   .btm-details{
     height: fit-content   ;
+  }
+
+  .btn-vm{
+    width: 17rem !important;
+    height: 4rem !important;
   }
 
 
@@ -179,8 +209,8 @@ margin-top: 5rem;
 }
 
 table{
-     font-weight: 100;
-    font-size: 1.2rem;
+    font-weight: 100;
+    font-size: 1.4rem;
     color: white;
     margin-top: 10px;
     /* font-size: 14pt;
@@ -189,10 +219,13 @@ table{
     line-height: 35px;
     text-align: left;
     /* margin: 6% auto; */
-    width: 50%;
+    width: 65rem;
+    /* border: 2px solid #3b0054; */
 }
 
-table td{
+table tr{
+  /* border: 2px solid #3b0054; */
+  
     /* text-align: right; */
 }
 
@@ -284,4 +317,181 @@ table td{
 .btm-details .css-pwngrv-MuiPaper-root-MuiCard-root{
   width: 22rem !important;
   height: fit-content !important;
+}
+
+.icon_back{
+  margin-top: 0.8rem
+}
+
+.image_logo{
+  margin-top: 3rem;
+  margin-right: 0px;
+  /* margin-left: 4rem */
+}
+
+
+/* ATL/ATH Component */
+.card-atl{
+  max-width: 280px;
+  margin-left: 9rem;
+  width: 20rem ;
+  height: 10rem;
+  margin-bottom: 3.5rem;
+}
+
+.ath_price{
+  background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-size: 3rem; */
+  text-align: center;
+}
+
+.ath_percentage_col{
+  color: black;
+  font-weight: bold;
+  /* font-size: 6rem; */
+  text-align: center;
+  /* margin-top: 20rem; */
+}
+
+.left-det .btn-coin{
+margin-left: 2rem;
+margin-bottom: 1rem;
+}
+
+@media (min-width:19rem) and (max-width:26.66rem){
+.top-info {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    background-size: 50rem;
+    background: url(http://localhost:3000/static/media/wave_grid.1f5f7ef….png);
+    background-repeat: no-repeat;
+    background-size: 132rem 60rem;
+    /* background-repeat: no-repeat; */
+    /* align-items: center; */
+    justify-content: space-between;
+    margin-left: -6rem;
+    /* text-decoration: none; */
+}
+}
+
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+.left-det {
+    width: 50rem;
+    margin-top: 5rem;
+    
+    margin-left: 0rem;
+}
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+.d-name > :nth-child(1) {
+    
+    font-size: 2rem;
+    
+}
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+.left-det .btn-coin{
+  margin-left: 0rem;
+
+}
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+.btn-coin{  
+  width: 8rem;
+}
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+table {
+  display: none;
+}
+}
+
+@media (min-width: 19rem) and (max-width:26.66rem){
+.d-name > :nth-child(2) {
+    
+    font-size: 2rem;
+    
+}
+}
+
+@media (min-width: 19rem) and (max-width:26.66rem){
+  .card-atl {
+    max-width: 280px;
+    /* margin-left: 9rem; */
+    width: 16rem;
+    height: 10rem;
+    margin-left: 0.7rem;
+    margin-bottom: 3.5rem;
+}
+}
+
+@media (min-width: 19rem) and (max-width:26.66rem){
+  .line-chart h1{
+    font-size: 1.6rem;
+
+  }
+}
+
+@media (min-width: 19rem) and (max-width:26.66rem){
+  .line-chart {
+    width: 100%;
+    height: fit-content;
+    /* margin-top: 10%; */
+    /* margin: 5% auto 5%; */
+}
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+  .desc-col {
+    text-align: justify;
+    width: 80%;
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    color: white;
+    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+    padding: 1rem;
+    border-radius: 1rem;
+    /* margin-left: 10%; */
+}
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+  .desc-col h1 {
+
+    font-size: 1.6rem;
+
+ 
+}
+}
+
+@media (min-width: 19rem) and (max-width:26.66rem){
+  .desc-col .para {
+    font-size: 0.6rem;
+}
+}
+
+@media (min-width: 19rem) and (max-width:26.66rem){
+  .ex-h1 {
+    /* margin: auto; */
+    
+    font-size: 1.6rem;
+  
+}
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+  .right-col{
+    margin-top: 0rem;
+  }
 }

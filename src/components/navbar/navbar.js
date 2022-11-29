@@ -1,20 +1,30 @@
 import React, { Component, useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
+import { useLogout } from '../../hooks/useLogout';
 import '../navbar/navbar.css';
 import { FaUserCircle } from "react-icons/fa";
 import { useAuthContext } from '../../hooks/useAuthContext';
 import logo  from '../../asset/logoA.png'
+import { useProfileContext } from '../../hooks/useProfileContext';
 
 const Navbar = () => {
-    const { user } = useAuthContext();
-    const [name, setName] = useState('');
+  
+  const { user } = useAuthContext();
+  const { profile } = useProfileContext() 
+  const [name, setName] = useState('');
+  const { logout } = useLogout();
 
-    useEffect(()  => {
-      const updateName = localStorage.getItem('username');
-      if (updateName){
-        setName(updateName.slice(1, -1));
-      }
-    }, [])
+  useEffect(()  => {
+    const updateName = localStorage.getItem('username');
+    if (updateName){
+      setName(updateName.slice(1, -1));
+    }
+  }, [])
+
+      //logout user
+  const handleClick = async () => {
+    await logout();
+  };
 
 
     return (
@@ -36,9 +46,9 @@ const Navbar = () => {
         </ul>
         <ul className="nav-right">
         <Link to = '/profile' className="nav-text">
-            <FaUserCircle /> <span className='name-col'>{name}</span>
+            <FaUserCircle /> <span className='name-col'>{profile ? profile["username"] : name}</span>
         </Link>
-        <Link to = '/appList' className="nav-text"> Logout </Link>
+        <Link onClick={handleClick} className="nav-text"> Logout </Link>
         </ul>
         </nav>
         )}
