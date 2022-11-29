@@ -32,7 +32,7 @@
 }
 .i-name > :nth-child(2) {
   font-size: 3rem;
-  background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+  background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 950;
@@ -63,11 +63,11 @@
   margin-left: 156px;
 }
 
-span#span-center{
+span#span-center {
   text-align: justify;
 }
 
-button#coinheaderbutton{
+button#coinheaderbutton {
   position: absolute;
   height: 80px;
   width: 300px;
@@ -90,12 +90,12 @@ button#coinheaderbutton{
   margin-top: 181px; */
 }
 
-button#coinheaderbutton{
+button#coinheaderbutton {
   background-size: 400%;
 }
 
-button#coinheaderbutton:before{
-content: '';
+button#coinheaderbutton:before {
+  content: "";
   position: absolute;
   background: inherit;
   top: -5px;
@@ -108,44 +108,39 @@ content: '';
   transition: opacity 0.5s;
 }
 
-button#coinheaderbutton:before{
+button#coinheaderbutton:before {
   opacity: 1;
   z-index: -1;
 }
 
-button#coinheaderbutton:hover{
+button#coinheaderbutton:hover {
   background: black;
   color: white;
   background-size: 400%;
 }
 
-
-
-button{
+button {
   z-index: 1;
   animation: glow 8s linear infinite;
 }
 @keyframes glow {
-  0%{
+  0% {
     background-position: 0%;
   }
-  100%{
+  100% {
     background-position: 400%;
   }
 }
 
-
-@media (min-width: 19rem) and (max-width:26.66rem){
-.Intro { 
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .Intro {
     padding-left: 1rem;
     /* background-color: #24262b; */
+  }
 }
-}
 
-
-
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.i-left {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .i-left {
     display: flex;
     position: relative;
     flex: 1 1;
@@ -153,37 +148,44 @@ button{
     gap: 2rem;
     margin-left: 1rem;
     margin-right: 1rem;
-}
+  }
 }
 
-@media (min-width: 19rem)and  (max-width: 26.66rem){
-.i-name > :nth-child(1) {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .i-name > :nth-child(1) {
     color: white;
     font-weight: bold;
     font-size: 2rem;
-}
+  }
 }
 
-@media (min-width: 19rem) and (max-width:26.66rem){
-.i-name > :nth-child(3) {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .i-name > :nth-child(3) {
     font-weight: 200;
     font-size: 1rem;
     color: white;
     margin-top: 10px;
-}
+  }
 }
 
-
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.i-name > :nth-child(2) {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .i-name > :nth-child(2) {
     font-size: 2rem;
-    background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
+    background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 950;
     width: 15rem;
+  }
+}
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+.i-right > :nth-child(1) {
+
+    display: none;
 }
 }
+
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
 button#coinheaderbutton {
@@ -191,8 +193,8 @@ button#coinheaderbutton {
 }
 }
 
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.t-left {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .t-left {
     display: flex;
     /* position: relative; */
     flex: 1 1;
@@ -200,12 +202,11 @@ button#coinheaderbutton {
     gap: 2rem;
     margin-left: 1rem;
     margin-right: 1rem;
+  }
 }
 
-}
-
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.t-left {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .t-left {
     display: flex;
     /* position: relative; */
     flex: 1 1;
@@ -213,40 +214,34 @@ button#coinheaderbutton {
     gap: 2rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-}
+  }
 }
 
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.t-name > :nth-child(1) {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .t-name > :nth-child(1) {
     color: white;
     font-weight: bold;
     font-size: 1rem;
     width: 7rem;
     text-align: center;
     margin: auto;
-}
+  }
 }
 
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.t-name > :nth-child(2) {
-
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .t-name > :nth-child(2) {
     font-size: 1rem;
-    
-}
+  }
 }
 
-@media (min-width:19rem) and (max-width:26.66rem){
-.search-col {
-   
-    
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .search-col {
     width: 16rem;
-
-
-}
+  }
 }
 
-@media (min-width:19rem) and (max-width:26.66rem){
-.coin-input {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .coin-input {
     border-radius: 5px;
     height: 55px;
     padding: 2px 23px 2px 30px;
@@ -254,52 +249,59 @@ button#coinheaderbutton {
     width: 9rem;
     transition: 0.1s ease-in;
     font-size: 12pt;
-}
+  }
 }
 
-
-@media (min-width:19rem) and (max-width:26.66rem){
-.coin-name {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .coin-name {
     color: white;
     transform: rotate(-45deg);
     margin-top: 81px;
     font-size: 1rem;
+    margin: 0.3rem;
 }
 }
 
-@media (min-width:19rem) and (max-width:26.66rem){
-.coin-name {
-    width: 5rem;
-    text-align: center;
-}
-}
 
-@media (min-width:19rem) and (max-width:26.66rem){
-.marketingcontainer {
+
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .marketingcontainer {
     padding: 3rem;
     display: block;
     justify-content: center;
     margin-left: 4rem;
     flex: column;
-}
+  }
 }
 
-
-@media (min-width:19rem) and (max-width:26.66rem){
-.grid-box {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .grid-box {
     height: 10rem;
     padding: 2rem;
     text-align: center;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 44%);
     width: 7rem;
-}
+  }
 }
 
-@media (min-width:19rem) and (max-width:26.66rem){
-.grid-box h1 {
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .grid-box h1 {
     color: whitesmoke;
     font-weight: 500;
     font-size: 1rem;
+  }
+}
+
+
+@media (min-width: 19rem) and (max-width:26.66rem){
+.trending-wrap {
+
+    display: none;
+
 }
 }
+
+
+
+

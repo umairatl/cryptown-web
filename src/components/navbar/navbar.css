@@ -6,6 +6,7 @@
  /* background: linear-gradient(90deg, #00b4d8 10%, #03254c 90%);  */
  /* height: 50%; */
  /* text-align: center; */
+ background: #00094B;
  /* background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424); */
 
  justify-content: space-between;
@@ -100,7 +101,7 @@ button{
 
 
 
-@media (min-width: 480px) and (max-width:801px) {
+@media (min-width: 30rem) and (max-width:50.1rem) {
 
     .nav-up{
 
@@ -117,5 +118,15 @@ button{
     }
 
 }
+
+@media screen and (min-width:19rem) and (max-width: 26.66rem) {
+  .nav-up {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+}
+
 
 

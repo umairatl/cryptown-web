@@ -15,6 +15,7 @@ const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
             loginMssg, 
             signupMssg,
             replyError,
+            userPostProfile,
             dispatch } = useDialogContext()
 
     const handleOpen = () => {
@@ -31,6 +32,8 @@ const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
                 return signupMssg
             case "REPLY_ERROR":
                 return replyError
+            case "USER_POST_PROFILE":
+                return userPostProfile
             default:
                 return
         }
@@ -67,3 +70,5 @@ const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
 }
  
 export default NormalDialog;
+
+
