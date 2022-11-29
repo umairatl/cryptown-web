@@ -163,3 +163,7 @@ form.login {
 .spacing29 {
   margin-top: 2%;
 }
+
+button#posting {
+  margin-left: -2%;
+}
