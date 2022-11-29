@@ -20,6 +20,7 @@ const MainLandingPage = () => {
       <Navbar />
       <LpAnimation />
       {/* <HeaderLandingPage/> */}
+      <Counter/>
       <Who />
       <AboutLandingPage />
       <Carousallp />
