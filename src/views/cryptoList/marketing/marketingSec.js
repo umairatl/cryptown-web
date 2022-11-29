@@ -37,13 +37,13 @@ const MarketingSection = () => {
                <img src={cricles} alt=''/>
            </div> */}
                    <h1> We Are Best <span id="colortext13"> Known For</span></h1>
-                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                      when an unknown printer took a galley of type and scrambled it to make a type
-                      specimen book. It has survived not only five centuries, but also the leap into
-                      electronic typesetting, remaining essentially unchanged. I</p>
-                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      Lorem Ipsum has been the i</p>
+                   <p>teaching how to trade cryptocurrencies. 
+                    In order to start trading cryptocurrencies, one first needs adequate knowledge of the subject. 
+                    It is also critical to know the associated risks and the laws that may
+                     apply based on one’s jurisdiction and decisions should be made accordingly</p>
+                   <p>The majority of cryptocurrency traders put their money into Bitcoin and Ether. 
+                    However, trading utilizing technical indicators is possible because these 
+                    cryptocurrencies move more predictably than smaller altcoins.</p>
                    <a href="#" className="btn">Learn More</a>
            </div>
            </div>
