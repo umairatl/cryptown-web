@@ -26,8 +26,6 @@ import RedirectBack from "./components/utils/redirectBack";
 function App() {
   const { user } = useAuthContext();
 
-  console.log(window.gtag);
-
   useEffect(() => {
     googleAnalyticsActions.initGoogleAnalytics("UA-250253272-1");
   }, []);
@@ -38,7 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLandingPage />}></Route>
           <Route path="/market" element={<CryptoList />}></Route>
-          <Route path="/coinDetail/:id" element={<CoinDetail />}></Route>
+          <Route path="/coinDetail/:id/:page" element={<CoinDetail />}></Route>
           <Route
             path="/forum"
             element={
