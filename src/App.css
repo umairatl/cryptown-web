@@ -122,3 +122,13 @@ body {
 .App-link {
   color: #61dafb;
 }
+
+.flex-d-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-d-column{
+  display: flex;
+  flex-direction: column;
+}

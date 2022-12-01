@@ -28,6 +28,13 @@
   margin-bottom: 1rem;
 }
 
+.list-forum-2 {
+  background: #00094B !important;
+  color: white;
+  height: fit-content;
+  border-radius: 1rem;
+}
+
 .forum-test {
   text-align: center;
 }
@@ -39,6 +46,14 @@
   width: 44.65rem;
   background-color: #2d567e;
   border-radius: 0px;
+}
+
+.post-box__reply {
+  /* width: 44.65rem; */
+  background-color: #2d567e;
+  /* border-radius: 10px; */
+  color: white;
+  /* padding: 0.2rem; */
 }
 
 .view-post-cont p span {
@@ -70,7 +85,11 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0px;
-  width: 30rem;
+  /* width: 30rem; */
+}
+
+.space-between-jn{
+  justify-content: space-between;
 }
 
 .wrap-outer-in {

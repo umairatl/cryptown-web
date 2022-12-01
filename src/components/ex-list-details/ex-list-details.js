@@ -31,8 +31,8 @@ const Exchange_Market = ({exchange}) => {
     return (
     <div className="exchange-list-col">
 
-<TableContainer component={Paper}>
-      <Table sx={{ maxWidth: 600 }} size="large">
+<TableContainer component={Paper} sx={{  width: '47% !important', margin: 'auto' }}>
+      <Table size="large">
         <TableHead>
           <TableRow>
             <TableCell className="exchange"><b>Exchange Name</b></TableCell>
@@ -56,17 +56,6 @@ const Exchange_Market = ({exchange}) => {
         </TableBody>
       </Table>
     </TableContainer>
-        {/* {data && data.map((exchange, index) => (
-            <div className="col"
-              key={index}>
-                <div className="title">{exchange.name} </div>
-                <button onClick = {() => {
-                 window.open(exchange.url, '_blank');
-                }}>{FaUserCircle}Visit Website</button>
-            </div>
-            
-          ))} */}
-
     </div> );
 }
  

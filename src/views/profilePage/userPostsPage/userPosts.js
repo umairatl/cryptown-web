@@ -8,6 +8,9 @@ import { useUserPostsContext } from "../../../hooks/useUserPostsContext";
 import NormalDialog from "../../../components/Dialog/normalDialog";
 import { useDialogContext } from "../../../hooks/useDialogContext";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
+
+import "../../../components/post/post.css";
 
 const entities = require("entities");
 
@@ -63,8 +66,13 @@ const UserPosts = () => {
                 <h1>My Forum Post</h1>
                 <div>
                     <div className="post-cont">
-                {postLists && postLists.map((post) => <Post onCustomClick={onCustomClick} key={post["postId"]} post={post}/>)}
-                {error && <h2>{error}</h2>}
+                {postLists && postLists.map((post) => 
+                <Post onCustomClick={onCustomClick} key={post["postId"]} post={post}/>)}
+                
+                {error && 
+                <div className="error-post">
+                    <p>{error}</p>
+                </div> }
 
                 {userPostProfile ?
                     <NormalDialog 
@@ -74,7 +82,7 @@ const UserPosts = () => {
                         <div className= 'top-cont-view'>
                             <p>Post Details</p>
                             <p>{new Date(postLists.filter((post) => post["postid"] === postId)[0]["postdatetime"]).toLocaleDateString("en-MY", timeOpt).toString().substring(12)}  
-                                {new Date(postLists.filter((post) => post["postid"] === postId)[0]["postdatetime"]).toLocaleDateString("en-MY", yearOpt).toString()}</p>
+                            <span style={{marginLeft:'1rem'}}>{new Date(postLists.filter((post) => post["postid"] === postId)[0]["postdatetime"]).toLocaleDateString("en-MY", yearOpt).toString()}</span></p>
                         </div>
                             <h1>{postLists.filter((post) => post["postid"] === postId)[0]["post"]}</h1>
                             <p>Replies</p>
@@ -82,16 +90,17 @@ const UserPosts = () => {
                     )} 
                     dialogMessage={
                         postLists && postId && postLists.filter((post) => post["postid"] === postId)[0]["replies"].map(
-                            (reply) => 
-                            <div className='wrap-outer-column reply-color'>
-                                <div className='wrap-outer-in'>
-                                
-                                <p><FaLongArrowAltRight className='fa-arrow' /> {reply.email} </p>
-                                <p> {new Date(reply.subpostdatetime).toLocaleDateString("en-MY", timeOpt).toString().substring(12)} 
-                                {new Date(reply.subpostdatetime).toLocaleDateString("en-MY", yearOpt).toString()}</p>
-                               </div>
-                                <p>{ entities.decodeHTML(reply.subpost)}</p>
+                            (reply, index) => 
+                            <div key={index} className="list-forum-2">
+                            <div className="flex-d-row space-between-jn post-box__reply">
+                                <div className="flex-d-row">
+                               <p style={{marginLeft: '1rem'}}><FaUserCircle /></p>
+                                <p style={{marginLeft: '1rem'}}> {reply.email} </p>
+                                </div>
+                               <p style={{marginRight: '1rem'}}> {new Date(reply.subpostdatetime).toLocaleDateString("en-MY", yearOpt).toString()}</p>
                             </div>
+                            <p style={{marginLeft: '1rem'}}>{entities.decodeHTML(reply.subpost)}</p>
+                          </div>
                         )
                     }
                     /> : null
