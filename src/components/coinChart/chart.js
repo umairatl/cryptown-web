@@ -40,42 +40,12 @@ const Chart = ({ cryptoId }) => {
   useEffect(() => {
     const fetchChart = async () => {
       if (time == "14") {
-        response = await axios.post(
-          "api/crypto/cryptoChartWeekly",
-          {
-            cryptoId: cryptoId,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        response = await axios(`api/crypto/cryptoChartWeekly/${cryptoId}`);
       }
       if (time == "max") {
-        response = await axios.post(
-          "api/crypto/cryptoChartMax",
-          {
-            cryptoId: cryptoId,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        response = await axios(`api/crypto/cryptoChartMax/${cryptoId}`);
       } else if (time == "24") {
-        response = await axios.post(
-          "api/crypto/cryptoChartDaily",
-          {
-            cryptoId: cryptoId,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        response = await axios(`api/crypto/cryptoChartDaily/${cryptoId}`);
       }
 
       const json = await response.data;

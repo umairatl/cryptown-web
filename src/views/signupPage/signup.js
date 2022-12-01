@@ -126,7 +126,7 @@ const Signup = () => {
       <input type ='username' placeholder='Create Username' onChange={(e) => setUsername(e.target.value)} value={username}/>
       
       <div className='flex-pass'>
-      <input type = {showPass ? 'text' : 'password'} placeholder='Create Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
+      <input type = {showPass ? 'text' : 'password'} placeholder='Create Password' onChange={(e) => onChangePassword(e.target.value)} value={password}/>
       <span class="material-symbols-outlined" onClick={(e) => setShowPass(!showPass)}> visibility </span></div>
 
       <div style={{textAlign: "left"}}>

@@ -3,7 +3,6 @@ import "../steps/basicsteps.css";
 
 const BasicSteps = () => {
 
-
 return(
     <div className="exlistsection">
         <br/>
@@ -45,8 +44,6 @@ return(
             </div>
          </div>
         </div>
-
-
 );
 }
 

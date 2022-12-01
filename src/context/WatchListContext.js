@@ -5,7 +5,6 @@ export const WatchListContexts = createContext()
 export const watchListReducer = (state, action) => {
     switch (action.type) {
         case 'SET_WATCHLIST':
-            console.log("State:", state.watchLists)
             return {
                 watchLists: action.payload
             }
@@ -37,7 +36,6 @@ export const WatchListContextsProvider = ({ children }) => {
     // when the "dispatch" function is called, the "useReducer"'s function (workoutReducer) would be called 
     // the values within the "dispatch" function is the "action"
     // dispatch({type: 'SET_WORKOUTS', payload: [{}, {}]})
-    // console.log("WatchList Context State Delete: ", state)
 
     return(
         <WatchListContexts.Provider value={{...state, dispatch}}>

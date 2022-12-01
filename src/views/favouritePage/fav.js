@@ -50,17 +50,38 @@ const FavPage = () => {
         }
       }, [dispatch, user]);
 
-      
     
     return ( 
-        <div>
-            <div className='fav-page'>
-
+        <div className='wrap-aout-fav'>
             <Navbar />
-            </div>
             <WatchlistHeaderSection/>
+
+            <div className='watchlist-cont'>
+            <TableContainer component={Paper} sx={{overflow: 'auto'}}>
+              <Table aria-label="simple table" stickyHeader>
+                <TableHead>
+                  <TableRow>
+                  <TableCell sx={{ width: "100px", textAlign: "center" }} className="table_h"><p>No</p></TableCell>
+                <TableCell className="table_h"><p>Name</p></TableCell>
+                <TableCell className="table_h"><p>ID</p></TableCell>
+                <TableCell className="table_h" align="right"><p>Remove from Watchlist</p></TableCell>
+                  </TableRow>
+                </TableHead>
+
+                <TableBody>
+                        { watchLists && watchLists.map((watchList, index) => 
+                        <WatchList key={index} index={index} watchlists={watchList}/>)}
+                    </TableBody> 
+              </Table>
+            </TableContainer>
+
+         
+          </div>
+
+
+
             <div className='test'>
-           <h3 className="textwlheader">Your <span id="colortextsix"> Favourites</span></h3>
+           {/* <h3 className="textwlheader">Your <span id="colortextsix"> Favourites</span></h3>
             <TableContainer component={Paper} className="shadoweffect">
                 <Table aria-label="simple table" stickyHeader>
                     <TableHead>
@@ -75,7 +96,7 @@ const FavPage = () => {
                         { watchLists && watchLists.map(watchList => <WatchList key={watchList["favid"]} watchlists={watchList}/>)}
                     </TableBody>
                 </Table>    
-            </TableContainer>
+            </TableContainer> */}
             { watchLists && watchLists.length === 0 && <h1>{username} has no watchlists</h1> }
 
             
@@ -88,6 +109,11 @@ const FavPage = () => {
             }
             
         </div>
+
+
+
+
+
         <Footer/>
         </div>
         

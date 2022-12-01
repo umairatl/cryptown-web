@@ -16,7 +16,7 @@ import AmbassadorSection from "../news/ambassador";
 import NewsGif from "./gifheader";
 import SliderSectionNews from "../news/sliderpartner";
 import Footer from "../../components/footer/footer";
-import HeaderHero from "../news/heroimage";
+import ImgDefault from "../../asset/blockchaincrop.png";
 
 const NewsPage = () => {
   var [news, setNewsList] = useState(null);
@@ -54,7 +54,7 @@ const NewsPage = () => {
             news.news.map((row, index) => (
               <div key={index} className="grid-item-news">
                 <Card className="news-box" sx={{ maxWidth: 345 }}>
-                  <CardMedia component="img" height="140" image={row.image} />
+                  <CardMedia component="img" height="140" image={row.image ? row.image : ImgDefault} />
                   <CardContent>
                     <div className="title-col-news">
                       <Typography gutterBottom variant="h5" component="div">

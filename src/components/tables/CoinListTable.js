@@ -7,11 +7,11 @@ const CoinListTable = ({ crypto, handleWatchLists, formatter, user }) => {
     const navigation = useNavigate();
 
     return ( 
-        <TableRow
+        <TableRow sx={{overflowY: 'scroll !important'}}
             key={crypto.name}
             style={{ cursor: "pointer" }}
             onClick={() => {
-            navigation(`/coinDetail/${crypto.cryptoId}`);
+            navigation(`/coinDetail/${crypto.cryptoId}/market`);
             }}
         >
             <TableCell
@@ -20,11 +20,10 @@ const CoinListTable = ({ crypto, handleWatchLists, formatter, user }) => {
             {crypto.market_cap_rank}
             </TableCell>
             <TableCell className="overflow-table line-height-t row-tbl-coin">
-            <div className="name-col">
-                {" "}
-                <img src={crypto.image} width="45px"></img>{" "}
-                <span> {crypto.name} </span>{" "}
-            </div>
+            <div className="flex-d-row">
+      <img src={crypto.image}  width="45px"></img>
+          <p className='coin-name-col'> {crypto.name} </p>
+      </div>
             </TableCell>
             <TableCell className="row-tbl-coin">
             {formatter.format(crypto.current_price)}
