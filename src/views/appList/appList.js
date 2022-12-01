@@ -55,71 +55,66 @@ import Footer from '../../components/footer/footer';
       setRowsPerPage(+event.target.value);
       setPage(0);
     };
+
+     // Create our number formatter.
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+
+    // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+  });
+
+
+
+
       return (
         <div>
         <Navbar />
         <ExchangeListHeader/>
         
         <div className='set-appList'>
-            {/* <img src = 
-            'https://asset.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'>
-            </img> */}
-
-
              <h3 className="exlistsecheader">List of <span id="colortextnine"> Platform</span></h3> 
-
-
-             <p id="exlistparagraph">Here are the list of several platform that can help you discover about cryptocurrency more</p>
-             <RollingSection/>
              <br></br>
 
-            
+            <div className='exchange-table'>
             <TableContainer component={Paper}>
       <Table aria-label="simple table" stickyHeader>
         <TableHead>
           <TableRow>
-            <TableCell>Ranking</TableCell>
-            <TableCell></TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Country</TableCell>
-            <TableCell>Established</TableCell>
-            <TableCell align="right">Trust Score</TableCell>
-            <TableCell align="right">Trade Volume 24h BTC</TableCell>
+            <TableCell className="table_h"><p>Ranking</p></TableCell>
+            <TableCell className="table_h"><p>Name</p></TableCell>
+            <TableCell className="table_h"><p>Country</p></TableCell>
+            <TableCell className="table_h"><p>Established</p></TableCell>
+            <TableCell className="table_h"><p>Trust Score</p></TableCell>
+            <TableCell className="table_h"><p>Trade Volume 24h BTC</p></TableCell>
           </TableRow>
         </TableHead>
+
         <TableBody>
           {exchangeList && exchangeList.exchange.map((row) => (
             <TableRow key={row.name} style={{cursor:'pointer'}}
             onClick = {() => {
-                //get the address bar or set the address
                  window.open(row.url, '_blank');
-
-                // document.location = row.url;
-                // <a href={row.url} target ="_blank"></a> 
-                
                 }}>  
-
-            
-              {/* <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell> */}
-                <TableCell>{row.trust_score_rank}</TableCell>
-                   <TableCell>
-                    <img src={row.image} width='40px'></img>
-                   </TableCell>
-                <TableCell>
-                    {row.name}
-                    </TableCell>
-                <TableCell>{row.country !== null ? row.country : "N/A"}</TableCell>
-                <TableCell>{row.year_established !== null ? row.year_established : "N/A"}</TableCell>
-                <TableCell align="right">{row.trust_score !== null ? row.trust_score : "N/A"} / 10</TableCell>
-                <TableCell align="right">{row.trade_volume_24h_btc !== null ? row.trade_volume_24h_btc : "N/A"}</TableCell>
+                <TableCell><p>{row.trust_score_rank} </p></TableCell>
+                <TableCell className="overflow-table line-height-t row-tbl-coin">
+      <div className="flex-d-row">
+      <img src={row.image}  width="45px"></img>
+          <p className='coin-name-col'> {row.name} </p>
+      </div>
+      </TableCell>
+                <TableCell><p>{row.country !== null ? row.country : "N/A"}</p></TableCell>
+                <TableCell><p>{row.year_established !== null ? row.year_established : "N/A"}</p></TableCell>
+                <TableCell><p>{row.trust_score !== null ? row.trust_score : "N/A"} / 10</p></TableCell>
+                <TableCell><p>{row.trade_volume_24h_btc !== null ? formatter.format(row.trade_volume_24h_btc)  : "N/A"}</p></TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
-
+    </div>
     
     </div>
     <BasicSteps/>

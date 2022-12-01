@@ -53,7 +53,6 @@ export const useSignup = () => {
                }
            
                } catch(error){
-                console.log('still in')
                  setIsLoading(false)
                  setStatus(error.response.data.mssg)
                  setError(error.response.data.error)

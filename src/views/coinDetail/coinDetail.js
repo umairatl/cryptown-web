@@ -21,20 +21,18 @@ import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../../components/Dialog/normalDialog";
 
 const CoinDetail = () => {
-  const { id } = useParams();
+  const { id, page } = useParams();
   let [detail, setDetail] = useState(null);
   let [error, setError] = useState(null) 
   const [watchList, setWatchList] = useState({});
-
   const scollToRef = useRef();  const [currency, setCurrency] = useState('10');
-
   const { watchLists: watchListContext, dispatch } = useWatchListContexts();
   const { addToWatchlist: addWatchListDialog, dispatch: dialogContext } =
     useDialogContext();
   const { user } = useAuthContext();
 
-
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const fetchCoinDetail = async () => {
       const response = await axios(`api/crypto/cryptoDetail/${id}`);
 
@@ -82,33 +80,17 @@ const CoinDetail = () => {
   };
 
   const handleWatchLists = async (cryptoId, coinName, image_url) => {
-    // e.stopProawaitpagation()
-    // console.log(cryptoId)
     try {
       await addToWatchlist(cryptoId, coinName, image_url);
       setError(null);
-      // console.log("watch list", watchList)
       dialogContext({ type: "ADD_TO_WATCHLIST" });
-      // alert(`${watchList["mssg"]}`)
     } catch (error) {
       console.log(error);
       setError(error.response.data.error);
       dialogContext({ type: "ADD_TO_WATCHLIST" });
-      // alert(error.response.data.error)
     }
   };
 
-  // var updateATH_ATL = () => {
-  //   console.log(currency, 'fka')
-  //      return (detail && <ATH_ATL detail = {[ detail.cryptoDetails, currency]} />)
-  //   }
-
-  // useEffect(() => {
-  //   updateATH_ATL()
-  //   console.log(currency)
-  // }, [currency])
-
-  // Create our number formatter.
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
@@ -123,12 +105,11 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
     <div>
       <div className="coin-detail">
         <Navbar />
-    
         <div className="top-info">
-
         <div className="back-col">
           <div className="table-flex">
-          <Link className="icon_back" to='/market'><FaArrowLeft /> <span>Back</span></Link>
+          <Link className="icon_back" to = {page === 'market' ?  '/market' :  '/watchlist'}
+         ><FaArrowLeft /> <span>Back</span></Link>
         <FormControl sx={{ m: 1, minWidth: 120, color: 'white', background: 'white' }} size="small">
       <InputLabel id="demo-select-small"></InputLabel>
       <Select

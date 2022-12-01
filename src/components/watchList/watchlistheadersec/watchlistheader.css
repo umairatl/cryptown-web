@@ -88,7 +88,7 @@ span.textwl{
     font-size: 21px;
     line-height: 30px;
     width: 80%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 @media (min-width: 16rem) and (max-width: 26.66rem){

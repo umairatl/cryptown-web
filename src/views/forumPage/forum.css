@@ -1,98 +1,14 @@
-/* .post-box {
-  width: 90%;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgb(185 185 185 / 79%);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 1rem;
- 
-} */
+.post-cont-forum{
+  /* background: green; */
+}
 
-/* .post-col {
+.cont-wrap-forum{
+  /* text-align: left; */
+  margin: 4rem auto;
+  width: 70%;
+  }
   
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-} */
-
-/* .list-forum{
-    background-color: red;
-} */
-
-/* input#contentforum {
-  width: 50%;
-  height: 100px;
-  box-shadow: 0 10px 10px -5px;
-  margin: 12px;
-  text-align: center;
-}
-
-.containerforforum {
-  background-image: linear-gradient(
-    -225deg,
-    #ff057c 0%,
-    #8d0b93 50%,
-    #321575 100%
-  );
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgb(0 0 0 / 72%);
-  width: 100%;
-}
-
-forum.login {
-  left: 50%;
-  width: 1000px;
-  margin-left: 550px;
-} */
-
-/* <div className"frem">
-          <div className"logo-namee">
-              <div className"logoforum">
-                  <img src={front} alt=""/>
-              </div>
-              <p>What do you want share</p>
-          </div>
-          <div className"text-area" contenteditable data-placeholder="Write here"></div>
-          <div className"bottom-cont">
-              <a href="#"><img src={photocamera1} alt="" style="margin-right: 9px;"/>Add Photo</a>
-              <a href="#"><img src={videocamera1} alt="" style="margin-right: 9px;"/>Add Video</a>
-              <a href="#"><img src={smilingface} alt=""/></a>
-              <a href="#"><img src={videocamera2} alt=""/></a>
-          </div>
-        </div> */
-
-/* .bn632-hover {
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin: 12px;
-  height: 55px;
-  text-align: center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-.bn632-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-.bn632-hover:focus {
-  outline: none;
-}
-
-.bn632-hover.bn20 {
+.forum .flex-d-row{
   background-image: linear-gradient(
     to right,
     #667eea,
@@ -101,338 +17,24 @@ forum.login {
     #8e37d7
   );
   box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-} */
-
-/* Trying */
-
-/* .wrapperfrm .outer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.wrapperfrm .cardfrm {
-  background: #fff;
-  width: 430px;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  justify-content: space-between;
-  border-radius: 100px 20px 20px 100px;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.cardfrm .contentfrm {
-  display: flex;
-  align-items: center;
-}
-
-.cardfrm .detailss {
-  margin-left: 80px;
-}
-.detailss span {
-  font-weight: 600;
-  font-size: 18px;
-}
-.cardfrm a {
-  text-decoration: none;
-  padding: 7px 18px;
-  border-radius: 25px;
-  color: #fff;
-  background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
-  transition: all 0.3s ease;
-}
-.cardfrm a:hover {
-  transform: scale(0.94);
-}
-
-.containerfrm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  /* background: #1d1f20; */
-/* margin-bottom: 8rem;
-} */
-
-/* #forumboxbg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  /* height: 200px; */
-/* color: #fff;
-  font-family: "Raleway";
-  font-size: 2.5em;
-} */
-
-/* .list-forum {
-  border-width: 10px;
-  background: #1d1f20;
-  position: relative;
-  border-radius: 10px;
-  height: 993px;
-}
-
-.list-forum:after {
-  content: "";
-  position: absolute;
-  top: calc(-1 * 10px);
-  left: calc(-1 * 10px);
-  height: calc(100% + 10px * 2);
-  width: calc(100% + 10px * 2);
-  background: linear-gradient(
-    60deg,
-    #f79533,
-    #f37055,
-    #ef4e7b,
-    #a166ab,
-    #5073b8,
-    #1098ad,
-    #07b39b,
-    #6fba82
-  );
-  border-radius: calc(2 * 10px);
-  z-index: -1;
-  animation: animate 3s ease alternate infinite;
-  background-size: 300% 300%;
-} */
-
-/* animation for gradient */
-
-/* @keyframes animate {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-h3.textfrmheader {
-  text-align: center;
-  font-size: 3.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-}
-
-span#colortext17 {
-  background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.bg34 {
-  background: url(../../asset/blackpink.png) no-repeat;
-  background-size: cover;
-  z-index: 1;
-  margin-top: -2%;
-} */
-
-/* .blob-wobble1 {
-  width: 700px;
-  height: 700px;
-  background-position: center center;
-  background-size: cover;
-  border-radius: 41% 59% 31% 69% / 51% 72% 28% 49%;
-  animation: wobble 10s ease-in-out alternate infinite;
-  box-shadow: 2px 14px 28px -10px rgba(0, 0, 0, 0.7);
-  z-index: 2;
-}
-.blob-wobble2 {
-  width: 700px;
-  height: 700px;
-  background-position: center center;
-  background-size: cover;
-  border-radius: 41% 59% 31% 69% / 51% 72% 28% 49%;
-  animation: wobble2 10s ease-in-out alternate infinite;
-  box-shadow: 2px 14px 28px -10px rgba(0, 0, 0, 0.7);
-  z-index: 2;
-}
-
-/* CSS to animate the blob */
-
-/* @keyframes wobble {
-  25% {
-    border-radius: 41% 59% 74% 26% / 51% 31% 69% 49%;
-    transform: scale(0.9) rotate(-5deg);
-  }
-
-  50% {
-    border-radius: 23% 77% 73% 27% / 14% 21% 79% 86%;
-    transform: scale(0.8) rotate(6deg);
-  }
-
-  100% {
-    border-radius: 75% 25% 75% 25% / 45% 26% 74% 55%;
-    transform: scale(0.95) rotate(-9deg);
-  }
-} */
-/* 
-@keyframes wobble2 {
-  25% {
-    border-radius: 41% 59% 74% 26% / 51% 31% 69% 49%;
-    transform: scale(0.9) rotate(-5deg);
-  }
-
-  50% {
-    border-radius: 23% 77% 73% 27% / 14% 21% 79% 86%;
-    transform: scale(0.8) rotate(6deg);
-  }
-
-  100% {
-    border-radius: 75% 25% 75% 25% / 45% 26% 74% 55%;
-    transform: scale(0.95) rotate(-9deg);
-  }
-} */
-
-/* .wrap-outer-p .replytext {
-  color: #000000;
-  margin-bottom: -15px;
-  font-size: 2rem;
-}
-
-.textalignment {
+.replies-col{
+  align-items: left;
   text-align: left;
-} */
-
-/* Accordion */
-
-/* .tab,
-.tab * {
-  font-family: arial, sans-serif;
-  box-sizing: border-box;
-}
-.tab {
-  max-width: 600px;
-  margin-top: 5%;
-  position: relative;
-  left: 28%;
-} */
-
-/* (B) HIDE CHECKBOX */
-/* .tab input {
-  display: none;
-} */
-
-/* (C) TAB LABEL */
-/* .tab label { */
-/* (C1) DIMENSIONS */
-/* position: relative; 
-  display: block;
-  width: 150%;
-  margin-top: 10px;
-  padding: 10px;
-  margin-left: -148px; */
-
-/* (C2) COSMETICS */
-/* font-weight: 700;
-  color: #fff; */
-/* background: #301934; */
-/* background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(0, 0, 0, 0.25) 200%
-    ); */
-/* background-blend-mode: multiply;
-  cursor: pointer;
-
-  border-radius: 12px;
-} */
-
-/* (D) TAB CONTENT - HIDDEN BY DEFAULT */
-/* css animation will not work with auto height */
-/* this is why we use max-height instead */
-/* .tab .contentforumm {
-  background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(0, 0, 0, 0.15) 100%
-    ),
-    radial-gradient(
-        at top center,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(0, 0, 0, 0.4) 120%
-      )
-      #989898;
-  background-blend-mode: multiply, multiply;
-  overflow: hidden;
-  transition: max-height 0.3s;
-  max-height: 0;
-  border-radius: 12px;
-  margin-left: -25%;
-  width: 150%;
-}
-.tab .contentforumm p {
-  padding: 10px;
-} */
-
-/* (E) OPEN TAB ON CHECKED */
-/* .tab input:checked ~ .contentforumm {
-  max-height: 100vh;
-} */
-
-/* (F) EXTRA - ADD ARROW INDICATOR */
-/* .tab label::after { */
-/* (F1) RIGHT ARROW */
-/* display: block;
-  content: "\25b6"; */
-
-/* (F2) PLACE AT RIGHT SIDE */
-/* position: absolute;
-  right: 10px;
-  top: 10px; */
-
-/* (F3) ANIMATED ARROW */
-/* transition: all 0.4s;
-} */
-
-/* (F4) ROTATE ARROW ON CHECKED */
-/* .tab input:checked ~ label::after {
-  transform: rotate(90deg);
-} */
-
-/* .containerthree {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .divsidebyside img#imground {
-  flex-basis: 40%;
-} */
-
-/* img#imground { */
-
-/* height: 15%;
-  width: 15%;
-  position: relative;
-  left: -40%;
-  margin-top: 7%;
-} */
-
-/* .divbolding1 {
-  position: relative;
-  left: -64%;
-  text-align: left;
-} */
-
-/* hr.styleline {
   
-} */
+  /* margin: 0px; */
 
-/* .datetimes {
-  position: relative;
-  left: 1.1%;
-  margin-top: -1.6%;
-} */
+  /* background: gray; */
+}
+
+
+
+
+
+
+
+/* here */
 
 .post-box {
   width: 90%;
@@ -442,10 +44,6 @@ span#colortext17 {
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 1rem;
-  /* padding: 1.5rem; */
-  /* height: 20%; */
-  /* background: wheat; */
-  /* margin-bottom: 50px; */
 }
 
 .post-col {
@@ -455,28 +53,22 @@ span#colortext17 {
   text-align: center;
 }
 
-/* .list-forum{
-    background-color: red;
-} */
+.forum-post{
+  
+}
 
-input#contentforum {
-  width: 50%;
-  height: 100px;
-  box-shadow: 0 10px 10px -5px;
-  margin: 12px;
-  text-align: center;
+textarea#contentforum {
+  border-radius: 20px;
+  background: #00094B;
+  color: white;
+  font-size: 1.5rem;
+  width: 70vh;
+  min-height: 20vh;
+  padding: 20px;
 }
 
 .containerforforum {
-  background-image: linear-gradient(
-    -225deg,
-    #ff057c 0%,
-    #8d0b93 50%,
-    #321575 100%
-  );
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgb(0 0 0 / 72%);
-  width: 100%;
+  margin: 5rem auto;
 }
 
 forum.login {
@@ -485,21 +77,6 @@ forum.login {
   margin-left: 550px;
 }
 
-/* <div class="frem">
-          <div class="logo-namee">
-              <div class="logoforum">
-                  <img src={front} alt=""/>
-              </div>
-              <p>What do you want share</p>
-          </div>
-          <div class="text-area" contenteditable data-placeholder="Write here"></div>
-          <div class="bottom-cont">
-              <a href="#"><img src={photocamera1} alt="" style="margin-right: 9px;"/>Add Photo</a>
-              <a href="#"><img src={videocamera1} alt="" style="margin-right: 9px;"/>Add Video</a>
-              <a href="#"><img src={smilingface} alt=""/></a>
-              <a href="#"><img src={videocamera2} alt=""/></a>
-          </div>
-        </div> */
 
 .bn632-hover {
   width: 160px;
@@ -666,18 +243,18 @@ span#colortext17 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+/* 
 .bg34 {
   background: url(../../asset/blackpink.png) no-repeat;
   background-size: cover;
   z-index: 1;
   margin-top: -2%;
-}
+} */
 
-.wrap-outer-p .replytext {
+/* .wrap-outer-p .replytext {
   color: #a020f0;
   margin-bottom: -15px;
-}
+} */
 
 .textalignment {
   text-align: left;
@@ -691,10 +268,10 @@ span#colortext17 {
   box-sizing: border-box;
 }
 .tab {
-  max-width: 600px;
-  margin-top: 5%;
+  width: 50%;
+  /* margin-top: 5%; */
   position: relative;
-  left: 28%;
+  /* left: 28%; */
 }
 
 /* (B) HIDE CHECKBOX */
@@ -771,9 +348,9 @@ img#imground {
   /* max-width: 100%; */
   height: 15%;
   width: 15%;
-  position: relative;
-  left: -40%;
-  margin-top: 7%;
+  /* position: relative; */
+  /* left: -40%; */
+  /* margin-top: 7%; */
 }
 
 .divbolding1 {

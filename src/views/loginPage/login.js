@@ -10,8 +10,6 @@ const Login = () => {
   const [showPass, setShowPass] = useState(false);
   const {login, isLoading, error, status} = useLogin();
 
-  console.log(showPass, "showwww")
-
   const { loginMssg, dispatch:dialogDispatch } = useDialogContext()
 
   const handleSubmit = async (e) => {

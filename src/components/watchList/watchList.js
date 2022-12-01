@@ -9,7 +9,7 @@ import { useWatchListContexts } from '../../hooks/useWatchListContext';
 import { useDialogContext } from '../../hooks/useDialogContext';
 import WatchlistHeaderSection from '../watchList/watchlistheadersec/watchlistheader';
 
-const WatchList = ({ watchlists }) => {
+const WatchList = ({ index, watchlists }) => {
   
     const [deleteWatchList, setDeleteWatchList] = useState({})
     const [error, setError] = useState(null)
@@ -18,6 +18,7 @@ const WatchList = ({ watchlists }) => {
     const { removeWatchlist: removeWatchListDialog, dispatch: dispatchDialogContext } = useDialogContext()
     const { dispatch } = useWatchListContexts()
     const { user } = useAuthContext()
+
 
     const deleteWatchlist = async (favId) => {
 
@@ -39,7 +40,6 @@ const WatchList = ({ watchlists }) => {
     
       if (response.status === 200){
         setDeleteWatchList(json)
-        console.log(deleteWatchList)
         dispatch({type:"DELETE_WATCHLIST", payload: json.deletedFavId})
       }
     }
@@ -49,34 +49,38 @@ const WatchList = ({ watchlists }) => {
         await deleteWatchlist(favId)
         setError(null)
         dispatchDialogContext({type: "REMOVE_FROM_WATCHLIST"})
-        // alert(`${deleteWatchList["mssg"]}`)
       } catch (error) {
-        console.log(error)
         setError(error.response.data.error) 
-        // alert(error.response.data.error)
       }
     }
             
     return (
-      <section>
-        
-         <div>
-        <TableRow key={watchlists.cryptoid} style={{cursor:'pointer'}} onClick={() => {
-            navigation(`/coinDetail/${watchlists.cryptoid}`);
-          }}>
-            <TableCell>
-              <img src={watchlists["image_url"]} width='40px'></img>
+
+      
+      <TableRow key={index} style={{cursor:'pointer'}} onClick={() => {
+        navigation(`/coinDetail/${watchlists.cryptoid}/watchlist`);
+      }}>
+  
+      <TableCell
+      sx={{ width: "100px", textAlign: "center" }}
+      >
+      {index + 1}
+      </TableCell>
+      <TableCell className="overflow-table line-height-t row-tbl-coin">
+      <div className="flex-d-row">
+          <img src={watchlists["image_url"]}  width="45px"></img>
+          <p className='coin-name-col'> {watchlists["coinname"]} </p>
+      </div>
+      </TableCell>
+      <TableCell className="row-tbl-coin">
+      {watchlists["cryptoid"]}
+      </TableCell>
+      
+      <TableCell className="row-tbl-coin" align="right">
+              <button className="btn-coin-watchlist" onClick={async (e) => {e.stopPropagation(); await handleDeleteWatchLists(watchlists['favid'])}}>Remove</button>
             </TableCell>
-            <TableCell>{watchlists["coinname"]}</TableCell>
-            <TableCell>{watchlists["cryptoid"]}</TableCell>
-            <TableCell>
-              <button onClick={async (e) => {e.stopPropagation(); await handleDeleteWatchLists(watchlists['favid'])}}>Remove</button>
-            </TableCell>
-        </TableRow>
-        </div>
-      </section>
-        
-    )
-  }
+      
+  </TableRow>
+      )}
 
 export default WatchList;
