@@ -10,7 +10,6 @@ import {
   CardMedia,
 } from "@mui/material";
 import "../news/news.css";
-// import HeaderHero from "../news/heroimage";
 import Navbar from "../../components/navbar/navbar";
 import AmbassadorSection from "../news/ambassador";
 import NewsGif from "./gifheader";
@@ -33,8 +32,6 @@ const NewsPage = () => {
     fetchNewsList();
   }, []);
 
-  console.log(news);
-
   return (
     <div className="news-page">
       <Navbar />
@@ -48,13 +45,16 @@ const NewsPage = () => {
         <div
           className="grid-container-news"
           data-aos="fade-up"
-          data-aos-duration="3000"
-        >
+          data-aos-duration="3000">
           {news &&
             news.news.map((row, index) => (
               <div key={index} className="grid-item-news">
                 <Card className="news-box" sx={{ maxWidth: 345 }}>
-                  <CardMedia component="img" height="140" image={row.image ? row.image : ImgDefault} />
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={row.image ? row.image : ImgDefault}
+                  />
                   <CardContent>
                     <div className="title-col-news">
                       <Typography gutterBottom variant="h5" component="div">
