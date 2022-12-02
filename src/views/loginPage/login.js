@@ -10,8 +10,6 @@ const Login = () => {
   const [showPass, setShowPass] = useState(false);
   const {login, isLoading, error, status} = useLogin();
 
-  console.log(showPass, "showwww")
-
   const { loginMssg, dispatch:dialogDispatch } = useDialogContext()
 
   const handleSubmit = async (e) => {
@@ -29,7 +27,7 @@ return (
 
 <div className='flex-pass'>
         <input type = {showPass ? 'text' : 'password'} placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} value={password}/>
-        <span class="material-symbols-outlined" onClick={(e) => setShowPass(!showPass)}> visibility </span></div>
+        <span className="material-symbols-outlined" onClick={(e) => setShowPass(!showPass)}> visibility </span></div>
 
 <br></br>
       <button disabled={isLoading}>Login</button>

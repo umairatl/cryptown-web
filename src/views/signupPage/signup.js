@@ -116,18 +116,34 @@ const Signup = () => {
 
       )
     }
-    
   }
+
+  // validation on username
+  const signupOnKey = (e) => {
+    if(["Backspace",'Delete','Home','End'].includes(e.key)){
+      return false;
+    }
+    var regex = new RegExp("^[a-zA-Z0-9 ]{1,1}$");
+    if (regex.test(e.key)) {
+      return true;
+    } else {
+    e.preventDefault();
+    return false;
+    }
+};
+
   return (
      <div>
 		<h5>SIGNUP</h5>
     <form className='signup' onSubmit={handleSubmit}>
-      <input type ='email' placeholder='Enter your Email' onChange={(e) => setEmail(e.target.value)} value={email}/>
-      <input type ='username' placeholder='Create Username' onChange={(e) => setUsername(e.target.value)} value={username}/>
-      
+      <input type ='email'  placeholder='Enter your Email' onChange={(e) => {setEmail(e.target.value)}} value={email}/>
+      <input minLength="1" maxLength="50" onKeyDown={(e) => signupOnKey(e)}
+       type ='username' placeholder='Create Username' onChange={(e) => setUsername(e.target.value)} value={username}/>
+      <span id="error"></span>
+
       <div className='flex-pass'>
-      <input type = {showPass ? 'text' : 'password'} placeholder='Create Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
-      <span class="material-symbols-outlined" onClick={(e) => setShowPass(!showPass)}> visibility </span></div>
+      <input type = {showPass ? 'text' : 'password'} placeholder='Create Password' onChange={(e) => onChangePassword(e.target.value)} value={password}/>
+      <span className="material-symbols-outlined" onClick={(e) => setShowPass(!showPass)}> visibility </span></div>
 
       <div style={{textAlign: "left"}}>
         {password && passwordScore(passwordStrength)}
@@ -135,7 +151,7 @@ const Signup = () => {
 
       <div className='flex-pass'>
       <input type = {showPass2 ? 'text' : 'password'} placeholder='Confirm Password' onChange={(e) => setconfirmPass(e.target.value)} value={confirmPass}/>
-      <span class="material-symbols-outlined" onClick={(e) => setShowPass2(!showPass2)}> visibility </span></div>
+      <span className="material-symbols-outlined" onClick={(e) => setShowPass2(!showPass2)}> visibility </span></div>
       <button disabled={isLoading}>Sign up</button>
       { signupMssg ?
         <NormalDialog 

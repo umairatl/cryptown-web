@@ -10,7 +10,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
-import { Pagination } from "@mui/material";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Navbar from "../../components/navbar/navbar";
@@ -36,7 +35,7 @@ import "swiper/css/scrollbar";
 import { margin } from "@mui/system";
 import CoinListTable from "../../components/tables/CoinListTable";
 
-const Coin = ({}) => {
+const Coin = ({ }) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [popular, setPopular] = useState("");
@@ -93,7 +92,6 @@ const Coin = ({}) => {
     };
     fetchCrypto();
     fetchCryptoTren();
-    console.log("USER_LIST: ", user)
   }, []);
 
   const cryptoFilter = (cryptoList) => {
@@ -182,7 +180,7 @@ const Coin = ({}) => {
       <SwiperSlide
         key={crypto.cryptoId}
         onClick={() => {
-          navigation(`/coinDetail/${crypto.cryptoId}`);
+          navigation(`/coinDetail/${crypto.cryptoId}/market`);
         }}
       >
         <img className="img" src={crypto.image} width="200px" alt="" />
@@ -215,11 +213,10 @@ const Coin = ({}) => {
               <div className="t-name">
                 <span>Cryptorrency Prices by Market Cap</span>
                 <span>
-                  {" "}
                   The indicator that measures the total value of a
                   cryptocurrency
                 </span>
-              </div>{" "}
+              </div>
             </div>
           </div>
           <div className="search-col">
@@ -234,20 +231,18 @@ const Coin = ({}) => {
           </div>
 
           <div className="set-coinList">
-            <TableContainer className="overflow-table" component={Paper}>
+            <TableContainer component={Paper} sx={{ overflow: 'auto' }}>
               <Table aria-label="simple table" stickyHeader>
                 <TableHead>
                   <TableRow>
-                    <TableCell className="table_h">Ranking</TableCell>
-                    {/* <TableCell sx={{width: '0px'}}></TableCell> */}
-                    <TableCell className="table_h">Name</TableCell>
-                    <TableCell className="table_h">Price</TableCell>
-                    <TableCell className="table_h">Market Cap</TableCell>
-                    <TableCell className="table_h">24 Volume Price</TableCell>
-
+                    <TableCell className="table_h"><p>Ranking</p></TableCell>
+                    <TableCell className="table_h"><p>Name</p></TableCell>
+                    <TableCell className="table_h"><p>Price</p></TableCell>
+                    <TableCell className="table_h"><p>Market Cap</p></TableCell>
+                    <TableCell className="table_h"><p>24 Volume Price</p></TableCell>
                     {user && (
-                      <TableCell className="table_h">
-                        Add to Watchlist
+                      <TableCell className="table_h"><p>
+                        Add to Watchlist</p>
                       </TableCell>
                     )}
                   </TableRow>
@@ -256,18 +251,18 @@ const Coin = ({}) => {
                 <TableBody>
                   {crypto && search === ""
                     ? crypto.cryptoList
-                        .slice((page - 1) * 10, (page - 1) * 10 + 10)
-                        .map((crypto) => {
-                          return (
-                            <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user}/>
-                          );
-                        })
-                    : crypto &&
-                      cryptoFilter(crypto.cryptoList).map((crypto) => {
+                      .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                      .map((crypto) => {
                         return (
-                          <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user}/>
+                          <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user} />
                         );
-                      })}
+                      })
+                    : crypto &&
+                    cryptoFilter(crypto.cryptoList).map((crypto) => {
+                      return (
+                        <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user} />
+                      );
+                    })}
                 </TableBody>
               </Table>
             </TableContainer>
@@ -280,7 +275,7 @@ const Coin = ({}) => {
               />
             ) : null}
 
-            <Pagination className="pagination-cont"
+            {/* <Pagination className="pagination-cont"
               count={(crypto?.cryptoList.length / 10).toFixed(0)}
               style={{
                 padding: 20,
@@ -292,7 +287,7 @@ const Coin = ({}) => {
                 setPage(value);
                 window.scroll(0, 450);
               }}
-            />
+            /> */}
           </div>
         </div>
       </section>
@@ -303,24 +298,22 @@ const Coin = ({}) => {
             <div className="t-name">
               <span>Popular Coins</span>
               <span> The current top 10 coins in the market</span>
-            </div>{" "}
+            </div>
           </div>
         </div>
         {popular ? <TrendingTable popular={popular} /> : null}
       </div>
 
       <div className="trending-wrap">
-        {/* <div className="title-market"> */}
         <div className="t-left">
           <div className="t-name">
             <span style={{ color: "black", marginTop: "4rem" }}>
               Trending Coins
             </span>
             <span>
-              {" "}
               Find out what are the trending coins in the market currently
             </span>
-          </div>{" "}
+          </div>
         </div>
 
         {/* </div> */}

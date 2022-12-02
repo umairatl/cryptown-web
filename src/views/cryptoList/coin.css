@@ -9,27 +9,16 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* background: #14578e; */
 }
 
 /* table */
 .overflow-table {
-  overflow-x: auto;
+  overflow: hidden !important;
 }
 
-/* .css-11xur9t-MuiPer-root-MuiTableContainer-root{
-  overflow-x: visible !important;
-} */
-
 .table_h {
-  /* background: #14578e !important; */
-  /* color:  !important; */
   color: white !important;
   background: black !important;
-  height: 2rem !important;
-  font-size: 1.2rem !important;
-  padding: 21px !important;
-  /* text-transform: uppercase; */
 }
 
 .line-height-t {
@@ -40,25 +29,9 @@
   font-size: 1.2rem !important;
 }
 
-/* 
-.css-1ex1afd-MuiTableCell-root{
-  line-height: 7px !important;
-
-} */
-
-/* .css-i02g0k-MuiTableCell-root{
-  color: white !important;
-background: black !important;
-height: 2rem !important;
-font-size: 1.2rem !important;
-padding: 21px !important;
-} */
-
-/* .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root{
-color: white !important;
-background-color: blue;
-font-size: 1rem !;
-} */
+.tbl-h{
+overflow: hidden !important;
+}
 
 .name-col span {
   margin-left: 1rem;
@@ -66,10 +39,6 @@ font-size: 1rem !;
   font-size: 1.2rem;
   /* text-transform: ; */
 }
-
-/* .css-y8ay40-MuiTableCell-root{
-  text-align: center !important;
-} */
 
 .coin-input {
   border-radius: 5px;
@@ -142,9 +111,8 @@ img#gif1 {
 }
 
 .set-coinList {
-  width: 100rem;
-  margin-top: -22pt;
-  /* margin-top: -49pt; */
+  /* width: 100rem; */
+  /* margin-top: -22pt; */
 }
 
 h3.headercointable {
@@ -231,7 +199,7 @@ span#colortext6 {
 }
 
 .carousel-2 {
-  width: 70%;
+  /* width: 70%; */
   margin: 5rem auto;
   color: white;
 }
@@ -243,36 +211,25 @@ span#colortext6 {
 }
 
 .trending-wrap {
+  cursor: pointer;
   background-color: white;
   width: 70%;
   border-radius: 7rem;
   margin: 0px auto 7rem;
-  /* margin-left: 28rem;  */
-  /* margin: auto; */
   text-align: center;
-  /* margin-bottom: 4rem !important; */
-  /* align-items: center; */
 }
 
 .title-market {
   width: 50%;
   margin-bottom: 2rem;
   margin-top: 4rem;
-  /* text-align: center; */
-
-  /* justify-content: center; */
-  /* text-align: center; */
-  /* text-align: center; */
-  /* font-size: 12pt; */
 }
 
 .t-left {
   display: flex;
-  /* position: relative; */
   flex: 1;
   flex-direction: column;
   gap: 2rem;
-  /* margin-left: 100px; */
   margin-right: -50px;
 }
 .t-name {
@@ -281,7 +238,6 @@ span#colortext6 {
   gap: 0.25rem;
 }
 .t-name > :nth-child(1) {
-  /* text-align: c; */
   color: white;
   font-weight: bold;
   font-size: 2.4rem;
@@ -321,35 +277,9 @@ span#colortext6 {
 
 .pagination-cont{
   padding: 20px;
-    width: 97.5% !important;
+    /* width: 97.5% !important; */
     display: flex;
     justify-content: center;
     color: white !important;
     background: white;
 }
-
-/* 
-@media (min-width:16rem) and (max-width:26.66rem){
-.set-coinList {
-    display: flex;
-    flex-direction: row;
-    color: black;
-    width: 70%;
-    margin: 0px auto;
-}
-}
-
-
-@media (min-width:16rem) and (max-width:26.66rem){
-.css-11xur9t-MuiPaper-root-MuiTableContainer-root 
-{
-    background-color: #fff;
-    color: rgba(0, 0, 0, 0.87);
-    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    border-radius: 4px;
-    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-    width: 100%;
-    overflow-x: auto;
-}
-} */
