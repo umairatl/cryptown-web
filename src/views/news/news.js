@@ -79,6 +79,7 @@ const NewsPage = () => {
             ))}
         </div>
       </div>
+      <br />
       <AmbassadorSection />
       <Footer />
     </div>

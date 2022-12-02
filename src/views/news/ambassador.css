@@ -2,15 +2,13 @@
         /* display: flex;
         align-items: center;
         justify-content: center; */
-        /* background-color: black; */
-    /* }  */
+/* background-color: black; */
+/* }  */
 /* img.gif2 {
         max-width: 100%;
         flex-basis: 40%;
     } */
 
-        
-   
 /* .texta {
         color: #CD5C5C;
         padding-left: 20px;
@@ -29,79 +27,69 @@
 }
       */
 
-.section5{
-
-    /* display: grid; */
-    padding: 2rem;
-    /* grid-template-columns: 300px 1fr; */
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    /* max-width: 800px;
+.section5 {
+  /* display: grid; */
+  padding: 2rem;
+  /* grid-template-columns: 300px 1fr; */
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  /* max-width: 800px;
     margin: 0 auto; */
-    font: 500 100%/1.5 system-ui;
-    margin-top: -110px;
-   
+  font: 500 100%/1.5 system-ui;
+  margin-top: -110px;
+  height: 50vh;
 }
 
-
-img.gif2{
-    height: auto;
-    width: 30%;
+img.gif2 {
+  height: auto;
+  width: 30%;
 }
 
-p.pambassador{
-    width: 30%;
-    color: #ffffff;
-    text-align: justify;
-    margin: 244px;
-} 
-
-
-
-
-h3.headerambassador{
-    color: #ffffff;
-    text-align: center;
-    font-size: 3.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-}
-
-
-span#colortext5{
-    color: #0000ff;
-}
-
-.header2{
-    background-color: black;
-    margin-bottom: -40px;
-}
-
-
-
-@media (min-width:16rem) and (max-width:24.66rem){
-h3.headerambassador{
-
-    font-size: 2rem;
-    
-    
-}
-}
-
-
-@media (min-width:16rem) and (max-width:26.66rem){
 p.pambassador {
+  width: 30%;
+  color: #ffffff;
+  text-align: justify;
+  margin: 244px;
+}
+
+h3.headerambassador {
+  color: #ffffff;
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+span#colortext5 {
+  color: #0000ff;
+}
+
+.header2 {
+  background-color: black;
+  margin-bottom: -40px;
+}
+
+@media (min-width: 16rem) and (max-width: 24.66rem) {
+  h3.headerambassador {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 16rem) and (max-width: 26.66rem) {
+  p.pambassador {
     width: 100%;
     color: #ffffff;
     text-align: center;
-    
+
     margin: 3rem;
-}
+  }
 }
 
-@media (min-width:16rem) and (max-width:26.66rem){
-img.gif2 {
+@media (min-width: 16rem) and (max-width: 26.66rem) {
+  img.gif2 {
     display: none;
-}
+  }
 }
