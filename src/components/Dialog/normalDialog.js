@@ -18,6 +18,8 @@ const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
             userPostProfile,
             userUpdate,
             passwordUpdate,
+            postSuccessful,
+            usernameError,
             dispatch } = useDialogContext()
 
     const handleOpen = () => {
@@ -40,6 +42,10 @@ const NormalDialog = ({type, dialogTitle, dialogMessage}) => {
                 return userUpdate
             case "PASSWORD_UPDATE":
                 return passwordUpdate
+            case "USERNAME_ERROR":
+                return usernameError
+            case "POST_SUCCESSFUL":
+                return postSuccessful
             default:
                 return
         }
