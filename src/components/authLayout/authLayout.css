@@ -11,10 +11,12 @@ body {
     font-family: "Open Sans", sans-serif;
     color: #333333;
     position:absolute;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
+    /* height: auto ; */
+    /* background-size: cover; */
+    /* top:0px; */
+    /* right:0px; */
+    /* bottom:0px; */
+    /* left:0px; */
     /* background-image: url(../../asset/Asset5.png);                                                                                                */
 }
 
@@ -46,6 +48,8 @@ body {
 
 a{
 	text-decoration:none;
+  font-size: inherit;
+  color: royalblue;
 }
 
 .flex-pass{
@@ -349,8 +353,8 @@ label input[type="checkbox"] {
 @media (min-width: 20rem) and (max-width: 47rem){
   .box-form .right {
     padding-left: 5vw;
-    width: 75vw;
-    height: 20rem;
+    width: 100%;
+    height: 100%;
     padding-right: 4vw;
 }
 }
@@ -358,7 +362,7 @@ label input[type="checkbox"] {
 @media (min-width: 20rem) and (max-width: 47rem){
 
 .box-form .right h5 {
-    font-size: 1.9vmax;
+    font-size: 1rem;
     line-height: 0;
     text-align: center;
 }
@@ -378,7 +382,6 @@ label input[type="checkbox"] {
     margin-top: 5px;
     margin-left: 0;
     font-size: 10px;
-    padding: 2px;
     border-radius: 10rem;
     display: inline-block;
     border: 0;
@@ -391,14 +394,33 @@ label input[type="checkbox"] {
 
 @media (min-width: 20rem) and (max-width: 47rem){
   .box-form .right input {
-    width: 8rem;
+    width: 90%;
     padding: 0.5rem;
-    margin-top: 0.5rem;
+   ;
     font-size: 16px;
     border: none;
     outline: none;
     border-bottom: 2px solid #B0B3B9;
 }
+}
+
+
+@media (min-width:20rem) and (max-width:47rem){
+  .box-form{
+    margin: 11rem auto 15rem;
+  }
+}
+
+@media (min-width:20rem) and (max-width:47rem){
+  .right img{
+    margin-top:10%;
+  }
+}
+
+@media (min-width:20rem) and (max-width:47rem){
+  .back-1{
+    bottom:auto;
+  }
 }
 
 /* //use rem use em// no pixel */
@@ -413,7 +435,7 @@ label input[type="checkbox"] {
 .box-form .left .overlay {
     padding: 1rem;
     
-    height: 30rem;
+    /* height: 30rem; */
     
     box-sizing: border-box;
 }
@@ -459,15 +481,16 @@ label input[type="checkbox"] {
   .box-form .right {
     padding-left: 5vw;
     width: 75vw;
-    height: 25rem;
+    height: 100%;
     padding-right: 4vw;
+    
 }
 }
 
 @media (min-width: 48rem)and (max-width:63rem){
 
 .box-form .right h5 {
-    font-size: 1.9vmax;
+    font-size: 1.3rem;
     line-height: 0;
     text-align: center;
 }
@@ -501,9 +524,8 @@ label input[type="checkbox"] {
 
 @media (min-width: 48rem )and (max-width:63rem){
   .box-form .right input {
-    width: 16rem;
+    width: 95%;
     padding: 0.5rem;
-    margin-top: 0.5rem;
     font-size: 16px;
     border: none;
     outline: none;
@@ -514,7 +536,7 @@ label input[type="checkbox"] {
 
 @media (min-width: 48rem) and (max-width:63rem){
   .right img {
-    margin-top: 10%;
+    margin-top: 0%;
 
 }
 }
@@ -581,7 +603,7 @@ label input[type="checkbox"] {
   .box-form .right {
     padding-left: 5vw;
     width: 75vw;
-    height: 25rem;
+    height: auto;
     padding-right: 4vw;
 }
 }
@@ -598,7 +620,7 @@ label input[type="checkbox"] {
 @media (min-width: 64rem)and  (max-width: 89rem){
 
 .box-form .right p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #a0a3ab;
 }
 }
