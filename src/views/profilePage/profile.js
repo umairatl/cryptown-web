@@ -142,7 +142,6 @@ const Profile = () => {
           });
         }
       } catch (error) {
-        console.log(error);
         dialogDispatch({ type: "PASSWORD_UPDATE" });
         setError(error.response.data.error);
       }
@@ -181,7 +180,6 @@ const Profile = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    console.log(passwordStrength);
     if (passwordStrength < 50) {
       return (
         // <h1>Weak Password</h1>
