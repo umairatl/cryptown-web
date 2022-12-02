@@ -15,25 +15,26 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import ATH_ATL from "../../components/ath/atl/ath_atl";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useWatchListContexts } from "../../hooks/useWatchListContext";
+import { useDialogContext } from "../../hooks/useDialogContext";
+import NormalDialog from "../../components/Dialog/normalDialog";
 
 const CoinDetail = () => {
-  const { id } = useParams();
-  var [detail, setDetail] = useState(null);
+  const { id, page } = useParams();
+  let [detail, setDetail] = useState(null);
+  let [error, setError] = useState(null) 
+  const [watchList, setWatchList] = useState({});
   const scollToRef = useRef();  const [currency, setCurrency] = useState('10');
+  const { watchLists: watchListContext, dispatch } = useWatchListContexts();
+  const { addToWatchlist: addWatchListDialog, dispatch: dialogContext } =
+    useDialogContext();
+  const { user } = useAuthContext();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const fetchCoinDetail = async () => {
-      const response = await axios.post(
-        "api/crypto/cryptoDetail",
-        {
-          cryptoId: id,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await axios(`api/crypto/cryptoDetail/${id}`);
 
       const json = await response.data;
 
@@ -47,18 +48,49 @@ const CoinDetail = () => {
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
+  
+  const addToWatchlist = async (cryptoId, coinName, image_url) => {
+    if (!user) {
+      setError("Please log in to use this feature");
+      return;
+    }
 
-  // var updateATH_ATL = () => {
-  //   console.log(currency, 'fka')
-  //      return (detail && <ATH_ATL detail = {[ detail.cryptoDetails, currency]} />)
-  //   }
+    const response = await axios.post(
+      "api/favourite/favourite-add",
+      {
+        cryptoId: cryptoId,
+        coinName: coinName,
+        image_url: image_url,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user}`,
+        },
+      }
+    );
 
-  // useEffect(() => {
-  //   updateATH_ATL()
-  //   console.log(currency)
-  // }, [currency])
+    const json = await response.data;
 
-  // Create our number formatter.
+    if (response.status === 200) {
+      setWatchList((prev) => ({ ...prev, ...json }));
+      console.log("ADD: ", json["newFavourite"]);
+      dispatch({ type: "ADD_WATCHLIST", payload: json["newFavourite"] });
+    }
+  };
+
+  const handleWatchLists = async (cryptoId, coinName, image_url) => {
+    try {
+      await addToWatchlist(cryptoId, coinName, image_url);
+      setError(null);
+      dialogContext({ type: "ADD_TO_WATCHLIST" });
+    } catch (error) {
+      console.log(error);
+      setError(error.response.data.error);
+      dialogContext({ type: "ADD_TO_WATCHLIST" });
+    }
+  };
+
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
@@ -73,12 +105,11 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
     <div>
       <div className="coin-detail">
         <Navbar />
-    
         <div className="top-info">
-
         <div className="back-col">
           <div className="table-flex">
-          <Link className="icon_back" to='/market'><FaArrowLeft /> <span>Back</span></Link>
+          <Link className="icon_back" to = {page === 'market' ?  '/market' :  '/watchlist'}
+         ><FaArrowLeft /> <span>Back</span></Link>
         <FormControl sx={{ m: 1, minWidth: 120, color: 'white', background: 'white' }} size="small">
       <InputLabel id="demo-select-small"></InputLabel>
       <Select
@@ -116,12 +147,27 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                   {formatterMY.format(detail && detail.cryptoDetails.current_price_myr)} </span> :  
                   <span> 
                   {formatter.format(detail && detail.cryptoDetails.current_price_usd)}</span>}
-                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}</span>
+                <span>Rank #{detail && detail.cryptoDetails.market_cap_rank}
+
+                { detail &&  
+                  <button  onClick={() => handleWatchLists(detail.cryptoDetails.cryptoId, detail.cryptoDetails.name, detail.cryptoDetails.image)} className="btn-coin">Add to Wishlist</button> 
+                }
+
+                {addWatchListDialog ? (
+                  <NormalDialog 
+                    type="ADD_TO_WATCHLIST"
+                    dialogTitle="Add to Watchlist"
+                    dialogMessage={!error ? watchList["mssg"] : error}
+                  />
+                  ) : null
+                }
+                </span>
                 <div className="table-detail">
 
                   {/* table */}
                   {currency === 20 ? 
                   <table>
+                    <tbody>
                     <tr>
                       <th>Market Cap</th>
                       <td>{formatterMY.format(detail && detail.cryptoDetails.market_cap_myr)}</td>
@@ -142,8 +188,10 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                     </tr>
                     <tr>
                     </tr>
+                    </tbody>
                   </table>
                   :  <table>
+                    <tbody>
                   <tr>
                     <th>Market Cap</th>
                     <td>{formatter.format(detail && detail.cryptoDetails.market_cap_usd)}</td>
@@ -164,6 +212,7 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
                   </tr>
                   <tr>
                   </tr>
+                  </tbody>
                 </table> }
                 
                 </div>
@@ -178,6 +227,7 @@ const formatterMY = new Intl.NumberFormat('ms-MY', {
            detail && <ATH_ATL detail = {[ detail.cryptoDetails, 20]} />
            : detail && <ATH_ATL detail = {[ detail.cryptoDetails, 10]} />
         }
+        
 
 
 

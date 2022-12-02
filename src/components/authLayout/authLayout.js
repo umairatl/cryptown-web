@@ -71,7 +71,7 @@ return (
     <div className="box-form">
 	    <div className="left">
         <div className="overlay">
-        <h1>Hey <span className="txt-rotate" dataPeriod="1000"ss><span className="wrap">{text}</span></span></h1>
+        <h1>Hey <span className="txt-rotate" dataperiod="1000"ss><span className="wrap">{text}</span></span></h1>
         <p>Welcome to Cryptown, <br></br> a place to explore and learn everything related to cryptocurrency </p>
         <div className="home-btn">			
           <Link to ='/'><p>Go to Cryptown! </p></Link>
@@ -80,7 +80,7 @@ return (
         </div>
 	</div>
 
-  <div class="right">
+  <div className="right">
   <img src={logo} width='80%'/>
     { authType === 'login' ? 
     <div >

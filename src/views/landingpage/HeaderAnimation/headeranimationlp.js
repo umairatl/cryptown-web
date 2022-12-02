@@ -1,9 +1,7 @@
 import React from "react";
 import videoanimation from "../../../asset/intro.mp4";
-import '../HeaderAnimation/headeranimation.css';
-
-
-
+import "../HeaderAnimation/headeranimation.css";
+import {Link} from "react-router-dom";
 
 export default function LpAnimation() {
   // React.useEffect(()=>{
@@ -14,17 +12,12 @@ export default function LpAnimation() {
   //   })
   // },[])
 
-
-
-
-
-
   // const [is_mounted, setMounted] = React.useState(false)
   //   const video_ref = React.useRef();
 
   //   React.useEffect(() => {
   //       let timer_id;
-  //       if (is_mounted && video_ref.current) {  
+  //       if (is_mounted && video_ref.current) {
   //           timer_id = setTimeout((        video_ref.current.play(), 500))
 
   //       }
@@ -32,7 +25,6 @@ export default function LpAnimation() {
 
   //       return () => clearTimeout(timer_id)
   //   }, [is_mounted])
-
 
   return (
     // <div className="App">
@@ -50,9 +42,9 @@ export default function LpAnimation() {
 
     // <iframe id="stylevideo" src={videoanimation}
     //     allowfullscreen="allowfullscreen"
-    //     mozallowfullscreen="mozallowfullscreen" 
-    //     msallowfullscreen="msallowfullscreen" 
-    //     oallowfullscreen="oallowfullscreen" 
+    //     mozallowfullscreen="mozallowfullscreen"
+    //     msallowfullscreen="msallowfullscreen"
+    //     oallowfullscreen="oallowfullscreen"
     //     webkitallowfullscreen="webkitallowfullscreen"
 
     // >
@@ -60,24 +52,20 @@ export default function LpAnimation() {
     // </div>
     // </div>
     <div className="jimvideo">
-    <video autoPlay loop muted id="myVideo">
-      
-      <source type="video/mp4" src={videoanimation} />
-   
-      Your browser does not support HTML5 video.
-    </video>
-      <button id="lpheaderbutton">Learn More</button>
-    
-    
+      <video autoPlay loop muted id="myVideo">
+        <source type="video/mp4" src={videoanimation} />
+        Your browser does not support HTML5 video.
+      </video>
+      <Link to ='/market'> <button  id="lpheaderbutton">Learn More</button> </Link>
     </div>
   );
-}   
+}
 //     const [is_mounted, setMounted] = React.useState(false)
 //     const video_ref = React.useRef();
 
 // React.useEffect(() => {
 //     let timer_id;
-//     if (is_mounted && video_ref.current) {  
+//     if (is_mounted && video_ref.current) {
 //         timer_id = setTimeout((        video_ref.current.play(), 500))
 
 //     }
@@ -98,5 +86,4 @@ export default function LpAnimation() {
 //           alt="All the devices"
 //           src={videoanimation}
 //           autoPlay
-//         />   
-    
+//         />
