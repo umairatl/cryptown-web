@@ -89,3 +89,16 @@
     flex-wrap: wrap;
 }
 }
+
+@media (min-width:48rem) and (max-width:64rem){
+  .test {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 16px;
+    margin-right: 0rem; 
+     margin-left: 0rem; 
+    /* margin-bottom: 21vh;
+    */
+  }
+}

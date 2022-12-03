@@ -43,7 +43,7 @@ const Post = ({ onCustomClick, post }) => {
 
     const json = await response.data;
 
-    if (response.status === 200 ) {
+    if (response.status === 200) {
       setPostDelete(json);
       dispatch({ type: "DELETE_POST", payload: json.deletedPostId });
       userPostsDispatch({ type: "DELETE_POST", payload: json.deletedPostId });
@@ -63,7 +63,6 @@ const Post = ({ onCustomClick, post }) => {
       setError(null);
       dialogDispatch({ type: "USER_POST" });
     } catch (error) {
-      console.log(error);
       setError(error.response.data.error);
     }
   };
@@ -98,7 +97,6 @@ const Post = ({ onCustomClick, post }) => {
         </div>
         <h2>{entities.decodeHTML(post.post)}</h2>
       </div>
-
     </div>
   );
 };

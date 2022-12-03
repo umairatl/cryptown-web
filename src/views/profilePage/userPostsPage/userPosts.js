@@ -7,7 +7,6 @@ import Post from "../../../components/post/post";
 import { useUserPostsContext } from "../../../hooks/useUserPostsContext";
 import NormalDialog from "../../../components/Dialog/normalDialog";
 import { useDialogContext } from "../../../hooks/useDialogContext";
-import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 
 import "../../../components/post/post.css";
