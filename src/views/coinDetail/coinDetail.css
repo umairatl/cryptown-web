@@ -134,11 +134,10 @@
     height: fit-content   ;
   }
 
-  .btn-vm{
-    width: 17rem !important;
-    height: 4rem !important;
+  /* .btn-vm{
+ 
   }
-
+ */
 
 
 
@@ -266,6 +265,7 @@ table tr{
 
 .desc-col .para a{
     color:  #557897;
+    font-size: inherit;
 }
 
 
@@ -374,7 +374,7 @@ margin-bottom: 1rem;
     /* background-repeat: no-repeat; */
     /* align-items: center; */
     justify-content: space-between;
-    margin-left: -6rem;
+    
     /* text-decoration: none; */
 }
 }
@@ -382,7 +382,7 @@ margin-bottom: 1rem;
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
 .left-det {
-    width: 50rem;
+    width: 50%;
     margin-top: 5rem;
     
     margin-left: 0rem;
@@ -493,5 +493,149 @@ table {
 @media (min-width: 19rem) and (max-width: 26.66rem){
   .right-col{
     margin-top: 0rem;
+    width: auto;
+    margin: auto;
   }
 }
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+  .back-col{
+    margin-left: 0rem;
+  }
+}
+
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+  .d-left{
+    margin: auto;
+  }
+}
+
+
+@media (min-width: 19rem) and (max-width: 26.66rem){
+  .d-name{
+    margin-top: 2rem;
+  }
+}
+
+/*tablet 768 */
+
+
+
+@media (min-width:26.67rem) and (max-width:48rem){
+.top-info {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    background-size: 50rem;
+    background: url(http://localhost:3000/static/media/wave_grid.1f5f7ef….png);
+    background-repeat: no-repeat;
+    background-size: 132rem 60rem;
+    /* background-repeat: no-repeat; */
+    /* align-items: center; */
+    justify-content: space-between;
+    
+    /* text-decoration: none; */
+}
+}
+
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+.left-det {
+    width: 50%;
+    margin-top: 5rem;
+    
+    margin-left: 0rem;
+}
+}
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+.d-name > :nth-child(1) {
+    
+    font-size: 6rem;
+    
+}
+}
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+.left-det .btn-coin{
+  margin-left: 0rem;
+
+}
+}
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+.btn-coin{  
+  width: 30rem;
+}
+}
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+table {
+  display: none;
+}
+}
+
+@media (min-width: 26.67rem) and (max-width:48rem){
+.d-name > :nth-child(2) {
+    
+    font-size: 6rem;
+    width: fit-content;
+    
+}
+}
+
+@media (min-width: 26.67rem) and (max-width:48rem){
+  .card-atl {
+    
+    /* margin-left: 9rem; */
+    width: auto;
+    height: 10rem;
+    display: block;
+    
+    margin-bottom: 3.5rem;
+}
+}
+
+@media (min-width: 26.67rem) and (max-width:48rem){
+  .line-chart h1{
+    font-size: 1.6rem;
+
+  }
+}
+
+@media (min-width: 26.67rem) and (max-width:48rem){
+  .line-chart {
+    width: 100%;
+    height: fit-content;
+    /* margin-top: 10%; */
+    /* margin: 5% auto 5%; */
+}
+}
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+  .desc-col {
+    text-align: justify;
+    width: 80%;
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    color: white;
+    background: linear-gradient(60deg, #242424, #3b0054, #00094B, #242424);
+    padding: 1rem;
+    border-radius: 1rem;
+    /* margin-left: 10%; */
+}
+}
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+  .desc-col h1 {
+
+    font-size: 1.6rem;
+
+ 
+}
+}
+
