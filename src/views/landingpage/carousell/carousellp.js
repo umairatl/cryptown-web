@@ -53,15 +53,15 @@ function Carousallp() {
     <div
       className="Carousallanding"
       data-aos="fade-right"
-      data-aos-duration="3000"
-    >
+      data-aos-duration="3000">
       <h3 className="headercarousal">
         Our<span id="colortext3"> Services</span>
       </h3>
       <Slider {...settings}>
-        {console.log(images)}
         {images.map((img, idx) => (
-          <div className={idx === imgIndex ? "slide activeSlide" : "slide"}>
+          <div
+            key={idx}
+            className={idx === imgIndex ? "slide activeSlide" : "slide"}>
             <img src={img} alt={idx} />
             <h1>{array[idx]}</h1>
           </div>

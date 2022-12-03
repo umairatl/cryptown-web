@@ -163,8 +163,7 @@ const Navbar = () => {
           <nav className="nav-up">
           <ul>
          <Link to ='/market' className="nav-text"> 
-         {/* <img className='logoclass' src = { logo } width='60%' /> */}
-         <img src = { logo } width='60%'/>
+         <img src = { logo } alt='CRYPTOWN' width='50%'/>
           </Link>
          </ul>
         <ul className="nav-right">
@@ -186,7 +185,7 @@ const Navbar = () => {
         { !user && (
         <nav className="nav-up">
         <Link to ='/market' className="nav-text"> 
-         <img src = { logo } width='60%'/>
+         <img src = { logo } alt='CRYPTOWN'  width='60%'/>
         </Link>
 
         <ul className="nav-right">
@@ -199,12 +198,6 @@ const Navbar = () => {
        </nav>
         )}
 </div>
-
-
-
-
-
-
 
 <div className="nav-mobile">
       <div>
@@ -223,7 +216,7 @@ const Navbar = () => {
             {list(anchor)}
           </Drawer>
           </div>
-<div><img src = { logo } width='50%'/>
+<div><img src = { logo } alt='CRYPTOWN' width='50%'/>
 </div>
 </div>
         </React.Fragment>

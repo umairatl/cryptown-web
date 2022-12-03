@@ -1,10 +1,9 @@
 import "../footer/footer.css";
-// import { faHome } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaFacebook, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import footerimg from "../../asset/Asset2.png";
 import footerimgTwo from "../../asset/Asset5.png";
 import footerimgapp from "../../asset/mobapp.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,10 +18,11 @@ const Footer = () => {
               <h4>Company</h4>
               <ul id="footer-ul">
                 <li>
-                  <a href="#">about us</a>
+                  <Link to="/">about us</Link>
                 </li>
+                <br></br>
                 <li>
-                  <a href="#">our services</a>
+                  <Link to="/market">our services</Link>
                 </li>
               </ul>
             </div>
@@ -31,6 +31,7 @@ const Footer = () => {
               <ul id="footer-ul">
                 <li>
                   <a>0136316723</a>
+                  <br></br>
                 </li>
                 <li>
                   <a>cryptownweb@gmail.com</a>
@@ -52,9 +53,10 @@ const Footer = () => {
                 <a href="https://twitter.com/CryptownWeb">
                   <FaTwitter />
                 </a>
+                <br></br>
               </div>
               <a href="https://drive.google.com/drive/folders/1GZZzui-cKttbV-SfnR3IwTH5N_824cBo">
-                <img alt="GoogleApp" src={footerimgapp} />
+                <img alt="GoogleApp" src={footerimgapp} width="60%" />
               </a>
             </div>
             <div className="footer-col">
@@ -62,7 +64,7 @@ const Footer = () => {
                 id="FTwo"
                 src={footerimgTwo}
                 alt="footerimg2"
-                style={{ width: "70%", height: "30%" }}
+                style={{ width: "70%", height: "100%" }}
               />
             </div>
           </div>

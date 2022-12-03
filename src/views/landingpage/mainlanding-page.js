@@ -18,8 +18,7 @@ const MainLandingPage = () => {
   return (
     <section>
       <LpAnimation />
-      {/* <HeaderLandingPage/> */}
-      <Counter/>
+      <Counter />
       <Who />
       <AboutLandingPage />
       <Carousallp />
@@ -27,7 +26,6 @@ const MainLandingPage = () => {
       <br />
       <CustomerReview />
       <Footer />
-      {/* <br></br> */}
     </section>
   );
 };
