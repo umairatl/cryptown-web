@@ -8,18 +8,17 @@ import Reply from "../../components/replies/replies";
 import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
 import ForumHeaderSection from "./forumHeader/forumhead";
-import imground from "../../asset/imageempty.png";
 import Footer from "../../components/footer/footer";
 import { FaUserCircle } from "react-icons/fa";
 import { Pagination } from "@mui/material";
 import { useDialogContext } from "../../hooks/useDialogContext";
-
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import NormalDialog from "../../components/Dialog/normalDialog";
+import { FaArrowRight } from "react-icons/fa";
 
 const entities = require("entities");
 
@@ -27,17 +26,13 @@ const ForumPage = () => {
   const [postList, setPostList] = useState(null);
   const [newPost, setNewPost] = useState("");
   const [error, setError] = useState("");
-  const [hasSubmitReply, setHasSubmitReply] = useState(false)
-
   const { user } = useAuthContext();
   const { forumList, dispatch } = useForumContext();
   const { postLists, dispatch: userPostDispatch } = useUserPostsContext();
+  const { replyError, dispatch: dialogDispatch } = useDialogContext();
+  const { postSuccessful, dispatch: dialogSuccessDispatch } =
+    useDialogContext();
   const [page, setPage] = useState(1);
-  const {
-    postSuccessful,
-    replyError,
-    dispatch: dialogDispatch,
-  } = useDialogContext();
 
   const fetchPosts = async () => {
     const response = await axios("api/post/getPosts", {
@@ -64,7 +59,6 @@ const ForumPage = () => {
     }
   }, [dispatch, user]);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -83,10 +77,9 @@ const ForumPage = () => {
         }
       );
       const json = await response.data;
-
       if (response.status === 200) {
         dispatch({ type: "ADD_POST", payload: json["newPost"] });
-        dialogDispatch({ type: "POST_SUCCESSFUL" });
+        dialogSuccessDispatch({ type: "POST_SUCCESSFUL" });
 
         if (postLists !== null) {
           userPostDispatch({ type: "ADD_POST", payload: json["newPost"] });
@@ -99,39 +92,41 @@ const ForumPage = () => {
     }
   };
   let dayOpt = { weekday: "long" };
-  let yearOpt = {month: "short", day: "numeric" };
+  let yearOpt = { month: "short", day: "numeric" };
   let timeOpt = { hour: "numeric", minute: "numeric" };
 
   return (
     <div className="tagging">
       <div className="forum">
         <Navbar />
-        {/* <ForumHeaderSection /> */}
         <div className="post-col">
-          {/* <h3 className="textfrmheader"
+          <div className="cont-top-forum-1">
+            <h3
+              className="textfrmheader"
               data-aos="fade-down"
               data-aos-duration="3000">
-              Forum<span id="colortext17"> Feed</span>
-            </h3> */}
-
-          <form
-            className="forum-post"
-            onSubmit={handleSubmit}
-            data-aos="fade-up"
-            data-aos-duration="3000">
-            <div className="containerforforum">
-              <textarea
-                id="contentforum"
-                placeholder="Post your thought"
-                value={newPost}
-                onChange={(e) => setNewPost(e.target.value)}
-              />
-              <br></br>
-              <button className="bn632-hover bn20" disabled={!newPost}>
-                Post
-              </button>
-            </div>
-          </form>
+              Join our communities and
+              <span id="colortext17"> share your thoughts</span>
+            </h3>
+            <form
+              className="forum-post"
+              onSubmit={handleSubmit}
+              data-aos="fade-up"
+              data-aos-duration="3000">
+              <div className="containerforforum">
+                <textarea
+                  id="contentforum"
+                  placeholder="Post your thought"
+                  value={newPost}
+                  onChange={(e) => setNewPost(e.target.value)}
+                />
+                <br></br>
+                <button className="bn632-hover bn20" disabled={!newPost}>
+                  Post
+                </button>
+              </div>
+            </form>
+          </div>
 
           {replyError && error ? (
             <NormalDialog
@@ -141,28 +136,14 @@ const ForumPage = () => {
             />
           ) : null}
 
-          {postSuccessful ? (
-            <NormalDialog
-              type="POST_SUCCESSFUL"
-              dialogTitle="Post Successful"
-              dialogMessage="Thank you for joining the talk"
-            />
-          ) : null}
-
-          <br />
-          <br />
-
           {/* Styling for forum feed*/}
           <div>
             <h3
-              className="textfrmheader"
+              className="exlistsecheader"
               data-aos="fade-down"
               data-aos-duration="3000">
-              Forum<span id="colortext17"> Feed</span>
+              Cryptown <span id="colortextnine">Forum Feed</span>
             </h3>
-
-            <br />
-            <br />
 
             {forumList?.length ? (
               <Pagination
@@ -179,9 +160,7 @@ const ForumPage = () => {
                   window.scroll(0, 450);
                 }}
               />
-            ) : (
-              <></>
-            )}
+            ) : null}
 
             {forumList &&
               forumList
@@ -192,7 +171,6 @@ const ForumPage = () => {
                       <div className="flex-d-row">
                         {/* <img id="imground" width='100%' src={imground} alt="image" /> */}
                         <p style={{ marginLeft: "1rem" }}>
-                          {" "}
                           <FaUserCircle /> {row.username}
                         </p>
                       </div>
@@ -220,19 +198,30 @@ const ForumPage = () => {
                       {/* </div> */}
                     </div>
                     <div>
-                      <p style={{ marginLeft: "1rem", textAlign: "left" }}>
+                      <h2
+                        style={{
+                          marginLeft: "2rem",
+                          textAlign: "left",
+                          fontFamily: "Roleway",
+                        }}>
                         {entities.decodeHTML(row.post)}
-                      </p>
+                      </h2>
                     </div>
 
                     {row.replies.length !== 0 ? (
                       <div className="replies-section">
-                        <Accordion>
+                        {/* <div className="flex-d-row" sx={{ width: "100%" }}> */}
+
+                        <Accordion
+                          sx={{ background: "#0D1550", color: "white" }}>
                           <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
+                            expandIcon={
+                              <ExpandMoreIcon sx={{ color: "white" }} />
+                            }
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography sx={{ textAlign: "center" }}>
+                            <Typography>
+                              <FaArrowRight className="arrow-reply" />
                               View Replies
                             </Typography>
                           </AccordionSummary>
@@ -244,17 +233,26 @@ const ForumPage = () => {
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
+                        {/* </div> */}
                       </div>
                     ) : null}
-                    <ReplyForum forumList={forumList} setForumList={(payload) => dispatch({
-                      type: "SET_POSTS",
-                      payload
-                    })} key={row.postid} postId={row.postid} />
+                    <ReplyForum
+                      forumList={forumList}
+                      setForumList={(payload) =>
+                        dispatch({
+                          type: "SET_POSTS",
+                          payload,
+                        })
+                      }
+                      key={row.postid}
+                      postId={row.postid}
+                    />
                   </div>
                 ))}
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

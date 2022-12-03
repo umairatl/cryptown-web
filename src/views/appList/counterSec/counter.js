@@ -17,7 +17,6 @@ const Counter = ({ className, ...rest }) => {
         setUserCount(json);
       }
     };
-
     fetchUserCount();
   }, []);
 

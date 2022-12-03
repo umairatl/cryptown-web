@@ -59,7 +59,9 @@ function Carousallp() {
       </h3>
       <Slider {...settings}>
         {images.map((img, idx) => (
-          <div className={idx === imgIndex ? "slide activeSlide" : "slide"}>
+          <div
+            key={idx}
+            className={idx === imgIndex ? "slide activeSlide" : "slide"}>
             <img src={img} alt={idx} />
             <h1>{array[idx]}</h1>
           </div>

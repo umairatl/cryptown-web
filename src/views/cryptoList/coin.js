@@ -15,18 +15,24 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import Navbar from "../../components/navbar/navbar";
 import Intro from "../../components/homeBanner/intro";
 import Footer from "../../components/footer/footer";
+import RollingSection from "./rollingcoin";
+import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../../components/Dialog/normalDialog";
+
 import TrendingTable from "../../components/trending_carousel/trending_carousel";
 import MarketingSection from "./marketing/marketingSec";
+// import { FaStar } from "react-icons/fa";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper";
+import { Navigation, Pagination as pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { margin } from "@mui/system";
 import CoinListTable from "../../components/tables/CoinListTable";
 
 const Coin = ({}) => {
@@ -148,6 +154,9 @@ const Coin = ({}) => {
       };
       SLIDE_INFO.push(obj);
     });
+
+  // const POPULAR_LIST = [];
+  // const items =
 
   // Create our number formatter.
   const formatter = new Intl.NumberFormat("en-US", {
@@ -279,8 +288,7 @@ const Coin = ({}) => {
               />
             ) : null}
 
-            <Pagination
-              className="pagination-cont"
+            {/* <Pagination className="pagination-cont"
               count={(crypto?.cryptoList.length / 10).toFixed(0)}
               style={{
                 padding: 20,
@@ -292,7 +300,7 @@ const Coin = ({}) => {
                 setPage(value);
                 window.scroll(0, 450);
               }}
-            />
+            /> */}
           </div>
         </div>
       </section>

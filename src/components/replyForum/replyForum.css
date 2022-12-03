@@ -125,8 +125,9 @@ p.bolding9 {
 }
 
 input#replyforumid {
-  width: 50%;
+  width: 70%;
   height: 50px;
+  margin-top: 5%;
   text-align: center;
 }
 
