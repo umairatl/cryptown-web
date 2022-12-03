@@ -19,6 +19,7 @@ const AmbassadorSection = () => {
     //     </div>
     // </div>
     <div className="header2" data-aos="fade-up" data-aos-duration="3000">
+      <br />
       <h3 className="headerambassador">
         Join Our<span id="colortext5"> Ambassador</span> Programme
       </h3>
