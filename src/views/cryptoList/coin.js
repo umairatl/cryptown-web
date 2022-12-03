@@ -15,27 +15,21 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import Navbar from "../../components/navbar/navbar";
 import Intro from "../../components/homeBanner/intro";
 import Footer from "../../components/footer/footer";
-import RollingSection from "./rollingcoin";
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../../components/Dialog/normalDialog";
-
 import TrendingTable from "../../components/trending_carousel/trending_carousel";
 import MarketingSection from "./marketing/marketingSec";
-// import { FaStar } from "react-icons/fa";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination as pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { margin } from "@mui/system";
 import CoinListTable from "../../components/tables/CoinListTable";
 
-const Coin = ({ }) => {
+const Coin = ({}) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [popular, setPopular] = useState("");
@@ -128,25 +122,18 @@ const Coin = ({ }) => {
 
     if (response.status === 200) {
       setWatchList((prev) => ({ ...prev, ...json }));
-      console.log("ADD: ", json["newFavourite"]);
       dispatch({ type: "ADD_WATCHLIST", payload: json["newFavourite"] });
     }
   };
 
   const handleWatchLists = async (cryptoId, coinName, image_url) => {
-    // e.stopProawaitpagation()
-    // console.log(cryptoId)
     try {
       await addToWatchlist(cryptoId, coinName, image_url);
       setError(null);
-      // console.log("watch list", watchList)
       dialogContext({ type: "ADD_TO_WATCHLIST" });
-      // alert(`${watchList["mssg"]}`)
     } catch (error) {
-      console.log(error);
       setError(error.response.data.error);
       dialogContext({ type: "ADD_TO_WATCHLIST" });
-      // alert(error.response.data.error)
     }
   };
 
@@ -181,8 +168,7 @@ const Coin = ({ }) => {
         key={crypto.cryptoId}
         onClick={() => {
           navigation(`/coinDetail/${crypto.cryptoId}/market`);
-        }}
-      >
+        }}>
         <img className="img" src={crypto.image} width="200px" alt="" />
         <h1
           style={{
@@ -190,8 +176,7 @@ const Coin = ({ }) => {
             marginBottom: "50px",
             color: "black",
             fontSize: "1.5rem",
-          }}
-        >
+          }}>
           {crypto.name}
         </h1>
       </SwiperSlide>
@@ -230,39 +215,61 @@ const Coin = ({ }) => {
             <i className="fa fa-search"></i>
           </div>
 
-          <div className="set-coinList">
-            <TableContainer component={Paper} sx={{ overflow: 'auto' }}>
+          <div className="exchange-table">
+            <TableContainer component={Paper} sx={{ background: "none" }}>
               <Table aria-label="simple table" stickyHeader>
                 <TableHead>
                   <TableRow>
-                    <TableCell className="table_h"><p>Ranking</p></TableCell>
-                    <TableCell className="table_h"><p>Name</p></TableCell>
-                    <TableCell className="table_h"><p>Price</p></TableCell>
-                    <TableCell className="table_h"><p>Market Cap</p></TableCell>
-                    <TableCell className="table_h"><p>24 Volume Price</p></TableCell>
+                    <TableCell className="table_h">
+                      <p>Ranking</p>
+                    </TableCell>
+                    <TableCell className="table_h">
+                      <p>Name</p>
+                    </TableCell>
+                    <TableCell className="table_h">
+                      <p>Price</p>
+                    </TableCell>
+                    <TableCell className="table_h">
+                      <p>Market Cap</p>
+                    </TableCell>
+                    <TableCell className="table_h">
+                      <p>24 Volume Price</p>
+                    </TableCell>
                     {user && (
-                      <TableCell className="table_h"><p>
-                        Add to Watchlist</p>
+                      <TableCell className="table_h">
+                        <p>Add to Watchlist</p>
                       </TableCell>
                     )}
                   </TableRow>
                 </TableHead>
 
-                <TableBody>
+                <TableBody sx={{ background: "white" }}>
                   {crypto && search === ""
                     ? crypto.cryptoList
-                      .slice((page - 1) * 10, (page - 1) * 10 + 10)
-                      .map((crypto) => {
-                        return (
-                          <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user} />
-                        );
-                      })
+                        .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                        .map((crypto) => {
+                          return (
+                            <CoinListTable
+                              key={crypto.cryptoId}
+                              crypto={crypto}
+                              handleWatchLists={handleWatchLists}
+                              formatter={formatter}
+                              user={user}
+                            />
+                          );
+                        })
                     : crypto &&
-                    cryptoFilter(crypto.cryptoList).map((crypto) => {
-                      return (
-                        <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user} />
-                      );
-                    })}
+                      cryptoFilter(crypto.cryptoList).map((crypto) => {
+                        return (
+                          <CoinListTable
+                            key={crypto.cryptoId}
+                            crypto={crypto}
+                            handleWatchLists={handleWatchLists}
+                            formatter={formatter}
+                            user={user}
+                          />
+                        );
+                      })}
                 </TableBody>
               </Table>
             </TableContainer>
@@ -326,8 +333,7 @@ const Coin = ({ }) => {
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             centeredSlides={false}
             centerInsufficientSlides={true}
-            pagination={{ clickable: true }}
-          >
+            pagination={{ clickable: true }}>
             <div className="trend-car">
               {tren &&
                 tren["cryptoTrending"].map((crypto) => createSlide(crypto))}

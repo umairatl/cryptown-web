@@ -2,7 +2,7 @@ import React from "react";
 import "../coinChart/chart.css";
 import { useEffect, useState } from "react";
 import axios from "../../components/axios/axios";
-import ProgressBar from '../progressBar/proressBar';
+import ProgressBar from "../progressBar/proressBar";
 
 import {
   Chart as ChartJS,
@@ -39,12 +39,12 @@ const Chart = ({ cryptoId }) => {
 
   useEffect(() => {
     const fetchChart = async () => {
-      if (time == "14") {
+      if (time === "14") {
         response = await axios(`api/crypto/cryptoChartWeekly/${cryptoId}`);
       }
-      if (time == "max") {
+      if (time === "max") {
         response = await axios(`api/crypto/cryptoChartMax/${cryptoId}`);
-      } else if (time == "24") {
+      } else if (time === "24") {
         response = await axios(`api/crypto/cryptoChartDaily/${cryptoId}`);
       }
 
@@ -64,14 +64,14 @@ const Chart = ({ cryptoId }) => {
         y: value[1].toFixed(7),
       }));
 
-    if (time == "24") {
+    if (time === "24") {
       data2 = {
         labels: coinChartData.map((value) => moment(value.x).format("ddd, hA")),
         datasets: [
           {
             fill: true,
             data: coinChartData.map((value) => value.y),
-            label: cryptoId + ' vs USD',
+            label: cryptoId + " vs USD",
             borderColor: "rgb(53, 162, 235)",
             backgroundColor: "rgba(53, 162, 235, 0.5)",
           },
@@ -84,7 +84,7 @@ const Chart = ({ cryptoId }) => {
           {
             fill: true,
             data: coinChartData.map((value) => value.y),
-            label: cryptoId + ' vs USD',
+            label: cryptoId + " vs USD",
             borderColor: "rgb(53, 162, 235)",
             backgroundColor: "rgba(53, 162, 235, 0.5)",
           },
@@ -109,8 +109,7 @@ const Chart = ({ cryptoId }) => {
         value={time}
         exclusive
         onChange={handleChange}
-        aria-label="Platform"
-      >
+        aria-label="Platform">
         <ToggleButton value="24">1D</ToggleButton>
         <ToggleButton value="14">14D</ToggleButton>
         <ToggleButton value="max">Max</ToggleButton>

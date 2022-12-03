@@ -18,6 +18,14 @@
     --Livvic : 'Livvic', cursive;
 }
 
+.bckg-vid-nav{
+  z-index: 5;
+}
+
+.bckg-vid-nav .first-col{
+  background: none !important;
+}
+
 
 
 /* button.btn{
@@ -68,6 +76,9 @@ video#myVideo{
     width: 100%;
 }
 
+.jimvideo .first-col{
+  background: black
+}
 
 
 

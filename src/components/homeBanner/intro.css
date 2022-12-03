@@ -59,8 +59,9 @@
 .i-right > :nth-child(1) {
   transform: scale(0.69);
   left: -15%;
-  margin-top: -23%;
-  margin-left: 156px;
+  margin-top: -20%;
+  margin-left: 25%;
+    width: 87%;
 }
 
 span#span-center {
@@ -183,14 +184,13 @@ button {
 .i-right > :nth-child(1) {
 
     display: none;
-}
+  }
 }
 
-
-@media (min-width: 19rem) and (max-width: 26.66rem){
-button#coinheaderbutton {
- width: 14rem;
-}
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  button#coinheaderbutton {
+    width: 14rem;
+  }
 }
 
 @media (min-width: 19rem) and (max-width: 26.66rem) {
@@ -259,10 +259,8 @@ button#coinheaderbutton {
     margin-top: 81px;
     font-size: 1rem;
     margin: 0.3rem;
+  }
 }
-}
-
-
 
 @media (min-width: 19rem) and (max-width: 26.66rem) {
   .marketingcontainer {
@@ -293,13 +291,10 @@ button#coinheaderbutton {
   }
 }
 
-
-@media (min-width: 19rem) and (max-width:26.66rem){
-.trending-wrap {
-
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .trending-wrap {
     display: none;
-
-}
+  }
 }
 
 /* 768px ////////////////////////////////////////////*/

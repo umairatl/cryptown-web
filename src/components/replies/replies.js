@@ -1,22 +1,28 @@
-import * as React from 'react';
+import * as React from "react";
+import { FaUserCircle } from "react-icons/fa";
+
 const entities = require("entities");
 
-let yearOpt = {month: "short", day: "numeric" };
+let yearOpt = { month: "short", day: "numeric" };
 
 const Reply = ({ reply }) => {
   return (
     <div className="reply-in-cont">
+      <div className="tweet-header-info">
+        <div className="flex-d-row space-between-jn">
+          <div>
+            <FaUserCircle /> {reply.username}
+          </div>
+          <span>
+            .
+            {new Date(reply.subpostdatetime)
+              .toLocaleDateString("en-MY", yearOpt)
+              .toString()}
+          </span>
+        </div>
 
-<div className="tweet-header-info">
-{reply.username}<span>. 
-
-{new Date(reply.subpostdatetime)
-          .toLocaleDateString("en-MY", yearOpt)
-          .toString()}
-
-</span>
-      <p>{entities.decodeHTML(reply.subpost)}</p>
-    </div>
+        <p>{entities.decodeHTML(reply.subpost)}</p>
+      </div>
     </div>
   );
 };
