@@ -7,7 +7,6 @@ import ReplyForum from "../../components/replyForum/replyForum";
 import Reply from "../../components/replies/replies";
 import { useForumContext } from "../../hooks/useForumContext";
 import { useUserPostsContext } from "../../hooks/useUserPostsContext";
-import ForumHeaderSection from "./forumHeader/forumhead";
 import Footer from "../../components/footer/footer";
 import { FaUserCircle } from "react-icons/fa";
 import { Pagination } from "@mui/material";

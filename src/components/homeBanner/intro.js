@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../homeBanner/intro.css";
-import phonee from "../../asset/marketphone.png";
+import phonee from "../../asset/mobile_cryptown.png";
 
 const Intro = () => {
   return (

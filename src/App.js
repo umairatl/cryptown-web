@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./views/signupPage/signup";
 import FavPage from "./views/favouritePage/fav";
 import CryptoList from "./views/cryptoList/coin";
 import AppList from "./views/appList/appList";
@@ -10,17 +9,13 @@ import NewsPage from "./views/news/news";
 import Profile from "./views/profilePage/profile";
 import CoinDetail from "./views/coinDetail/coinDetail";
 import UserPosts from "./views/profilePage/userPostsPage/userPosts";
-import Login from "./views/loginPage/login";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 import NotFound from "./components/notFound/notFound";
 import AuthLayout from "./components/authLayout/authLayout";
 import MainLandingPage from "./views/landingpage/mainlanding-page";
-import ForumPage from "./views/forumPage/forum";
 import { useEffect } from "react";
-import ReactGA from "react-ga";
 import { googleAnalyticsActions } from "./views/google-analytics-init";
-
 import RedirectBack from "./components/utils/redirectBack";
 
 function App() {
@@ -41,8 +36,7 @@ function App() {
             path="/forum"
             element={
               user ? <Forum /> : <Navigate to="/login?redirect=/forum" />
-            }
-          ></Route>
+            }></Route>
           <Route path="/appList" element={<AppList />}></Route>
           <Route path="/news" element={<NewsPage />}></Route>
           <Route
@@ -50,20 +44,17 @@ function App() {
             path="/profile"
             element={
               user ? <Profile /> : <Navigate to="/login?redirect=/profile" />
-            }
-          ></Route>
+            }></Route>
           {/* <Route path="/signup" element = { !user ? <Signup /> :  <RedirectBack/>}>
             </Route> */}
           <Route
             path="/login"
-            element={!user ? <AuthLayout /> : <RedirectBack />}
-          ></Route>
+            element={!user ? <AuthLayout /> : <RedirectBack />}></Route>
           <Route
             path="/watchlist"
             element={
               user ? <FavPage /> : <Navigate to="/login?redirect=/watchlist" />
-            }
-          ></Route>
+            }></Route>
           <Route
             exact
             path="/profile/userPosts"
@@ -73,8 +64,7 @@ function App() {
               ) : (
                 <Navigate to="/login?redirect=/profile/userPosts" />
               )
-            }
-          ></Route>
+            }></Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

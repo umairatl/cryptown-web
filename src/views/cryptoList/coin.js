@@ -15,24 +15,18 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import Navbar from "../../components/navbar/navbar";
 import Intro from "../../components/homeBanner/intro";
 import Footer from "../../components/footer/footer";
-import RollingSection from "./rollingcoin";
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../../components/Dialog/normalDialog";
-
 import TrendingTable from "../../components/trending_carousel/trending_carousel";
 import MarketingSection from "./marketing/marketingSec";
-// import { FaStar } from "react-icons/fa";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination as pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { margin } from "@mui/system";
 import CoinListTable from "../../components/tables/CoinListTable";
 
 const Coin = ({}) => {
@@ -221,8 +215,8 @@ const Coin = ({}) => {
             <i className="fa fa-search"></i>
           </div>
 
-          <div className="set-coinList">
-            <TableContainer component={Paper} sx={{ overflow: "auto" }}>
+          <div className="exchange-table">
+            <TableContainer component={Paper} sx={{ background: "none" }}>
               <Table aria-label="simple table" stickyHeader>
                 <TableHead>
                   <TableRow>
@@ -249,7 +243,7 @@ const Coin = ({}) => {
                   </TableRow>
                 </TableHead>
 
-                <TableBody>
+                <TableBody sx={{ background: "white" }}>
                   {crypto && search === ""
                     ? crypto.cryptoList
                         .slice((page - 1) * 10, (page - 1) * 10 + 10)

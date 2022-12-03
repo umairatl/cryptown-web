@@ -59,9 +59,9 @@
 .i-right > :nth-child(1) {
   transform: scale(0.69);
   left: -15%;
-  margin-top: -33%;
-  margin-left: 4%;
-  width: 120%;
+  margin-top: -20%;
+  margin-left: 25%;
+    width: 87%;
 }
 
 span#span-center {
