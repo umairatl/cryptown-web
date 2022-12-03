@@ -1,12 +1,8 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
-import { LocalConvenienceStoreOutlined } from "@mui/icons-material";
 
 const ATH_ATL = (detail) => {
   const [data, setData] = useState(detail.detail[0]);
@@ -20,7 +16,7 @@ const ATH_ATL = (detail) => {
     <div>
       {data ? (
         <div>
-          {currency == 20 ? (
+          {currency === 20 ? (
             <div>
               <Card className="card-atl">
                 <CardContent>
@@ -60,7 +56,7 @@ const ATH_ATL = (detail) => {
                     {data.atl.myr}{" "}
                   </Typography>
                   <Typography className="ath_percentage_col" variant="body1">
-                    Change Percentage : <br></br>{" "}
+                    MYR Change Percentage : <br></br>{" "}
                     {data.atl.change_percentage_myr}
                   </Typography>
                 </CardContent>
@@ -84,7 +80,7 @@ const ATH_ATL = (detail) => {
                     {data.ath.usd}{" "}
                   </Typography>
                   <Typography className="ath_percentage_col" variant="body1">
-                    Change Percentage : <br></br>{" "}
+                    USD Change Percentage : <br></br>{" "}
                     {data.ath.change_percentage_usd}
                   </Typography>
                 </CardContent>
@@ -106,7 +102,7 @@ const ATH_ATL = (detail) => {
                     {data.atl.usd}{" "}
                   </Typography>
                   <Typography className="ath_percentage_col" variant="body1">
-                    Change Percentage : <br></br>{" "}
+                    USD Change Percentage : <br></br>{" "}
                     {data.atl.change_percentage_usd}
                   </Typography>
                 </CardContent>

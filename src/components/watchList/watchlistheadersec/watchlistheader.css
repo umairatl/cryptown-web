@@ -95,3 +95,31 @@ span.textwl {
     flex-wrap: wrap;
   }
 }
+
+@media (min-width: 16rem) and (max-width:26.66rem){
+
+}.home_header_info p {
+    font-size: 21px;
+    line-height: 30px;
+    width: 100%;
+  
+}
+
+
+@media (min-width: 26.67rem) and (max-width:48rem){
+span.textwl {
+
+    font-size: 5rem;
+ 
+}
+
+}
+
+@media (min-width: 26.67rem) and (max-width:48rem){
+.home_header_info p  {
+
+    font-size: 2rem;
+ 
+}
+
+}

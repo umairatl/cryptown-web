@@ -4,7 +4,6 @@ import CoinChart from "../../components/coinChart/chart";
 import Navbar from "../../components/navbar/navbar";
 import DOMPurify from "dompurify";
 import Footer from "../../components/footer/footer";
-import Exchange_Market from "../../components/ex-list-details/ex-list-details";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -19,6 +18,7 @@ import { useRef } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
+import ExchangeMarket from "../../components/ex-list-details/ex-list-details";
 
 const CoinDetail = () => {
   const { id, page } = useParams();
@@ -120,10 +120,8 @@ const CoinDetail = () => {
                   background: "white",
                 }}
                 size="small">
-                <InputLabel id="demo-select-small"></InputLabel>
+                <InputLabel></InputLabel>
                 <Select
-                  labelId="demo-select-small"
-                  id="demo-select-small"
                   value={currency}
                   label="Currency"
                   onChange={handleChange}>
@@ -133,6 +131,7 @@ const CoinDetail = () => {
               </FormControl>
             </div>
             <img
+              alt="logo"
               className="image_logo"
               src={detail && detail.cryptoDetails.image}
             />
@@ -170,7 +169,7 @@ const CoinDetail = () => {
                 )}
                 <span>
                   Rank #{detail && detail.cryptoDetails.market_cap_rank}
-                  {detail && (
+                  {user && detail && (
                     <button
                       onClick={() =>
                         handleWatchLists(
@@ -308,7 +307,7 @@ const CoinDetail = () => {
 
         <div className="ex-detail">
           <h1 className="ex-h1"> EXCHANGE LIST</h1>
-          <Exchange_Market exchange={detail && detail.cryptoDetails.exchange} />
+          <ExchangeMarket exchange={detail && detail.cryptoDetails.exchange} />
           <Footer />
         </div>
       </div>

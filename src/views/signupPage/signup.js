@@ -102,7 +102,7 @@ const Signup = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    if (passwordStrength < 50) {
+    if (passwordStrength < 10) {
       return (
         // <h1>Weak Password</h1>
         <span
@@ -115,7 +115,7 @@ const Signup = () => {
           }}
         />
       );
-    } else if (passwordStrength >= 50 && passwordStrength <= 60) {
+    } else if (passwordStrength >= 10 && passwordStrength <= 15) {
       return (
         // <h1>Medium Password</h1>
         <span
@@ -144,8 +144,22 @@ const Signup = () => {
     }
   };
 
+  // validation on email
+  const emailOnKey = (e) => {
+    if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
+      return false;
+    }
+    var regex = new RegExp("^[a-zA-Z0-9. ]{1,1}$");
+    if (regex.test(e.key)) {
+      return true;
+    } else {
+      e.preventDefault();
+      return false;
+    }
+  };
+
   // validation on username
-  const signupOnKey = (e) => {
+  const usernameOnKey = (e) => {
     if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
       return false;
     }
@@ -164,6 +178,7 @@ const Signup = () => {
       <form className="signup" onSubmit={handleSubmit}>
         <input
           type="email"
+          onKeyDown={(e) => emailOnKey(e)}
           placeholder="Enter your Email"
           onChange={(e) => {
             setEmail(e.target.value);
@@ -173,7 +188,7 @@ const Signup = () => {
         <input
           minLength="1"
           maxLength="50"
-          onKeyDown={(e) => signupOnKey(e)}
+          onKeyDown={(e) => usernameOnKey(e)}
           type="username"
           placeholder="Create Username"
           onChange={(e) => setUsername(e.target.value)}
