@@ -106,7 +106,7 @@ button#lpheaderbutton:hover{
 
 button#lpheaderbutton:before{
 
-content: '';
+
   position: absolute;
   background: inherit;
   top: -5px;
