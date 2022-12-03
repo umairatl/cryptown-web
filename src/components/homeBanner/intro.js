@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../homeBanner/intro.css";
-import phonee from "../../asset/phonee.png";
+import phonee from "../../asset/mobile_cryptown.png";
 
 const Intro = () => {
   return (
@@ -9,20 +8,19 @@ const Intro = () => {
       {/* //* left name side */}
       <div className="i-left">
         <div className="i-name">
-          
-            <span>Best Platform For Beginners</span>
-            <span>In Cryptocurrency</span>
-            <span id="span-center">
-              The best crypto we focus on markets where technology, innovation,
-              and capital can unlock long-term value and drive economic growth
-              for you and our company.
-            </span>
-          
+          <span>Best Platform For Beginners</span>
+          <span>In Cryptocurrency</span>
+          <span id="span-center">
+            The best crypto we focus on markets where technology, innovation,
+            and capital can unlock long-term value and drive economic growth for
+            you and our company.
+          </span>
         </div>
         {/* <Link to="/coinDetail" smooth={true} spy={true}> */}
-          {/* <button className="button i-button">Learn More</button> */}
-          <a href="#marketlist">
-          <button id="coinheaderbutton">market Coins</button></a>
+        {/* <button className="button i-button">Learn More</button> */}
+        <a href="#marketlist">
+          <button id="coinheaderbutton">market Coins</button>
+        </a>
         {/* </Link> */}
       </div>
       <div className="i-right">

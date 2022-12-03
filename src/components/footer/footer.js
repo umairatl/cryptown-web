@@ -1,9 +1,9 @@
 import "../footer/footer.css";
-// import { faHome } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaFacebook, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import footerimg from "../../asset/Asset2.png";
 import footerimgTwo from "../../asset/Asset5.png";
+import footerimgapp from "../../asset/mobapp.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -18,10 +18,11 @@ const Footer = () => {
               <h4>Company</h4>
               <ul id="footer-ul">
                 <li>
-                  <a href="#">about us</a>
+                  <Link to="/">about us</Link>
                 </li>
+                <br></br>
                 <li>
-                  <a href="#">our services</a>
+                  <Link to="/market">our services</Link>
                 </li>
               </ul>
             </div>
@@ -30,35 +31,41 @@ const Footer = () => {
               <ul id="footer-ul">
                 <li>
                   <a>0136316723</a>
+                  <br></br>
                 </li>
                 <li>
-                  <a>cryptown@gmail.com</a>
+                  <a>cryptownweb@gmail.com</a>
                 </li>
               </ul>
             </div>
             <div className="footer-col" style={{ textAlign: "center" }}>
               <h4>follow us</h4>
               <div className="social-links">
-                <a href="#">
-                  {/* <i className="fab fa-facebook-f"></i> */}
+                <a href="https://www.facebook.com/profile.php?id=100088488904187&mibextid=ZbWKwL">
                   <FaFacebook />
                 </a>
-                <a href="#">
-                  {/* <i className="fab fa-twitter"></i> */}
+                <a href="https://www.youtube.com/channel/UC3tyXlq9YgEE7072Xrbmedg">
                   <FaYoutube />
                 </a>
-                <a href="#">
-                  {/* <i className="fab fa-instagram"></i> */}
+                <a href="https://www.instagram.com/cryptownweb/">
                   <FaInstagram />
                 </a>
-                <a href="#">
-                  {/* <i className'fab fa-linkedin-in fa-spin fa-3x'></i> */}
+                <a href="https://twitter.com/CryptownWeb">
                   <FaTwitter />
                 </a>
+                <br></br>
               </div>
+              <a href="https://drive.google.com/drive/folders/1GZZzui-cKttbV-SfnR3IwTH5N_824cBo">
+                <img alt="GoogleApp" src={footerimgapp} width="60%" />
+              </a>
             </div>
             <div className="footer-col">
-              <img id="FTwo" src={footerimgTwo} alt="footerimg2" />
+              <img
+                id="FTwo"
+                src={footerimgTwo}
+                alt="footerimg2"
+                style={{ width: "70%", height: "100%" }}
+              />
             </div>
           </div>
           <div className="copyright">© Cryptown. All Rights Reserved 2022</div>

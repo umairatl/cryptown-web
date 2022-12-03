@@ -171,7 +171,7 @@ span#colortext6 {
 }
 
 .main-page {
-  background: linear-gradient(60deg, #242424, #3b0054, #00094b, #242424);
+  background: linear-gradient(70deg, #242424, #3b0054, #00094b, #242424);
   /* background: url(../../asset/platform.png) no-repeat; */
   object-fit: contain;
   background-size: 100% 100%;

@@ -53,7 +53,6 @@ TabPanel.propTypes = {
 
 const Profile = () => {
   const { logout } = useLogout();
-  // const [data, setData] = useState();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
@@ -64,7 +63,7 @@ const Profile = () => {
   const [showPass2, setShowPass2] = useState(false);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { user } = useAuthContext();
   const { profile, dispatch } = useProfileContext();
@@ -78,9 +77,33 @@ const Profile = () => {
   } = useDialogContext();
   const [passwordStrength, setPasswordStrength] = useState("");
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  let passwordRequirementMssg = `
+  Password Requirements:
+    1. Minimum 8 characters
+    2. Minimum 1 number
+    3. Minimum 1 symbol
+    4. Minimum 1 Uppercase Letter
+    5. Minimum 1 Lower Letter
+`;
+
+  let password_requirement = {
+    minLength: 8,
+    minLowercase: 1,
+    minUppercase: 1,
+    minNumbers: 1,
+    minSymbols: 1,
+    returnScore: true,
+    pointsPerUnique: 1,
+    pointsPerRepeat: 0.5,
+    pointsForContainingLower: 10,
+    pointsForContainingUpper: 10,
+    pointsForContainingNumber: 10,
+    pointsForContainingSymbol: 10,
   };
+
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  // };
 
   //   fetch user data
   useEffect(() => {
@@ -142,35 +165,10 @@ const Profile = () => {
           });
         }
       } catch (error) {
-        console.log(error);
         dialogDispatch({ type: "PASSWORD_UPDATE" });
         setError(error.response.data.error);
       }
     }
-  };
-
-  let passwordRequirementMssg = `
-  Password Requirements:
-    1. Minimum 8 characters
-    2. Minimum 1 number
-    3. Minimum 1 symbol
-    4. Minimum 1 Uppercase Letter
-    5. Minimum 1 Lower Letter
-`;
-
-  let password_requirement = {
-    minLength: 8,
-    minLowercase: 1,
-    minUppercase: 1,
-    minNumbers: 1,
-    minSymbols: 1,
-    returnScore: true,
-    pointsPerUnique: 1,
-    pointsPerRepeat: 0.5,
-    pointsForContainingLower: 10,
-    pointsForContainingUpper: 10,
-    pointsForContainingNumber: 10,
-    pointsForContainingSymbol: 10,
   };
 
   const onChangePassword = (password) => {
@@ -181,7 +179,6 @@ const Profile = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    console.log(passwordStrength);
     if (passwordStrength < 50) {
       return (
         // <h1>Weak Password</h1>

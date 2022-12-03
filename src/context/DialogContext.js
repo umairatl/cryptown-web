@@ -41,8 +41,8 @@ export const DialogContextProvider = ({ children }) => {
     userPostProfile: false,
     userUpdate: false,
     usernameError: false,
+    postSuccessful: false,
     passwordUpdate: false,
-    postSuccessful: false
   });
 
   return (
