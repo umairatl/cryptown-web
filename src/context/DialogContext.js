@@ -19,8 +19,12 @@ export const dialogReducer = (state, action) => {
       return { userPostProfile: !state.userPostProfile };
     case "USER_UPDATE":
       return { userUpdate: !state.userUpdate };
-      case "PASSWORD_UPDATE":
-        return { passwordUpdate: !state.passwordUpdate };
+    case "PASSWORD_UPDATE":
+      return { passwordUpdate: !state.passwordUpdate };
+    case "USERNAME_ERROR":
+      return { usernameError: !state.usernameError };
+    case "POST_SUCCESSFUL":
+      return { postSuccessful: !state.postSuccessful };
     default:
       return state;
   }
@@ -36,7 +40,9 @@ export const DialogContextProvider = ({ children }) => {
     replyError: false,
     userPostProfile: false,
     userUpdate: false,
-    passwordUpdate: false
+    usernameError: false,
+    passwordUpdate: false,
+    postSuccessful: false
   });
 
   return (

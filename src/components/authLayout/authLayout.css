@@ -302,6 +302,12 @@ label input[type="checkbox"] {
   margin-left: 6%;
 }
 
+#error {
+  display: block;
+  color: red;
+  margin: 5px 0 0 0;
+}
+
 /* //login media */
 
 @media (min-width: 20rem) and (max-width: 47rem){

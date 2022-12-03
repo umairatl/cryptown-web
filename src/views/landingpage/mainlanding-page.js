@@ -17,7 +17,6 @@ import Counter from "../appList/counterSec/counter";
 const MainLandingPage = () => {
   return (
     <section>
-      <Navbar />
       <LpAnimation />
       {/* <HeaderLandingPage/> */}
       <Counter/>

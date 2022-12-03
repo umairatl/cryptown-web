@@ -5,13 +5,27 @@ import { useEffect, useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../Dialog/normalDialog";
+import { useForumContext } from "../../hooks/useForumContext";
 
-const ReplyForum = ({ postId }) => {
+
+const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
   const [replyPost, setReplyPost] = useState("");
   const { user } = useAuthContext();
   const [isReply, setIsReply] = useState(false);
   const [error, setError] = useState("");
-  const { replyError, dispatch: dialogDispatch } = useDialogContext();
+  const [name, setName] = useState('');
+  const {
+    postSuccessful,
+    replyError,
+    dispatch: dialogDispatch,
+  } = useDialogContext();
+
+  useEffect(()  => {
+    const updateName = localStorage.getItem('username');
+    if (updateName){
+      setName(updateName.slice(1, -1));
+    }
+  }, [])
 
   const handleSubmitReply = (postId) => async (e) => {
     e.preventDefault();
@@ -34,9 +48,29 @@ const ReplyForum = ({ postId }) => {
 
       if (response.status === 200) {
         setError("");
-        window.location = "/forum";
+        const payload = forumList.map(forum => {
+          if (forum.postid === postId) {
+            const newReply = {
+              postid: postId,
+              subpost: replyPost,
+              subpostdatetime: new Date().toISOString(),
+              username: name
+            }
+            return {
+              ...forum,
+              replies: [...forum.replies, newReply] 
+            }
+          }
+          return forum
+        })
+        setForumList(payload);
+        dialogDispatch({ type: "POST_SUCCESSFUL" });
+        setIsReply(false)
+        onSubmitReply();
       }
-    } catch (error) {
+    }
+    
+    catch (error) {
       dialogDispatch({ type: "REPLY_ERROR" });
       setError(error.response.data.error);
     }
@@ -50,9 +84,11 @@ const ReplyForum = ({ postId }) => {
   return (
     <div>
       <div>
+        { !isReply ?
         <button className="bn633-hover bn201" onClick={updateReply}>
           Reply
-        </button>
+        </button> : null
+        }
       </div>
       {isReply ? (
         <form className="login" onSubmit={handleSubmitReply(postId)}>
@@ -80,6 +116,16 @@ const ReplyForum = ({ postId }) => {
            dialogMessage={error}
          />
        ) : null}
+
+
+          {postSuccessful ? (
+            <NormalDialog
+              type="POST_SUCCESSFUL"
+              dialogTitle="Post Successful"
+              dialogMessage="Thank you for joining the talk"
+            />
+          ) : null}
+
     </div>
   );
 };

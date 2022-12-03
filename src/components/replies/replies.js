@@ -1,32 +1,22 @@
+import * as React from 'react';
 const entities = require("entities");
 
-let dayOpt = { weekday: "long" };
-let yearOpt = { year: "numeric", month: "numeric", day: "numeric" };
-let timeOpt = { hour: "numeric", minute: "numeric" };
+let yearOpt = {month: "short", day: "numeric" };
 
 const Reply = ({ reply }) => {
   return (
-    <div className="replies-col">
-      <div className="flex-d-row space-between-jn">
-      <p>{reply.email}</p>
-      <p>
-        {new Date(reply.subpostdatetime)
+    <div className="reply-in-cont">
+
+<div className="tweet-header-info">
+{reply.username}<span>. 
+
+{new Date(reply.subpostdatetime)
           .toLocaleDateString("en-MY", yearOpt)
           .toString()}
-      </p>
-      </div>
-          <p>{entities.decodeHTML(reply.subpost)}</p>
-      {/* <p>
-        {new Date(reply.subpostdatetime)
-          .toLocaleDateString("en-MY", timeOpt)
-          .toString()
-          .substring(12)}
-      </p>
-      <p>
-        {new Date(reply.subpostdatetime)
-          .toLocaleDateString("en-MY", dayOpt)
-          .toString()}
-      </p> */}
+
+</span>
+      <p>{entities.decodeHTML(reply.subpost)}</p>
+    </div>
     </div>
   );
 };

@@ -554,7 +554,7 @@ table {
 @media (min-width: 26.67rem) and (max-width: 48rem){
 .d-name > :nth-child(1) {
     
-    font-size: 8rem;
+    font-size: 6rem;
     
 }
 }

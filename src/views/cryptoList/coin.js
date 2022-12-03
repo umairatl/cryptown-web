@@ -10,7 +10,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
-import { Pagination } from "@mui/material";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Navbar from "../../components/navbar/navbar";
@@ -36,7 +35,7 @@ import "swiper/css/scrollbar";
 import { margin } from "@mui/system";
 import CoinListTable from "../../components/tables/CoinListTable";
 
-const Coin = ({}) => {
+const Coin = ({ }) => {
   const [crypto, setCrypto] = useState(null);
   const [search, setSearch] = useState("");
   const [popular, setPopular] = useState("");
@@ -181,7 +180,7 @@ const Coin = ({}) => {
       <SwiperSlide
         key={crypto.cryptoId}
         onClick={() => {
-          navigation(`/coinDetail/${crypto.cryptoId}`);
+          navigation(`/coinDetail/${crypto.cryptoId}/market`);
         }}
       >
         <img className="img" src={crypto.image} width="200px" alt="" />
@@ -232,11 +231,11 @@ const Coin = ({}) => {
           </div>
 
           <div className="set-coinList">
-          <TableContainer component={Paper} sx={{overflow: 'auto'}}>
+            <TableContainer component={Paper} sx={{ overflow: 'auto' }}>
               <Table aria-label="simple table" stickyHeader>
                 <TableHead>
                   <TableRow>
-                  <TableCell className="table_h"><p>Ranking</p></TableCell>
+                    <TableCell className="table_h"><p>Ranking</p></TableCell>
                     <TableCell className="table_h"><p>Name</p></TableCell>
                     <TableCell className="table_h"><p>Price</p></TableCell>
                     <TableCell className="table_h"><p>Market Cap</p></TableCell>
@@ -250,21 +249,21 @@ const Coin = ({}) => {
                 </TableHead>
 
                 <TableBody>
-                {crypto && search === ""
+                  {crypto && search === ""
                     ? crypto.cryptoList
-                        .slice((page - 1) * 10, (page - 1) * 10 + 10)
-                        .map((crypto) => {
-                          return (
-                            <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user}/>
-                          );
-                        })
-                    : crypto &&
-                      cryptoFilter(crypto.cryptoList).map((crypto) => {
+                      .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                      .map((crypto) => {
                         return (
-                          <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user}/>
+                          <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user} />
                         );
-                      })}
-                    </TableBody> 
+                      })
+                    : crypto &&
+                    cryptoFilter(crypto.cryptoList).map((crypto) => {
+                      return (
+                        <CoinListTable key={crypto.cryptoId} crypto={crypto} handleWatchLists={handleWatchLists} formatter={formatter} user={user} />
+                      );
+                    })}
+                </TableBody>
               </Table>
             </TableContainer>
 
@@ -299,24 +298,22 @@ const Coin = ({}) => {
             <div className="t-name">
               <span>Popular Coins</span>
               <span> The current top 10 coins in the market</span>
-            </div>{" "}
+            </div>
           </div>
         </div>
         {popular ? <TrendingTable popular={popular} /> : null}
       </div>
 
       <div className="trending-wrap">
-        {/* <div className="title-market"> */}
         <div className="t-left">
           <div className="t-name">
             <span style={{ color: "black", marginTop: "4rem" }}>
               Trending Coins
             </span>
             <span>
-              {" "}
               Find out what are the trending coins in the market currently
             </span>
-          </div>{" "}
+          </div>
         </div>
 
         {/* </div> */}

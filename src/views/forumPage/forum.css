@@ -5,30 +5,64 @@
 .cont-wrap-forum{
   /* text-align: left; */
   margin: 4rem auto;
-  width: 70%;
+  width: 51%;
   }
   
 .forum .flex-d-row{
-  background-image: linear-gradient(
-    to right,
-    #667eea,
-    #764ba2,
-    #6b8dd6,
-    #8e37d7
-  );
-  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  /* background: #00094B; */
+  /* border-radius: 20px; */
+}
+
+.replies-section{
+  width: 70%;
+  margin: auto;
 }
 
 .replies-col{
   align-items: left;
   text-align: left;
+  margin-left: 7rem;
+  color: white
   
   /* margin: 0px; */
 
   /* background: gray; */
 }
 
+.reply-in-cont{
+  text-align: left;
+  max-width:490px;
+  background: #fff;
+  margin: 0 auto;
+  /* margin-top: 50px; */
+  border-radius:3px;
+  padding: 30px;
+  border-bottom: 1px solid #e6ecf0;
+  border-top: 1px solid #e6ecf0;
 
+
+  /* margin: auto;
+  width: 95%;
+  background: white;
+  border: 1px solid black;
+  border-radius: 1rem; */
+  /* padding: 1rem; */
+}
+
+.tweet-header-info {
+  font-weight:bold;
+}
+.tweet-header-info span {
+  color:#657786;
+  font-weight:normal;
+  margin-left: 5px;
+}
+.tweet-header-info p {
+  font-weight:normal;
+  /* margin-top: 5px; */
+}
 
 
 
@@ -63,7 +97,7 @@ textarea#contentforum {
   color: white;
   font-size: 1.5rem;
   width: 70vh;
-  min-height: 20vh;
+  min-height: 10vh;
   padding: 20px;
 }
 
@@ -170,7 +204,7 @@ forum.login {
   align-items: center;
   height: 100%;
   /* background: #1d1f20; */
-  margin-bottom: 8rem;
+  /* margin-bottom: 8rem; */
 }
 
 #forumboxbg {
@@ -285,7 +319,7 @@ span#colortext17 {
   position: relative; /* required for (f2) position:absolute */
   display: block;
   width: 100%;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   padding: 10px;
   margin-left: -2px;
 
@@ -367,5 +401,5 @@ img#imground {
 .datetimes {
   position: relative;
   left: 1.1%;
-  margin-top: -1.6%;
+  /* margin-top: -1.6%; */
 }

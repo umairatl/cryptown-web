@@ -17,7 +17,7 @@
 
 .post-cont {
   width: fit-content;
-  height: 55vh !important;
+  height: 80vh !important;
   overflow: auto;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .list-forum-2 {
-  background: #00094B !important;
+  background: #00094b !important;
   color: white;
   height: fit-content;
   border-radius: 1rem;
@@ -88,7 +88,7 @@
   /* width: 30rem; */
 }
 
-.space-between-jn{
+.space-between-jn {
   justify-content: space-between;
 }
 
