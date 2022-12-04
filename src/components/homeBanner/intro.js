@@ -5,9 +5,8 @@ import phonee from "../../asset/mobile_cryptown.png";
 const Intro = () => {
   return (
     <div className="Intro" id="Intro">
-      {/* //* left name side */}
       <div className="i-left">
-        <div className="i-name">
+        <div className="i-name" data-aos="fade-right" data-aos-duration="3000">
           <span>Best Platform For Beginners</span>
           <span>In Cryptocurrency</span>
           <span id="span-center">
@@ -16,14 +15,11 @@ const Intro = () => {
             you and our company.
           </span>
         </div>
-        {/* <Link to="/coinDetail" smooth={true} spy={true}> */}
-        {/* <button className="button i-button">Learn More</button> */}
         <a href="#marketlist">
           <button id="coinheaderbutton">market Coins</button>
         </a>
-        {/* </Link> */}
       </div>
-      <div className="i-right">
+      <div className="i-right" data-aos="fade-left" data-aos-duration="3000">
         <img src={phonee} alt="picture" />
       </div>
     </div>

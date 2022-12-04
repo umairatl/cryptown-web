@@ -56,7 +56,6 @@ const Coin = ({}) => {
       const json = await response.data;
 
       if (response.status === 200) {
-        // setWatchLists(json.favourites);
         dispatch({ type: "SET_WATCHLIST", payload: json.favourites });
       }
     };
@@ -150,9 +149,6 @@ const Coin = ({}) => {
       SLIDE_INFO.push(obj);
     });
 
-  // const POPULAR_LIST = [];
-  // const items =
-
   // Create our number formatter.
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -197,8 +193,10 @@ const Coin = ({}) => {
           <div className="title-market">
             <div className="t-left">
               <div className="t-name">
-                <span>Cryptorrency Prices by Market Cap</span>
-                <span>
+                <span data-aos="fade-down" data-aos-duration="3000">
+                  Cryptorrency Prices by Market Cap
+                </span>
+                <span data-aos="fade-down" data-aos-duration="3000">
                   The indicator that measures the total value of a
                   cryptocurrency
                 </span>
@@ -294,7 +292,6 @@ const Coin = ({}) => {
               }}
               onChange={(_, value) => {
                 setPage(value);
-                // window.scroll(0, 500);
               }}
             />
           </div>
@@ -304,7 +301,10 @@ const Coin = ({}) => {
       <div className="sec-wrap">
         <div className="title-market">
           <div className="t-left">
-            <div className="t-name">
+            <div
+              className="t-name"
+              data-aos="fade-down"
+              data-aos-duration="3000">
               <span>Popular Coins</span>
               <span> The current top 10 coins in the market</span>
             </div>
@@ -316,7 +316,10 @@ const Coin = ({}) => {
       <div className="trending-wrap">
         <div className="t-left">
           <div className="t-name">
-            <span style={{ color: "black", marginTop: "4rem" }}>
+            <span
+              style={{ color: "black", marginTop: "4rem" }}
+              data-aos="fade-down"
+              data-aos-duration="3000">
               Trending Coins
             </span>
             <span>
@@ -325,13 +328,14 @@ const Coin = ({}) => {
           </div>
         </div>
 
-        {/* </div> */}
-        <div className="carousel-2">
+        <div
+          className="carousel-2"
+          data-aos="fade-up-right"
+          data-aos-duration="3000">
           <Swiper
             modules={[Navigation, pagination, Autoplay]}
             slidesPerView={3}
             spaceBetween={180}
-            // navigation
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             centeredSlides={false}
             centerInsufficientSlides={true}

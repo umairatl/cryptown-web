@@ -147,7 +147,7 @@ const CoinDetail = () => {
           </div>
 
           <div className="left-det">
-            <div className="d-left">
+            <div className="d-left" data-aos="fade-up" data-aos-duration="3000">
               <div className="d-name">
                 <span>
                   {id} ({detail && detail.cryptoDetails.symbol})
@@ -290,7 +290,7 @@ const CoinDetail = () => {
         <CoinChart cryptoId={id} />
       </div>
       <div className="btm-details">
-        <section id="about">
+        <section id="about" data-aos="fade-left" data-aos-duration="3000">
           <div className="coin-info-col2">
             <div className="desc-col">
               <h1>About {id}</h1>
@@ -305,11 +305,14 @@ const CoinDetail = () => {
           </div>
         </section>
 
-        <div className="ex-detail">
+        <div
+          className="ex-detail"
+          data-aos="fade-left"
+          data-aos-duration="3000">
           <h1 className="ex-h1"> EXCHANGE LIST</h1>
           <ExchangeMarket exchange={detail && detail.cryptoDetails.exchange} />
-          <Footer />
         </div>
+        <Footer />
       </div>
     </div>
   );

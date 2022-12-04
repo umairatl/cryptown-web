@@ -103,8 +103,12 @@ const Chart = ({ cryptoId }) => {
 
   return (
     <div className="line-chart">
-      <h1>PRICE CHART of {cryptoId}</h1>
+      <h1 data-aos="fade-left" data-aos-duration="3000">
+        PRICE CHART of {cryptoId}
+      </h1>
       <ToggleButtonGroup
+        data-aos="fade-right"
+        data-aos-duration="3000"
         color="primary"
         value={time}
         exclusive
@@ -114,7 +118,16 @@ const Chart = ({ cryptoId }) => {
         <ToggleButton value="14">14D</ToggleButton>
         <ToggleButton value="max">Max</ToggleButton>
       </ToggleButtonGroup>
-      {data ? <Line options={options} data={data2} /> : <ProgressBar />}
+      {data ? (
+        <Line
+          data-aos="fade-left"
+          data-aos-duration="3000"
+          options={options}
+          data={data2}
+        />
+      ) : (
+        <ProgressBar />
+      )}
     </div>
   );
 };

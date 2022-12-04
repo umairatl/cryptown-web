@@ -18,6 +18,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import NormalDialog from "../../components/Dialog/normalDialog";
 import { FaArrowRight } from "react-icons/fa";
+import ForumHeaderSection from "../../components/forumHeader/forumHeader";
 
 const entities = require("entities");
 
@@ -98,6 +99,7 @@ const ForumPage = () => {
     <div className="tagging">
       <div className="forum">
         <Navbar />
+        <ForumHeaderSection />
         <div className="post-col">
           <div className="cont-top-forum-1">
             <h3
@@ -135,8 +137,8 @@ const ForumPage = () => {
             />
           ) : null}
 
-          {/* Styling for forum feed*/}
-          <div>
+          {/* Forum feeds*/}
+          <div data-aos="fade-down" data-aos-duration="3000">
             <h3
               className="exlistsecheader"
               data-aos="fade-down"
@@ -156,7 +158,6 @@ const ForumPage = () => {
                 }}
                 onChange={(_, value) => {
                   setPage(value);
-                  // window.scroll(0, 450);
                 }}
               />
             ) : null}
@@ -168,13 +169,11 @@ const ForumPage = () => {
                   <div className="list-forum-2 cont-wrap-forum" key={index}>
                     <div className="flex-d-row space-between-jn post-box__reply">
                       <div className="flex-d-row">
-                        {/* <img id="imground" width='100%' src={imground} alt="image" /> */}
                         <p style={{ marginLeft: "1rem" }}>
                           <FaUserCircle /> {row.username}
                         </p>
                       </div>
                       <div className="flex-d-row">
-                        {/* <p> {row.email}</p> */}
                         <p style={{ marginRight: "1rem" }}>
                           {new Date(row.postdatetime)
                             .toLocaleDateString("en-MY", dayOpt)
@@ -194,7 +193,6 @@ const ForumPage = () => {
                             .toString()}
                         </p>
                       </div>
-                      {/* </div> */}
                     </div>
                     <div>
                       <h2
@@ -209,8 +207,6 @@ const ForumPage = () => {
 
                     {row.replies.length !== 0 ? (
                       <div className="replies-section">
-                        {/* <div className="flex-d-row" sx={{ width: "100%" }}> */}
-
                         <Accordion
                           sx={{ background: "#0D1550", color: "white" }}>
                           <AccordionSummary
@@ -251,7 +247,6 @@ const ForumPage = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );
