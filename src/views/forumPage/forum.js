@@ -156,7 +156,7 @@ const ForumPage = () => {
                 }}
                 onChange={(_, value) => {
                   setPage(value);
-                  window.scroll(0, 450);
+                  // window.scroll(0, 450);
                 }}
               />
             ) : null}

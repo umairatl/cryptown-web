@@ -22,6 +22,7 @@ import NormalDialog from "../../components/Dialog/normalDialog";
 import TrendingTable from "../../components/trending_carousel/trending_carousel";
 import MarketingSection from "./marketing/marketingSec";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "@mui/material";
 import { Navigation, Pagination as pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -282,7 +283,8 @@ const Coin = ({}) => {
               />
             ) : null}
 
-            {/* <Pagination className="pagination-cont"
+            <Pagination
+              className="pagination-cont"
               count={(crypto?.cryptoList.length / 10).toFixed(0)}
               style={{
                 padding: 20,
@@ -292,9 +294,9 @@ const Coin = ({}) => {
               }}
               onChange={(_, value) => {
                 setPage(value);
-                window.scroll(0, 450);
+                // window.scroll(0, 500);
               }}
-            /> */}
+            />
           </div>
         </div>
       </section>
