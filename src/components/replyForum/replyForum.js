@@ -94,8 +94,7 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
           }
           return post
         })
-        console.log("USER_PAYLOAD: ", user_payload)
-        userPostDispatch({type: "SET_POSTS", user_payload})
+        userPostDispatch({type: "SET_POSTS", payload: user_payload})
       }
 
       setForumList(payload);
