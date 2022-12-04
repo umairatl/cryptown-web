@@ -8,8 +8,6 @@
 
 .nav-up{
     padding-top: 2rem; 
-    /* padding-bottom: 2rem; */
-    /* margin-bottom: 2rem;  */
     display: flex;
     color: white;
     justify-content: space-between;
@@ -17,8 +15,6 @@
 
 .nav-text:hover{
     color: #d1bcd3;
-    /* background-color: purple; */
-    /* width: 5vh */
 }
 
 .nav-right{
@@ -118,13 +114,10 @@ button{
     
     .nav-mobile .img{
         margin-left: 30rem
-
     }
 }
 
-
 @media (min-width: 30rem) and (max-width:50.1rem) {
-
     .nav-up{
         overflow: hidden;
         font-size: 1;
@@ -148,6 +141,3 @@ button{
   }
 
 }
-
-
-

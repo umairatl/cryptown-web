@@ -7,7 +7,6 @@
   background: url(../../asset/wave_grid.png);
   background-repeat: no-repeat;
   background-size: 2112px;
-  /* background-color: #24262b; */
 }
 
 /* left side styling */
@@ -82,13 +81,7 @@ button#coinheaderbutton {
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.5s;
-  /* background: #111; */
   background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-
-  /* top: 65%;
-  right: 50%;
-  margin-right: -180px;
-  margin-top: 181px; */
 }
 
 button#coinheaderbutton {
@@ -124,6 +117,7 @@ button {
   z-index: 1;
   animation: glow 8s linear infinite;
 }
+
 @keyframes glow {
   0% {
     background-position: 0%;
@@ -136,7 +130,6 @@ button {
 @media (min-width: 19rem) and (max-width: 26.66rem) {
   .Intro {
     padding-left: 1rem;
-    /* background-color: #24262b; */
   }
 }
 
@@ -196,7 +189,6 @@ button {
 @media (min-width: 19rem) and (max-width: 26.66rem) {
   .t-left {
     display: flex;
-    /* position: relative; */
     flex: 1 1;
     flex-direction: column;
     gap: 2rem;
@@ -208,7 +200,6 @@ button {
 @media (min-width: 19rem) and (max-width: 26.66rem) {
   .t-left {
     display: flex;
-    /* position: relative; */
     flex: 1 1;
     flex-direction: column;
     gap: 2rem;
@@ -297,10 +288,6 @@ button {
   }
 }
 
-/* 768px ////////////////////////////////////////////*/
-
-
-
 @media (min-width: 48rem) and (max-width: 64rem){
 button#coinheaderbutton {
  width: 14rem;
@@ -310,7 +297,6 @@ button#coinheaderbutton {
 @media (min-width: 48rem) and (max-width: 64rem) {
   .t-left {
     display: flex;
-    /* position: relative; */
     flex: 1 1;
     flex-direction: column;
     gap: 2rem;
@@ -322,7 +308,6 @@ button#coinheaderbutton {
 @media (min-width: 48rem) and (max-width: 64rem) {
   .t-left {
     display: flex;
-    /* position: relative; */
     flex: 1 1;
     flex-direction: column;
     gap: 2rem;
@@ -336,7 +321,6 @@ button#coinheaderbutton {
     color: white;
     font-weight: bold;
     font-size: 3rem;
-    
     text-align: center;
     margin: auto;
   }
@@ -376,8 +360,6 @@ button#coinheaderbutton {
 }
 }
 
-
-
 @media (min-width: 48rem) and (max-width: 64rem) {
   .marketingcontainer {
     padding: 3rem;
@@ -407,12 +389,9 @@ button#coinheaderbutton {
   }
 }
 
-
 @media (min-width: 48rem) and (max-width:64rem){
 .trending-wrap {
-
     display: none;
-
 }
 }
 
@@ -423,14 +402,12 @@ button#coinheaderbutton {
 }
 
 @media (min-width:48rem) and (max-width:64rem){
-  .test {
-display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 16px;
-    margin-right: 0rem; 
-     margin-left: 0rem; 
-    /* margin-bottom: 21vh;
-    */
-  }
+.test {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 16px;
+  margin-right: 0rem; 
+  margin-left: 0rem; 
+}
 }
