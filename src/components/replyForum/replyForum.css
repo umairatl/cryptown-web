@@ -37,11 +37,6 @@
   );
   box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
-
-/* .postfbackground{
-  position: relative;
-} */
-
 p.bolding1 {
   font-weight: bolder;
   display: inline;
@@ -50,15 +45,12 @@ p.bolding1 {
   color: #ffffff;
   box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000;
   justify-content: left;
-  /* margin-right: 70%; */
 }
 p.bolding2 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
-  /* background: #000000; */
   color: #ffffff;
-  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
 }
 
 p.bolding3 {
@@ -74,9 +66,7 @@ p.bolding4 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
-  /* background: #000000; */
   color: #ffffff;
-  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
   font-size: 1em;
 }
 
@@ -84,9 +74,7 @@ p.bolding7 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
-  /* background: #000000; */
   color: #ffffff;
-  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
   font-size: 30%;
 }
 
@@ -94,9 +82,7 @@ p.bolding8 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
-  /* background: #000000; */
   color: #ffffff;
-  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
   font-size: 30%;
 }
 
@@ -104,9 +90,7 @@ p.bolding9 {
   font-weight: bolder;
   display: inline;
   padding: 0.25em 0.5em;
-  /* background: #000000; */
   color: #ffffff;
-  /* box-shadow: 0.5em 0 0 #000000, -0.5em 0 0 #000000; */
   font-size: 30%;
 }
 
@@ -131,24 +115,7 @@ input#replyforumid {
   text-align: center;
 }
 
-/* .containerpost{
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-} */
-
-/* .divbolding1 {
-  display: flex;
-  /* align-content: center; not using*/
-/* justify-content: space-between; */
-/* }  */
-
 .mainpost {
-  /* margin-top: 5%; */
   text-align: left;
 }
 

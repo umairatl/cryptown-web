@@ -49,18 +49,6 @@ const AppList = () => {
       )
     );
 
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-
   // Create our number formatter.
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -77,12 +65,18 @@ const AppList = () => {
       <ExchangeListHeader />
 
       <div className="set-appList">
-        <h3 className="exlistsecheader">
+        <h3
+          className="exlistsecheader"
+          data-aos="fade-down"
+          data-aos-duration="3000">
           List of <span id="colortextnine"> Platform</span>
         </h3>
         <br></br>
 
-        <div className="exchange-table">
+        <div
+          className="exchange-table"
+          data-aos="fade-up"
+          data-aos-duration="3000">
           <TableContainer component={Paper}>
             <Table aria-label="simple table" stickyHeader>
               <TableHead>
