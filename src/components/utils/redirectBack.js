@@ -3,8 +3,6 @@ import React from "react";
 
 export default function RedirectBack() {
   const { search } = useLocation();
-  // const abc=useNavigate()
-  // React.useEffect(()=>{abc(-1); abc(location.pathname)},[abc]);
   const params = new URLSearchParams(search);
   return <Navigate to={params.get("redirect") ?? "/"} />;
 }

@@ -87,7 +87,6 @@ const Post = ({ onCustomClick, post }) => {
           <p>
             <FaUserCircle /> {name}
           </p>
-
           <ConditionalDialog
             handleSubmit={() => handleDeletePost(post.postid)}
             dialogButton="Delete"

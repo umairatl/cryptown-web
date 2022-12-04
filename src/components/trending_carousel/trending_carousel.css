@@ -23,31 +23,11 @@
 
 .image-popular{
     transform:rotate(-45deg);
-    /* width: 50px !important; */
 }
-
-/* .css-1oqv2c0-MuiPaper-root-MuiCard-root{
-    background: none !important;
-    width: 13rem;
-    height: 12rem;
-    border: 27px solid none!important;
-} */
-
-
-/* .css-1q04urf{
-    background: none !important;
-    width: 13rem;
-    height: 12rem;
-    border: 27px solid none!important;
-} */
 
 .css-1q04urf{
     background: none !important;
 }
-
-/* .trending-card{
-
-} */
 
 .coin-name{
     width: 3rem;
@@ -55,7 +35,6 @@
 
 .css-1oqv2c0-MuiPaper-root-MuiCard-root{
     width: 50v;
-    /* text-transform: up; */
 }
 
 .css-1rorjgf-MuiCardMedia-root{
@@ -98,7 +77,5 @@
     margin-top: 16px;
     margin-right: 0rem; 
      margin-left: 0rem; 
-    /* margin-bottom: 21vh;
-    */
   }
 }
