@@ -283,3 +283,10 @@ span#colortext6 {
     color: white !important;
     background: white;
 }
+
+element.style {
+    padding: 20px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
