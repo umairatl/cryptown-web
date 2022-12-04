@@ -9,17 +9,11 @@
     flex-direction: column;
 }
 
-
 .containerexlist{
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-
-
-
 
 .containerexlist .boxexchangelist{
 
@@ -33,9 +27,7 @@
     box-sizing: border-box;
     overflow: hidden;
     text-align: center;
-
 }
-
 
 .containerexlist .boxexchangelist:before{
     content: '';
@@ -49,10 +41,7 @@
     pointer-events: none;
 }
 
-
-
 .containerexlist .boxexchangelist .iconexchangelist{
-
     position: relative;
     width: 80px;
     height: 80px;
@@ -69,20 +58,14 @@
 
 }
 
-
-
-
 .containerexlist .boxexchangelist:nth-child(1) .iconexchangelist{
-
     box-shadow: 0 0 0 0 #e91e63;
     background: #e91e63;
 }
-
+x
 
 .containerexlist .boxexchangelist:nth-child(1):hover .iconexchangelist{
-
     box-shadow: 0 0 0 400px #e91e63;
-
 }
 
 

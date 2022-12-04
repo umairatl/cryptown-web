@@ -14,7 +14,6 @@ import TableRow from "@mui/material/TableRow";
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../../components/Dialog/normalDialog";
-
 import WatchlistHeaderSection from "../../components/watchList/watchlistheadersec/watchlistheader";
 import Footer from "../../components/footer/footer";
 
@@ -22,7 +21,6 @@ const FavPage = () => {
   const { watchLists, dispatch } = useWatchListContexts();
   const { removeWatchlist: removeWatchListDialog } = useDialogContext();
   const { user } = useAuthContext();
-
   const [username, setUsername] = useState("");
 
   useEffect(() => {
@@ -54,11 +52,18 @@ const FavPage = () => {
       <WatchlistHeaderSection />
 
       <div className="watchlist-cont">
-        <h3 className="exlistsecheader">
+        <h3
+          className="exlistsecheader"
+          data-aos="fade-down"
+          data-aos-duration="3000">
           List of <span id="colortextnine"> Your Favourite Coin</span>
         </h3>
 
-        <TableContainer component={Paper} sx={{ overflow: "auto" }}>
+        <TableContainer
+          component={Paper}
+          sx={{ overflow: "auto" }}
+          data-aos="fade-up"
+          data-aos-duration="3000">
           <Table aria-label="simple table" stickyHeader>
             <TableHead>
               <TableRow>
