@@ -38,18 +38,7 @@
   align-items: flex-start;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: -140px;
-  left: -40;
-  width: 100%;
-  height: 120%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
-  transform: rotate(35deg);
-  pointer-events: none;
-  filter: blur(5px);
-}
+
 
 .card:nth-child(1) {
   background: linear-gradient(to bottom, #ff2ae0, #645bf6);
@@ -76,29 +65,7 @@
   justify-content: center;
 }
 
-.icon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50px;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border-top-right-radius: 50px;
-  box-shadow: 15px -15px 0 15px #3c2846;
-}
 
-.icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -50px;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border-top-left-radius: 50px;
-  box-shadow: -15px -15px 0 15px #3c2846;
-}
 
 .icon ion-icon {
   color: #fff;
@@ -116,11 +83,11 @@
   text-align: justify;
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .contentofcard {
     width: 50vw;
   }
-}
+} */
 
 .contentofcard h2#cardheader {
   font-size: 1.75em;
@@ -132,7 +99,7 @@
 .contentofcard p#pheader {
   color: #fff;
   line-height: 1.5em;
-  width: 12vw;
+  width: 18rem;
 }
 
 h3.headersize {
@@ -152,7 +119,7 @@ span#colortext2 {
     background-position: right;
 } */
 
-@media (min-width: 480px) and (max-width: 801px) {
+@media (min-width: 26.67) and (max-width: 48rem) {
   h3.headersize {
     font-size: 2.9rem;
   }
@@ -187,17 +154,7 @@ span#colortext2 {
     align-items: flex-start;
   }
 
-  .card::before {
-    content: "";
-    position: absolute;
-    top: -140px;
-    width: 100%;
-    height: 120%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
-    transform: rotate(35deg);
-    pointer-events: none;
-    filter: blur(5px);
-  }
+ 
 
   .contentofcard {
     position: absolute;
@@ -240,7 +197,7 @@ span#colortext2 {
 .contentofcard p#pheader{
     color: #fff;
     line-height: 1.5em;
-    width: 12vw;
+    width: auto;
 
 }
 
@@ -265,7 +222,7 @@ span#colortext2{
 } */
 
 
-
+/* 
 @media (min-width: 480px) and (max-width:801px) {
 
         h3.headersize{
@@ -337,5 +294,5 @@ span#colortext2{
             text-align: justify;
         }
 
-}
+} */
 }
