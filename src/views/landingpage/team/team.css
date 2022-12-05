@@ -102,13 +102,13 @@ section#lp {
   margin-bottom: -1.2%;
 }
 
-@media (min-width: 480px) and (max-width: 801px) {
+@media (min-width: 26.67rem) and (max-width: 48rem) {
   h3.headerteamm {
     font-size: 2.9rem;
   }
 
   .lastlayer {
-    display: inline-block;
+    display: grid;
     overflow: hidden;
     margin-top: -35px;
   }

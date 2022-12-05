@@ -352,7 +352,7 @@ label input[type="checkbox"] {
 /* all fonts */
 @media (min-width: 20rem) and (max-width: 47rem){
   p {
-    font-size: 1rem;
+    font-size: 0.6rem;
 }
 }
 

@@ -108,7 +108,7 @@ textarea#contentforum {
   background: #00094B;
   color: white;
   font-size: 1.5rem;
-  width: 70vh;
+  width: auto;
   min-height: 10vh;
   padding: 20px;
 }
@@ -416,3 +416,16 @@ img#imground {
   left: 1.1%;
   /* margin-top: -1.6%; */
 }
+
+
+/*phone*/
+
+@media (min-width:16rem) and (max-width:26.66rem){
+
+.cont-wrap-forum{
+  /* text-align: left; */
+  margin: 4rem auto;
+  width: auto;
+  }
+}
+
