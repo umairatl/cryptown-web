@@ -1,17 +1,8 @@
 .hero-setting {
-  /* background-image: url("../../asset/city1.png");
-  height: 50%;
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  position: relative; */
-  /* background-image: url("../../asset/city1.png"); */
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-size: 100% 100%;
 }
-
-
 
 .hero-text {
   text-align: center;

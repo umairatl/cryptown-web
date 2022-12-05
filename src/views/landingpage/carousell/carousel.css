@@ -1,38 +1,36 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-
 .Carousallanding {
   text-align: center;
   width: 80%;
   margin: 10rem auto;
-  /* height: 570px; */
 }
 
-.slide img{
-width:20rem;
-margin: 0 auto;
+.slide img {
+  width: 20rem;
+  margin: 0 auto;
 }
 
-.slide{
+.slide {
   transform: scale(0.2);
   transition: transform 300ms;
   opacity: 0.5;
 }
 
-.activeSlide{
+.activeSlide {
   transform: scale(1.1);
   opacity: 1;
 }
 
-.arrow{
+.arrow {
   background-color: #fff;
   position: absolute;
   cursor: pointer;
   z-index: 10;
 }
 
-.arrow svg{
+.arrow svg {
   transition: color 300ms;
 }
 
@@ -50,49 +48,44 @@ margin: 0 auto;
   top: 50%;
 }
 
-
-
-h3.headercarousal{
-    text-align: center;
-    font-size: 3.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+h3.headercarousal {
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
-
-span#colortext3{
-    color: #0000ff;
+span#colortext3 {
+  color: #0000ff;
 }
 
-
-
-@media (min-width: 480px) and (max-width:801px) {
-
+@media (min-width: 480px) and (max-width: 801px) {
   .Carousallanding {
     margin: -3rem auto;
   }
 
-  h3.headercarousal{
+  h3.headercarousal {
     font-size: 2.9rem;
   }
-  .slick-list{
+  .slick-list {
     padding: 0px;
   }
-  .slick-track{
+  .slick-track {
     width: 1820px;
     opacity: 1;
     transform: translate3d(-390px, 0px, 0px);
   }
-  .slick-slide.slick-cloned{
+  .slick-slide.slick-cloned {
     width: 130px;
   }
 
-  .slide{
+  .slide {
     width: 100%;
     display: inline-block;
   }
 
-  .slide img{
-    width:20rem;
+  .slide img {
+    width: 20rem;
   }
-
 }

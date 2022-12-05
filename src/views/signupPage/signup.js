@@ -105,7 +105,7 @@ const Signup = () => {
     console.log(passwordStrength);
     if (passwordStrength < 50) {
       return (
-        // <h1>Weak Password</h1>
+        //Weak Password
         <span
           style={{
             display: "block",
@@ -118,7 +118,7 @@ const Signup = () => {
       );
     } else if (passwordStrength >= 50 && passwordStrength <= 60) {
       return (
-        // <h1>Medium Password</h1>
+        //Medium Password
         <span
           style={{
             display: "block",
@@ -131,7 +131,7 @@ const Signup = () => {
       );
     } else {
       return (
-        // <h1>Strong Password</h1>
+        //Strong Password
         <span
           style={{
             display: "block",
