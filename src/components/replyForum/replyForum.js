@@ -6,6 +6,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../Dialog/normalDialog";
 import { useForumContext } from "../../hooks/useForumContext";
+import { useUserPostsContext } from "../../hooks/useUserPostsContext";
 
 const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
   const [replyPost, setReplyPost] = useState("");
@@ -18,6 +19,8 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
     replyError,
     dispatch: dialogDispatch,
   } = useDialogContext();
+  const { postLists, dispatch: userPostDispatch } = useUserPostsContext();
+
 
   useEffect(() => {
     const updateName = localStorage.getItem("username");
@@ -74,6 +77,26 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
         }
         return forum;
       });
+
+      if (postLists !== null) {
+        const user_payload = postLists.map((post) => {
+          if (post.postid === postId) {
+            const newReply = {
+              postid: postId,
+              subpost: replyPost,
+              subpostdatetime: new Date().toISOString(),
+              username: name,
+            };
+            return {
+              ...post,
+              replies: [...post.replies, newReply],
+            };
+          }
+          return post
+        })
+        userPostDispatch({type: "SET_POSTS", payload: user_payload})
+      }
+
       setForumList(payload);
       setIsReply(false);
       setReplyPost("");

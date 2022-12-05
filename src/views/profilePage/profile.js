@@ -44,31 +44,17 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-// function a11yProps(index) {
-//   return {
-//     id: `vertical-tab-${index}`,
-//     "aria-controls": `vertical-tabpanel-${index}`
-//   };
-// }
-
 const Profile = () => {
-  const { logout } = useLogout();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
-  const [isShow, setShow] = useState(false);
-  const [open, setOpen] = React.useState(false);
   var { handleSubmit } = useForm();
   const [showPass, setShowPass] = useState(false);
   const [showPass2, setShowPass2] = useState(false);
   const [error, setError] = useState(null);
-
-  // const navigate = useNavigate();
-
   const { user } = useAuthContext();
   const { profile, dispatch } = useProfileContext();
   const { userUpdate, dispatch: dispatchDialogContext } = useDialogContext();
-  const [value, setValue] = React.useState(0);
   var [nav, setNav] = useState("profile");
   const {
     usernameError,
@@ -101,11 +87,6 @@ const Profile = () => {
     pointsForContainingSymbol: 10,
   };
 
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  // };
-
-  //   fetch user data
   useEffect(() => {
     const fetchUserProfile = async () => {
       const response = await axios("api/user/profile", {
@@ -117,7 +98,6 @@ const Profile = () => {
       const json = await response.data;
 
       if (response.status === 200) {
-        // setData(json);
         setUsername(json.username);
         dispatch({
           type: "SET_PROFILE",
@@ -179,7 +159,7 @@ const Profile = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    if (passwordStrength < 50) {
+    if (passwordStrength < 10) {
       return (
         // <h1>Weak Password</h1>
         <span
@@ -192,7 +172,7 @@ const Profile = () => {
           }}
         />
       );
-    } else if (passwordStrength >= 50 && passwordStrength <= 60) {
+    } else if (passwordStrength >= 10 && passwordStrength <= 15) {
       return (
         // <h1>Medium Password</h1>
         <span

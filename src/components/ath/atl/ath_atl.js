@@ -13,7 +13,7 @@ const ATH_ATL = (detail) => {
   }, [detail]);
 
   return (
-    <div>
+    <div className="ath-atl" data-aos="fade-left" data-aos-duration="3000">
       {data ? (
         <div>
           {currency === 20 ? (

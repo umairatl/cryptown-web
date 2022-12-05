@@ -19,6 +19,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useWatchListContexts } from "../../hooks/useWatchListContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import ExchangeMarket from "../../components/ex-list-details/ex-list-details";
+import { JavascriptOutlined } from "@mui/icons-material";
 
 const CoinDetail = () => {
   const { id, page } = useParams();
@@ -27,10 +28,13 @@ const CoinDetail = () => {
   const [watchList, setWatchList] = useState({});
   const scollToRef = useRef();
   const [currency, setCurrency] = useState("10");
+  const [about, setAbout] = useState("");
+  const [aboutMore, setAboutMore] = useState("");
   const { watchLists: watchListContext, dispatch } = useWatchListContexts();
   const { addToWatchlist: addWatchListDialog, dispatch: dialogContext } =
     useDialogContext();
   const { user } = useAuthContext();
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -41,6 +45,10 @@ const CoinDetail = () => {
 
       if (response.status === 200) {
         setDetail(json);
+        const desc = json && json.cryptoDetails.description;
+        const descMore = `${desc.substring(0, 1200)}`;
+        setAbout(desc);
+        setAboutMore(descMore);
       }
     };
     fetchCoinDetail();
@@ -147,7 +155,7 @@ const CoinDetail = () => {
           </div>
 
           <div className="left-det">
-            <div className="d-left">
+            <div className="d-left" data-aos="fade-up" data-aos-duration="3000">
               <div className="d-name">
                 <span>
                   {id} ({detail && detail.cryptoDetails.symbol})
@@ -190,9 +198,9 @@ const CoinDetail = () => {
                     />
                   ) : null}
                 </span>
-                <div className="table-detail">
-                  {/* table */}
-                  {currency === 20 ? (
+                {/* table */}
+                {currency === 20 ? (
+                  <div className="table-detail">
                     <table>
                       <tbody>
                         <tr>
@@ -229,7 +237,9 @@ const CoinDetail = () => {
                         <tr></tr>
                       </tbody>
                     </table>
-                  ) : (
+                  </div>
+                ) : (
+                  <div className="table-detail">
                     <table>
                       <tbody>
                         <tr>
@@ -270,9 +280,12 @@ const CoinDetail = () => {
                         <tr></tr>
                       </tbody>
                     </table>
-                  )}
-                </div>
-              </div>{" "}
+                  </div>
+                )}
+                <p className="scroll-detail">
+                  Please scroll to the right on the table to view more
+                </p>
+              </div>
             </div>
 
             <h1></h1>
@@ -290,26 +303,38 @@ const CoinDetail = () => {
         <CoinChart cryptoId={id} />
       </div>
       <div className="btm-details">
-        <section id="about">
+        <section id="about" data-aos="fade-left" data-aos-duration="3000">
           <div className="coin-info-col2">
             <div className="desc-col">
               <h1>About {id}</h1>
-              <div
-                className="para"
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(
-                    detail && detail.cryptoDetails.description
-                  ),
-                }}></div>
+              <div className="para">
+                {showMore ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(about),
+                    }}></div>
+                ) : (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(aboutMore),
+                    }}></div>
+                )}
+                <a className="" onClick={() => setShowMore(!showMore)}>
+                  {showMore ? "Show less" : "Show more"}
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        <div className="ex-detail">
+        <div
+          className="ex-detail"
+          data-aos="fade-left"
+          data-aos-duration="3000">
           <h1 className="ex-h1"> EXCHANGE LIST</h1>
           <ExchangeMarket exchange={detail && detail.cryptoDetails.exchange} />
-          <Footer />
         </div>
+        <Footer />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@
 .profile-post h2 {
   font-size: 1.3rem;
   margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .profile-post p {
@@ -49,25 +50,15 @@
 }
 
 .post-box__reply {
-  /* width: 44.65rem; */
   background-color: #2d567e;
-  /* border-radius: 10px; */
   color: white;
-  /* padding: 0.2rem; */
 }
 
 .view-post-cont p span {
   font-weight: bold;
   font-size: 1rem;
   margin-bottom: 2px;
-  /* text-align: center; */
-  /* width: 40rem */
 }
-/* 
-.arrow-pst{
-  font-weight: bold;
-  font-size: 1.2rem;
-} */
 
 .wrap-outer-column {
   display: flex;
@@ -85,7 +76,6 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0px;
-  /* width: 30rem; */
 }
 
 .space-between-jn {
@@ -96,7 +86,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* margin: 5px */
 }
 
 .fa-arrow {

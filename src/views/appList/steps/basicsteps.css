@@ -1,197 +1,120 @@
-.exlistsection{
-    margin: 0 0 10rem 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    flex-direction: column;
+.exlistsection {
+  margin: 0 0 10rem 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  flex-direction: column;
 }
 
-
-.containerexlist{
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.containerexlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-
-
-
-
-.containerexlist .boxexchangelist{
-
-    position: relative;
-    width: 350px;
-    padding: 40px;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
-    border-radius: 4px;
-    margin: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-    text-align: center;
-
+.containerexlist .boxexchangelist {
+  position: relative;
+  width: 350px;
+  padding: 40px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
 }
 
-
-.containerexlist .boxexchangelist:before{
-    content: '';
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, .2);
-    z-index: 2;
-    pointer-events: none;
+.containerexlist .boxexchangelist:before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 2;
+  pointer-events: none;
 }
 
-
-
-.containerexlist .boxexchangelist .iconexchangelist{
-
-    position: relative;
-    width: 80px;
-    height: 80px;
-    color: #fff;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 50%;
-    font-size: 40px;
-    font-weight: 700;
-    transition: 1s;
-
+.containerexlist .boxexchangelist .iconexchangelist {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  color: #fff;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 40px;
+  font-weight: 700;
+  transition: 1s;
 }
 
-
-
-
-.containerexlist .boxexchangelist:nth-child(1) .iconexchangelist{
-
-    box-shadow: 0 0 0 0 #e91e63;
-    background: #e91e63;
+.containerexlist .boxexchangelist:nth-child(1) .iconexchangelist {
+  box-shadow: 0 0 0 0 #e91e63;
+  background: #e91e63;
 }
 
-
-.containerexlist .boxexchangelist:nth-child(1):hover .iconexchangelist{
-
-    box-shadow: 0 0 0 400px #e91e63;
-
+.containerexlist .boxexchangelist:nth-child(1):hover .iconexchangelist {
+  box-shadow: 0 0 0 400px #e91e63;
 }
 
-
-
-
-
-
-
-
-
-
-.containerexlist .boxexchangelist:nth-child(2) .iconexchangelist{
-
-    box-shadow: 0 0 0 0  #990099;
-    background:  #990099;
+.containerexlist .boxexchangelist:nth-child(2) .iconexchangelist {
+  box-shadow: 0 0 0 0 #990099;
+  background: #990099;
 }
 
-
-.containerexlist .boxexchangelist:nth-child(2):hover .iconexchangelist{
-
-    box-shadow: 0 0 0 400px  #990099;
-
+.containerexlist .boxexchangelist:nth-child(2):hover .iconexchangelist {
+  box-shadow: 0 0 0 400px #990099;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.containerexlist .boxexchangelist:nth-child(3) .iconexchangelist{
-
-    box-shadow: 0 0 0 0 #2196f3;
-    background: #2196f3;
+.containerexlist .boxexchangelist:nth-child(3) .iconexchangelist {
+  box-shadow: 0 0 0 0 #2196f3;
+  background: #2196f3;
 }
 
-
-.containerexlist .boxexchangelist:nth-child(3):hover .iconexchangelist{
-
-    box-shadow: 0 0 0 400px #2196f3;
-
+.containerexlist .boxexchangelist:nth-child(3):hover .iconexchangelist {
+  box-shadow: 0 0 0 400px #2196f3;
 }
 
-
-
-.containerexlist .boxexchangelist .contentforexlist{
-
-    position: relative;
-    z-index: 1;
-    transition: 0.5s;
+.containerexlist .boxexchangelist .contentforexlist {
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
 }
 
-
-
-
-
-.containerexlist .boxexchangelist:hover .contentforexlist{
-
-    color: #fff;
-
+.containerexlist .boxexchangelist:hover .contentforexlist {
+  color: #fff;
 }
 
-
-
-
-
-.containerexlist .boxexchangelist .contentforexlist h3{
-
-    font-size: 20px;
-    margin: 10px 0;
-    padding: 0;
+.containerexlist .boxexchangelist .contentforexlist h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  padding: 0;
 }
 
-
-
-.containerexlist .boxexchangelist .contentforexlist p{
-
-    margin: 0;
-    padding: 0;
-    text-align: justify;
+.containerexlist .boxexchangelist .contentforexlist p {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
 }
 
-
-
-
-h3.textelheader2{
-    text-align: center;
-    font-size: 3.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+h3.textelheader2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
-
-span#colortext11{
-    color: #0000ff;
+span#colortext11 {
+  color: #0000ff;
 }
-
-
-
-
-
-
-
-
-
-
-

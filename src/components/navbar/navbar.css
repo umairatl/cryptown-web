@@ -8,17 +8,14 @@
 
 .nav-up{
     padding-top: 2rem; 
-    /* padding-bottom: 2rem; */
-    /* margin-bottom: 2rem;  */
     display: flex;
+    flex-direction: row;
     color: white;
     justify-content: space-between;
 }
 
 .nav-text:hover{
     color: #d1bcd3;
-    /* background-color: purple; */
-    /* width: 5vh */
 }
 
 .nav-right{
@@ -29,8 +26,8 @@
 
 .nav-text{
     color: white;
-    padding-left: 0.8rem;
-    padding-right: 1rem;
+    /* padding-left: 0.8rem; */
+    /* padding-right: 1rem; */
     padding-top: 0.1rem; 
     padding-bottom: 0.1rem;
     border: none;
@@ -85,12 +82,35 @@ button{
     color: white
 }
 
+.name{
+    margin-top: 0.8rem;
+}
 
 .web-navbar{
     display: block;
 }
 
-@media (max-width: 850px){
+@media screen and (min-width:1111px) and (max-width: 1226px) {
+    .nav-right {
+        margin-right: 0px;
+    }
+
+    .col-3{
+    margin-right: 3rem;
+    }
+
+    .first-col img{
+        width: 95%;
+    }
+}
+
+@media screen and (min-width:1227px) and (max-width: 1270px) {
+    .first-col img {
+        width: 84%;
+    }
+}
+
+@media (max-width: 1104px){
     .nav-mobile{
         display: block;
         width: 121%;
@@ -118,13 +138,43 @@ button{
     
     .nav-mobile .img{
         margin-left: 30rem
-
     }
 }
 
+@media (max-width: 1092px) {
+.nav-text{
+    font-size: 18px;
+}
+
+.first-col img{
+    /* width: 91%; */
+    margin-top: 0.2rem;   
+}
+
+.nav-right{
+    margin-right: 6vh;
+}
+}
+
+@media (max-width: 950px) {
+    .first-col img {
+            width: 49%;
+        }
+}
+
+@media(max-width: 670px){
+.first-col img{
+    margin-left: 6rem;
+}
+}
+
+@media(min-width: 1070px) {
+    .first-col img {
+        margin-right: 4rem;
+    }
+}
 
 @media (min-width: 30rem) and (max-width:50.1rem) {
-
     .nav-up{
         overflow: hidden;
         font-size: 1;
@@ -148,6 +198,3 @@ button{
   }
 
 }
-
-
-

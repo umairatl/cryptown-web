@@ -1,5 +1,3 @@
-import Navbar from "../../../components/navbar/navbar";
-import { Link } from "react-router-dom";
 import { useAuthContext } from "../../../hooks/useAuthContext";
 import { useEffect, useState } from "react";
 import axios from "../../../components/axios/axios";
@@ -36,6 +34,7 @@ const UserPosts = () => {
           const objKeyArr = Object.keys(json["postsObj"]).map(
             (objKey) => json["postsObj"][objKey]
           );
+          console.log(objKeyArr);
           // setPostList(objKeyArr);
           dispatch({ type: "SET_POSTS", payload: objKeyArr });
         }
@@ -53,7 +52,6 @@ const UserPosts = () => {
     setPostId(_postId);
   };
 
-  let dayOpt = { weekday: "long" };
   let yearOpt = { year: "numeric", month: "numeric", day: "numeric" };
   let timeOpt = { hour: "numeric", minute: "numeric" };
 
@@ -100,13 +98,13 @@ const UserPosts = () => {
                       </span>
                     </p>
                   </div>
-                  <h1>
+                  <h3>
                     {
                       postLists.filter((post) => post["postid"] === postId)[0][
                         "post"
                       ]
                     }
-                  </h1>
+                  </h3>
                   <p>Replies</p>
                 </div>
               }
@@ -125,7 +123,6 @@ const UserPosts = () => {
                           <p style={{ marginLeft: "1rem" }}> {reply.email} </p>
                         </div>
                         <p style={{ marginRight: "1rem" }}>
-                          {" "}
                           {new Date(reply.subpostdatetime)
                             .toLocaleDateString("en-MY", yearOpt)
                             .toString()}
