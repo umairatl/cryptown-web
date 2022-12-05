@@ -39,6 +39,11 @@ body {
   color: #1f51ff;
   border: 1px solid #1f51ff;
 }
+@media screen and (max-width: 480px) {
+  .App {
+    padding: 0rem 0rem;
+  }
+}
 
 .App-header {
   background-color: #282c34;

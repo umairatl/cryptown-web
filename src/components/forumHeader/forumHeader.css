@@ -40,14 +40,23 @@
     height: auto;
   }
 }
-
+/* 
 @media (min-width: 16rem) and (max-width: 26.66rem) {
   html:not(.no-js) [data-aos^="fade"][data-aos^="fade"].aos-animate {
     transform: none;
     height: auto;
     font-size: 1rem;
   }
-}
+@media (min-width:16rem) and (max-width:26.66rem) {
+
+    html:not(.no-js) [data-aos^=fade][data-aos^=fade].aos-animate {
+
+        transform: none;
+        height: auto;
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+} */
 /*tab*/
 
 @media (min-width: 26.67rem) and (max-width: 48rem) {
