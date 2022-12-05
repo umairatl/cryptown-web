@@ -37,7 +37,6 @@
   margin-left: 1rem;
   margin-top: 0px;
   font-size: 1.2rem;
-  /* text-transform: ; */
 }
 
 .coin-input {
@@ -73,7 +72,7 @@
   color: #1f51ff;
 }
 
-.coin-text> :nth-child(1) {
+.coin-text > :nth-child(1) {
   font-weight: 200;
   font-size: 2rem;
   color: var(--black);
@@ -108,11 +107,6 @@ img#gif1 {
   width: 700px;
   height: 500px;
   margin: 0 auto;
-}
-
-.set-coinList {
-  /* width: 100rem; */
-  /* margin-top: -22pt; */
 }
 
 h3.headercointable {
@@ -154,9 +148,6 @@ span#colortext6 {
   overflow: hidden;
   transition: 0.5s;
   letter-spacing: 4px;
-  /* text-align: center; */
-  /* border: 1px solid #8f7cec; */
-  /* margin: auto; */
   margin-right: 57pt;
   border-radius: 5px;
   /* width: 27%; */
@@ -172,34 +163,17 @@ span#colortext6 {
 
 .main-page {
   background: linear-gradient(70deg, #242424, #3b0054, #00094b, #242424);
-  /* background: url(../../asset/platform.png) no-repeat; */
   object-fit: contain;
   background-size: 100% 100%;
 }
 
 .carousel-col-1 {
-  /* display: inline-block;
-    border-radius: 40px;
-    background-color: #abd8ff;
-    font-size: 2rem;
-    margin: 4% auto;
-    height: 40vh;
-    width: 70vh; */
-  /* background-color: #0000ff;
-  width: 55rem;
-  height: 25rem;
-  margin: 3rem auto;
-  border-radius: 40px;
-  overflow: hidden; */
-  /* background: url(../../asset/platform.png) no-repeat; */
   background: linear-gradient(60deg, #242424, #3b0054, #00094b, #242424);
-
   object-fit: contain;
   background-size: 100% 100%;
 }
 
 .carousel-2 {
-  /* width: 70%; */
   margin: 5rem auto;
   color: white;
 }
@@ -239,13 +213,13 @@ span#colortext6 {
   gap: 0.25rem;
 }
 
-.t-name> :nth-child(1) {
+.t-name > :nth-child(1) {
   color: white;
   font-weight: bold;
   font-size: 2.4rem;
 }
 
-.t-name> :nth-child(2) {
+.t-name > :nth-child(2) {
   background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -253,7 +227,7 @@ span#colortext6 {
   font-weight: 950;
 }
 
-.t-name> :nth-child(3) {
+.t-name > :nth-child(3) {
   font-weight: 200;
   font-size: 1rem;
   color: white;
@@ -267,15 +241,14 @@ span#colortext6 {
 
 .t-right {
   flex: 1;
-  /* position: relative; */
 }
 
-.t-right>* {
+.t-right > * {
   position: absolute;
   z-index: 1;
 }
 
-.t-right> :nth-child(1) {
+.t-right > :nth-child(1) {
   transform: scale(0.69);
   left: -15%;
   margin-top: -23%;
@@ -291,12 +264,12 @@ span#colortext6 {
   background: white;
 }
 
-@media (max-width: 1086px){
-  .btn-coin{
-    width: 88%
+@media (max-width: 1086px) {
+  .btn-coin {
+    width: 88%;
   }
 
-    .coin-name-col {
-      line-height: 1.2rem;
-    }
+  .coin-name-col {
+    line-height: 1.2rem;
+  }
 }

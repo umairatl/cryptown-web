@@ -1,63 +1,60 @@
-.trending-card{
-    /* width: 0rem; */
-    margin: 15px 15px 15px;
-    border-radius: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    transform:rotate(45deg);
-    /* background: red; */
+.trending-card {
+  margin: 15px 15px 15px;
+  border-radius: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  transform: rotate(45deg);
 }
 
-.test{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 16px;
-    margin-right: 321px;
-    margin-left: 321px;
-    margin-bottom: 21vh;
-    flex-wrap: wrap;
+.test {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 16px;
+  margin-right: 321px;
+  margin-left: 321px;
+  margin-bottom: 21vh;
+  flex-wrap: wrap;
 }
 
-.image-popular{
-    transform:rotate(-45deg);
+.image-popular {
+  transform: rotate(-45deg);
 }
 
-.css-1q04urf{
-    background: none !important;
+.css-1q04urf {
+  background: none !important;
 }
 
-.coin-name{
-    width: 3rem;
+.coin-name {
+  width: 3rem;
 }
 
-.css-1oqv2c0-MuiPaper-root-MuiCard-root{
-    width: 50v;
+.css-1oqv2c0-MuiPaper-root-MuiCard-root {
+  width: 50v;
 }
 
-.css-1rorjgf-MuiCardMedia-root{
-    background: black;
+.css-1rorjgf-MuiCardMedia-root {
+  background: black;
 }
 
-.coin-name{
-    color: white;
-    transform:rotate(-45deg);
-    margin-top: 81px;
-    font-size: 18pt;
-
+.coin-name {
+  color: white;
+  transform: rotate(-45deg);
+  margin-top: 81px;
+  font-size: 18pt;
 }
 
-.trending-card__test{
-    background: none !important;
-    width: 13rem;
-    height: 12rem;
-    border: 27px solid none!important;
+.trending-card__test {
+  background: none !important;
+  width: 13rem;
+  height: 12rem;
+  border: 27px solid none !important;
 }
 
-@media (min-width:16rem) and (max-width:26.66rem){
-    .test {
+@media (min-width: 16rem) and (max-width: 26.66rem) {
+  .test {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -66,16 +63,16 @@
     margin-left: auto;
     margin-bottom: auto;
     flex-wrap: wrap;
-}
+  }
 }
 
-@media (min-width:48rem) and (max-width:64rem){
+@media (min-width: 48rem) and (max-width: 64rem) {
   .test {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 16px;
-    margin-right: 0rem; 
-     margin-left: 0rem; 
+    margin-right: 0rem;
+    margin-left: 0rem;
   }
 }

@@ -3,14 +3,11 @@
 }
 
 .cont-top-forum-1 {
-  /* background: #00094B; */
   background: radial-gradient(
     circle at 52.1% -29.6%,
     rgb(144, 17, 105) 0%,
     rgb(51, 0, 131) 100.2%
   );
-  /* border: 2px solid black;
-*/
 }
 
 textarea {
@@ -18,7 +15,6 @@ textarea {
 }
 
 .cont-wrap-forum {
-  /* text-align: left; */
   margin: 4rem auto;
   width: 51%;
 }
@@ -26,8 +22,6 @@ textarea {
 .forum .flex-d-row {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  /* background: #00094B; */
-  /* border-radius: 20px; */
 }
 
 .replies-section {
@@ -40,19 +34,12 @@ textarea {
   text-align: left;
   margin-left: 7rem;
   color: white;
-
-  /* margin: 0px; */
-
-  /* background: gray; */
 }
 
 .reply-in-cont {
   text-align: left;
-  /* max-width: 490px; */
   background: #fff;
   margin: 0 auto;
-  /* margin-top: 50px; */
-  /* border-radius: 3px; */
   padding: 12px;
   /* border-bottom: 1px solid #e6ecf0; */
   /* border-top: 1px solid #e6ecf0; */
@@ -70,18 +57,11 @@ textarea {
 }
 .tweet-header-info p {
   font-weight: normal;
-  /* margin-top: 5px; */
 }
-/* 
-.panel1a-header{
-  text-align: "center"
-} */
 
 .arrow-reply {
   margin-right: 1rem;
 }
-
-/* here */
 
 .post-box {
   width: 90%;
@@ -94,7 +74,6 @@ textarea {
 }
 
 .post-col {
-  /* margin: auto; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -103,7 +82,6 @@ textarea {
 .forum-post {
   background-image: url("/src/asset/wave_grid.png");
   background-size: cover;
-  /* background-repeat: no-repeat; */
 }
 
 textarea#contentforum {
@@ -217,8 +195,6 @@ textarea#contentforum {
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* background: #1d1f20; */
-  /* margin-bottom: 8rem; */
 }
 
 #forumboxbg {
@@ -226,7 +202,6 @@ textarea#contentforum {
   justify-content: center;
   align-items: center;
   width: 70%;
-  /* height: 200px; */
   color: #fff;
   font-family: "Raleway";
   font-size: 2.5em;
@@ -292,18 +267,6 @@ span#colortext17 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* 
-.bg34 {
-  background: url(../../asset/blackpink.png) no-repeat;
-  background-size: cover;
-  z-index: 1;
-  margin-top: -2%;
-} */
-
-/* .wrap-outer-p .replytext {
-  color: #a020f0;
-  margin-bottom: -15px;
-} */
 
 .textalignment {
   text-align: left;
@@ -318,34 +281,31 @@ span#colortext17 {
 }
 .tab {
   width: 50%;
-  /* margin-top: 5%; */
   position: relative;
-  /* left: 28%; */
 }
 
-/* (B) HIDE CHECKBOX */
+/* HIDE CHECKBOX */
 .tab input {
   display: none;
 }
 
-/* (C) TAB LABEL */
+/* TAB LABEL */
 .tab label {
-  /* (C1) DIMENSIONS */
+  /* DIMENSIONS */
   position: relative; /* required for (f2) position:absolute */
   display: block;
   width: 100%;
-  /* margin-top: 10px; */
   padding: 10px;
   margin-left: -2px;
 
-  /* (C2) COSMETICS */
+  /* COSMETICS */
   font-weight: 700;
   color: #fff;
   background: #301934;
   cursor: pointer;
 }
 
-/* (D) TAB CONTENT - HIDDEN BY DEFAULT */
+/* TAB CONTENT - HIDDEN BY DEFAULT */
 /* css animation will not work with auto height */
 /* this is why we use max-height instead */
 .tab .contentforumm {
@@ -358,27 +318,27 @@ span#colortext17 {
   padding: 10px;
 }
 
-/* (E) OPEN TAB ON CHECKED */
+/* OPEN TAB ON CHECKED */
 .tab input:checked ~ .contentforumm {
   max-height: 100vh;
 }
 
-/* (F) EXTRA - ADD ARROW INDICATOR */
+/* EXTRA - ADD ARROW INDICATOR */
 .tab label::after {
-  /* (F1) RIGHT ARROW */
+  /* RIGHT ARROW */
   display: block;
   content: "\25b6";
 
-  /* (F2) PLACE AT RIGHT SIDE */
+  /* PLACE AT RIGHT SIDE */
   position: absolute;
   right: 10px;
   top: 10px;
 
-  /* (F3) ANIMATED ARROW */
+  /* ANIMATED ARROW */
   transition: all 0.4s;
 }
 
-/* (F4) ROTATE ARROW ON CHECKED */
+/* ROTATE ARROW ON CHECKED */
 .tab input:checked ~ label::after {
   transform: rotate(90deg);
 }
@@ -389,17 +349,9 @@ span#colortext17 {
   justify-content: center;
 }
 
-/* .divsidebyside img#imground {
-  flex-basis: 40%;
-} */
-
 img#imground {
-  /* max-width: 100%; */
   height: 15%;
   width: 15%;
-  /* position: relative; */
-  /* left: -40%; */
-  /* margin-top: 7%; */
 }
 
 .divbolding1 {
@@ -409,50 +361,42 @@ img#imground {
   bottom: -25px;
 }
 
-/* hr.styleline {
-  
-} */
-
 .datetimes {
   position: relative;
   left: 1.1%;
-  /* margin-top: -1.6%; */
 }
-
 
 /*phone*/
 
-@media (min-width:16rem) and (max-width:26.66rem){
-  .cont-wrap-forum{
-  margin: 4rem auto;
-  width: auto;
+@media (min-width: 16rem) and (max-width: 26.66rem) {
+  .cont-wrap-forum {
+    margin: 4rem auto;
+    width: auto;
   }
 
   .forum-post {
-  background-size: 500px;
+    background-size: 500px;
   }
 
-  h3.textfrmheader{
-  margin-top: 3rem;
-  margin-bottom: -3rem;
+  h3.textfrmheader {
+    margin-top: 3rem;
+    margin-bottom: -3rem;
   }
 
-  .pagination-cont{
-  padding: 0px !important;
-  width: 90%;
+  .pagination-cont {
+    padding: 0px !important;
+    width: 90%;
   }
 
   .forum p {
-  font-size: 0.9rem
+    font-size: 0.9rem;
   }
 
   .tweet-header-info span {
+    font-size: 0.9rem;
+  }
 
-  font-size: 0.9rem;        }
-
-  .forum h2{
-  font-size: 14pt;
+  .forum h2 {
+    font-size: 14pt;
   }
 }
-
-

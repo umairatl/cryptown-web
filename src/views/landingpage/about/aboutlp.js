@@ -4,13 +4,11 @@ import "../about/aboutlp.css";
 export default function AboutLandingPage() {
   return (
     <section
-    className="about"
+      className="about"
       id="about"
       data-aos="fade-left"
       data-aos-duration="3000"
     >
-      {/* <h1 className="headingabout"> about the app </h1> */}
-
       <div className="column">
         <div className="image"></div>
 
