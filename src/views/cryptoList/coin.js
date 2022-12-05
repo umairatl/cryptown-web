@@ -286,7 +286,6 @@ const Coin = ({}) => {
               count={(crypto?.cryptoList.length / 10).toFixed(0)}
               style={{
                 padding: 20,
-                width: "100%",
                 display: "flex",
                 justifyContent: "center",
               }}

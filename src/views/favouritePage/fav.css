@@ -27,3 +27,9 @@
     width: auto; 
   }
 } 
+
+@media screen and (max-width: 665px) {
+  .coin-name-col {
+    line-height: 1rem;
+  }
+}

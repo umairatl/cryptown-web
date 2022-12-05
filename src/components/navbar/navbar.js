@@ -173,8 +173,8 @@ const Navbar = () => {
             <Link to = '/news' className="nav-text">  News </Link>
             <Link to = '/appList' className="nav-text"> Exchange </Link>
         </ul>
-        <ul className="nav-right">
-        <Link to = '/profile' className="nav-text">
+        <ul className="nav-right col-3">
+        <Link to = '/profile' className="nav-text flex-d-row name">
             <FaUserCircle /> <span className='name-col'>{profile ? profile["username"] : name}</span>
         </Link>
         <Link onClick={handleClick} className="nav-text"> Logout </Link>
