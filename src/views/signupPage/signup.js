@@ -102,7 +102,8 @@ const Signup = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    if (passwordStrength < 10) {
+    console.log(passwordStrength);
+    if (passwordStrength < 50) {
       return (
         // <h1>Weak Password</h1>
         <span
@@ -115,7 +116,7 @@ const Signup = () => {
           }}
         />
       );
-    } else if (passwordStrength >= 10 && passwordStrength <= 15) {
+    } else if (passwordStrength >= 50 && passwordStrength <= 60) {
       return (
         // <h1>Medium Password</h1>
         <span
@@ -149,7 +150,7 @@ const Signup = () => {
     if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
       return false;
     }
-    var regex = new RegExp("^[a-zA-Z0-9. ]{1,1}$");
+    var regex = new RegExp("^[a-zA-Z0-9.@ ]{1,1}$");
     if (regex.test(e.key)) {
       return true;
     } else {
@@ -159,7 +160,7 @@ const Signup = () => {
   };
 
   // validation on username
-  const usernameOnKey = (e) => {
+  const signupOnKey = (e) => {
     if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
       return false;
     }
@@ -178,7 +179,6 @@ const Signup = () => {
       <form className="signup" onSubmit={handleSubmit}>
         <input
           type="email"
-          onKeyDown={(e) => emailOnKey(e)}
           placeholder="Enter your Email"
           onChange={(e) => {
             setEmail(e.target.value);
@@ -188,7 +188,7 @@ const Signup = () => {
         <input
           minLength="1"
           maxLength="50"
-          onKeyDown={(e) => usernameOnKey(e)}
+          onKeyDown={(e) => signupOnKey(e)}
           type="username"
           placeholder="Create Username"
           onChange={(e) => setUsername(e.target.value)}
@@ -205,7 +205,8 @@ const Signup = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass(!showPass)}>
+            onClick={(e) => setShowPass(!showPass)}
+          >
             {" "}
             visibility{" "}
           </span>
@@ -224,7 +225,8 @@ const Signup = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass2(!showPass2)}>
+            onClick={(e) => setShowPass2(!showPass2)}
+          >
             {" "}
             visibility{" "}
           </span>

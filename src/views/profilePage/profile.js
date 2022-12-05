@@ -159,7 +159,7 @@ const Profile = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    if (passwordStrength < 50) {
+    if (passwordStrength < 10) {
       return (
         // <h1>Weak Password</h1>
         <span
@@ -172,7 +172,7 @@ const Profile = () => {
           }}
         />
       );
-    } else if (passwordStrength >= 50 && passwordStrength <= 60) {
+    } else if (passwordStrength >= 10 && passwordStrength <= 15) {
       return (
         // <h1>Medium Password</h1>
         <span

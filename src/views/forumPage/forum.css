@@ -1,70 +1,75 @@
-.post-cont-forum{
+.post-cont-forum {
   /* background: green; */
 }
 
-.cont-top-forum-1{
- background: #00094B;
- border: 2px solid black;
+.cont-top-forum-1 {
+  /* background: #00094B; */
+  background: radial-gradient(
+    circle at 52.1% -29.6%,
+    rgb(144, 17, 105) 0%,
+    rgb(51, 0, 131) 100.2%
+  );
+  /* border: 2px solid black;
+*/
 }
 
-textarea{
+textarea {
   background: white;
 }
 
-.cont-wrap-forum{
+.cont-wrap-forum {
   /* text-align: left; */
   margin: 4rem auto;
   width: 51%;
-  }
-  
-.forum .flex-d-row{
+}
+
+.forum .flex-d-row {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   /* background: #00094B; */
   /* border-radius: 20px; */
 }
 
-.replies-section{
+.replies-section {
   width: 70%;
   margin: auto;
 }
 
-.replies-col{
+.replies-col {
   align-items: left;
   text-align: left;
   margin-left: 7rem;
-  color: white
-  
+  color: white;
+
   /* margin: 0px; */
 
   /* background: gray; */
 }
 
-.reply-in-cont{
+.reply-in-cont {
+  text-align: left;
+  /* max-width: 490px; */
+  background: #fff;
+  margin: 0 auto;
+  /* margin-top: 50px; */
+  /* border-radius: 3px; */
+  padding: 12px;
+  border-bottom: 1px solid #e6ecf0;
+  border-top: 1px solid #e6ecf0;
+  /* padding: 1rem; */
+}
 
-      text-align: left;
-      /* max-width: 490px; */
-      background: #fff;
-      margin: 0 auto;
-      /* margin-top: 50px; */
-      /* border-radius: 3px; */
-      padding: 12px;
-      border-bottom: 1px solid #e6ecf0;
-      border-top: 1px solid #e6ecf0;
-      /* padding: 1rem; */
-    }
-    
 .tweet-header-info {
-  font-weight:bold;
-  color: black
+  font-weight: bold;
+  color: black;
 }
 .tweet-header-info span {
-  color:#657786;
-  font-weight:normal;
+  color: #657786;
+  font-weight: normal;
   margin-left: 5px;
 }
 .tweet-header-info p {
-  font-weight:normal;
+  font-weight: normal;
   /* margin-top: 5px; */
 }
 /* 
@@ -72,11 +77,9 @@ textarea{
   text-align: "center"
 } */
 
-.arrow-reply{
+.arrow-reply {
   margin-right: 1rem;
 }
-
-
 
 /* here */
 
@@ -97,7 +100,7 @@ textarea{
   text-align: center;
 }
 
-.forum-post{
+.forum-post {
   background-image: url("/src/asset/wave_grid.png");
   background-size: cover;
   /* background-repeat: no-repeat; */
@@ -105,7 +108,7 @@ textarea{
 
 textarea#contentforum {
   border-radius: 20px;
-  background: #00094B;
+  background: #00094b;
   color: white;
   font-size: 1.5rem;
   width: 70vh;
@@ -122,7 +125,6 @@ forum.login {
   width: 1000px;
   margin-left: 550px;
 }
-
 
 .bn632-hover {
   width: 160px;
