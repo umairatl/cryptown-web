@@ -149,7 +149,7 @@ const Signup = () => {
     if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
       return false;
     }
-    var regex = new RegExp("^[a-zA-Z0-9. ]{1,1}$");
+    var regex = new RegExp("^[a-zA-Z0-9.@ ]{1,1}$");
     if (regex.test(e.key)) {
       return true;
     } else {
