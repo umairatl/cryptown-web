@@ -98,11 +98,10 @@ const AuthLayout = () => {
               <p>
                 Don't have an account?{"\n"}
                 <a onClick={(event) => handleClick(event, "signup")}>
-                  Create Your Account 
+                  Create Your Account
                 </a>
                 {"\n"}
-                 It takes less than a minute
-                 
+                It takes less than a minute
               </p>
             </div>
           ) : (
