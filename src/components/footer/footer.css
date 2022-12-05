@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 .futmob{
@@ -23,12 +22,11 @@ ul#footer-ul {
   padding: 0 0 0 0px;
 }
 .footer {
- background: #00094B;
+  background: #00094b;
   margin-top: 1rem;
   bottom: 0;
   left: 0;
   width: 100%;
-
 }
 .footer-col {
   width: 25%;
@@ -87,13 +85,13 @@ ul#footer-ul {
   background-color: #ffffff;
 }
 
-.footer-col>img#FOne{
+.footer-col > img#FOne {
   max-width: 20vw;
   min-width: 100px;
   transform: rotateY(180deg);
 }
 
-.footer-col>img#FTwo{
+.footer-col > img#FTwo {
   max-width: 18vw;
   transform: rotateY(180deg);
   position: absolute;
@@ -101,18 +99,18 @@ ul#footer-ul {
   bottom: 0;
 }
 
-.copyright{
-   width: auto;
-   margin-top: auto;
-   color: #fff;
-   background-color: black;
-   line-height: 40px;
-   font-size: 0.7em;
-   text-align: center;
-   bottom:0;
+.copyright {
+  width: auto;
+  margin-top: auto;
+  color: #fff;
+  background-color: black;
+  line-height: 40px;
+  font-size: 0.7em;
+  text-align: center;
+  bottom: 0;
 }
 
-.footer-col#column-one{
+.footer-col#column-one {
   align-content: center;
 }
 
@@ -127,13 +125,11 @@ ul#footer-ul {
 .footer-col h4::before {
     width: 74px;
 }
-}
 
-
-@media (min-width:26.67rem){
-element.style {
+@media (min-width: 26.67rem) {
+  element.style {
     display: flex;
-}
+  }
 }
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
@@ -144,7 +140,7 @@ element.style {
     margin-bottom: 35px;
     font-weight: 500;
     position: relative;
-}
+  }
 }
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
@@ -154,14 +150,20 @@ element.style {
 
 }
 
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.footer-col>img#FOne {
-  display: none;
-}
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .footer-col > img#FOne {
+    display: none;
+  }
 }
 
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.footer-col>img#FTwo {
-  display: none;
+@media (min-width: 19rem) and (max-width: 26.66rem) {
+  .footer-col > img#FTwo {
+    display: none;
+  }
+
+  .futmob {
+    display: grid;
+    width: 5rem;
+  }
 }
 }

@@ -1,6 +1,6 @@
 html,
 body {
-  margin: 0px;
+  margin: 0px;  
   height: 100%;
 }
 
@@ -106,10 +106,10 @@ a {
   padding-top: 2vh;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1027px) {
   .box-form .right {
-    width: 50vw;
-    height: 77vh;
+    width: 150rem;
+    height: 82vh;
   }
 }
 
@@ -182,12 +182,10 @@ label input[type="checkbox"] {
 }
 
 .box-form .right button {
-  /* float: center; */
   color: #fff;
   margin-top: 0;
   margin-left: 0;
   font-size: 16px;
-  /* padding: 12px 35px; */
   border-radius: 50px;
   display: inline-block;
   border: 0;
@@ -213,4 +211,10 @@ label input[type="checkbox"] {
     margin-left: 12px;
     width: 198px;
   }
+}
+
+@media (max-width: 375px){
+  .box-form .right button {
+        width: 141px;
+    }
 }

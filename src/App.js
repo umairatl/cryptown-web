@@ -36,7 +36,8 @@ function App() {
             path="/forum"
             element={
               user ? <Forum /> : <Navigate to="/login?redirect=/forum" />
-            }></Route>
+            }
+          ></Route>
           <Route path="/appList" element={<AppList />}></Route>
           <Route path="/news" element={<NewsPage />}></Route>
           <Route
@@ -44,17 +45,19 @@ function App() {
             path="/profile"
             element={
               user ? <Profile /> : <Navigate to="/login?redirect=/profile" />
-            }></Route>
-          {/* <Route path="/signup" element = { !user ? <Signup /> :  <RedirectBack/>}>
-            </Route> */}
+            }
+          ></Route>
+
           <Route
             path="/login"
-            element={!user ? <AuthLayout /> : <RedirectBack />}></Route>
+            element={!user ? <AuthLayout /> : <RedirectBack />}
+          ></Route>
           <Route
             path="/watchlist"
             element={
               user ? <FavPage /> : <Navigate to="/login?redirect=/watchlist" />
-            }></Route>
+            }
+          ></Route>
           <Route
             exact
             path="/profile/userPosts"
@@ -64,7 +67,8 @@ function App() {
               ) : (
                 <Navigate to="/login?redirect=/profile/userPosts" />
               )
-            }></Route>
+            }
+          ></Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

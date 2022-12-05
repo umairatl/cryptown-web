@@ -30,7 +30,8 @@ const Counter = ({ className, ...rest }) => {
                 <CountUp
                   {...rest}
                   start={viewPortEntered ? null : 0}
-                  end={userCount.userCount}>
+                  end={userCount.userCount}
+                >
                   {({ countUpRef }) => {
                     return (
                       <VisibilitySensor
@@ -40,7 +41,8 @@ const Counter = ({ className, ...rest }) => {
                             setViewPortEntered(true);
                           }
                         }}
-                        delayedCall>
+                        delayedCall
+                      >
                         <span className="number" ref={countUpRef} />
                       </VisibilitySensor>
                     );
@@ -49,8 +51,7 @@ const Counter = ({ className, ...rest }) => {
               )}
             </strong>
             <span>
-              {" "}
-              Registered <br /> Users{" "}
+              Registered <br /> Users
             </span>
           </div>
 
@@ -60,7 +61,8 @@ const Counter = ({ className, ...rest }) => {
                 <CountUp
                   {...rest}
                   start={viewPortEntered ? null : 0}
-                  end={userCount.activeUserCount}>
+                  end={userCount.activeUserCount}
+                >
                   {({ countUpRef }) => {
                     return (
                       <VisibilitySensor
@@ -70,7 +72,8 @@ const Counter = ({ className, ...rest }) => {
                             setViewPortEntered(true);
                           }
                         }}
-                        delayedCall>
+                        delayedCall
+                      >
                         <span className="number" ref={countUpRef} />
                       </VisibilitySensor>
                     );
@@ -79,8 +82,7 @@ const Counter = ({ className, ...rest }) => {
               )}
             </strong>
             <span>
-              {" "}
-              Active <br /> Users{" "}
+              Active <br /> Users
             </span>
           </div>
 
@@ -90,7 +92,8 @@ const Counter = ({ className, ...rest }) => {
                 <CountUp
                   {...rest}
                   start={viewPortEntered ? null : 0}
-                  end={userCount.postsCount}>
+                  end={userCount.postsCount}
+                >
                   {({ countUpRef }) => {
                     return (
                       <VisibilitySensor
@@ -100,7 +103,8 @@ const Counter = ({ className, ...rest }) => {
                             setViewPortEntered(true);
                           }
                         }}
-                        delayedCall>
+                        delayedCall
+                      >
                         <span className="number" ref={countUpRef} />
                       </VisibilitySensor>
                     );

@@ -161,7 +161,6 @@ button:hover {
   .about .column .contentabout h3 {
     font-size: 2rem;
     text-align: center;
-    /* color: #666; */
     color: #000;
   }
 }
@@ -252,7 +251,7 @@ button:hover {
   }
 }
 
-@media (min-width: 27rem) and (max-width:48rem) {
+@media (min-width: 27rem) and (max-width:115rem) {
   button#lpheaderbutton {
     position: inherit;
     height: 4rem;
