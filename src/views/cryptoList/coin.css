@@ -29,8 +29,8 @@
   font-size: 1.2rem !important;
 }
 
-.tbl-h{
-overflow: hidden !important;
+.tbl-h {
+  overflow: hidden !important;
 }
 
 .name-col span {
@@ -73,7 +73,7 @@ overflow: hidden !important;
   color: #1f51ff;
 }
 
-.coin-text > :nth-child(1) {
+.coin-text> :nth-child(1) {
   font-weight: 200;
   font-size: 2rem;
   color: var(--black);
@@ -232,29 +232,34 @@ span#colortext6 {
   gap: 2rem;
   margin-right: -50px;
 }
+
 .t-name {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
-.t-name > :nth-child(1) {
+
+.t-name> :nth-child(1) {
   color: white;
   font-weight: bold;
   font-size: 2.4rem;
 }
-.t-name > :nth-child(2) {
+
+.t-name> :nth-child(2) {
   background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2rem;
   font-weight: 950;
 }
-.t-name > :nth-child(3) {
+
+.t-name> :nth-child(3) {
   font-weight: 200;
   font-size: 1rem;
   color: white;
   margin-top: 10px;
 }
+
 .t-button {
   width: 21rem;
   height: 4rem;
@@ -264,22 +269,24 @@ span#colortext6 {
   flex: 1;
   /* position: relative; */
 }
-.t-right > * {
+
+.t-right>* {
   position: absolute;
   z-index: 1;
 }
-.t-right > :nth-child(1) {
+
+.t-right> :nth-child(1) {
   transform: scale(0.69);
   left: -15%;
   margin-top: -23%;
   margin-left: 156px;
 }
 
-.pagination-cont{
+.pagination-cont {
   padding: 20px;
-    /* width: 97.5% !important; */
-    display: flex;
-    justify-content: center;
-    color: white !important;
-    background: white;
+  /* width: 97.5% !important; */
+  display: flex;
+  justify-content: center;
+  color: white !important;
+  background: white;
 }
