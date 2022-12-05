@@ -35,10 +35,10 @@ const Signup = () => {
     returnScore: true,
     pointsPerUnique: 1,
     pointsPerRepeat: 0.5,
-    pointsForContainingLower: 10,
-    pointsForContainingUpper: 10,
-    pointsForContainingNumber: 10,
-    pointsForContainingSymbol: 10,
+    pointsForContainingLower: 12,
+    pointsForContainingUpper: 12,
+    pointsForContainingNumber: 12,
+    pointsForContainingSymbol: 12,
   };
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const Signup = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    if (passwordStrength < 10) {
+    if (passwordStrength < 50) {
       return (
         //Weak Password
         <span
@@ -115,7 +115,7 @@ const Signup = () => {
           }}
         />
       );
-    } else if (passwordStrength >= 10 && passwordStrength <= 15) {
+    } else if (passwordStrength >= 50 && passwordStrength <= 60) {
       return (
         //Medium Password
         <span
@@ -146,7 +146,19 @@ const Signup = () => {
 
   // validation on email
   const emailOnKey = (e) => {
-    if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
+    if (
+      [
+        "Backspace",
+        "Delete",
+        "Home",
+        "End",
+        "ArrowLeft",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown",
+      ].includes(e.key)
+    ) {
       return false;
     }
     var regex = new RegExp("^[a-zA-Z0-9.@ ]{1,1}$");
@@ -160,7 +172,18 @@ const Signup = () => {
 
   // validation on username
   const usernameOnKey = (e) => {
-    if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
+    if (
+      [
+        "Backspace",
+        "Delete",
+        "Home",
+        "End",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown",
+      ].includes(e.key)
+    ) {
       return false;
     }
     var regex = new RegExp("^[a-zA-Z0-9 ]{1,1}$");
@@ -229,6 +252,7 @@ const Signup = () => {
             visibility
           </span>
         </div>
+        <br></br>
         <button disabled={isLoading}>Sign up</button>
         {signupMssg ? (
           <NormalDialog
