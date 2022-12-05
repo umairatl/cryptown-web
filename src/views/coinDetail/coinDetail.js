@@ -117,7 +117,8 @@ const CoinDetail = () => {
             <div className="table-flex">
               <Link
                 className="icon_back"
-                to={page === "market" ? "/market" : "/watchlist"}>
+                to={page === "market" ? "/market" : "/watchlist"}
+              >
                 <FaArrowLeft /> <span>Back</span>
               </Link>
               <FormControl
@@ -127,12 +128,14 @@ const CoinDetail = () => {
                   color: "white",
                   background: "white",
                 }}
-                size="small">
+                size="small"
+              >
                 <InputLabel></InputLabel>
                 <Select
                   value={currency}
                   label="Currency"
-                  onChange={handleChange}>
+                  onChange={handleChange}
+                >
                   <MenuItem value={10}>USD</MenuItem>
                   <MenuItem value={20}>MYR</MenuItem>
                 </Select>
@@ -148,7 +151,8 @@ const CoinDetail = () => {
               <button
                 className="btn-vm"
                 id="coinheaderbutton"
-                onClick={() => scollToRef.current.scrollIntoView()}>
+                onClick={() => scollToRef.current.scrollIntoView()}
+              >
                 More info
               </button>
             </a>
@@ -166,7 +170,7 @@ const CoinDetail = () => {
                   <span>
                     {formatterMY.format(
                       detail && detail.cryptoDetails.current_price_myr
-                    )}{" "}
+                    )}
                   </span>
                 ) : (
                   <span>
@@ -186,7 +190,8 @@ const CoinDetail = () => {
                           detail.cryptoDetails.image
                         )
                       }
-                      className="btn-coin">
+                      className="btn-coin"
+                    >
                       Add to Watchlist
                     </button>
                   )}
@@ -226,7 +231,6 @@ const CoinDetail = () => {
                             )}
                           </td>
                           <th>Circulating Supply</th>
-                          {/* <td>RM {detail && detail.cryptoDetails.circulating_myr}</td> */}
                         </tr>
                         <tr>
                           <th>Total Supply</th>
@@ -312,12 +316,14 @@ const CoinDetail = () => {
                   <div
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(about),
-                    }}></div>
+                    }}
+                  ></div>
                 ) : (
                   <div
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(aboutMore),
-                    }}></div>
+                    }}
+                  ></div>
                 )}
                 <a className="" onClick={() => setShowMore(!showMore)}>
                   {showMore ? "Show less" : "Show more"}
@@ -330,7 +336,8 @@ const CoinDetail = () => {
         <div
           className="ex-detail"
           data-aos="fade-left"
-          data-aos-duration="3000">
+          data-aos-duration="3000"
+        >
           <h1 className="ex-h1"> EXCHANGE LIST</h1>
           <ExchangeMarket exchange={detail && detail.cryptoDetails.exchange} />
         </div>

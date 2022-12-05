@@ -12,7 +12,8 @@ const CoinListTable = ({ crypto, handleWatchLists, formatter, user }) => {
       style={{ cursor: "pointer" }}
       onClick={() => {
         navigation(`/coinDetail/${crypto.cryptoId}/market`);
-      }}>
+      }}
+    >
       <TableCell sx={{ width: "100px", textAlign: "center" }}>
         {crypto.market_cap_rank}
       </TableCell>
@@ -29,7 +30,7 @@ const CoinListTable = ({ crypto, handleWatchLists, formatter, user }) => {
         {formatter.format(crypto.total_volume)}
       </TableCell>
       <TableCell className="row-tbl-coin">
-        {formatter.format(crypto.market_cap)}{" "}
+        {formatter.format(crypto.market_cap)}
       </TableCell>
       {user && (
         <TableCell align="center">
@@ -42,7 +43,8 @@ const CoinListTable = ({ crypto, handleWatchLists, formatter, user }) => {
                 crypto.name,
                 crypto.image
               );
-            }}>
+            }}
+          >
             add
           </button>
         </TableCell>

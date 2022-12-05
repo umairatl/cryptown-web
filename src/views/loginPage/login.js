@@ -54,9 +54,9 @@ const Login = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass(!showPass)}>
-            {" "}
-            visibility{" "}
+            onClick={(e) => setShowPass(!showPass)}
+          >
+            visibility
           </span>
         </div>
 

@@ -78,12 +78,6 @@
   text-align: justify;
 }
 
-/* @media screen and (max-width: 800px) {
-  .contentofcard {
-    width: 50vw;
-  }
-} */
-
 .contentofcard h2#cardheader {
   font-size: 1.75em;
   color: #fff;
@@ -108,11 +102,6 @@ h3.headersize {
 span#colortext2 {
   color: #0000ff;
 }
-
-/* img#I1{
-    opacity: 0.3;
-    background-position: right;
-} */
 
 @media (min-width: 26.67) and (max-width: 48rem) {
   h3.headersize {
@@ -200,83 +189,4 @@ span#colortext2 {
   span#colortext2 {
     color: #0000ff;
   }
-
-  /* img#I1{
-    opacity: 0.3;
-    background-position: right;
-} */
-
-  /* 
-@media (min-width: 480px) and (max-width:801px) {
-
-        h3.headersize{
-            font-size: 2.9rem;
-        }
-
-        .section1who{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container1{
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 65px;
-
-        }
-
-        .card{
-            position:relative;
-            width: 320px;
-            height: 450px;
-            background: #287bff;
-            border-radius: 20px;
-            border-bottom-left-radius: 160px;
-            border-bottom-right-radius: 160px;
-            box-shadow: 0 15px 0 #fff, inset 0 -15px 0 rgba(255,255,255,0.25),
-            0 45px 0 rgba(0,0,0,0.15);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .card::before{
-            content: '';
-            position: absolute;
-            top: -140px;
-            width: 100%;
-            height: 120%;
-            background: linear-gradient(90deg,transparent,rgba(255,255,255,0.2));
-            transform: rotate(35deg);
-            pointer-events: none;
-            filter: blur(5px);
-            }
-
-        .content{
-            position:absolute;
-            width: 100%;
-            padding: 10px;
-            padding-top: 140px;
-            text-align: justify;
-            }
-
-        .contentofcard p#pheader{
-            color: #fff;
-            line-height: 1.1em;
-            text-align: justify;
-
-        }
-        .contentofcard{
-            position:absolute;
-            padding: 10px;
-            padding-top: 140px;
-            text-align: justify;
-        }
-
-} */
 }

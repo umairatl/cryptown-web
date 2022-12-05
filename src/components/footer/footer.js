@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="section1">
       <footer className="footer">
         <div className="container">
-          <div className="" style={{ display: "flex" }}>
+          <div className="futmob" style={{ display: "flex" }}>
             <div className="footer-col">
               <img id="FOne" src={footerimg} alt="footerimg1" />
             </div>

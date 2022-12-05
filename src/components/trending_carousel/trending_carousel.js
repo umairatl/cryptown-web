@@ -27,7 +27,7 @@ const TrendingTable = ({ popular }) => {
                     }}
                     image={row.image}
                     alt="Live from space album cover"
-                  />{" "}
+                  />
                   <br></br>
                   <p className="coin-name">{row.name}</p>
                   <p className="coin-name"></p>

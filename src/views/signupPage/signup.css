@@ -182,12 +182,10 @@ label input[type="checkbox"] {
 }
 
 .box-form .right button {
-  /* float: center; */
   color: #fff;
   margin-top: 0;
   margin-left: 0;
   font-size: 16px;
-  /* padding: 12px 35px; */
   border-radius: 50px;
   display: inline-block;
   border: 0;
