@@ -19,7 +19,7 @@ const WatchlistHeaderSection = () => {
             <p>
               Watchlist is a page where you could view all the desired crypto
               coins that you have saved. You can always views your added crypto
-              at here .
+              at here.
             </p>
           </div>
         </div>
