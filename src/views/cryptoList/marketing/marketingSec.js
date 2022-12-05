@@ -7,7 +7,11 @@ import webdesignimg from "../../../asset/webdesign.png";
 
 const MarketingSection = () => {
   return (
-    <section className="marketingservices">
+    <section
+      className="marketingservices"
+      data-aos="fade-right"
+      data-aos-duration="3000"
+    >
       <div className="marketingcontainer">
         <div className="grid-wrapper">
           <div className="grid-box mobileapp">
