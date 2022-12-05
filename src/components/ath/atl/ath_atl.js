@@ -23,18 +23,20 @@ const ATH_ATL = (detail) => {
                   <Typography
                     sx={{ fontSize: 14 }}
                     color="text.secondary"
-                    gutterBottom>
+                    gutterBottom
+                  >
                     All Time High (ATH)
                   </Typography>
 
                   <Typography
                     className="ath_price"
                     variant="h3"
-                    component="div">
-                    {data.ath.myr}{" "}
+                    component="div"
+                  >
+                    {data.ath.myr}
                   </Typography>
                   <Typography className="ath_percentage_col" variant="body1">
-                    MYR Change Percentage : <br></br>{" "}
+                    MYR Change Percentage : <br></br>
                     {data.ath.change_percentage_myr}
                   </Typography>
                 </CardContent>
@@ -45,18 +47,20 @@ const ATH_ATL = (detail) => {
                   <Typography
                     sx={{ fontSize: 14 }}
                     color="text.secondary"
-                    gutterBottom>
+                    gutterBottom
+                  >
                     All Time Low (ATL)
                   </Typography>
 
                   <Typography
                     className="ath_price"
                     variant="h3"
-                    component="div">
-                    {data.atl.myr}{" "}
+                    component="div"
+                  >
+                    {data.atl.myr}
                   </Typography>
                   <Typography className="ath_percentage_col" variant="body1">
-                    MYR Change Percentage : <br></br>{" "}
+                    MYR Change Percentage : <br></br>
                     {data.atl.change_percentage_myr}
                   </Typography>
                 </CardContent>
@@ -69,18 +73,20 @@ const ATH_ATL = (detail) => {
                   <Typography
                     sx={{ fontSize: 14 }}
                     color="text.secondary"
-                    gutterBottom>
+                    gutterBottom
+                  >
                     All Time High (ATH)
                   </Typography>
 
                   <Typography
                     className="ath_price"
                     variant="h3"
-                    component="div">
-                    {data.ath.usd}{" "}
+                    component="div"
+                  >
+                    {data.ath.usd}
                   </Typography>
                   <Typography className="ath_percentage_col" variant="body1">
-                    USD Change Percentage : <br></br>{" "}
+                    USD Change Percentage : <br></br>
                     {data.ath.change_percentage_usd}
                   </Typography>
                 </CardContent>
@@ -91,18 +97,20 @@ const ATH_ATL = (detail) => {
                   <Typography
                     sx={{ fontSize: 14 }}
                     color="text.secondary"
-                    gutterBottom>
+                    gutterBottom
+                  >
                     All Time Low (ATL)
                   </Typography>
 
                   <Typography
                     className="ath_price"
                     variant="h3"
-                    component="div">
-                    {data.atl.usd}{" "}
+                    component="div"
+                  >
+                    {data.atl.usd}
                   </Typography>
                   <Typography className="ath_percentage_col" variant="body1">
-                    USD Change Percentage : <br></br>{" "}
+                    USD Change Percentage : <br></br>
                     {data.atl.change_percentage_usd}
                   </Typography>
                 </CardContent>

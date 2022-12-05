@@ -72,14 +72,14 @@ const AuthLayout = () => {
         <div className="left">
           <div className="overlay">
             <h1>
-              Hey{" "}
+              Hey
               <span className="txt-rotate" dataperiod="1000" ss>
                 <span className="wrap">{text}</span>
               </span>
             </h1>
             <p>
               Welcome to Cryptown, <br></br> a place to explore and learn
-              everything related to cryptocurrency{" "}
+              everything related to cryptocurrency
             </p>
             <div className="home-btn">
               <Link to="/">

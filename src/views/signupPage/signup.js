@@ -228,9 +228,9 @@ const Signup = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass(!showPass)}>
-            {" "}
-            visibility{" "}
+            onClick={(e) => setShowPass(!showPass)}
+          >
+            visibility
           </span>
         </div>
 
@@ -247,9 +247,9 @@ const Signup = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass2(!showPass2)}>
-            {" "}
-            visibility{" "}
+            onClick={(e) => setShowPass2(!showPass2)}
+          >
+            visibility
           </span>
         </div>
         <br></br>
