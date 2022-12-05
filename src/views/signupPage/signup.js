@@ -145,6 +145,20 @@ const Signup = () => {
     }
   };
 
+  // validation on email
+  const emailOnKey = (e) => {
+    if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
+      return false;
+    }
+    var regex = new RegExp("^[a-zA-Z0-9.@ ]{1,1}$");
+    if (regex.test(e.key)) {
+      return true;
+    } else {
+      e.preventDefault();
+      return false;
+    }
+  };
+
   // validation on username
   const signupOnKey = (e) => {
     if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {

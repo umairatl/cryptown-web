@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useDialogContext } from "../../hooks/useDialogContext";
 import NormalDialog from "../Dialog/normalDialog";
-import { useForumContext } from "../../hooks/useForumContext";
 
 const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
   const [replyPost, setReplyPost] = useState("");
