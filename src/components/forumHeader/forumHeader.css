@@ -1,51 +1,73 @@
 .forumh {
-    background-color: red;
-    max-height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 200px;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: overlay;
-    color: #fff;
+  background-color: red;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 200px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  color: #fff;
 }
 
 .videoforum {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-height: 100%;
 }
 
 #videoforumid {
-    width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    height: 70vh;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  height: 78vh;
 }
 
 .allheaderforum {
-    height: 70vh;
+  height: 70vh;
 }
 
-@media (min-width:16rem) and (max-width:26.66rem) {
-    #videoforumid {
-        width: -webkit-fill-available;
-        max-height: fit-content;
-        object-fit: cover;
-        height: auto;
-    }
+@media (min-width: 16rem) and (max-width: 26.66rem) {
+  #videoforumid {
+    width: -webkit-fill-available;
+    max-height: fit-content;
+    object-fit: cover;
+    height: auto;
+  }
 }
-
+/* 
+@media (min-width: 16rem) and (max-width: 26.66rem) {
+  html:not(.no-js) [data-aos^="fade"][data-aos^="fade"].aos-animate {
+    transform: none;
+    height: auto;
+    font-size: 1rem;
+  }
 @media (min-width:16rem) and (max-width:26.66rem) {
 
     html:not(.no-js) [data-aos^=fade][data-aos^=fade].aos-animate {
 
         transform: none;
         height: auto;
+        margin-top: 1rem;
+        font-size: 1rem;
     }
+} */
+/*tab*/
+
+@media (min-width: 26.67rem) and (max-width: 48rem) {
+  #videoforumid {
+    width: -webkit-fill-available;
+    max-height: fit-content;
+    object-fit: cover;
+    height: auto;
+  }
+
+  .allheaderforum {
+    height: auto;
+  }
 }

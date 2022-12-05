@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import img from "../../asset/signup.png";
-import logo from "../../asset/Assetlogo.png";
+import logo from "../../asset/loginlog.png";
 import "../authLayout/authLayout.css";
 import Login from "../../views/loginPage/login";
 import Signup from "../../views/signupPage/signup";
@@ -96,11 +96,13 @@ const AuthLayout = () => {
             <div>
               <Login />
               <p>
-                Don't have an account?
+                Don't have an account?{"\n"}
                 <a onClick={(event) => handleClick(event, "signup")}>
-                  Create Your Account
+                  Create Your Account 
                 </a>
-                it takes less than a minute
+                {"\n"}
+                 It takes less than a minute
+                 
               </p>
             </div>
           ) : (
