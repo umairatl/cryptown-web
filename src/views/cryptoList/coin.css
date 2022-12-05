@@ -139,7 +139,7 @@ span#colortext6 {
 }
 
 .btn-coin {
-  padding: 7px 0px;
+  padding: 7px 20px;
   color: white;
   background: #14578e;
   font-size: 16px;
@@ -150,7 +150,7 @@ span#colortext6 {
   letter-spacing: 4px;
   margin-right: 57pt;
   border-radius: 5px;
-  width: 27%;
+  /* width: 27%; */
 }
 
 .btn-coin:hover {
@@ -206,16 +206,19 @@ span#colortext6 {
   gap: 2rem;
   margin-right: -50px;
 }
+
 .t-name {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
+
 .t-name > :nth-child(1) {
   color: white;
   font-weight: bold;
   font-size: 2.4rem;
 }
+
 .t-name > :nth-child(2) {
   background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
   -webkit-background-clip: text;
@@ -223,12 +226,14 @@ span#colortext6 {
   font-size: 2rem;
   font-weight: 950;
 }
+
 .t-name > :nth-child(3) {
   font-weight: 200;
   font-size: 1rem;
   color: white;
   margin-top: 10px;
 }
+
 .t-button {
   width: 21rem;
   height: 4rem;
@@ -237,10 +242,12 @@ span#colortext6 {
 .t-right {
   flex: 1;
 }
+
 .t-right > * {
   position: absolute;
   z-index: 1;
 }
+
 .t-right > :nth-child(1) {
   transform: scale(0.69);
   left: -15%;
@@ -250,8 +257,19 @@ span#colortext6 {
 
 .pagination-cont {
   padding: 20px;
+  /* width: 97.5% !important; */
   display: flex;
   justify-content: center;
   color: white !important;
   background: white;
+}
+
+@media (max-width: 1086px) {
+  .btn-coin {
+    width: 88%;
+  }
+
+  .coin-name-col {
+    line-height: 1.2rem;
+  }
 }

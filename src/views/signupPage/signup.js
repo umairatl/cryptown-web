@@ -102,8 +102,7 @@ const Signup = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    console.log(passwordStrength);
-    if (passwordStrength < 50) {
+    if (passwordStrength < 10) {
       return (
         //Weak Password
         <span
@@ -116,7 +115,7 @@ const Signup = () => {
           }}
         />
       );
-    } else if (passwordStrength >= 50 && passwordStrength <= 60) {
+    } else if (passwordStrength >= 10 && passwordStrength <= 15) {
       return (
         //Medium Password
         <span
@@ -160,7 +159,7 @@ const Signup = () => {
   };
 
   // validation on username
-  const signupOnKey = (e) => {
+  const usernameOnKey = (e) => {
     if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
       return false;
     }
@@ -179,6 +178,7 @@ const Signup = () => {
       <form className="signup" onSubmit={handleSubmit}>
         <input
           type="email"
+          onKeyDown={(e) => emailOnKey(e)}
           placeholder="Enter your Email"
           onChange={(e) => {
             setEmail(e.target.value);
@@ -188,7 +188,7 @@ const Signup = () => {
         <input
           minLength="1"
           maxLength="50"
-          onKeyDown={(e) => signupOnKey(e)}
+          onKeyDown={(e) => usernameOnKey(e)}
           type="username"
           placeholder="Create Username"
           onChange={(e) => setUsername(e.target.value)}
@@ -205,8 +205,7 @@ const Signup = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass(!showPass)}
-          >
+            onClick={(e) => setShowPass(!showPass)}>
             {" "}
             visibility{" "}
           </span>
@@ -225,8 +224,7 @@ const Signup = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass2(!showPass2)}
-          >
+            onClick={(e) => setShowPass2(!showPass2)}>
             {" "}
             visibility{" "}
           </span>

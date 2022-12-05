@@ -340,9 +340,9 @@ margin-bottom: 1rem;
   margin-left: 0rem;
   }
 
-  .btn-coin {
+  /* .btn-coin {
   width: 8rem;
-  }
+  } */
 
   .d-name> :nth-child(2) {
   font-size: 2rem;
@@ -436,9 +436,9 @@ margin-bottom: 1rem;
   margin-left: 0rem;
   }
 
-  .btn-coin {
+  /* .btn-coin {
   width: 30rem;
-  }
+  } */
 
   .d-name> :nth-child(2) {
   font-size: 6rem;

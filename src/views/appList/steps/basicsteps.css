@@ -76,9 +76,30 @@
   box-shadow: 0 0 0 400px #990099;
 }
 
-.containerexlist .boxexchangelist:nth-child(3) .iconexchangelist {
-  box-shadow: 0 0 0 0 #2196f3;
-  background: #2196f3;
+
+@media (min-width:26.67rem) and (max-width:48rem){
+    .containerexlist .boxexchangelist {
+ 
+    margin: auto auto 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+}
+
+
+
+
+
+
+
+
+
+
+.containerexlist .boxexchangelist:nth-child(3) .iconexchangelist{
+
+    box-shadow: 0 0 0 0 #2196f3;
+    background: #2196f3;
 }
 
 .containerexlist .boxexchangelist:nth-child(3):hover .iconexchangelist {

@@ -41,8 +41,9 @@ textarea {
   background: #fff;
   margin: 0 auto;
   padding: 12px;
-  border-bottom: 1px solid #e6ecf0;
-  border-top: 1px solid #e6ecf0;
+  /* border-bottom: 1px solid #e6ecf0; */
+  /* border-top: 1px solid #e6ecf0; */
+  /* padding: 1rem; */
 }
 
 .tweet-header-info {
@@ -88,7 +89,7 @@ textarea#contentforum {
   background: #00094b;
   color: white;
   font-size: 1.5rem;
-  width: 70vh;
+  width: auto;
   min-height: 10vh;
   padding: 20px;
 }
@@ -97,11 +98,11 @@ textarea#contentforum {
   margin: 5rem auto;
 }
 
-forum.login {
+/* forum.login {
   left: 50%;
   width: 1000px;
   margin-left: 550px;
-}
+} */
 
 .bn632-hover {
   width: 160px;
@@ -363,4 +364,39 @@ img#imground {
 .datetimes {
   position: relative;
   left: 1.1%;
+}
+
+/*phone*/
+
+@media (min-width: 16rem) and (max-width: 26.66rem) {
+  .cont-wrap-forum {
+    margin: 4rem auto;
+    width: auto;
+  }
+
+  .forum-post {
+    background-size: 500px;
+  }
+
+  h3.textfrmheader {
+    margin-top: 3rem;
+    margin-bottom: -3rem;
+  }
+
+  .pagination-cont {
+    padding: 0px !important;
+    width: 90%;
+  }
+
+  .forum p {
+    font-size: 0.9rem;
+  }
+
+  .tweet-header-info span {
+    font-size: 0.9rem;
+  }
+
+  .forum h2 {
+    font-size: 14pt;
+  }
 }

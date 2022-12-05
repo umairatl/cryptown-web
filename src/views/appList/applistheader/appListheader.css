@@ -113,3 +113,21 @@
     width: 100%;
   }
 }
+
+
+
+/*tab*/
+
+@media (min-width: 26.67rem) and (max-width: 48rem){
+.homeexlist .contentexlist h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.homeexlist .contentexlist {
+    max-width: 40rem;
+}
+}
+
