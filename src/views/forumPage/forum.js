@@ -105,8 +105,7 @@ const ForumPage = () => {
             <h3
               className="textfrmheader"
               data-aos="fade-down"
-              data-aos-duration="3000"
-            >
+              data-aos-duration="3000">
               Join our communities and
               <span id="colortext17"> share your thoughts</span>
             </h3>
@@ -114,8 +113,7 @@ const ForumPage = () => {
               className="forum-post"
               onSubmit={handleSubmit}
               data-aos="fade-up"
-              data-aos-duration="3000"
-            >
+              data-aos-duration="3000">
               <div className="containerforforum">
                 <textarea
                   id="contentforum"
@@ -123,6 +121,7 @@ const ForumPage = () => {
                   value={newPost}
                   onChange={(e) => setNewPost(e.target.value)}
                 />
+                <p>* Note: The post box are stretchable *</p>
                 <br></br>
                 <button className="bn632-hover bn20" disabled={!newPost}>
                   Post
@@ -144,8 +143,7 @@ const ForumPage = () => {
             <h3
               className="exlistsecheader"
               data-aos="fade-down"
-              data-aos-duration="3000"
-            >
+              data-aos-duration="3000">
               Cryptown <span id="colortextnine">Forum Feed</span>
             </h3>
 
@@ -204,8 +202,7 @@ const ForumPage = () => {
                           marginRight: "2rem",
                           textAlign: "left",
                           fontFamily: "Roleway",
-                        }}
-                      >
+                        }}>
                         {entities.decodeHTML(row.post)}
                       </h2>
                     </div>
@@ -213,15 +210,13 @@ const ForumPage = () => {
                     {row.replies.length !== 0 ? (
                       <div className="replies-section">
                         <Accordion
-                          sx={{ background: "#0D1550", color: "white" }}
-                        >
+                          sx={{ background: "#0D1550", color: "white" }}>
                           <AccordionSummary
                             expandIcon={
                               <ExpandMoreIcon sx={{ color: "white" }} />
                             }
                             aria-controls="panel1a-content"
-                            id="panel1a-header"
-                          >
+                            id="panel1a-header">
                             <Typography>
                               <FaArrowRight className="arrow-reply" />
                               View Replies
