@@ -150,7 +150,6 @@ span#colortext6 {
   letter-spacing: 4px;
   margin-right: 57pt;
   border-radius: 5px;
-  /* width: 27%; */
 }
 
 .btn-coin:hover {
@@ -257,7 +256,6 @@ span#colortext6 {
 
 .pagination-cont {
   padding: 20px;
-  /* width: 97.5% !important; */
   display: flex;
   justify-content: center;
   color: white !important;

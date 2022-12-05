@@ -300,8 +300,7 @@ const Profile = () => {
                                 className="material-symbols-outlined"
                                 onClick={(e) => setShowPass(!showPass)}
                               >
-                                {" "}
-                                visibility{" "}
+                                visibility
                               </span>
                             </div>
                             <div style={{ textAlign: "left" }}>
@@ -321,8 +320,7 @@ const Profile = () => {
                                 className="material-symbols-outlined"
                                 onClick={(e) => setShowPass2(!showPass2)}
                               >
-                                {" "}
-                                visibility{" "}
+                                visibility
                               </span>
                             </div>
 
