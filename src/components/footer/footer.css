@@ -4,6 +4,12 @@
   box-sizing: border-box;
   
 }
+
+.futmob{
+  display: flex;
+}
+  
+
 .container {
   margin: auto;
 }
@@ -110,11 +116,13 @@ ul#footer-ul {
   align-content: center;
 }
 
-@media (min-width:19rem) and (max-width:26.66rem){
+@media (min-width:19rem) and (max-width:48rem){
 .futmob{
   display: table;
   width: 400%;
 }
+
+
 
 .footer-col h4::before {
     width: 74px;
