@@ -20,7 +20,18 @@ const Login = () => {
 
   // validation on email
   const emailOnKey = (e) => {
-    if (["Backspace", "Delete", "Home", "End"].includes(e.key)) {
+    if (
+      [
+        "Backspace",
+        "Delete",
+        "Home",
+        "End",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown",
+      ].includes(e.key)
+    ) {
       return false;
     }
     var regex = new RegExp("^[a-zA-Z0-9.@ ]{1,1}$");
@@ -54,9 +65,9 @@ const Login = () => {
           />
           <span
             className="material-symbols-outlined"
-            onClick={(e) => setShowPass(!showPass)}>
-            {" "}
-            visibility{" "}
+            onClick={(e) => setShowPass(!showPass)}
+          >
+            visibility
           </span>
         </div>
 

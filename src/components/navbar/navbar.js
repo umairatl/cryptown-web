@@ -27,7 +27,7 @@ const Navbar = () => {
     }
   }, [])
 
-      //logout user
+  //logout user
   const handleClick = async () => {
     await logout();
   };
@@ -46,6 +46,7 @@ const Navbar = () => {
     setState({ ...state, [anchor]: open });
   };
 
+  // SIDE NAVBAR
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -62,6 +63,16 @@ const Navbar = () => {
       </List>
       <Divider />
       <List>
+         <Link to ='/'>
+          <ListItem className="nav-side-item" disablePadding>
+            <ListItemButton>
+              <ListItemText >
+              About Us
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+            </Link>
+
       <Link to ='/market'>
           <ListItem className="nav-side-item" disablePadding>
             <ListItemButton>
@@ -125,7 +136,7 @@ const Navbar = () => {
           </Link>
 )}
 
-{ user && (
+        { user && (
           <Link onClick={handleClick}>
           <ListItem className="nav-side-item" disablePadding>
             <ListItemButton>
@@ -135,9 +146,9 @@ const Navbar = () => {
             </ListItemButton>
           </ListItem>
           </Link>
-)}
+        )}
 
-{ !user && (
+        { !user && (
           <Link to = '/login'>
           <ListItem className="nav-side-item" disablePadding>
             <ListItemButton>
@@ -147,11 +158,7 @@ const Navbar = () => {
             </ListItemButton>
           </ListItem>
           </Link>
-)}
-
-
-
-
+      )}
       </List>
     </Box>
   );
@@ -159,6 +166,7 @@ const Navbar = () => {
     return (
       <div className='first-col'>
         <div className='web-navbar'>
+          {/* navbar if user logged in */}
         { user && (
           <nav className="nav-up">
           <ul>
@@ -167,6 +175,7 @@ const Navbar = () => {
           </Link>
          </ul>
         <ul className="nav-right">
+            <Link to ='/' className="nav-text">  About Us </Link>
             <Link to ='/market' className="nav-text">  Market </Link>
             <Link to = '/watchlist' className="nav-text"> Watchlist </Link>
             <Link to ='/forum' className="nav-text">  Forum </Link>
@@ -180,15 +189,16 @@ const Navbar = () => {
         <Link onClick={handleClick} className="nav-text"> Logout </Link>
         </ul>
         </nav>
-        )}
+    )}
 
+          {/* navbar if user doesn't logged in */}
         { !user && (
         <nav className="nav-up">
         <Link to ='/market' className="nav-text"> 
          <img src = { logo } alt='CRYPTOWN'  width='60%'/>
         </Link>
-
         <ul className="nav-right">
+            <Link to ='/' className="nav-text">  About Us </Link>
             <Link to ='/market' className="nav-text">  Market </Link>
             <Link to ='/forum' className="nav-text">  Forum </Link>
             <Link to = '/news' className="nav-text">  News </Link>
@@ -199,31 +209,28 @@ const Navbar = () => {
         )}
 </div>
 
-<div className="nav-mobile">
-      <div>
-      {['left'].map((anchor) => (
-        <React.Fragment key={anchor}>
-          <div className='flex-d-row jc-space-between'>
-
-<div className='left-nav-mobile'>
+  <div className="nav-mobile">
+        <div>
+        {['left'].map((anchor) => (
+          <React.Fragment key={anchor}>
+            <div className='flex-d-row jc-space-between'>
+      <div className='left-nav-mobile'>
          <span onClick={toggleDrawer(anchor, true)} className='btn-sidenav'> ≡ </span>
-
           <Drawer
             anchor={anchor}
             open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
+            onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
           </Drawer>
           </div>
-<div><img src = { logo } alt='CRYPTOWN' width='50%'/>
-</div>
-</div>
+          <div><img src = { logo } alt='CRYPTOWN' width='50%'/>
+        </div>
+      </div>
         </React.Fragment>
       ))}
-</div>
+      </div>
     </div>
-    </div>
+  </div>
     )
   }
 

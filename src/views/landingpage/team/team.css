@@ -147,3 +147,10 @@ section#lp {
     font-family: Arial, Helvetica, sans-serif;
   }
 }
+
+@media (min-width: 375px) {
+  h3.headerteamm {
+    width: 64%;
+    margin: auto;
+}
+}

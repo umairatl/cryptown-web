@@ -84,8 +84,8 @@ const Post = ({ onCustomClick, post }) => {
             handlePostClick(post.postid);
           }}
           className="post-box__user">
-          <p>
-            <FaUserCircle /> {name}
+          <p style={{ color: "white" }}>
+            <FaUserCircle /> {post.email}
           </p>
           <ConditionalDialog
             handleSubmit={() => handleDeletePost(post.postid)}

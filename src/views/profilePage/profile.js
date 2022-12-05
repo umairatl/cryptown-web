@@ -28,8 +28,7 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`verticalz-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
+      {...other}>
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -82,10 +81,10 @@ const Profile = () => {
     returnScore: true,
     pointsPerUnique: 1,
     pointsPerRepeat: 0.5,
-    pointsForContainingLower: 10,
-    pointsForContainingUpper: 10,
-    pointsForContainingNumber: 10,
-    pointsForContainingSymbol: 10,
+    pointsForContainingLower: 12,
+    pointsForContainingUpper: 12,
+    pointsForContainingNumber: 12,
+    pointsForContainingSymbol: 12,
   };
 
   useEffect(() => {
@@ -298,10 +297,8 @@ const Profile = () => {
                               />
                               <span
                                 className="material-symbols-outlined"
-                                onClick={(e) => setShowPass(!showPass)}
-                              >
-                                {" "}
-                                visibility{" "}
+                                onClick={(e) => setShowPass(!showPass)}>
+                                visibility
                               </span>
                             </div>
                             <div style={{ textAlign: "left" }}>
@@ -319,10 +316,8 @@ const Profile = () => {
                               />
                               <span
                                 className="material-symbols-outlined"
-                                onClick={(e) => setShowPass2(!showPass2)}
-                              >
-                                {" "}
-                                visibility{" "}
+                                onClick={(e) => setShowPass2(!showPass2)}>
+                                visibility
                               </span>
                             </div>
 

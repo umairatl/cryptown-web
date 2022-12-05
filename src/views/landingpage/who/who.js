@@ -21,7 +21,7 @@ export default function Who() {
                 <p id="pheader">
                   Teamwork and mutual trust are the foundations of connection in
                   workplace, finding common ground of others’ ideas, ambitions,
-                  histories, and beliefs.{" "}
+                  histories, and beliefs.
                 </p>
               </div>
             </div>
@@ -47,7 +47,7 @@ export default function Who() {
                 <h2 id="cardheader">Service</h2>
                 <p id="pheader">
                   Being service-minded or customer-oriented means that you care
-                  about providing a quality experience to the clients you serve.{" "}
+                  about providing a quality experience to the clients you serve.
                 </p>
               </div>
             </div>

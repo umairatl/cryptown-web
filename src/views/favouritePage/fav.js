@@ -55,7 +55,8 @@ const FavPage = () => {
         <h3
           className="exlistsecheader"
           data-aos="fade-down"
-          data-aos-duration="3000">
+          data-aos-duration="3000"
+        >
           List of <span id="colortextnine"> Your Favourite Coin</span>
         </h3>
 
@@ -63,13 +64,15 @@ const FavPage = () => {
           component={Paper}
           sx={{ overflow: "auto" }}
           data-aos="fade-up"
-          data-aos-duration="3000">
+          data-aos-duration="3000"
+        >
           <Table aria-label="simple table" stickyHeader>
             <TableHead>
               <TableRow>
                 <TableCell
                   sx={{ width: "100px", textAlign: "center" }}
-                  className="table_h">
+                  className="table_h"
+                >
                   <p>No</p>
                 </TableCell>
                 <TableCell className="table_h">
@@ -95,22 +98,6 @@ const FavPage = () => {
       </div>
 
       <div className="test">
-        {/* <h3 className="textwlheader">Your <span id="colortextsix"> Favourites</span></h3>
-            <TableContainer component={Paper} className="shadoweffect">
-                <Table aria-label="simple table" stickyHeader>
-                    <TableHead>
-                        <TableRow>
-                        <TableCell>Image</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell>ID</TableCell>
-                        <TableCell>Remove from Watchlist</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        { watchLists && watchLists.map(watchList => <WatchList key={watchList["favid"]} watchlists={watchList}/>)}
-                    </TableBody>
-                </Table>    
-            </TableContainer> */}
         {watchLists && watchLists.length === 0 && (
           <h1>{username} has no watchlists</h1>
         )}

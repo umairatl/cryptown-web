@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="section1">
       <footer className="footer">
         <div className="container">
-          <div className="" style={{ display: "flex" }}>
+          <div className="futmob" >
             <div className="footer-col">
               <img id="FOne" src={footerimg} alt="footerimg1" />
             </div>
@@ -41,16 +41,16 @@ const Footer = () => {
             <div className="footer-col" style={{ textAlign: "center" }}>
               <h4>follow us</h4>
               <div className="social-links">
-                <a href="https://www.facebook.com/profile.php?id=100088488904187&mibextid=ZbWKwL">
+                <a href="https://www.facebook.com/profile.php?id=100088488904187&mibextid=ZbWKwL" target="_blank">
                   <FaFacebook />
                 </a>
-                <a href="https://www.youtube.com/channel/UC3tyXlq9YgEE7072Xrbmedg">
+                <a href="https://www.youtube.com/channel/UC3tyXlq9YgEE7072Xrbmedg" target="_blank">
                   <FaYoutube />
                 </a>
-                <a href="https://www.instagram.com/cryptownweb/">
+                <a href="https://www.instagram.com/cryptownweb/" target="_blank">
                   <FaInstagram />
                 </a>
-                <a href="https://twitter.com/CryptownWeb">
+                <a href="https://twitter.com/CryptownWeb" target="_blank">
                   <FaTwitter />
                 </a>
                 <br></br>
