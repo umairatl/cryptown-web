@@ -89,11 +89,12 @@ const Coin = ({}) => {
   }, []);
 
   const cryptoFilter = (cryptoList) => {
+    //if condition is true, return the value
     return cryptoList.filter(
       (f) =>
-        f.name.toLowerCase().includes(search) ||
-        f.symbol.toLowerCase().includes(search) ||
-        f.cryptoId.toLowerCase().includes(search)
+        f.name.toLowerCase().includes(search.toLowerCase()) ||
+        f.symbol.toLowerCase().includes(search.toLowerCase()) ||
+        f.cryptoId.toLowerCase().includes(search.toLowerCase())
     );
   };
 
@@ -165,8 +166,7 @@ const Coin = ({}) => {
         key={crypto.cryptoId}
         onClick={() => {
           navigation(`/coinDetail/${crypto.cryptoId}/market`);
-        }}
-      >
+        }}>
         <img className="img" src={crypto.image} width="200px" alt="" />
         <h1
           style={{
@@ -174,8 +174,7 @@ const Coin = ({}) => {
             marginBottom: "50px",
             color: "black",
             fontSize: "1.5rem",
-          }}
-        >
+          }}>
           {crypto.name}
         </h1>
       </SwiperSlide>
@@ -305,8 +304,7 @@ const Coin = ({}) => {
             <div
               className="t-name"
               data-aos="fade-down"
-              data-aos-duration="3000"
-            >
+              data-aos-duration="3000">
               <span>Popular Coins</span>
               <span> The current top 10 coins in the market</span>
             </div>
@@ -321,8 +319,7 @@ const Coin = ({}) => {
             <span
               style={{ color: "black", marginTop: "4rem" }}
               data-aos="fade-down"
-              data-aos-duration="3000"
-            >
+              data-aos-duration="3000">
               Trending Coins
             </span>
             <span>
@@ -334,8 +331,7 @@ const Coin = ({}) => {
         <div
           className="carousel-2"
           data-aos="fade-up-right"
-          data-aos-duration="3000"
-        >
+          data-aos-duration="3000">
           <Swiper
             modules={[Navigation, pagination, Autoplay]}
             slidesPerView={3}
@@ -343,8 +339,7 @@ const Coin = ({}) => {
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             centeredSlides={false}
             centerInsufficientSlides={true}
-            pagination={{ clickable: true }}
-          >
+            pagination={{ clickable: true }}>
             <div className="trend-car">
               {tren &&
                 tren["cryptoTrending"].map((crypto) => createSlide(crypto))}
