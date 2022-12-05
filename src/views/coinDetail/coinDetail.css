@@ -391,7 +391,7 @@ margin-bottom: 1rem;
 
   .right-col {
   margin-top: 0rem;
-  width: auto;
+  width: fit-content;
   margin: auto;
   }
 
@@ -405,6 +405,7 @@ margin-bottom: 1rem;
 
   .d-name {
     margin-top: 2rem;
+    margin-left: 5%;
   }
 }
 
@@ -483,9 +484,9 @@ margin-bottom: 1rem;
       width: 39rem;
 }
 
- .scroll-detail {
+ /* .scroll-detail {
    display: block;
- }
+ } */
 
  .table-detail {
   width: 35rem;
@@ -498,7 +499,8 @@ margin-bottom: 1rem;
  }
 
  .left-det .btn-coin {
-   width: 20rem;
+   width: min-content;
+   font-size: 0.6rem;
  }
 }
 
@@ -508,9 +510,9 @@ margin-bottom: 1rem;
   }
 }
 
-@media (max-width: 1067px){
+@media (max-width: 425px){
     .top-info {
-        display: flex;
+        display: contents;
         flex-direction: column;
         width: 50%;
         margin-left: 6rem;
@@ -524,25 +526,34 @@ margin-bottom: 1rem;
       } */
 
   .image_logo {
-  margin-top: 3rem;
-  width: 70%;
-  margin-left: 8rem;
+  margin:auto;
+  width: 40%;
+  
   }
 
-  .back-col button#coinheaderbutton {
-  background-size: 600%;
-  margin-left: 10rem;
-  }
+.back-col button#coinheaderbutton {
+    background-size: 600%;
+    /* margin-left: 35%; */
+    height: auto;
+    width: -webkit-fill-available;
+    /* margin: auto; */
+}
 
   .d-name> :nth-child(1) {
-  font-size: 5rem;
+  font-size: 2rem;
   margin-top: 2rem;
+  }
+
+    .d-name> :nth-child(3) {
+  font-size: 1.5rem;
+  margin-top: 0.7rem;
   }
 
   .table-detail {
   overflow: auto !important;
-  width: 30rem;
-  margin: auto;
+  width: 20rem;
+  margin: 0;
+  margin-bottom: 3rem;
   }
 
   .table-flex {
@@ -552,5 +563,16 @@ margin-bottom: 1rem;
   .ath-atl{
   margin-top: -9rem;
   }
+
+  table {
+    font-weight: 100;
+    font-size: 1.4rem;
+    color: white;
+    margin-top: 10px;
+    border-collapse: collapse;
+    line-height: 35px;
+    text-align: left;
+    width: 65rem;
+}
 
 }
