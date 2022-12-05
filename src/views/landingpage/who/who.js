@@ -7,7 +7,7 @@ import { ImBubbles2 } from "react-icons/im";
 
 export default function Who() {
   return (
-    <div className="section2">
+    <div className="section2" data-aos="fade-right" data-aos-duration="3000">
       <h3 className="headersize">
         Our Core<span id="colortext2"> Values</span>
       </h3>
