@@ -198,6 +198,7 @@ const ForumPage = () => {
                       <h2
                         style={{
                           marginLeft: "2rem",
+                          marginRight: "2rem",
                           textAlign: "left",
                           fontFamily: "Roleway",
                         }}>

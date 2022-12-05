@@ -129,7 +129,7 @@ a{
 @media (max-width: 980px) {
   .box-form .right {
     width: 50vw;
-	height: 50vh;
+	height: 77vh;
   }
 }
 
@@ -221,4 +221,17 @@ label input[type="checkbox"] {
   margin-top: 30%;
   /* text-align: center; */
   margin-left: 6%;
+}
+
+@media (max-width: 525px) {
+  .box-form .right button {
+      width: 157px;
+    }
+}
+
+@media (max-width: 1662px){
+  .box-form .right button {
+      margin-left: 12px;
+      width: 198px;
+    }
 }
