@@ -114,7 +114,7 @@ ul#footer-ul {
   align-content: center;
 }
 
-@media (min-width:19rem) and (max-width:48rem){
+@media (min-width:10rem) and (max-width:48rem){
 .futmob{
   display: table;
   width: 400%;
@@ -126,11 +126,11 @@ ul#footer-ul {
     width: 74px;
 }
 
-@media (min-width: 26.67rem) {
+/* @media (min-width: 26.67rem) {
   element.style {
     display: flex;
   }
-}
+} */
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
 .footer-col h4 {
@@ -161,9 +161,9 @@ ul#footer-ul {
     display: none;
   }
 
-  .futmob {
+  /* .futmob {
     display: grid;
     width: 5rem;
-  }
+  } */
 }
 }
