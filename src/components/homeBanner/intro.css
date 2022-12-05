@@ -387,7 +387,7 @@ button {
   }
 }
 
-@media (min-width: 48rem) and (max-width: 64rem) {
+@media (min-width: 48rem) and (max-width: 90rem) {
   .trending-wrap {
     display: none;
   }
