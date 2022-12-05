@@ -65,7 +65,7 @@ span#colortext3{
 
 
 
-@media (min-width: 480px) and (max-width:801px) {
+@media (min-width: 26.67rem) and (max-width:48rem) {
 
   .Carousallanding {
     margin: -3rem auto;
@@ -92,7 +92,7 @@ span#colortext3{
   }
 
   .slide img{
-    width:20rem;
+    width:14rem;
   }
 
 }

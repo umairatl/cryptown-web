@@ -61,7 +61,7 @@ span#colortext{
 
 
 
-@media (min-width: 641px) and (max-width:1007px) {
+@media (min-width: 26.67rem) and (max-width:79rem) {
 
     .about{
         background:url(../../../asset/whatpng-01.png) no-repeat;
@@ -73,12 +73,14 @@ span#colortext{
         font-size: 3rem;
         /* color:#666; */
         color: #000;
+        margin-left: 27rem;
     }
 
     p#lpparagraph{
         font-size: 15px;
         color: black;
-        text-align: -webkit-center;
+        text-align: justify;
+        margin-left: 27rem;
     }
 
 }

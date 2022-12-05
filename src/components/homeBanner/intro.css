@@ -411,3 +411,9 @@ button#coinheaderbutton {
   margin-left: 0rem; 
 }
 }
+
+@media (max-width: 400px){
+  .Intro {
+      background-size: 1828px;
+    }
+}
