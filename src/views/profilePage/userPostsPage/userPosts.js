@@ -12,7 +12,6 @@ import "../../../components/post/post.css";
 const entities = require("entities");
 
 const UserPosts = () => {
-  // const [postList, setPostList] = useState(null)
   const [error, setError] = useState("");
   const [postId, setPostId] = useState("");
 
@@ -35,7 +34,6 @@ const UserPosts = () => {
             (objKey) => json["postsObj"][objKey]
           );
           console.log(objKeyArr);
-          // setPostList(objKeyArr);
           dispatch({ type: "SET_POSTS", payload: objKeyArr });
         }
       } catch (error) {

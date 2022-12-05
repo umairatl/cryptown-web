@@ -10,7 +10,6 @@
   justify-content: center;
   align-items: center;
   min-height: 45vh;
-  /* background: #3c2846; */
 }
 
 .container1 {
@@ -38,19 +37,6 @@
   align-items: flex-start;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: -140px;
-  left: -40;
-  width: 100%;
-  height: 120%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
-  transform: rotate(35deg);
-  pointer-events: none;
-  filter: blur(5px);
-}
-
 .card:nth-child(1) {
   background: linear-gradient(to bottom, #ff2ae0, #645bf6);
 }
@@ -76,30 +62,6 @@
   justify-content: center;
 }
 
-.icon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50px;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border-top-right-radius: 50px;
-  box-shadow: 15px -15px 0 15px #3c2846;
-}
-
-.icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -50px;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border-top-left-radius: 50px;
-  box-shadow: -15px -15px 0 15px #3c2846;
-}
-
 .icon ion-icon {
   color: #fff;
   position: relative;
@@ -116,11 +78,11 @@
   text-align: justify;
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .contentofcard {
     width: 50vw;
   }
-}
+} */
 
 .contentofcard h2#cardheader {
   font-size: 1.75em;
@@ -132,7 +94,7 @@
 .contentofcard p#pheader {
   color: #fff;
   line-height: 1.5em;
-  width: 12vw;
+  width: 18rem;
 }
 
 h3.headersize {
@@ -152,7 +114,7 @@ span#colortext2 {
     background-position: right;
 } */
 
-@media (min-width: 480px) and (max-width: 801px) {
+@media (min-width: 26.67) and (max-width: 48rem) {
   h3.headersize {
     font-size: 2.9rem;
   }
@@ -187,18 +149,6 @@ span#colortext2 {
     align-items: flex-start;
   }
 
-  .card::before {
-    content: "";
-    position: absolute;
-    top: -140px;
-    width: 100%;
-    height: 120%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
-    transform: rotate(35deg);
-    pointer-events: none;
-    filter: blur(5px);
-  }
-
   .contentofcard {
     position: absolute;
     top: 0;
@@ -208,64 +158,55 @@ span#colortext2 {
     background: transparent;
     border-top-left-radius: 50px;
     box-shadow: -15px -15px 0 15px #3c2846;
+  }
 
-}
-
-
-.icon ion-icon{
+  .icon ion-icon {
     color: #fff;
     position: relative;
     font-size: 6em;
     z-index: 10000;
     --ionicon-stroke-width: 24px;
+  }
 
-}
-
-.contentofcard{
-    position:absolute;
+  .contentofcard {
+    position: absolute;
     width: fit-content;
     padding: 30px;
     padding-top: 140px;
     text-align: justify;
   }
 
-.contentofcard h2#cardheader{
+  .contentofcard h2#cardheader {
     font-size: 1.75em;
     color: #fff;
     margin-bottom: 10px;
     text-align: center;
-}
+  }
 
-
-.contentofcard p#pheader{
+  .contentofcard p#pheader {
     color: #fff;
     line-height: 1.5em;
-    width: 12vw;
+    width: auto;
+  }
 
-}
-
-
-h3.headersize{
+  h3.headersize {
     text-align: center;
     font-size: 3.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-}
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+  }
 
-
-span#colortext2{
+  span#colortext2 {
     color: #0000ff;
-}
+  }
 
-
-
-
-/* img#I1{
+  /* img#I1{
     opacity: 0.3;
     background-position: right;
 } */
 
-
-
+  /* 
 @media (min-width: 480px) and (max-width:801px) {
 
         h3.headersize{
@@ -337,5 +278,5 @@ span#colortext2{
             text-align: justify;
         }
 
-}
+} */
 }

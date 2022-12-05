@@ -187,7 +187,7 @@ const CoinDetail = () => {
                         )
                       }
                       className="btn-coin">
-                      Add to Wishlist
+                      Add to Watchlist
                     </button>
                   )}
                   {addWatchListDialog ? (
