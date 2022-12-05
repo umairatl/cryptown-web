@@ -111,8 +111,13 @@ ul#footer-ul {
 }
 
 @media (min-width:19rem) and (max-width:26.66rem){
-.elemt.style{
-  display: inline;
+.futmob{
+  display: table;
+  width: 400%;
+}
+
+.footer-col h4::before {
+    width: 74px;
 }
 }
 
@@ -125,7 +130,7 @@ element.style {
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
 .footer-col h4 {
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: #ffffff;
     text-transform: capitalize;
     margin-bottom: 35px;
@@ -136,9 +141,9 @@ element.style {
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
 .footer-col ul li a {
-    font-size: 0.5rem;
-
+    font-size: 1rem;
 }
+
 }
 
 @media (min-width: 19rem) and (max-width: 26.66rem){

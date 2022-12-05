@@ -92,3 +92,9 @@
   margin-top: 3px;
   font-size: 18px;
 }
+
+@media (max-width: 697px){
+  .list-forum-2 {
+    width: 86%;
+}
+}

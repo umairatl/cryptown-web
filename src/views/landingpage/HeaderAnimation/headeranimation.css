@@ -252,12 +252,11 @@ button:hover {
   }
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 27rem) and (max-width:48rem) {
   button#lpheaderbutton {
     position: inherit;
     height: 4rem;
-    width: 100%;
-    margin: auto;
+    width: 50%;
     border-radius: 1rem;
     border: none;
     outline: none;
@@ -269,8 +268,8 @@ button:hover {
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.5s;
-    right: 0;
-    margin-right: 0;
-    margin-top: 0;
+    /* right: 0; */
+    margin: auto;
+    margin-left: 25%;
   }
 }
