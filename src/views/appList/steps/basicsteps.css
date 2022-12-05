@@ -18,12 +18,12 @@
 .containerexlist .boxexchangelist{
 
     position: relative;
-    width: auto;
+    width: 300px;
     padding: 40px;
     background: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
     border-radius: 4px;
-    margin: 20px;
+    margin: 5rem;
     box-sizing: border-box;
     overflow: hidden;
     text-align: center;
@@ -91,7 +91,15 @@ x
 }
 
 
-
+@media (min-width:26.67rem) and (max-width:48rem){
+    .containerexlist .boxexchangelist {
+ 
+    margin: auto auto 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+}
 
 
 
