@@ -145,7 +145,7 @@ span#colortext6 {
 }
 
 .btn-coin {
-  padding: 7px 0px;
+  padding: 7px 20px;
   color: white;
   background: #14578e;
   font-size: 16px;
@@ -159,7 +159,7 @@ span#colortext6 {
   /* margin: auto; */
   margin-right: 57pt;
   border-radius: 5px;
-  width: 27%;
+  /* width: 27%; */
 }
 
 .btn-coin:hover {
@@ -289,4 +289,14 @@ span#colortext6 {
   justify-content: center;
   color: white !important;
   background: white;
+}
+
+@media (max-width: 1086px){
+  .btn-coin{
+    width: 88%
+  }
+
+    .coin-name-col {
+      line-height: 1.2rem;
+    }
 }
