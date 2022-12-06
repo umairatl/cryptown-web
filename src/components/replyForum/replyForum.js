@@ -14,13 +14,8 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
   const [isReply, setIsReply] = useState(false);
   const [error, setError] = useState("");
   const [name, setName] = useState("");
-  const {
-    postSuccessful,
-    replyError,
-    dispatch: dialogDispatch,
-  } = useDialogContext();
+  const { replyError, dispatch: dialogDispatch } = useDialogContext();
   const { postLists, dispatch: userPostDispatch } = useUserPostsContext();
-
 
   useEffect(() => {
     const updateName = localStorage.getItem("username");
@@ -92,9 +87,9 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
               replies: [...post.replies, newReply],
             };
           }
-          return post
-        })
-        userPostDispatch({type: "SET_POSTS", payload: user_payload})
+          return post;
+        });
+        userPostDispatch({ type: "SET_POSTS", payload: user_payload });
       }
 
       setForumList(payload);
@@ -145,14 +140,6 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
           type="REPLY_ERROR"
           dialogTitle="Failed to Add Post"
           dialogMessage={error}
-        />
-      ) : null}
-
-      {postSuccessful ? (
-        <NormalDialog
-          type="POST_SUCCESSFUL"
-          dialogTitle="Post Successful"
-          dialogMessage="Thank you for joining the talk"
         />
       ) : null}
     </div>
