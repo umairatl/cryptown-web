@@ -417,9 +417,9 @@ table {
     background-size: 132rem 60rem;
     justify-content: space-between;
   }
-}
 
-@media (min-width: 26.67rem) and (max-width: 48rem) {
+
+
   .left-det {
     width: 50%;
     margin-top: 5rem;
@@ -467,6 +467,7 @@ table {
     font-size: 1.6rem;
   }
 }
+
 
 @media (max-width: 1629px) {
   .left-det {

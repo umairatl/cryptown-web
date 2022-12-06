@@ -20,6 +20,7 @@ const NormalDialog = ({ type, dialogTitle, dialogMessage }) => {
     usernameError,
     passwordUpdate,
     postSuccessful,
+    replyPostSuccessful,
     dispatch,
   } = useDialogContext();
 
