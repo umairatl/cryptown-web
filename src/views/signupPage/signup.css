@@ -109,7 +109,7 @@ a {
 @media (max-width: 1027px) {
   .box-form .right {
     width: 150rem;
-    height: 82vh;
+    height: fit-content;
   }
 }
 
