@@ -74,6 +74,7 @@ span#colortext {
     text-align: -webkit-center;
   }
 }
+
 @media (min-width: 26.67rem) and (max-width: 79rem) {
   .about {
     background: url(../../../asset/whatpng-01.png) no-repeat;
@@ -92,5 +93,15 @@ span#colortext {
     color: black;
     text-align: justify;
     margin-left: 27rem;
+  }
+}
+
+@media (max-width: 753px) {
+  .about .column .contentabout h3 {
+    margin-left: 0px;
+  }
+
+  p#lpparagraph {
+    margin-left: 0px;
   }
 }

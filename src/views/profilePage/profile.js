@@ -28,7 +28,8 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`verticalz-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      {...other}>
+      {...other}
+    >
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -159,44 +160,53 @@ const Profile = () => {
   };
 
   const passwordScore = (passwordStrength) => {
-    if (passwordStrength < 10) {
+    if (passwordStrength < 50) {
       return (
         //Weak Password
-        <span
-          style={{
-            display: "block",
-            border: "0px",
-            background: "red",
-            width: "50px",
-            height: "30px",
-          }}
-        />
+        <div>
+          <span
+            style={{
+              display: "block",
+              border: "0px",
+              background: "red",
+              width: "50px",
+              height: "30px",
+            }}
+          />
+          <h1 id="weak-PwdProfile">Weak Password</h1>
+        </div>
       );
-    } else if (passwordStrength >= 10 && passwordStrength <= 15) {
+    } else if (passwordStrength >= 50 && passwordStrength <= 60) {
       return (
         //Medium Password
-        <span
-          style={{
-            display: "block",
-            border: "0px",
-            background: "yellow",
-            width: "100px",
-            height: "30px",
-          }}
-        />
+        <div>
+          <span
+            style={{
+              display: "block",
+              border: "0px",
+              background: "yellow",
+              width: "100px",
+              height: "30px",
+            }}
+          />
+          <h1 id="avg-PwdProfile">Average Password</h1>
+        </div>
       );
     } else {
       return (
         //Strong Password
-        <span
-          style={{
-            display: "block",
-            border: "0px",
-            background: "green",
-            width: "150px",
-            height: "30px",
-          }}
-        />
+        <div>
+          <span
+            style={{
+              display: "block",
+              border: "0px",
+              background: "green",
+              width: "150px",
+              height: "30px",
+            }}
+          />
+          <h1 id="stg-PwdProfile">Strong Password</h1>
+        </div>
       );
     }
   };
@@ -297,7 +307,8 @@ const Profile = () => {
                               />
                               <span
                                 className="material-symbols-outlined"
-                                onClick={(e) => setShowPass(!showPass)}>
+                                onClick={(e) => setShowPass(!showPass)}
+                              >
                                 visibility
                               </span>
                             </div>
@@ -316,7 +327,8 @@ const Profile = () => {
                               />
                               <span
                                 className="material-symbols-outlined"
-                                onClick={(e) => setShowPass2(!showPass2)}>
+                                onClick={(e) => setShowPass2(!showPass2)}
+                              >
                                 visibility
                               </span>
                             </div>

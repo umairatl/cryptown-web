@@ -112,7 +112,7 @@ const Signup = () => {
               border: "0px",
               background: "red",
               width: "50px",
-              height: "30px",
+              height: "15px",
             }}
           />
           <h1 id="weak-Pwd">Weak Password</h1>
@@ -127,8 +127,8 @@ const Signup = () => {
               display: "block",
               border: "0px",
               background: "yellow",
-              width: "150px",
-              height: "30px",
+              width: "100px",
+              height: "15px",
             }}
           />
 
@@ -144,8 +144,8 @@ const Signup = () => {
               display: "block",
               border: "0px",
               background: "green",
-              width: "275px",
-              height: "30px",
+              width: "150px",
+              height: "15px",
             }}
           />
           <h1 id="stg-Pwd">Strong Password</h1>

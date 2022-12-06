@@ -201,13 +201,13 @@ label input[type="checkbox"] {
 }
 
 h1#weak-Pwd {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
 }
 h1#avg-Pwd {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
 }
 h1#stg-Pwd {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 525px) {
@@ -220,6 +220,7 @@ h1#stg-Pwd {
   .box-form .right button {
     margin-left: 12px;
     width: 198px;
+    margin-top: -5%;
   }
 }
 
