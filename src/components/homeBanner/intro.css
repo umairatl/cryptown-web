@@ -242,6 +242,12 @@ button {
   }
   }
 
+  @media (min-width: 26.67rem) and (max-width: 90rem){
+     .trending-wrap {
+  display: none;
+  }
+  }
+
   @media (min-width: 48rem) and (max-width: 64rem) {
   button#coinheaderbutton {
   width: 14rem;
