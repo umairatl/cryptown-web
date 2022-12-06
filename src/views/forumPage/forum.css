@@ -390,4 +390,10 @@ img#imground {
   .forum h2 {
     font-size: 14pt;
   }
+
+
+
+.forum p {
+    display: none;
+}
 }
