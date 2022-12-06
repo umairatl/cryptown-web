@@ -39,16 +39,16 @@
     object-fit: cover;
     height: auto;
   }
-}
 
-@media (min-width: 16rem) and (max-width: 26.66rem) {
+
+
   html:not(.no-js) [data-aos^="fade"][data-aos^="fade"].aos-animate {
     transform: none;
     height: auto;
     font-size: 1rem;
   }
-}
-@media (min-width:16rem) and (max-width:26.66rem) {
+
+
 
     html:not(.no-js) [data-aos^=fade][data-aos^=fade].aos-animate {
 

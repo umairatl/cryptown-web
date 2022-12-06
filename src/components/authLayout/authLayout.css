@@ -319,9 +319,9 @@ label input[type="checkbox"] {
     
     box-sizing: border-box;
 }
-}
 
-@media (min-width: 20rem) and (max-width: 47rem){
+
+
 .box-form .left .overlay h1 {
     font-size: 1.5rem;
     line-height: 1;
@@ -329,16 +329,16 @@ label input[type="checkbox"] {
     /* margin-top: 15vh; */
     margin-bottom: 0vh;
 }
-}
+
 
 /* //paragraph font size */
-@media (min-width: 20rem) and (max-width: 47rem){
+
 .box-form.left.overlay p {
   font-size: 1rem;
 } 
-}
 
-@media (min-width: 20rem) and (max-width: 47rem){
+
+
   .home-btn {
     /* background: #3b5998; */
     color: #FFFFFF;
@@ -348,42 +348,42 @@ label input[type="checkbox"] {
     /* display: inline-block; */
     /* box-shadow: 0 3px 6px 1px #042d4657; */
 }
-}
+
 
 /* all fonts */
-@media (min-width: 20rem) and (max-width: 47rem){
+
   .back-1 p {
     font-size: 0.6rem;
 }
-}
 
-@media (min-width: 20rem) and (max-width: 47rem){
+
+
   .box-form .right {
     padding-left: 5vw;
     width: 100%;
     height: 100%;
     padding-right: 4vw;
 }
-}
 
-@media (min-width: 20rem) and (max-width: 47rem){
+
+
 
 .box-form .right h5 {
     font-size: 1rem;
     line-height: 0;
     text-align: center;
 }
-}
 
-@media (min-width: 20rem) and (max-width: 47rem){
+
+
 
 .box-form .right p {
     font-size: 0.5rem;
     color: #a0a3ab;
 }
-}
 
-@media (min-width: 20rem) and (max-width: 47rem){
+
+
   .box-form .right button {
     color: #fff;
     margin-top: 5px;
@@ -397,9 +397,9 @@ label input[type="checkbox"] {
     box-shadow: 0px 4px 20px 0px #050608a6;
     background-image: linear-gradient(135deg, #1015b5 10%, #03254c 100%);
 }
-}
 
-@media (min-width: 20rem) and (max-width: 47rem){
+
+
   .box-form .right input {
     width: 90%;
     padding: 0.5rem;
@@ -409,22 +409,22 @@ label input[type="checkbox"] {
     outline: none;
     border-bottom: 2px solid #B0B3B9;
 }
-}
 
 
-@media (min-width:20rem) and (max-width:47rem){
+
+
   .box-form{
     margin: 11rem auto 15rem;
   }
-}
 
-@media (min-width:20rem) and (max-width:47rem){
+
+
   .right img{
     margin-top:10%;
   }
-}
 
-@media (min-width:20rem) and (max-width:47rem){
+
+
   .back-1{
     bottom:auto;
   }
@@ -446,9 +446,9 @@ label input[type="checkbox"] {
     
     box-sizing: border-box;
 }
-}
 
-@media (min-width: 48rem)and (max-width:63rem){
+
+
 .box-form .left .overlay h1 {
     font-size: 1.5rem;
     line-height: 1;
@@ -456,16 +456,16 @@ label input[type="checkbox"] {
     /* margin-top: 15vh; */
     margin-bottom: 0vh;
 }
-}
+
 
 /* //paragraph font size */
-@media (min-width: 48rem)and (max-width:63rem){
+
 .box-form.left.overlay p {
   font-size: 1rem;
 } 
-}
 
-@media (min-width: 48rem)and (max-width:63rem){
+
+
   .home-btn {
     /* background: #3b5998; */
     color: #FFFFFF;
@@ -475,16 +475,16 @@ label input[type="checkbox"] {
     /* display: inline-block; */
     /* box-shadow: 0 3px 6px 1px #042d4657; */
 }
-}
+
 
 /* all fonts */
-@media (min-width: 48rem)and (max-width:63rem){
+
   p {
     font-size: 1rem;
 }
-}
 
-@media (min-width: 48rem)and (max-width:63rem){
+
+
   .box-form .right {
     padding-left: 5vw;
     width: 75vw;
@@ -492,26 +492,26 @@ label input[type="checkbox"] {
     padding-right: 4vw;
     
 }
-}
 
-@media (min-width: 48rem)and (max-width:63rem){
+
+
 
 .box-form .right h5 {
     font-size: 1.3rem;
     line-height: 0;
     text-align: center;
 }
-}
 
-@media (min-width: 48rem)and (max-width:63rem){
+
+
 
 .box-form .right p {
     font-size: 1.5rem;
     color: #a0a3ab;
 }
-}
 
-@media (min-width: 48rem)and (max-width:63rem){
+
+
   .box-form .right button {
     color: #fff;
     margin-top: 5px;
@@ -527,9 +527,9 @@ label input[type="checkbox"] {
     box-shadow: 0px 4px 20px 0px #050608a6;
     background-image: linear-gradient(135deg, #1015b5 10%, #03254c 100%);
 }
-}
 
-@media (min-width: 48rem )and (max-width:63rem){
+
+
   .box-form .right input {
     width: 95%;
     padding: 0.5rem;
@@ -538,10 +538,10 @@ label input[type="checkbox"] {
     outline: none;
     border-bottom: 2px solid #B0B3B9;
 }
-}
 
 
-@media (min-width: 48rem) and (max-width:63rem){
+
+
   .right img {
     margin-top: 0%;
 
@@ -557,10 +557,10 @@ label input[type="checkbox"] {
     
   
 }
-}
 
 
-@media (min-width: 64rem)and  (max-width: 90rem){
+
+
 .box-form .left .overlay {
     padding: 1rem;
     
@@ -568,9 +568,9 @@ label input[type="checkbox"] {
     
     box-sizing: border-box;
 }
-}
 
-@media (min-width: 64rem)and  (max-width: 90rem){
+
+
 .box-form .left .overlay h1 {
     font-size: 1.5rem;
     line-height: 1;
@@ -578,16 +578,16 @@ label input[type="checkbox"] {
     /* margin-top: 15vh; */
     margin-bottom: 0vh;
 }
-}
+
 
 /* //paragraph font size */
-@media (min-width: 64rem)and  (max-width: 90rem){
+
 .box-form.left.overlay p {
   font-size: 1rem;
 } 
-}
 
-@media (min-width: 64rem)and  (max-width: 90rem){
+
+
   .home-btn {
     /* background: #3b5998; */
     color: #FFFFFF;
@@ -599,40 +599,41 @@ label input[type="checkbox"] {
 }
 }
 
+
 /* all fonts */
 @media (min-width: 64rem)and  (max-width: 89rem){
   p {
     font-size: 1rem;
 }
-}
 
-@media (min-width: 64rem)and  (max-width: 89rem){
+
+
   .box-form .right {
     padding-left: 5vw;
     width: 75vw;
     height: auto;
     padding-right: 4vw;
 }
-}
 
-@media (min-width: 64rem)and  (max-width: 89rem){
+
+
 
 .box-form .right h5 {
     font-size: 1.9vmax;
     line-height: 0;
     text-align: center;
 }
-}
 
-@media (min-width: 64rem)and  (max-width: 89rem){
+
+
 
 .box-form .right p {
     font-size: 1rem;
     color: #a0a3ab;
 }
-}
 
-@media (min-width: 64rem)and  (max-width: 89rem){
+
+
   .box-form .right button {
     color: #fff;
     margin-top: 5px;
@@ -648,9 +649,9 @@ label input[type="checkbox"] {
     box-shadow: 0px 4px 20px 0px #050608a6;
     background-image: linear-gradient(135deg, #1015b5 10%, #03254c 100%);
 }
-}
 
-@media (min-width: 64rem)and  (max-width: 89rem){
+
+
   .box-form .right input {
     width: 14rem;
     padding: 0.5rem;
@@ -660,10 +661,10 @@ label input[type="checkbox"] {
     outline: none;
     border-bottom: 2px solid #B0B3B9;
 }
-}
 
 
-@media (min-width: 64rem)and  (max-width: 89rem){
+
+
   .right img {
     margin-top: 10%;
 

@@ -390,9 +390,9 @@ img#imground {
   .forum h2 {
     font-size: 14pt;
   }
-}
 
-@media (min-width: 16rem) and (max-width: 26.66rem){
+
+
 .forum p {
     display: none;
 }
