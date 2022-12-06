@@ -145,10 +145,7 @@ const CoinDetail = () => {
             />
 
             <a href="#about">
-              <button
-                className="btn-vm"
-                id="coinheaderbutton"
-                onClick={() => scollToRef.current.scrollIntoView()}>
+              <button className="btn-vm" id="coinheaderbutton">
                 More info
               </button>
             </a>
