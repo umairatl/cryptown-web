@@ -33,7 +33,6 @@ const UserPosts = () => {
           const objKeyArr = Object.keys(json["postsObj"]).map(
             (objKey) => json["postsObj"][objKey]
           );
-          console.log(objKeyArr);
           dispatch({ type: "SET_POSTS", payload: objKeyArr });
         }
       } catch (error) {

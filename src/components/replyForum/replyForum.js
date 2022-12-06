@@ -47,14 +47,12 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
         updateContextForum();
       }
     } catch (error) {
-      console.log("in");
       dialogDispatch({ type: "REPLY_ERROR" });
       setError(error.response.data.error);
     }
   };
 
   const updateContextForum = () => {
-    try {
       dialogDispatch({ type: "POST_SUCCESSFUL" });
       setError("");
       const payload = forumList.map((forum) => {
@@ -96,9 +94,6 @@ const ReplyForum = ({ forumList, setForumList, onSubmitReply, postId }) => {
       setIsReply(false);
       setReplyPost("");
       onSubmitReply();
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   const updateReply = () => {
