@@ -146,7 +146,7 @@
       }
     }
     
-
+/*phone*/
     @media (min-width: 19rem) and (max-width:26.66rem){
 .marketingcontainer {
     
@@ -154,15 +154,44 @@
     justify-content: center;
     margin-left: 0rem;
 }
+
+.grid-box img {
+    width: 2rem;
+    height: 3rem;
+    margin-bottom: 20px;
+    animation: scaleup 6s ease-in-out infinite;
 }
 
-@media (min-width: 19rem) and (max-width:26.66rem){
+.grid-box {
+    height: 4rem;
+    width: 3rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 44%);
+}
+
+.grid-box h1 {
+    color: whitesmoke;
+    font-weight: 500;
+    font-size: 0.5rem;
+}
+
+.services-content h1 {
+    font-size: 1.5rem;
+}
+
+span#colortext13 {
+    font-size: 1rem;
+
+}
+
 a {
     text-decoration: none;
     font-size: 1rem;
 }
-}
+    }
 
+    /*1864*/
 
 @media (min-width: 19rem) and (max-width: 64rem){
   .grid-wrapper{
@@ -175,37 +204,11 @@ a {
   }
 
 
-}
-
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.grid-box img {
-    width: 2rem;
-    height: 3rem;
-    margin-bottom: 20px;
-    animation: scaleup 6s ease-in-out infinite;
-}
-}
-
-@media (min-width: 19rem) and (max-width:26.66rem){
-.grid-box {
-    height: 4rem;
-    width: 3rem;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgb(0 0 0 / 44%);
-}
-}
-
-@media (min-width: 19rem) and (max-width:26.66rem){
-.grid-box h1 {
-    color: whitesmoke;
-    font-weight: 500;
-    font-size: 0.5rem;
-}
-}
 
 
-@media (min-width: 19rem) and (max-width:64rem){
+
+
+
 .services-content {
     padding: inherit;
     position: relative;
@@ -217,18 +220,8 @@ a {
 }
 }
 
-@media (min-width: 19rem) and (max-width:26.66rem){
-.services-content h1 {
-    font-size: 1.5rem;
-}
-}
 
-@media (min-width: 19rem) and (max-width:26.66rem){
-span#colortext13 {
-    font-size: 1rem;
 
-}
-}
 
 .services-content p {
     padding-right: 6rem;
@@ -237,7 +230,7 @@ span#colortext13 {
     color: white;
 }
 
-
+/**/
     @media (min-width: 47rem) and (max-width:64rem){
 .marketingcontainer {
     
@@ -245,9 +238,9 @@ span#colortext13 {
     justify-content: center;
     margin-left: 0rem;
 }
-}
 
-@media (min-width: 48rem) and (max-width:64rem){
+
+
 .grid-box {
     height: 14rem;
     width: 14rem;
@@ -255,39 +248,45 @@ span#colortext13 {
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 44%);
 }
-}
 
-@media (min-width: 48rem) and (max-width: 64rem){
+
+
 .grid-box img {
     width: 6rem;
     height: 7rem;
     margin-bottom: 20px;
     animation: scaleup 6s ease-in-out infinite;
 }
-}
 
 
-@media (min-width: 48rem) and (max-width:64rem){
+
+
 .grid-box h1 {
     color: whitesmoke;
     font-weight: 500;
     font-size: 1.5rem;
 }
-}
 
-@media (min-width: 48rem) and (max-width:64rem){
+
+
    .services-content p {
     padding-right: 6rem;
     margin-bottom: 30px;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: white;
 }
-}
 
-@media (min-width: 48rem) and (max-width:64rem){
+
+
 a {
     text-decoration: none;
     font-size: xxx-large;
 }
+}
+
+@media (min-width: 1424px){
+    .grid-box h1{
+        font-size: 0.8rem;
+    }
 }

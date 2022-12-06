@@ -117,9 +117,9 @@ button:hover {
     margin-right: 0;
     margin-top: 0;
   }
-}
 
-@media (min-width: 16rem) and (max-width: 26.66rem) {
+
+
   .container1 {
     display: flex;
     justify-content: center;
@@ -127,18 +127,19 @@ button:hover {
     flex-wrap: wrap;
     padding: 0rem;
   }
-}
 
-@media (min-width: 16rem) and (max-width: 26.66rem) {
+
+ 
   .content p#pheader {
     color: #fff;
     line-height: 1.5em;
     width: 100%;
     text-align: center;
   }
-}
+  
 
-@media (min-width: 16rem) and (max-width: 26.66rem) {
+
+
   .about .column {
     display: flex;
     align-items: center;
@@ -146,26 +147,26 @@ button:hover {
     flex-wrap: wrap;
     padding: 1rem;
   }
-}
 
-@media (min-width: 16rem) and (max-width: 26.66rem) {
+
+
   .about .column .contentabout p {
     font-size: 1rem;
     color: #666;
     padding: 1rem 0;
     text-align: center;
   }
-}
 
-@media (min-width: 16rem) and (max-width: 26.66rem) {
+
+
   .about .column .contentabout h3 {
     font-size: 2rem;
     text-align: center;
     color: #000;
   }
-}
 
-@media (min-width: 16rem) and (max-width: 26.66rem) {
+
+
   .slide img {
     width: 100%;
     margin-top: 5rem;

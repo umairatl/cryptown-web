@@ -91,6 +91,10 @@ textarea#contentforum {
   margin: 5rem auto;
 }
 
+.containerforforum p{
+  color: white;
+}
+
 .bn632-hover {
   width: 160px;
   font-size: 16px;
@@ -120,6 +124,8 @@ textarea#contentforum {
 .bn632-hover:focus {
   outline: none;
 }
+
+
 
 .bn632-hover.bn20 {
   background-image: linear-gradient(
@@ -384,4 +390,10 @@ img#imground {
   .forum h2 {
     font-size: 14pt;
   }
+
+
+
+.forum p {
+    display: none;
+}
 }
