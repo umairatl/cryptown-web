@@ -1,200 +1,188 @@
-:root{
-    --gradient-1: linear-gradient(to bottom right, rgb(107,107,255),blue);
-     
-    --gradient-2: linear-gradient(to bottom right, rgb(80,80,255),rgb(253,119,119));
-     
-    --gradient-3: linear-gradient(to bottom right, rgb(255,207,145),rgb(255,111,92));
-     
-    --gradient-4: linear-gradient(to bottom right, #2af598, #009efd);
-     
-    }
-     
-     
-     
-    .marketingservices{
-       margin-top: -80px;
-       margin-bottom: 80px;
-       text-align: justify;
-    }
-     
-     
-     
-    .marketingcontainer{
-       padding: 3rem;
-       display: flex;
-       justify-content: center;
-    }
-     
-     
-    .grid-wrapper,
-    .services-content{
-       flex-basis: 50%;
-    }
-     
-    .grid-wrapper{
-       display: grid;
-       grid-template-columns: repeat(auto-fit,minmax(auto,40%));
-       grid-gap: 2em;
-       padding: 3rem;
-       max-width: 30%;
-       justify-content: space-between;
-     
-    }
-     
-     
-    .grid-box{
-       height: 200px;
-       padding: 2rem;
-       text-align: center;
-       border-radius: 5px;
-       box-shadow: 2px 2px 5px rgba(0,0,0,0.438);
-    }
-     
-    .mobileapp{
-       background: var(--gradient-1);
-    }
-     
-    .webdesign{
-       background: var(--gradient-2);
-    }
-     
-    .marketing{
-       background: var(--gradient-3);
-    }
-     
-     
-    .branding{
-       background: var(--gradient-4);
-    }
-     
-     
-    .grid-box img{
-       width: 80px;
-       height: 80px;
-       margin-bottom: 20px;
-       animation: scaleup 6s ease-in-out infinite;
-     
-    }
-     
-     
-    .grid-box h1{
-       color: whitesmoke;
-       font-weight: 500;
-    }
-     
-     
-     
-     
-    .services-content{
-     
-       padding: 3rem;
-       position: relative;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       flex-grow: 6;
-       max-width: 40%;
-    }
-     
-    .services-content h1{
-     
-       font-size: 3.5rem;
-       margin-bottom: 30px;
-       color: white;
-     
-    }
-     
-     
-    .services-content p{
-     
-       padding-right: 6rem;
-       margin-bottom: 30px;
-     
-    }
-     
-    span#colortext13{
-     font-size: 3rem;
-     background: -webkit-linear-gradient(115deg,#fc00ff,#00dbde);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     font-weight: 950;
-    }
-     
-     
-    .circle img{
-       position: absolute;
-       top: -10%;
-       left: 5%;
-       width: 760px;
-       z-index: -1;
-       animation: scaleup 6s ease-in-out infinite;
-     
-    }
-     
-     
-    /* Animations */
-     
-    @keyframes scaleup{
-      0%{
-           transform: scale(1.2);
-      }
-      50%{
-           transform: scale(1);
-      }
-      100%{
-           transform: scale(1.2);
-      }
-    }
-    
-/*phone*/
-    @media (min-width: 19rem) and (max-width:26.66rem){
+:root {
+  --gradient-1: linear-gradient(to bottom right, rgb(107, 107, 255), blue);
+
+  --gradient-2: linear-gradient(
+    to bottom right,
+    rgb(80, 80, 255),
+    rgb(253, 119, 119)
+  );
+
+  --gradient-3: linear-gradient(
+    to bottom right,
+    rgb(255, 207, 145),
+    rgb(255, 111, 92)
+  );
+
+  --gradient-4: linear-gradient(to bottom right, #2af598, #009efd);
+}
+
+.marketingservices {
+  margin-top: -80px;
+  margin-bottom: 80px;
+  text-align: justify;
+}
+
 .marketingcontainer {
-    
-    display: grid;
-    justify-content: center;
-    margin-left: 0rem;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.grid-wrapper,
+.services-content {
+  flex-basis: 50%;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 40%));
+  grid-gap: 2em;
+  padding: 3rem;
+  max-width: 30%;
+  justify-content: space-between;
+}
+
+.grid-box {
+  height: 200px;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.438);
+}
+
+.mobileapp {
+  background: var(--gradient-1);
+}
+
+.webdesign {
+  background: var(--gradient-2);
+}
+
+.marketing {
+  background: var(--gradient-3);
+}
+
+.branding {
+  background: var(--gradient-4);
 }
 
 .grid-box img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  animation: scaleup 6s ease-in-out infinite;
+}
+
+.grid-box h1 {
+  color: whitesmoke;
+  font-weight: 500;
+}
+
+.services-content {
+  padding: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 6;
+  max-width: 40%;
+}
+
+.services-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.services-content p {
+  padding-right: 6rem;
+  margin-bottom: 30px;
+}
+
+span#colortext13 {
+  font-size: 3rem;
+  background: -webkit-linear-gradient(115deg, #fc00ff, #00dbde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 950;
+}
+
+.circle img {
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  width: 760px;
+  z-index: -1;
+  animation: scaleup 6s ease-in-out infinite;
+}
+
+/* Animations */
+
+@keyframes scaleup {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 1500px) {
+  .grid-box h1 {
+    font-size: 0.8rem;
+  }
+}
+
+/*phone*/
+@media (min-width: 19rem) and (max-width: 46rem) {
+  .marketingcontainer {
+    display: grid;
+    justify-content: center;
+    margin-left: 0rem;
+  }
+
+  .grid-box img {
     width: 2rem;
     height: 3rem;
     margin-bottom: 20px;
     animation: scaleup 6s ease-in-out infinite;
-}
+  }
 
-.grid-box {
+  .grid-box {
     height: 4rem;
     width: 3rem;
     text-align: center;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 44%);
-}
+  }
 
-.grid-box h1 {
+  .grid-box h1 {
     color: whitesmoke;
     font-weight: 500;
     font-size: 0.5rem;
-}
+  }
 
-.services-content h1 {
+  .services-content h1 {
     font-size: 1.5rem;
-}
+  }
 
-span#colortext13 {
+  span#colortext13 {
     font-size: 1rem;
+  }
 
-}
-
-a {
+  a {
     text-decoration: none;
     font-size: 1rem;
+  }
 }
-    }
 
-    /*1864*/
+/*1864*/
 
-@media (min-width: 19rem) and (max-width: 64rem){
-  .grid-wrapper{
+@media (min-width: 19rem) and (max-width: 64rem) {
+  .grid-wrapper {
     display: grid;
     grid-gap: 1rem;
     padding: inherit;
@@ -203,13 +191,7 @@ a {
     justify-content: space-between;
   }
 
-
-
-
-
-
-
-.services-content {
+  .services-content {
     padding: inherit;
     position: relative;
     display: flex;
@@ -217,76 +199,61 @@ a {
     justify-content: center;
     flex-grow: 6;
     max-width: 100%;
+  }
 }
-}
-
-
-
 
 .services-content p {
-    padding-right: 6rem;
-    margin-bottom: 30px;
-    width: 100%;
-    color: white;
+  padding-right: 6rem;
+  margin-bottom: 30px;
+  width: 100%;
+  color: white;
 }
 
 /**/
-    @media (min-width: 47rem) and (max-width:64rem){
-.marketingcontainer {
-    
+@media (min-width: 47rem) and (max-width: 64rem) {
+  .marketingcontainer {
     display: block;
     justify-content: center;
     margin-left: 0rem;
-}
+  }
 
-
-
-.grid-box {
+  .grid-box {
     height: 14rem;
     width: 14rem;
     text-align: center;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 44%);
-}
+  }
 
-
-
-.grid-box img {
+  .grid-box img {
     width: 6rem;
     height: 7rem;
     margin-bottom: 20px;
     animation: scaleup 6s ease-in-out infinite;
-}
+  }
 
-
-
-
-.grid-box h1 {
+  .grid-box h1 {
     color: whitesmoke;
     font-weight: 500;
     font-size: 1.5rem;
-}
+  }
 
-
-
-   .services-content p {
+  .services-content p {
     padding-right: 6rem;
     margin-bottom: 30px;
     width: 100%;
     font-size: 1.3rem;
     color: white;
-}
+  }
 
-
-
-a {
+  a {
     text-decoration: none;
     font-size: xxx-large;
-}
+  }
 }
 
-@media (min-width: 1424px){
-    .grid-box h1{
-        font-size: 0.8rem;
-    }
+@media (min-width: 1424px) {
+  .grid-box h1 {
+    font-size: 0.8rem;
+  }
 }
