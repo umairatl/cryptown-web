@@ -1,6 +1,6 @@
 html,
 body {
-  margin: 0px;  
+  margin: 0px;
   height: 100%;
 }
 
@@ -200,6 +200,16 @@ label input[type="checkbox"] {
   margin-left: 6%;
 }
 
+h1#weak-Pwd {
+  font-size: 0.75rem;
+}
+h1#avg-Pwd {
+  font-size: 0.75rem;
+}
+h1#stg-Pwd {
+  font-size: 0.75rem;
+}
+
 @media (max-width: 525px) {
   .box-form .right button {
     width: 157px;
@@ -210,11 +220,12 @@ label input[type="checkbox"] {
   .box-form .right button {
     margin-left: 12px;
     width: 198px;
+    margin-top: -5%;
   }
 }
 
-@media (max-width: 375px){
+@media (max-width: 375px) {
   .box-form .right button {
-        width: 141px;
-    }
+    width: 141px;
+  }
 }

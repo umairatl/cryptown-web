@@ -105,41 +105,51 @@ const Signup = () => {
     if (passwordStrength < 50) {
       return (
         //Weak Password
-        <span
-          style={{
-            display: "block",
-            border: "0px",
-            background: "red",
-            width: "50px",
-            height: "30px",
-          }}
-        />
+        <div>
+          <span
+            style={{
+              display: "block",
+              border: "0px",
+              background: "red",
+              width: "50px",
+              height: "15px",
+            }}
+          />
+          <h1 id="weak-Pwd">Weak Password</h1>
+        </div>
       );
     } else if (passwordStrength >= 50 && passwordStrength <= 60) {
       return (
         //Medium Password
-        <span
-          style={{
-            display: "block",
-            border: "0px",
-            background: "yellow",
-            width: "100px",
-            height: "30px",
-          }}
-        />
+        <div>
+          <span
+            style={{
+              display: "block",
+              border: "0px",
+              background: "yellow",
+              width: "100px",
+              height: "15px",
+            }}
+          />
+
+          <h1 id="avg-Pwd">Average Password</h1>
+        </div>
       );
     } else {
       return (
         //Strong Password
-        <span
-          style={{
-            display: "block",
-            border: "0px",
-            background: "green",
-            width: "150px",
-            height: "30px",
-          }}
-        />
+        <div>
+          <span
+            style={{
+              display: "block",
+              border: "0px",
+              background: "green",
+              width: "150px",
+              height: "15px",
+            }}
+          />
+          <h1 id="stg-Pwd">Strong Password</h1>
+        </div>
       );
     }
   };

@@ -76,7 +76,7 @@ const CustomerReview = () => {
               <div className="review dark">
                 <h4>Such a life-changing experience. Highly recommended!</h4>
                 <p>
-                  “Before knowing cryotown, I’ve never trade before in my entire
+                  “Before knowing cryptown, I’ve never trade before in my entire
                   life. I needed some advice from professionals who can help me
                   learn trading more. I was encouraged to use this website that
                   have been recommended by another friend of mine. The entire
@@ -131,10 +131,10 @@ const CustomerReview = () => {
                 </h4>
                 <p>
                   “ The UI is very straightforward and easy for beginners to
-                  understand especially those who are newly into
-                  cryptocurrencyworld. I also feel this website is too easy for
-                  professionals trader like me and therefore I think it is
-                  appropriate for beginners.”
+                  understand especially those who are newly into cryptocurrency
+                  world. I also feel this website is too easy for professionals
+                  trader like me and therefore I think it is appropriate for
+                  beginners.”
                 </p>
               </div>
             </div>

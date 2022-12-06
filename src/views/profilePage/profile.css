@@ -24,7 +24,7 @@ a {
   margin-top: 37px;
 }
 
-input{
+input {
   font-size: 2rem;
 }
 
@@ -39,6 +39,18 @@ input{
 
 .pass-cont input {
   background-color: none;
+}
+h1#weak-PwdProfile {
+  font-size: 0.9rem;
+  text-align: left;
+}
+h1#avg-PwdProfile {
+  font-size: 0.9rem;
+  text-align: left;
+}
+h1#stg-PwdProfile {
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 @media (max-width: 980px) {
@@ -292,13 +304,13 @@ profile-cont {
   }
 
   .box-form-1 {
-  display: block;
+    display: block;
   }
 
   .box-form-1 .right {
-  width: auto;
-  height: min-content;
-  text-align: left;
+    width: auto;
+    height: min-content;
+    text-align: left;
   }
 
   .box-form-1 .right input {
@@ -314,22 +326,20 @@ profile-cont {
   }
 }
 
-@media (max-width: 402px){
-  form.login{
-      text-align: left;
-    }
+@media (max-width: 402px) {
+  form.login {
+    text-align: left;
+  }
 }
 
 /* laptop */
-@media (min-width: 63rem){
-   
+@media (min-width: 63rem) {
   .box-form-1 div {
     height: auto;
     width: auto;
   }
 
   .box-form-1 .right button {
-    
     /* margin-left: 1rem; */
     color: #fff;
     font-size: 16px;
