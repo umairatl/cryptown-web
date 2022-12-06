@@ -7,7 +7,6 @@
 .futmob{
   display: flex;
 }
-  
 
 .container {
   margin: auto;
@@ -21,6 +20,7 @@ ul#footer-ul {
   list-style: none;
   padding: 0 0 0 0px;
 }
+
 .footer {
   background: #00094b;
   margin-top: 1rem;
@@ -120,50 +120,30 @@ ul#footer-ul {
   width: 400%;
 }
 
-
-
 .footer-col h4::before {
     width: 74px;
-}
-
-/* @media (min-width: 26.67rem) {
-  element.style {
-    display: flex;
-  }
-} */
-
-@media (min-width: 19rem) and (max-width: 26.66rem){
-.footer-col h4 {
-    font-size: 1rem;
-    color: #ffffff;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: 500;
-    position: relative;
-  }
+ }
 }
 
 @media (min-width: 19rem) and (max-width: 26.66rem){
-.footer-col ul li a {
-    font-size: 1rem;
-}
-
-}
-
-@media (min-width: 19rem) and (max-width: 26.66rem) {
-  .footer-col > img#FOne {
-    display: none;
-  }
-}
-
-@media (min-width: 19rem) and (max-width: 26.66rem) {
-  .footer-col > img#FTwo {
-    display: none;
+  .footer-col h4 {
+  font-size: 1rem;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
   }
 
-  /* .futmob {
-    display: grid;
-    width: 5rem;
-  } */
-}
+  .footer-col ul li a {
+  font-size: 1rem;
+  }
+
+  .footer-col>img#FOne {
+  display: none;
+  }
+
+  .footer-col>img#FTwo {
+  display: none;
+  }
 }
