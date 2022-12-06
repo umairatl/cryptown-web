@@ -26,6 +26,7 @@
 }
 
 .top-info {
+  overflow-x: auto;
   height: fit-content;
   padding: 18px;
   display: flex;
@@ -311,7 +312,13 @@ table {
   color: lightblue !important;
 }
 
-@media (min-width: 19rem) and (max-width: 26.66rem) {
+@media (max-width: 900px){
+  .top-info img {
+    width: 79% !important;
+}
+}
+
+@media (min-width: 19rem) and (max-width: 35rem) {
   .top-info {
     height: -moz-fit-content;
     height: fit-content;
@@ -484,9 +491,19 @@ table {
     background-size: 106rem 82rem;
   }
 
+  .top-info img{
+    width: 125%;
+  }
+
   .left-det .btn-coin {
     width: min-content;
     font-size: 0.6rem;
+  }
+}
+
+@media(max-width: 1309px){
+  .back-col button#coinheaderbutton{
+    display: hidden;
   }
 }
 
@@ -496,7 +513,13 @@ table {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 763px){
+.top-info img {
+    width: 41%;
+  }
+}
+
+@media(max-width: 425px) {
   .top-info {
     display: contents;
     flex-direction: column;

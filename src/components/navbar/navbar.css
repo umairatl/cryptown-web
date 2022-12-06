@@ -96,13 +96,13 @@ button {
   }
 
   .first-col img {
-    width: 95%;
+    width: 50%;
   }
 }
 
 @media screen and (min-width: 1227px) and (max-width: 1270px) {
   .first-col img {
-    width: 84%;
+    width: 50%;
   }
 }
 
