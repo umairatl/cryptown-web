@@ -13,7 +13,7 @@ const AmbassadorSection = () => {
       <div className="section5">
         <img className="gif2" src={videogif2} alt="gif" />
         <p className="pambassador">
-          If you've got an audience and you love Crypo platforms, we have an
+          If you've got an audience and you love Crypto platforms, we have an
           exciting opportunity for you! Our Ambassador Program is our way to
           establish and maintain long-term partnerships with people who
           genuinely love our brand and are excited to share it with their
