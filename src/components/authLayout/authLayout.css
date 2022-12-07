@@ -51,6 +51,7 @@ a{
 	text-decoration:none;
   font-size: inherit;
   color: royalblue;
+  cursor: pointer;
 }
 
 .flex-pass{
