@@ -1,4 +1,4 @@
-# This repo and deployment only for front end side
+Deployment on vercel only consist of front end for this repo. backend is not deployed hence no data. 
 
 # Getting Started with Create React App
 
