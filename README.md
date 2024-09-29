@@ -1,3 +1,6 @@
+BESQUARE - DERIV HACKATHON PROJECT 
+
+
 Deployment on vercel only consist of front end for this repo. backend is not deployed hence no data. 
 
 # Getting Started with Create React App
